@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "manifest_id": "W10.CASE_MANIFEST",
+  "graph": "graph.json",
+  "status": "topology review; quantitative semiconductor proof not approved",
+  "mirror_mapping": {
+    "reference_device": "AMP1.Q_CR_REF",
+    "reference_node": "AMP1.N.Q1C_Q4B",
+    "output_device": "AMP1.Q_CR_OUT",
+    "output_node": "AMP1.COMP_A",
+    "common_emitters": "P15",
+    "replaced_electrical_path": [
+      "AMP1.D_BAL",
+      "AMP1.R_BAL_L",
+      "AMP1.R_BAL_R",
+      "AMP1.R_COL_L",
+      "AMP1.R_COL_R"
+    ],
+    "physical_state_of_replaced_parts": "retained installed but disconnected"
+  },
+  "hold_protocol": {
+    "capacitors": {
+      "INT1": "1u film",
+      "INT2": "1u film"
+    },
+    "target_initial_output": "+5.00 V on both channels",
+    "precharge": "temporary external fixture; remove before timing; not part of active hold schematic",
+    "hold_duration": "60 s minimum",
+    "temperature": "25 C nominal; record actual pair and ambient temperature",
+    "output_loading": "10 Mohm each; use matched probes/meters",
+    "input_state": "input resistor electrically inactive/open during hold",
+    "calculation": "I_EQ = C_F * dV_OUT/dt; report sign and magnitude",
+    "controls": [
+      "measure capacitor insulation leakage separately",
+      "repeat with probes exchanged",
+      "record dielectric absorption and settling interval"
+    ],
+    "hidden_bleed_allowed": false
+  },
+  "optional_fig10_25_fet_branch": "excluded from cumulative baseline; preserve as a separately reviewable future branch",
+  "claim_boundary": {
+    "connectivity": "eligible for graph/SVG/SPICE equivalence",
+    "ideal_model_performance": "blocked by inherited Week 9 failures until rerun",
+    "realistic_model_performance": "unsupported until lawful exact device models and package pin maps are bound"
+  }
+}

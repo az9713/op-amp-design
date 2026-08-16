@@ -1,0 +1,161 @@
+{
+  "annotations": [
+    "INT2 is temporarily configured as the Chapter 3-style unity inverter, not as an integrator.",
+    "30 pF is the historical starting point; the final selection follows measured loop and step-response results."
+  ],
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "DEV.INT2"
+  ],
+  "components": {
+    "W13.INT2.CC_SELECT": {
+      "label": "Cc selected",
+      "x": 760,
+      "y": 620
+    },
+    "W13.INT2.RFB": {
+      "label": "R2",
+      "x": 700,
+      "y": 500
+    },
+    "W13.INT2.RIN": {
+      "label": "R1",
+      "x": 340,
+      "y": 300
+    },
+    "W13.INT2.RLOAD": {
+      "label": "scope",
+      "rotation": 90,
+      "x": 1120,
+      "y": 520
+    },
+    "W13.INT2.VSRC": {
+      "label": "-50 mV step",
+      "x": 130,
+      "y": 350
+    }
+  },
+  "graph": "../../../circuits/weeks/w13/graph.json",
+  "module_positions": {
+    "DEV.INT2": {
+      "height": 220,
+      "ports": {
+        "COMPA": {
+          "x": 760,
+          "y": 510
+        },
+        "COMPB": {
+          "x": 900,
+          "y": 510
+        },
+        "INM": {
+          "x": 560,
+          "y": 310
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 900,
+          "y": 310
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "LM301A core",
+      "width": 340,
+      "x": 560,
+      "y": 200
+    },
+    "INF.PWR_ENTRY": {
+      "connect_ports": false,
+      "height": 60,
+      "style": "inactive",
+      "subtitle": "permanent sheet",
+      "width": 200,
+      "x": 30,
+      "y": 740
+    },
+    "MOD.INT2": {
+      "height": 520,
+      "ports": {
+        "COMPA": {
+          "visible": false
+        },
+        "COMPB": {
+          "visible": false
+        },
+        "IN": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "title": "INT2 LM301A unity-inverter test",
+      "width": 700,
+      "x": 430,
+      "y": 120
+    },
+    "W13.INT2.TEST": {
+      "height": 600,
+      "ports": {
+        "COMPA": {
+          "visible": false
+        },
+        "COMPB": {
+          "visible": false
+        },
+        "GND": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "VIN": {
+          "visible": false
+        }
+      },
+      "subtitle": "matched fixture and compensation selector",
+      "width": 1180,
+      "x": 70,
+      "y": 80
+    }
+  },
+  "net_routes": {
+    "SGND": {
+      "coordinate": 690,
+      "rail": "bottom"
+    }
+  },
+  "schema_version": 1,
+  "sheet_id": "W13.ONEPOLE_INT2",
+  "status": "graph.json is electrical authority",
+  "title": "Week 13 one-pole compensation on LM301A INT2",
+  "viewport": {
+    "height": 840,
+    "width": 1400
+  }
+}

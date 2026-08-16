@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" role="img" data-project-id="CAPSTONE.W00_W11" data-variant-id="W11.RECT" data-fidelity="ideal" data-view="detail" data-detail-module-id="RECT1" data-layout-id="W11.RECT">
+  <title>Detail circuit projection: CAPSTONE.W00_W11</title>
+  <style>.symbol-line,.port-line,.wire,.port-wire,.net-trunk,.control-line{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.symbol-fill{fill:#171717;stroke:#171717;stroke-width:1}.symbol-paper{fill:#fff}.component.inactive{opacity:.34}.component.changed .symbol-line,.component.changed .symbol-fill{stroke:#d85c41}.component.changed .symbol-fill{fill:#d85c41}.designator.inactive,.value.inactive{opacity:.34}.module-boundary{fill:none;stroke:#8b9299;stroke-width:1;stroke-dasharray:6 4}.junction{fill:#171717}.crossing{fill:#fff;stroke:#171717;stroke-width:1}.designator{font:600 11px system-ui;fill:#171717}.value{font:10px system-ui;fill:#555}.pin-label,.port-label{font:9px ui-monospace;fill:#555}.module-label{font:600 12px system-ui;fill:#555}.collapsed-title{font:700 22px system-ui;fill:#171717}.collapsed-subtitle,.net-label{font:11px system-ui;fill:#555}.polarity{font:16px system-ui;fill:#171717}.collapsed-module.inactive{opacity:.38}.zone{fill:#f8fafb;stroke:#c5cbd1;stroke-width:1}.zone-label{font:600 11px system-ui;fill:#737b83}.semantic-ledger{display:none}</style>
+  <g class="zone-layer" />
+  <g class="boundary-layer">
+    <g id="module-Z5245435431" class="module" data-module-id="RECT1" data-parent-id="">
+      <rect x="60.0" y="50.0" width="960.0" height="570.0" rx="8" class="module-boundary" />
+      <text x="70.0" y="68.0" class="module-label">RECT1</text>
+      <circle class="module-port" cx="60.0" cy="300.0" r="3" data-port-id="IN" data-net-id="RECT1.IN" />
+      <text x="66.0" y="294.0" class="port-label">IN</text>
+      <circle class="module-port" cx="1020.0" cy="300.0" r="3" data-port-id="OUT" data-net-id="RECT1.OUT" />
+      <text x="975.0" y="294.0" class="port-label">OUT</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="AGND" data-net-id="SGND" />
+    </g>
+  </g>
+  <g class="wire-layer">
+    <g class="net" data-net-id="N15">
+      <line class="net-trunk" x1="410.0" y1="675.0" x2="450.0" y2="675.0" data-net-id="N15" />
+      <polyline class="wire" points="410.0,565.0 410.0,675.0" data-terminal-ref="RECT1.CN::N" data-net-id="N15" fill="none" />
+      <polyline class="wire" points="450.0,352.0 450.0,675.0" data-terminal-ref="RECT1.U1::VN" data-net-id="N15" fill="none" />
+      <text x="414.0" y="669.0" class="net-label">N15</text>
+    </g>
+    <g class="net" data-net-id="P15">
+      <line class="net-trunk" x1="320.0" y1="35.0" x2="450.0" y2="35.0" data-net-id="P15" />
+      <polyline class="wire" points="320.0,475.0 320.0,35.0" data-terminal-ref="RECT1.CP::P" data-net-id="P15" fill="none" />
+      <polyline class="wire" points="450.0,248.0 450.0,35.0" data-terminal-ref="RECT1.U1::VP" data-net-id="P15" fill="none" />
+      <text x="324.0" y="29.0" class="net-label">P15</text>
+    </g>
+    <g class="net" data-net-id="RECT1.COMP_A">
+      <line class="net-trunk" x1="492.0" y1="248.0" x2="492.0" y2="450.0" data-net-id="RECT1.COMP_A" />
+      <polyline class="wire" points="425.0,450.0 492.0,450.0" data-terminal-ref="RECT1.C_COMP::P" data-net-id="RECT1.COMP_A" fill="none" />
+      <polyline class="wire" points="474.0,248.0 492.0,248.0" data-terminal-ref="RECT1.U1::COMPA" data-net-id="RECT1.COMP_A" fill="none" />
+    </g>
+    <g class="net" data-net-id="RECT1.COMP_B">
+      <line class="net-trunk" x1="515.0" y1="352.0" x2="515.0" y2="450.0" data-net-id="RECT1.COMP_B" />
+      <polyline class="wire" points="515.0,450.0 515.0,450.0" data-terminal-ref="RECT1.C_COMP::N" data-net-id="RECT1.COMP_B" fill="none" />
+      <polyline class="wire" points="474.0,352.0 515.0,352.0" data-terminal-ref="RECT1.U1::COMPB" data-net-id="RECT1.COMP_B" fill="none" />
+    </g>
+    <g class="net" data-net-id="RECT1.DRIVE">
+      <line class="net-trunk" x1="505.0" y1="300.0" x2="645.0" y2="300.0" data-net-id="RECT1.DRIVE" />
+      <polyline class="wire" points="645.0,300.0 645.0,300.0" data-terminal-ref="RECT1.D1::A" data-net-id="RECT1.DRIVE" fill="none" />
+      <polyline class="wire" points="505.0,300.0 505.0,300.0" data-terminal-ref="RECT1.U1::OUT" data-net-id="RECT1.DRIVE" fill="none" />
+    </g>
+    <g class="net" data-net-id="RECT1.IN">
+      <line class="net-trunk" x1="60.0" y1="318.0" x2="400.0" y2="318.0" data-net-id="RECT1.IN" />
+      <polyline class="wire" points="400.0,318.0 400.0,318.0" data-terminal-ref="RECT1.U1::INP" data-net-id="RECT1.IN" fill="none" />
+      <circle cx="400.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.IN" />
+      <polyline class="wire" points="160.0,345.0 160.0,318.0" data-terminal-ref="RECT1.VIN::P" data-net-id="RECT1.IN" fill="none" />
+      <circle cx="160.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.IN" />
+      <polyline class="port-wire" points="60.0,300.0 60.0,318.0" data-port-ref="RECT1::IN" data-net-id="RECT1.IN" fill="none" />
+      <circle cx="60.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.IN" />
+    </g>
+    <g class="net" data-net-id="RECT1.OUT">
+      <line class="net-trunk" x1="400.0" y1="318.0" x2="1020.0" y2="318.0" data-net-id="RECT1.OUT" />
+      <polyline class="wire" points="735.0,300.0 735.0,318.0" data-terminal-ref="RECT1.D1::K" data-net-id="RECT1.OUT" fill="none" />
+      <circle cx="735.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.OUT" />
+      <polyline class="wire" points="850.0,395.0 850.0,318.0" data-terminal-ref="RECT1.R_LOAD::P" data-net-id="RECT1.OUT" fill="none" />
+      <circle cx="850.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.OUT" />
+      <polyline class="wire" points="400.0,282.0 400.0,318.0" data-terminal-ref="RECT1.U1::INM" data-net-id="RECT1.OUT" fill="none" />
+      <circle cx="400.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.OUT" />
+      <polyline class="port-wire" points="1020.0,300.0 1020.0,318.0" data-port-ref="RECT1::OUT" data-net-id="RECT1.OUT" fill="none" />
+      <circle cx="1020.0" cy="318.0" r="3.5" class="junction" data-net-id="RECT1.OUT" />
+    </g>
+    <g class="net" data-net-id="SGND">
+      <line class="net-trunk" x1="160.0" y1="650.0" x2="850.0" y2="650.0" data-net-id="SGND" />
+      <polyline class="wire" points="410.0,475.0 424.0,475.0 424.0,650.0 410.0,650.0" data-terminal-ref="RECT1.CN::P" data-net-id="SGND" fill="none" />
+      <circle cx="410.0" cy="650.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="320.0,565.0 320.0,650.0" data-terminal-ref="RECT1.CP::N" data-net-id="SGND" fill="none" />
+      <circle cx="320.0" cy="650.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="850.0,485.0 850.0,650.0" data-terminal-ref="RECT1.R_LOAD::N" data-net-id="SGND" fill="none" />
+      <circle cx="850.0" cy="650.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="160.0,435.0 160.0,650.0" data-terminal-ref="RECT1.VIN::N" data-net-id="SGND" fill="none" />
+      <circle cx="160.0" cy="650.0" r="3.5" class="junction" data-net-id="SGND" />
+      <text x="164.0" y="644.0" class="net-label">SGND</text>
+    </g>
+  </g>
+  <g class="symbol-layer">
+    <g id="component-Z52454354312E434E" class="component active" transform="translate(410.0 520.0) rotate(90)" data-component-id="RECT1.CN" data-module-id="RECT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>RECT1.CN</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SGND" data-open="false" data-global-x="410.0" data-global-y="475.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="410.0" data-global-y="565.0" />
+    </g>
+    <g id="component-Z52454354312E4350" class="component active" transform="translate(320.0 520.0) rotate(90)" data-component-id="RECT1.CP" data-module-id="RECT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>RECT1.CP</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="320.0" data-global-y="475.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="320.0" data-global-y="565.0" />
+    </g>
+    <g id="component-Z52454354312E435F434F4D50" class="component active" transform="translate(470.0 450.0) rotate(0)" data-component-id="RECT1.C_COMP" data-module-id="RECT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="0" data-mirror="false">
+      <title>RECT1.C_COMP</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="RECT1.COMP_A" data-open="false" data-global-x="425.0" data-global-y="450.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="RECT1.COMP_B" data-open="false" data-global-x="515.0" data-global-y="450.0" />
+    </g>
+    <g id="component-Z52454354312E4431" class="component active" transform="translate(690.0 300.0) rotate(0)" data-component-id="RECT1.D1" data-module-id="RECT1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE" data-rotation="0" data-mirror="false">
+      <title>RECT1.D1</title>
+      <line x1="-45" y1="0" x2="-16" y2="0" class="symbol-line" />
+      <polygon points="-16,-18 -16,18 13,0" class="symbol-fill diode-body" />
+      <line x1="15" y1="-21" x2="15" y2="21" class="symbol-line diode-bar" />
+      <line x1="15" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="A" data-net-id="RECT1.DRIVE" data-open="false" data-global-x="645.0" data-global-y="300.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="K" data-net-id="RECT1.OUT" data-open="false" data-global-x="735.0" data-global-y="300.0" />
+    </g>
+    <g id="component-Z52454354312E525F4C4F4144" class="component active" transform="translate(850.0 440.0) rotate(90)" data-component-id="RECT1.R_LOAD" data-module-id="RECT1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>RECT1.R_LOAD</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="RECT1.OUT" data-open="false" data-global-x="850.0" data-global-y="395.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="850.0" data-global-y="485.0" />
+    </g>
+    <g id="component-Z52454354312E5531" class="component active" transform="translate(450.0 300.0) rotate(0)" data-component-id="RECT1.U1" data-module-id="RECT1" data-state-class="persistent-installed" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP" data-rotation="0" data-mirror="false">
+      <title>RECT1.U1</title>
+      <polygon points="-34,-34 -34,34 40,0" class="symbol-line symbol-paper opamp-body" />
+      <line x1="-50" y1="-18" x2="-34" y2="-18" class="symbol-line" />
+      <line x1="-50" y1="18" x2="-34" y2="18" class="symbol-line" />
+      <line x1="40" y1="0" x2="55" y2="0" class="symbol-line" />
+      <line x1="0" y1="-42" x2="0" y2="-19" class="symbol-line" />
+      <line x1="0" y1="19" x2="0" y2="42" class="symbol-line" />
+      <text x="-29" y="-13" class="polarity">−</text>
+      <text x="-29" y="23" class="polarity">+</text>
+      <circle class="terminal" cx="-50" cy="18" r="3" data-pin-id="INP" data-net-id="RECT1.IN" data-open="false" data-global-x="400.0" data-global-y="318.0" />
+      <circle class="terminal" cx="-50" cy="-18" r="3" data-pin-id="INM" data-net-id="RECT1.OUT" data-open="false" data-global-x="400.0" data-global-y="282.0" />
+      <circle class="terminal" cx="55" cy="0" r="3" data-pin-id="OUT" data-net-id="RECT1.DRIVE" data-open="false" data-global-x="505.0" data-global-y="300.0" />
+      <circle class="terminal" cx="0" cy="-52" r="3" data-pin-id="VP" data-net-id="P15" data-open="false" data-global-x="450.0" data-global-y="248.0" />
+      <circle class="terminal" cx="0" cy="52" r="3" data-pin-id="VN" data-net-id="N15" data-open="false" data-global-x="450.0" data-global-y="352.0" />
+      <circle class="terminal" cx="24" cy="-52" r="3" data-pin-id="COMPA" data-net-id="RECT1.COMP_A" data-open="false" data-global-x="474.0" data-global-y="248.0" />
+      <circle class="terminal" cx="24" cy="52" r="3" data-pin-id="COMPB" data-net-id="RECT1.COMP_B" data-open="false" data-global-x="474.0" data-global-y="352.0" />
+    </g>
+    <g id="component-Z52454354312E56494E" class="component active" transform="translate(160.0 390.0) rotate(0)" data-component-id="RECT1.VIN" data-module-id="RECT1" data-state-class="configuration-only-fixture" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V" data-rotation="0" data-mirror="false">
+      <title>RECT1.VIN</title>
+      <line x1="0" y1="-45" x2="0" y2="-28" class="symbol-line" />
+      <line x1="0" y1="28" x2="0" y2="45" class="symbol-line" />
+      <circle cx="0" cy="0" r="28" class="symbol-line symbol-paper source-body" />
+      <line x1="-7" y1="-10" x2="7" y2="-10" class="symbol-line voltage-polarity" />
+      <line x1="0" y1="-17" x2="0" y2="-3" class="symbol-line voltage-polarity" />
+      <line x1="-7" y1="12" x2="7" y2="12" class="symbol-line voltage-polarity" />
+      <circle class="terminal" cx="0" cy="-45" r="3" data-pin-id="P" data-net-id="RECT1.IN" data-open="false" data-global-x="160.0" data-global-y="345.0" />
+      <circle class="terminal" cx="0" cy="45" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="160.0" data-global-y="435.0" />
+    </g>
+  </g>
+  <g class="annotation-layer">
+    <circle cx="320.0" cy="318.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="410.0" cy="650.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="450.0" cy="450.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="450.0" cy="650.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="492.0" cy="318.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="492.0" cy="352.0" r="4" class="crossing" data-connected="false" />
+    <text x="378.0" y="472.0" class="designator active">CN</text>
+    <text x="385.0" y="578.0" class="value active">0.1u</text>
+    <text x="288.0" y="472.0" class="designator active">CP</text>
+    <text x="295.0" y="578.0" class="value active">0.1u</text>
+    <text x="438.0" y="402.0" class="designator active">C_COMP</text>
+    <text x="445.0" y="508.0" class="value active">30p</text>
+    <text x="658.0" y="252.0" class="designator active">D1</text>
+    <text x="818.0" y="392.0" class="designator active">R_LOAD</text>
+    <text x="825.0" y="498.0" class="value active">10k</text>
+    <text x="404.0" y="313.0" class="pin-label">INP</text>
+    <text x="404.0" y="277.0" class="pin-label">INM</text>
+    <text x="509.0" y="295.0" class="pin-label">OUT</text>
+    <text x="454.0" y="243.0" class="pin-label">VP</text>
+    <text x="454.0" y="347.0" class="pin-label">VN</text>
+    <text x="478.0" y="243.0" class="pin-label">COMPA</text>
+    <text x="478.0" y="347.0" class="pin-label">COMPB</text>
+    <text x="418.0" y="252.0" class="designator active">U1</text>
+    <text x="128.0" y="342.0" class="designator active">VIN</text>
+    <text x="135.0" y="448.0" class="value active">SIN(0 1 1k)</text>
+  </g>
+  <g class="semantic-ledger" />
+</svg>

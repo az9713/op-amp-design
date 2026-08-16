@@ -1,0 +1,20 @@
+{
+  "week07": {
+    "configuration": "W07.PAIR_CHARACTERIZE",
+    "temperature_points_c": [
+      25,
+      35,
+      45
+    ],
+    "claim": "collector balance and input-referred offset only; no integrator function"
+  },
+  "week08": {
+    "configurations": [
+      "W08.OPEN_LOOP",
+      "W08.INT1_BRINGUP"
+    ],
+    "provisional_cc": "47p",
+    "output_current_limit": "ABSENT; external current-limited rails required",
+    "week09_delta": "add Q12/Q13 limiters and perform compensation campaign"
+  }
+}

@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" data-project-id="ROBERGE.ONEBOX.W00_04" data-variant-id="W00.INFRA_TEST" data-fidelity="ideal" data-view="main" data-detail-module-id="" data-layout-id="W00.INFRA">
+  <title>Main circuit projection: ROBERGE.ONEBOX.W00_04</title>
+  <style>.symbol-line,.port-line,.wire,.port-wire,.net-trunk,.control-line{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.symbol-fill{fill:#171717;stroke:#171717;stroke-width:1}.symbol-paper{fill:#fff}.component.inactive{opacity:.34}.component.changed .symbol-line,.component.changed .symbol-fill{stroke:#d85c41}.component.changed .symbol-fill{fill:#d85c41}.designator.inactive,.value.inactive{opacity:.34}.module-boundary{fill:none;stroke:#8b9299;stroke-width:1;stroke-dasharray:6 4}.junction{fill:#171717}.crossing{fill:#fff;stroke:#171717;stroke-width:1}.designator{font:600 11px system-ui;fill:#171717}.value{font:10px system-ui;fill:#555}.pin-label,.port-label{font:9px ui-monospace;fill:#555}.module-label{font:600 12px system-ui;fill:#555}.collapsed-title{font:700 22px system-ui;fill:#171717}.collapsed-subtitle,.net-label{font:11px system-ui;fill:#555}.polarity{font:16px system-ui;fill:#171717}.collapsed-module.inactive{opacity:.38}.zone{fill:#f8fafb;stroke:#c5cbd1;stroke-width:1}.zone-label{font:600 11px system-ui;fill:#737b83}.semantic-ledger{display:none}</style>
+  <g class="zone-layer" />
+  <g class="boundary-layer">
+    <g id="module-Z43484153534953" class="module semantic-ledger" data-module-id="CHASSIS" data-parent-id="">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="PGND" data-net-id="PGND" />
+    </g>
+    <g id="module-Z494E462E5057525F454E545259" class="module" data-module-id="INF.PWR_ENTRY" data-parent-id="CHASSIS">
+      <rect x="80.0" y="70.0" width="1040.0" height="600.0" rx="8" class="module-boundary" />
+      <text x="90.0" y="88.0" class="module-label">INF.PWR_ENTRY</text>
+      <circle class="module-port" cx="80.0" cy="115.0" r="3" data-port-id="VP15" data-net-id="P15" />
+      <text x="86.0" y="109.0" class="port-label">VP15</text>
+      <line x1="80.0" y1="117.0" x2="80.0" y2="103.0" class="port-line" />
+      <polygon points="80.0,97.0 74.0,106.0 86.0,106.0" class="symbol-fill power-arrow" data-rail-polarity="positive" />
+      <circle class="module-port" cx="80.0" cy="149.0" r="3" data-port-id="VN15" data-net-id="N15" />
+      <text x="86.0" y="143.0" class="port-label">VN15</text>
+      <line x1="80.0" y1="151.0" x2="80.0" y2="165.0" class="port-line" />
+      <polygon points="80.0,171.0 74.0,162.0 86.0,162.0" class="symbol-fill power-arrow" data-rail-polarity="negative" />
+      <circle class="module-port" cx="80.0" cy="183.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="86.0" y="177.0" class="port-label">SGND</text>
+      <line x1="80.0" y1="185.0" x2="80.0" y2="194.0" class="port-line ground-symbol" />
+      <line x1="70.0" y1="194.0" x2="90.0" y2="194.0" class="port-line ground-symbol" />
+      <line x1="73.0" y1="198.0" x2="87.0" y2="198.0" class="port-line ground-symbol" />
+      <line x1="77.0" y1="202.0" x2="83.0" y2="202.0" class="port-line ground-symbol" />
+      <circle class="module-port" cx="80.0" cy="217.0" r="3" data-port-id="PGND" data-net-id="PGND" />
+      <text x="86.0" y="211.0" class="port-label">PGND</text>
+    </g>
+  </g>
+  <g class="wire-layer">
+    <g class="net" data-net-id="N15">
+      <line class="net-trunk" x1="500.0" y1="650.0" x2="870.0" y2="650.0" data-net-id="N15" />
+      <polyline class="wire" points="870.0,355.0 884.0,355.0 884.0,650.0 870.0,650.0" data-terminal-ref="INF.CBN::N" data-net-id="N15" fill="none" />
+      <circle cx="870.0" cy="650.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="870.0,515.0 870.0,650.0" data-terminal-ref="INF.RDUMMY_N::N" data-net-id="N15" fill="none" />
+      <circle cx="870.0" cy="650.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="500.0,205.0 514.0,205.0 514.0,650.0 500.0,650.0" data-terminal-ref="INF.VN15::N" data-net-id="N15" fill="none" />
+      <circle cx="500.0" cy="650.0" r="3.5" class="junction" data-net-id="N15" />
+      <text x="504.0" y="644.0" class="net-label">N15</text>
+    </g>
+    <g class="net" data-net-id="P15">
+      <line class="net-trunk" x1="250.0" y1="110.0" x2="720.0" y2="110.0" data-net-id="P15" />
+      <polyline class="wire" points="720.0,185.0 720.0,110.0" data-terminal-ref="INF.CBP::P" data-net-id="P15" fill="none" />
+      <circle cx="720.0" cy="110.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="720.0,425.0 734.0,425.0 734.0,110.0 720.0,110.0" data-terminal-ref="INF.RDUMMY_P::P" data-net-id="P15" fill="none" />
+      <circle cx="720.0" cy="110.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="250.0,205.0 250.0,110.0" data-terminal-ref="INF.VP15::P" data-net-id="P15" fill="none" />
+      <circle cx="250.0" cy="110.0" r="3.5" class="junction" data-net-id="P15" />
+      <text x="254.0" y="104.0" class="net-label">P15</text>
+    </g>
+    <g class="net" data-net-id="PGND">
+      <line class="net-trunk" x1="250.0" y1="443.0" x2="870.0" y2="443.0" data-net-id="PGND" />
+      <polyline class="wire" points="375.0,425.0 375.0,443.0" data-terminal-ref="INF.GND_TIE::P" data-net-id="PGND" fill="none" />
+      <circle cx="375.0" cy="443.0" r="3.5" class="junction" data-net-id="PGND" />
+      <polyline class="wire" points="870.0,425.0 870.0,443.0" data-terminal-ref="INF.RDUMMY_N::P" data-net-id="PGND" fill="none" />
+      <circle cx="870.0" cy="443.0" r="3.5" class="junction" data-net-id="PGND" />
+      <polyline class="wire" points="720.0,515.0 720.0,443.0" data-terminal-ref="INF.RDUMMY_P::N" data-net-id="PGND" fill="none" />
+      <circle cx="720.0" cy="443.0" r="3.5" class="junction" data-net-id="PGND" />
+      <polyline class="wire" points="500.0,295.0 500.0,443.0" data-terminal-ref="INF.VN15::P" data-net-id="PGND" fill="none" />
+      <circle cx="500.0" cy="443.0" r="3.5" class="junction" data-net-id="PGND" />
+      <polyline class="wire" points="250.0,295.0 250.0,443.0" data-terminal-ref="INF.VP15::N" data-net-id="PGND" fill="none" />
+      <circle cx="250.0" cy="443.0" r="3.5" class="junction" data-net-id="PGND" />
+      <text x="254.0" y="437.0" class="net-label">PGND — single tie to SGND</text>
+    </g>
+    <g class="net" data-net-id="SGND">
+      <line class="net-trunk" x1="375.0" y1="380.0" x2="870.0" y2="380.0" data-net-id="SGND" />
+      <polyline class="wire" points="870.0,265.0 884.0,265.0 884.0,380.0 870.0,380.0" data-terminal-ref="INF.CBN::P" data-net-id="SGND" fill="none" />
+      <circle cx="870.0" cy="380.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="720.0,275.0 720.0,380.0" data-terminal-ref="INF.CBP::N" data-net-id="SGND" fill="none" />
+      <circle cx="720.0" cy="380.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="375.0,515.0 389.0,515.0 389.0,380.0 375.0,380.0" data-terminal-ref="INF.GND_TIE::N" data-net-id="SGND" fill="none" />
+      <circle cx="375.0" cy="380.0" r="3.5" class="junction" data-net-id="SGND" />
+      <text x="379.0" y="374.0" class="net-label">SGND</text>
+    </g>
+  </g>
+  <g class="symbol-layer">
+    <g id="component-Z494E462E43424E" class="component active" transform="translate(870.0 310.0) rotate(90)" data-component-id="INF.CBN" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>INF.CBN</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SGND" data-open="false" data-global-x="870.0" data-global-y="265.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="870.0" data-global-y="355.0" />
+    </g>
+    <g id="component-Z494E462E434250" class="component active" transform="translate(720.0 230.0) rotate(90)" data-component-id="INF.CBP" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>INF.CBP</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="720.0" data-global-y="185.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="720.0" data-global-y="275.0" />
+    </g>
+    <g id="component-Z494E462E474E445F544945" class="component active" transform="translate(375.0 470.0) rotate(0)" data-component-id="INF.GND_TIE" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V" data-rotation="0" data-mirror="false">
+      <title>INF.GND_TIE</title>
+      <line x1="0" y1="-45" x2="0" y2="-28" class="symbol-line" />
+      <line x1="0" y1="28" x2="0" y2="45" class="symbol-line" />
+      <circle cx="0" cy="0" r="28" class="symbol-line symbol-paper source-body" />
+      <line x1="-7" y1="-10" x2="7" y2="-10" class="symbol-line voltage-polarity" />
+      <line x1="0" y1="-17" x2="0" y2="-3" class="symbol-line voltage-polarity" />
+      <line x1="-7" y1="12" x2="7" y2="12" class="symbol-line voltage-polarity" />
+      <circle class="terminal" cx="0" cy="-45" r="3" data-pin-id="P" data-net-id="PGND" data-open="false" data-global-x="375.0" data-global-y="425.0" />
+      <circle class="terminal" cx="0" cy="45" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="375.0" data-global-y="515.0" />
+    </g>
+    <g id="component-Z494E462E5244554D4D595F4E" class="component changed" transform="translate(870.0 470.0) rotate(90)" data-component-id="INF.RDUMMY_N" data-module-id="INF.PWR_ENTRY" data-state-class="configuration-only-fixture" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>INF.RDUMMY_N</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="PGND" data-open="false" data-global-x="870.0" data-global-y="425.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="870.0" data-global-y="515.0" />
+    </g>
+    <g id="component-Z494E462E5244554D4D595F50" class="component changed" transform="translate(720.0 470.0) rotate(90)" data-component-id="INF.RDUMMY_P" data-module-id="INF.PWR_ENTRY" data-state-class="configuration-only-fixture" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>INF.RDUMMY_P</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="720.0" data-global-y="425.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="PGND" data-open="false" data-global-x="720.0" data-global-y="515.0" />
+    </g>
+    <g id="component-Z494E462E564E3135" class="component active" transform="translate(500.0 250.0) rotate(180)" data-component-id="INF.VN15" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V" data-rotation="180" data-mirror="false">
+      <title>INF.VN15</title>
+      <line x1="0" y1="-45" x2="0" y2="-28" class="symbol-line" />
+      <line x1="0" y1="28" x2="0" y2="45" class="symbol-line" />
+      <circle cx="0" cy="0" r="28" class="symbol-line symbol-paper source-body" />
+      <line x1="-7" y1="-10" x2="7" y2="-10" class="symbol-line voltage-polarity" />
+      <line x1="0" y1="-17" x2="0" y2="-3" class="symbol-line voltage-polarity" />
+      <line x1="-7" y1="12" x2="7" y2="12" class="symbol-line voltage-polarity" />
+      <circle class="terminal" cx="0" cy="-45" r="3" data-pin-id="P" data-net-id="PGND" data-open="false" data-global-x="500.0" data-global-y="295.0" />
+      <circle class="terminal" cx="0" cy="45" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="500.0" data-global-y="205.0" />
+    </g>
+    <g id="component-Z494E462E56503135" class="component active" transform="translate(250.0 250.0) rotate(0)" data-component-id="INF.VP15" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V" data-rotation="0" data-mirror="false">
+      <title>INF.VP15</title>
+      <line x1="0" y1="-45" x2="0" y2="-28" class="symbol-line" />
+      <line x1="0" y1="28" x2="0" y2="45" class="symbol-line" />
+      <circle cx="0" cy="0" r="28" class="symbol-line symbol-paper source-body" />
+      <line x1="-7" y1="-10" x2="7" y2="-10" class="symbol-line voltage-polarity" />
+      <line x1="0" y1="-17" x2="0" y2="-3" class="symbol-line voltage-polarity" />
+      <line x1="-7" y1="12" x2="7" y2="12" class="symbol-line voltage-polarity" />
+      <circle class="terminal" cx="0" cy="-45" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="250.0" data-global-y="205.0" />
+      <circle class="terminal" cx="0" cy="45" r="3" data-pin-id="N" data-net-id="PGND" data-open="false" data-global-x="250.0" data-global-y="295.0" />
+    </g>
+  </g>
+  <g class="annotation-layer">
+    <circle cx="389.0" cy="443.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="500.0" cy="380.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="514.0" cy="380.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="514.0" cy="443.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="734.0" cy="380.0" r="4" class="crossing" data-connected="false" />
+    <text x="838.0" y="262.0" class="designator active">BULK −</text>
+    <text x="845.0" y="368.0" class="value active">10u</text>
+    <text x="688.0" y="182.0" class="designator active">BULK +</text>
+    <text x="695.0" y="288.0" class="value active">10u</text>
+    <text x="343.0" y="422.0" class="designator active">ONE-POINT TIE</text>
+    <text x="350.0" y="528.0" class="value active">0</text>
+    <text x="838.0" y="422.0" class="designator changed">DUMMY −</text>
+    <text x="845.0" y="528.0" class="value changed">3.3k</text>
+    <text x="688.0" y="422.0" class="designator changed">DUMMY +</text>
+    <text x="695.0" y="528.0" class="value changed">3.3k</text>
+    <text x="468.0" y="202.0" class="designator active">−15 V INPUT</text>
+    <text x="475.0" y="308.0" class="value active">15</text>
+    <text x="218.0" y="202.0" class="designator active">+15 V INPUT</text>
+    <text x="225.0" y="308.0" class="value active">15</text>
+  </g>
+  <g class="semantic-ledger" />
+</svg>

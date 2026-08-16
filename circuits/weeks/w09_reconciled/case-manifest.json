@@ -1,0 +1,315 @@
+{
+  "assumption_profiles": {
+    "REALISTIC_FIRST_PASS": {
+      "W09.CPAR_COMPA": {
+        "required_sweep": [
+          "0.5p",
+          "1p",
+          "2p"
+        ],
+        "state": "configuration-only-fixture",
+        "status": "proposed_sensitivity_seed",
+        "value": "1p"
+      },
+      "W09.CPAR_COMPB": {
+        "required_sweep": [
+          "0.5p",
+          "1p",
+          "2p"
+        ],
+        "state": "configuration-only-fixture",
+        "status": "proposed_sensitivity_seed",
+        "value": "1p"
+      },
+      "W09.CPAR_HIGHZ": {
+        "required_sweep": [
+          "0.5p",
+          "1p",
+          "2p"
+        ],
+        "state": "configuration-only-fixture",
+        "status": "proposed_sensitivity_seed",
+        "value": "1p"
+      },
+      "W09.CPROBE_OUT": {
+        "state": "configuration-only-fixture",
+        "status": "proposed_replace_with_measured_probe",
+        "value": "12p"
+      },
+      "W09.LOAD": {
+        "state": "configuration-only-fixture",
+        "status": "proposed_replace_with_measured_probe",
+        "value": "10Meg"
+      },
+      "W09.RSOURCE": {
+        "state": "configuration-only-fixture",
+        "status": "proposed_replace_with_measured_generator",
+        "value": "50"
+      },
+      "ordinary_probe_on_internal_nodes": false,
+      "projection_status": "unsupported_missing_realistic_models"
+    },
+    "TOPOLOGY": {
+      "W09.CPAR_COMPA": {
+        "state": "removed-off-circuit",
+        "status": "proposed_zero_for_topology_tier",
+        "value": "OPEN"
+      },
+      "W09.CPAR_COMPB": {
+        "state": "removed-off-circuit",
+        "status": "proposed_zero_for_topology_tier",
+        "value": "OPEN"
+      },
+      "W09.CPAR_HIGHZ": {
+        "state": "removed-off-circuit",
+        "status": "proposed_zero_for_topology_tier",
+        "value": "OPEN"
+      },
+      "W09.CPROBE_OUT": {
+        "state": "removed-off-circuit",
+        "status": "proposed_zero_for_topology_tier",
+        "value": "OPEN"
+      },
+      "W09.LOAD": {
+        "state": "configuration-only-fixture",
+        "status": "proposed_10x_scope_resistance",
+        "value": "10Meg"
+      },
+      "W09.RSOURCE": {
+        "state": "configuration-only-fixture",
+        "status": "proposed",
+        "value": "0"
+      },
+      "ordinary_probe_on_internal_nodes": false,
+      "projection_status": "structural_after_explicit_substitution"
+    }
+  },
+  "cases": [
+    {
+      "alpha": "1/2",
+      "analysis": "transient_small_signal",
+      "cc": "47p",
+      "id": "CASE.W09.A47",
+      "ralpha": {
+        "state": "removed-off-circuit",
+        "value": "OPEN"
+      },
+      "source_locator": "Figure 9.10a",
+      "status": {
+        "alpha": "source",
+        "cc": "source",
+        "timing": "proposed",
+        "waveform_amplitude": "source"
+      },
+      "waveform_id": "SMALL_STEP"
+    },
+    {
+      "alpha": "1/2",
+      "analysis": "transient_small_signal",
+      "cc": "33p",
+      "id": "CASE.W09.A33",
+      "ralpha": {
+        "state": "removed-off-circuit",
+        "value": "OPEN"
+      },
+      "source_locator": "Figure 9.10b",
+      "status": {
+        "alpha": "source",
+        "cc": "source",
+        "timing": "proposed",
+        "waveform_amplitude": "source"
+      },
+      "waveform_id": "SMALL_STEP"
+    },
+    {
+      "alpha": "1/2",
+      "analysis": "transient_small_signal",
+      "cc": "10p",
+      "id": "CASE.W09.A10",
+      "ralpha": {
+        "state": "removed-off-circuit",
+        "value": "OPEN"
+      },
+      "source_locator": "Figure 9.10c",
+      "status": {
+        "alpha": "source",
+        "cc": "source",
+        "timing": "proposed",
+        "waveform_amplitude": "source"
+      },
+      "waveform_id": "SMALL_STEP"
+    },
+    {
+      "alpha": "1/2",
+      "analysis": "transient_small_signal",
+      "cc": "5p",
+      "id": "CASE.W09.A05",
+      "ralpha": {
+        "state": "removed-off-circuit",
+        "value": "OPEN"
+      },
+      "source_locator": "Figure 9.10d",
+      "status": {
+        "alpha": "source",
+        "cc": "source",
+        "timing": "proposed",
+        "waveform_amplitude": "source"
+      },
+      "waveform_id": "SMALL_STEP"
+    },
+    {
+      "alpha": "1/2",
+      "analysis": "transient_large_signal",
+      "cc": "20p",
+      "id": "CASE.W09.B20",
+      "ralpha": {
+        "state": "removed-off-circuit",
+        "value": "OPEN"
+      },
+      "source_locator": "Figure 9.12a",
+      "status": {
+        "alpha": "source",
+        "cc": "source",
+        "timing": "proposed",
+        "waveform_amplitude": "source"
+      },
+      "waveform_id": "SLEW_20VPP"
+    },
+    {
+      "alpha": "1/4",
+      "analysis": "transient_large_signal",
+      "cc": "10p",
+      "id": "CASE.W09.B10",
+      "ralpha": {
+        "state": "configuration-only-fixture",
+        "value": "2.350k"
+      },
+      "source_locator": "Figure 9.12b",
+      "status": {
+        "alpha": "source",
+        "cc": "source",
+        "ralpha_value": "derived_R1_over_2",
+        "timing": "proposed",
+        "waveform_amplitude": "source"
+      },
+      "waveform_id": "SLEW_20VPP"
+    }
+  ],
+  "claim_boundary": {
+    "hidden_bleed_allowed": false,
+    "historical_waveform_identity_claimed": false,
+    "realistic_tier": "UNSUPPORTED until lawful realistic bindings exist for every active transistor, JFET, and diode.",
+    "topology_tier": "Eligible only for structural and topology-default harness checks after explicit substitution."
+  },
+  "component_bindings": {
+    "cc": {
+      "component_id": "AMP1.CC",
+      "field": "value"
+    },
+    "comp_a_parasitic": {
+      "component_id": "W09.CPAR_COMPA",
+      "field": "value_and_state"
+    },
+    "comp_b_parasitic": {
+      "component_id": "W09.CPAR_COMPB",
+      "field": "value_and_state"
+    },
+    "high_z_parasitic": {
+      "component_id": "W09.CPAR_HIGHZ",
+      "field": "value_and_state"
+    },
+    "output_load": {
+      "component_id": "W09.LOAD",
+      "field": "value_and_state"
+    },
+    "output_probe_capacitance": {
+      "component_id": "W09.CPROBE_OUT",
+      "field": "value_and_state"
+    },
+    "ralpha": {
+      "component_id": "W09.RALPHA",
+      "field": "value_and_state"
+    },
+    "rfb": {
+      "component_id": "W09.RFB",
+      "field": "value"
+    },
+    "rin": {
+      "component_id": "W09.RIN",
+      "field": "value"
+    },
+    "source": {
+      "component_id": "W09.VSRC",
+      "field": "value"
+    },
+    "source_resistance": {
+      "component_id": "W09.RSOURCE",
+      "field": "value"
+    }
+  },
+  "configuration_id": "W09.CC_SWEEP",
+  "decision_source": "../../../spec/decisions/week09-proof-values.md",
+  "graph": "graph.json",
+  "manifest_id": "W09.CASE_MANIFEST",
+  "required_outputs": [
+    "graph hash and generated-deck hash",
+    "case ID, profile, substituted values, and component states",
+    "ngspice version and convergence diagnostics",
+    "raw vectors for output voltage and declared currents",
+    "unsupported reasons and topology-versus-realistic classification"
+  ],
+  "schema_boundary": "Circuit graph schema 1.0.0 has no case/value-override object; this companion manifest is not consumed automatically by the canonical projector.",
+  "schema_version": 1,
+  "shared_values": {
+    "W09.RFB": {
+      "basis": "Equal to W09.RIN as Figure 9.8 requires.",
+      "status": "proposed_value_source_equality",
+      "value": "4.70k"
+    },
+    "W09.RIN": {
+      "basis": "Reused cumulative-chassis inverter value; source specifies equality only.",
+      "status": "proposed",
+      "value": "4.70k"
+    },
+    "temperature_c": {
+      "status": "proposed",
+      "value": 27
+    }
+  },
+  "status": "proposed proof integration; not historical reconstruction",
+  "waveforms": {
+    "SLEW_20VPP": {
+      "fixture_choices": {
+        "delay": "100u",
+        "fall": "100n",
+        "minimum_periods": 2,
+        "period": "1m",
+        "rise": "100n",
+        "status": "proposed",
+        "width": "500u"
+      },
+      "source_claim": {
+        "amplitude": "20Vpp square wave",
+        "status": "source"
+      },
+      "spice": "PULSE(-10 10 100u 100n 100n 500u 1m)"
+    },
+    "SMALL_STEP": {
+      "fixture_choices": {
+        "delay": "1u",
+        "fall": "100n",
+        "minimum_stop": "1m",
+        "period": "1m",
+        "rise": "100n",
+        "status": "proposed",
+        "width": "400u"
+      },
+      "source_claim": {
+        "amplitude": "-20mV step",
+        "status": "source"
+      },
+      "spice": "PULSE(0 -20m 1u 100n 100n 400u 1m)"
+    }
+  },
+  "authority_note": "Cases describe substitutions in the single physical AMP1.CC socket. The canonical end-of-week graph retains 47 pF; each published schematic/netlist pair states its instantiated value."
+}

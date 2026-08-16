@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "sheet_id": "W06.INT3_DETAIL",
+  "title": "Week 6 dedicated LM301A INT3 detail",
+  "viewport": {"width": 1000, "height": 720},
+  "strict_components": true,
+  "module_positions": {
+    "DEV.INT3": {"x":70,"y":65,"width":860,"height":570,"title":"OSC1 DEDICATED INT3 CORE","ports":{"INP":{"x":70,"y":290},"INM":{"x":70,"y":370},"OUT":{"x":930,"y":330},"P15":{"visible":false},"N15":{"visible":false},"SGND":{"visible":false}}}
+  },
+  "components": {
+    "DEV.U_INT3_OSC":{"x":500,"y":330,"label":"UINT3 LM301A","label_dx":-45,"label_dy":-82},
+    "DEV.U_INT3_OSC.CC":{"x":575,"y":510,"label":"Cc"},
+    "DEV.U_INT3_OSC.CP":{"x":255,"y":225,"rotation":90,"label":"local + bypass"},
+    "DEV.U_INT3_OSC.CN":{"x":745,"y":435,"rotation":90,"label":"local − bypass"}
+  },
+  "net_routes":{"P15":{"rail":"top","coordinate":115},"SGND":{"rail":"middle","coordinate":600},"N15":{"rail":"bottom","coordinate":655}}
+}

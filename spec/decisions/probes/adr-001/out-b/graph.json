@@ -1,0 +1,72 @@
+{
+  "circuit": "W01.INV_TEST.PROBE",
+  "components": [
+    {
+      "id": "SRC.VIN",
+      "kind": "voltage_source",
+      "pins": {
+        "n": "SGND",
+        "p": "VIN"
+      },
+      "value": "AC 1"
+    },
+    {
+      "id": "MOD.INV1.RIN",
+      "kind": "resistor",
+      "pins": {
+        "1": "VIN",
+        "2": "SUM"
+      },
+      "value": "4.7k"
+    },
+    {
+      "id": "MOD.INV1.RFB",
+      "kind": "resistor",
+      "pins": {
+        "1": "OUT",
+        "2": "SUM"
+      },
+      "value": "4.7k"
+    },
+    {
+      "id": "DEV.U_INV1",
+      "kind": "opamp",
+      "model": "IDEAL_OPAMP",
+      "pins": {
+        "inv": "SUM",
+        "noninv": "SGND",
+        "out": "OUT",
+        "vn": "N15",
+        "vp": "P15"
+      }
+    },
+    {
+      "id": "INF.VP",
+      "kind": "dc_source",
+      "pins": {
+        "n": "SGND",
+        "p": "P15"
+      },
+      "value": "15"
+    },
+    {
+      "id": "INF.VN",
+      "kind": "dc_source",
+      "pins": {
+        "n": "SGND",
+        "p": "N15"
+      },
+      "value": "-15"
+    }
+  ],
+  "ground_net": "SGND",
+  "nets": [
+    "VIN",
+    "SUM",
+    "OUT",
+    "P15",
+    "N15",
+    "SGND"
+  ],
+  "schema": "probe.circuit-graph.v1"
+}

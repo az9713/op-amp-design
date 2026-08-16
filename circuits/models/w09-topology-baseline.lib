@@ -1,0 +1,11 @@
+* Week 9 topology-only semiconductor baseline
+* Project-authored wrapper; it copies no vendor model parameters.
+* This file intentionally invokes ngspice's built-in default device parameters.
+* It is useful for connectivity and harness smoke tests only. It is not a
+* historical-device model, a realistic prediction model, or a build claim.
+
+.model W09_NPN_BASE NPN
+.model W09_PNP_BASE PNP
+.model W09_NJF_BASE NJF
+.model W09_D_BASE D
+

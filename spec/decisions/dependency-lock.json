@@ -1,0 +1,21 @@
+{
+  "captured": "2026-08-15",
+  "dependencies": {
+    "ngspice": {
+      "version": "47",
+      "distribution": "Scoop extras manifest",
+      "homepage": "https://ngspice.sourceforge.io/",
+      "source_archive": "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/47/ngspice-47_64.7z",
+      "source_archive_manifest_hash": "sha1:498ecc543f73056df1e342f48c3b49e769b9cf2c",
+      "installed_binary": "C:/Users/simon/scoop/apps/ngspice/47/bin/ngspice_con.exe",
+      "installed_binary_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+      "scoop_manifest_sha256": "f9005cd7ed82dade7e6afb629da9bdbce6f107a649fa037ed94218b2af382e55",
+      "verification": "ngspice --version reports ngspice-47, compiled 2026-08-11 with KLU"
+    },
+    "7zip": {
+      "version": "26.02",
+      "reason": "Scoop extraction dependency installed automatically with ngspice",
+      "installed_path": "C:/Users/simon/scoop/apps/7zip/26.02"
+    }
+  }
+}

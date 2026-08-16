@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" data-project-id="CAPSTONE.W00_W10" data-variant-id="W10.CR_CHARACTERIZE" data-fidelity="ideal" data-view="detail" data-detail-module-id="AMP1.CR1" data-layout-id="W10.CR1_DETAIL">
+  <title>Detail circuit projection: CAPSTONE.W00_W10</title>
+  <style>.symbol-line,.port-line,.wire,.port-wire,.net-trunk,.control-line{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.symbol-fill{fill:#171717;stroke:#171717;stroke-width:1}.symbol-paper{fill:#fff}.component.inactive{opacity:.34}.component.changed .symbol-line,.component.changed .symbol-fill{stroke:#d85c41}.component.changed .symbol-fill{fill:#d85c41}.designator.inactive,.value.inactive{opacity:.34}.module-boundary{fill:none;stroke:#8b9299;stroke-width:1;stroke-dasharray:6 4}.junction{fill:#171717}.crossing{fill:#fff;stroke:#171717;stroke-width:1}.designator{font:600 11px system-ui;fill:#171717}.value{font:10px system-ui;fill:#555}.pin-label,.port-label{font:9px ui-monospace;fill:#555}.module-label{font:600 12px system-ui;fill:#555}.collapsed-title{font:700 22px system-ui;fill:#171717}.collapsed-subtitle,.net-label{font:11px system-ui;fill:#555}.polarity{font:16px system-ui;fill:#171717}.collapsed-module.inactive{opacity:.38}.zone{fill:#f8fafb;stroke:#c5cbd1;stroke-width:1}.zone-label{font:600 11px system-ui;fill:#737b83}.semantic-ledger{display:none}</style>
+  <g class="zone-layer" />
+  <g class="boundary-layer">
+    <g id="module-Z414D50312E435231" class="module" data-module-id="AMP1.CR1" data-parent-id="">
+      <rect x="80.0" y="60.0" width="720.0" height="380.0" rx="8" class="module-boundary" />
+      <text x="90.0" y="78.0" class="module-label">AMP1.CR1</text>
+      <circle class="module-port" cx="80.0" cy="330.0" r="3" data-port-id="REF" data-net-id="AMP1.N.Q1C_Q4B" />
+      <text x="86.0" y="324.0" class="port-label">REF</text>
+      <circle class="module-port" cx="800.0" cy="330.0" r="3" data-port-id="OUT" data-net-id="AMP1.COMP_A" />
+      <text x="755.0" y="324.0" class="port-label">OUT</text>
+      <circle class="module-port" cx="440.0" cy="60.0" r="3" data-port-id="VP15" data-net-id="P15" />
+      <text x="395.0" y="54.0" class="port-label">VP15</text>
+      <line x1="440.0" y1="62.0" x2="440.0" y2="48.0" class="port-line" />
+      <polygon points="440.0,42.0 434.0,51.0 446.0,51.0" class="symbol-fill power-arrow" data-rail-polarity="positive" />
+    </g>
+  </g>
+  <g class="wire-layer">
+    <g class="net" data-net-id="AMP1.COMP_A">
+      <line class="net-trunk" x1="530.0" y1="330.0" x2="800.0" y2="330.0" data-net-id="AMP1.COMP_A" />
+      <polyline class="wire" points="530.0,275.0 530.0,330.0" data-terminal-ref="AMP1.Q_CR_OUT::C" data-net-id="AMP1.COMP_A" fill="none" />
+      <polyline class="port-wire" points="800.0,330.0 800.0,330.0" data-port-ref="AMP1.CR1::OUT" data-net-id="AMP1.COMP_A" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q1C_Q4B">
+      <line class="net-trunk" x1="80.0" y1="293.0" x2="605.0" y2="293.0" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="605.0,240.0 605.0,293.0" data-terminal-ref="AMP1.Q_CR_OUT::B" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="605.0" cy="293.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="375.0,240.0 375.0,293.0" data-terminal-ref="AMP1.Q_CR_REF::B" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="375.0" cy="293.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="300.0,275.0 300.0,293.0" data-terminal-ref="AMP1.Q_CR_REF::C" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="300.0" cy="293.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="port-wire" points="80.0,330.0 80.0,293.0" data-port-ref="AMP1.CR1::REF" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="80.0" cy="293.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+    </g>
+    <g class="net" data-net-id="P15">
+      <line class="net-trunk" x1="300.0" y1="45.0" x2="530.0" y2="45.0" data-net-id="P15" />
+      <polyline class="wire" points="530.0,205.0 530.0,45.0" data-terminal-ref="AMP1.Q_CR_OUT::E" data-net-id="P15" fill="none" />
+      <circle cx="530.0" cy="45.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="300.0,205.0 300.0,45.0" data-terminal-ref="AMP1.Q_CR_REF::E" data-net-id="P15" fill="none" />
+      <circle cx="300.0" cy="45.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="port-wire" points="440.0,60.0 440.0,45.0" data-port-ref="AMP1.CR1::VP15" data-net-id="P15" fill="none" />
+      <circle cx="440.0" cy="45.0" r="3.5" class="junction" data-net-id="P15" />
+      <text x="304.0" y="39.0" class="net-label">P15</text>
+    </g>
+  </g>
+  <g class="symbol-layer">
+    <g id="component-Z414D50312E515F43525F4F5554" class="component active" transform="translate(560.0 240.0) rotate(180)" data-component-id="AMP1.Q_CR_OUT" data-module-id="AMP1.CR1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q_CR_OUT</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.COMP_A" data-open="false" data-global-x="530.0" data-global-y="275.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="605.0" data-global-y="240.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="P15" data-open="false" data-global-x="530.0" data-global-y="205.0" />
+    </g>
+    <g id="component-Z414D50312E515F43525F524546" class="component active" transform="translate(330.0 240.0) rotate(180)" data-component-id="AMP1.Q_CR_REF" data-module-id="AMP1.CR1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q_CR_REF</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="300.0" data-global-y="275.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="375.0" data-global-y="240.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="P15" data-open="false" data-global-x="300.0" data-global-y="205.0" />
+    </g>
+  </g>
+  <g class="annotation-layer">
+    <circle cx="530.0" cy="293.0" r="4" class="crossing" data-connected="false" />
+    <text x="534.0" y="270.0" class="pin-label">C</text>
+    <text x="609.0" y="235.0" class="pin-label">B</text>
+    <text x="534.0" y="200.0" class="pin-label">E</text>
+    <text x="510.0" y="185.0" class="designator active">QCR-OUT</text>
+    <text x="304.0" y="270.0" class="pin-label">C</text>
+    <text x="379.0" y="235.0" class="pin-label">B</text>
+    <text x="304.0" y="200.0" class="pin-label">E</text>
+    <text x="280.0" y="185.0" class="designator active">QCR-REF</text>
+  </g>
+  <g class="semantic-ledger" />
+</svg>

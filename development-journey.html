@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'">
+  <title>Roberge one-box — complete development journey</title>
+  <style>
+    :root { --bg:#f2f0e8; --paper:#fffdf7; --ink:#171713; --muted:#625f55; --line:#c9c5b9; --accent:#9b3f34; --green:#195f52; --amber:#86610b; --soft:#e9e6dc; --dark:#152d29; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.64 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:var(--green); text-underline-offset:.18em; }
+    header, main, footer { width:min(86rem,calc(100% - 2rem)); margin-inline:auto; }
+    header { padding:4.5rem 0 2.4rem; border-bottom:1px solid var(--line); }
+    .eyebrow,.tag,.metric span,.source-type { font:700 .72rem/1.2 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.07em; text-transform:uppercase; }
+    .eyebrow { color:var(--accent); }
+    h1 { max-width:17ch; margin:.4rem 0 1rem; font:750 clamp(2.8rem,7vw,6.5rem)/.93 Georgia,serif; letter-spacing:-.055em; }
+    .deck { max-width:65rem; color:var(--muted); font-size:1.24rem; }
+    .metrics { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px; margin-top:2rem; border:1px solid var(--line); background:var(--line); }
+    .metric { min-height:7.5rem; padding:1rem; background:var(--paper); }
+    .metric strong { display:block; font:700 2.2rem/1 Georgia,serif; }
+    .metric span { display:block; margin-top:.6rem; color:var(--muted); }
+    main { display:grid; grid-template-columns:17rem minmax(0,1fr); gap:3rem; padding:2.5rem 0 5rem; }
+    nav { position:sticky; top:1rem; align-self:start; padding:1rem 1.1rem; border:1px solid var(--line); background:var(--paper); }
+    nav strong { display:block; margin-bottom:.5rem; }
+    nav a { display:block; padding:.28rem 0; text-decoration:none; }
+    article { min-width:0; }
+    section { margin:0 0 3.6rem; }
+    h2 { margin:0 0 1rem; padding-top:1.1rem; border-top:1px solid var(--line); font:700 clamp(1.8rem,4vw,3.25rem)/1.05 Georgia,serif; letter-spacing:-.025em; }
+    h3 { margin:1.7rem 0 .55rem; font-size:1.15rem; }
+    p { max-width:74ch; }
+    .coverage,.callout,.finding { padding:1.1rem 1.25rem; border:1px solid var(--line); background:var(--paper); }
+    .coverage { border-left:5px solid var(--green); }
+    .warning { border-left:5px solid var(--amber); }
+    .failure { border-left:5px solid var(--accent); }
+    .attribution { border-left:5px solid #6b5b95; }
+    .timeline { display:grid; gap:.75rem; margin:1.2rem 0; }
+    .event { display:grid; grid-template-columns:8.2rem minmax(0,1fr); gap:1rem; padding:1rem; border:1px solid var(--line); background:var(--paper); }
+    .event .tag { color:var(--accent); }
+    .event h3 { margin:0 0 .35rem; }
+    .event p { margin:.25rem 0; }
+    .pipeline { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.7rem; margin:1.3rem 0; }
+    .stage { position:relative; min-height:9rem; padding:1rem; border:1px solid var(--line); background:var(--paper); }
+    .stage:not(:last-child)::after { content:"→"; position:absolute; right:-.72rem; top:43%; z-index:2; width:1.4rem; height:1.4rem; border-radius:50%; background:var(--dark); color:white; text-align:center; line-height:1.3rem; }
+    .stage strong { display:block; margin-bottom:.4rem; }
+    .stage p { margin:0; color:var(--muted); font-size:.9rem; }
+    table { width:100%; border-collapse:collapse; display:block; overflow:auto; background:var(--paper); }
+    th,td { padding:.7rem .75rem; border:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:var(--soft); }
+    code { padding:.06rem .25rem; background:var(--soft); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .good { color:var(--green); font-weight:700; }
+    .open { color:var(--accent); font-weight:700; }
+    .inference { color:#6b5b95; font-weight:700; }
+    .two { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .card { padding:1rem 1.1rem; border:1px solid var(--line); background:var(--paper); }
+    .card h3 { margin:.1rem 0 .5rem; }
+    .card ul { margin:.5rem 0; padding-left:1.2rem; }
+    details { margin:.65rem 0; border:1px solid var(--line); background:var(--paper); }
+    summary { cursor:pointer; padding:.75rem 1rem; font-weight:700; }
+    details > div { padding:0 1rem 1rem; }
+    .file-list { columns:2 22rem; margin:.4rem 0; padding-left:1.2rem; }
+    .file-list li { break-inside:avoid; margin:.24rem 0; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.83rem; }
+    .source-type { display:inline-block; margin-right:.45rem; color:var(--muted); }
+    footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--muted); }
+    @media (max-width:960px) { main { grid-template-columns:1fr; } nav { position:static; columns:2; } .metrics { grid-template-columns:repeat(2,1fr); } .pipeline { grid-template-columns:1fr; } .stage:not(:last-child)::after { content:"↓"; right:50%; top:auto; bottom:-.72rem; } }
+    @media (max-width:640px) { .two,.metrics { grid-template-columns:1fr; } .event { grid-template-columns:1fr; } nav { columns:1; } .file-list { columns:1; } }
+    @media print { nav { display:none; } main { display:block; } body { background:white; } details { break-inside:avoid; } a { color:black; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Evidence-grounded project history · 14–15 August 2026</p>
+    <h1>From pictures of circuits to circuits that generate pictures</h1>
+    <p class="deck">The complete development journey of the Roberge one-box capstone: the user-attributed Grok phase, the Codex specification and production phase, the architectural change that grounded every schematic in named electrical connectivity, the corrections that survived review, and the work that remains unproved.</p>
+    <div class="metrics" aria-label="Project metrics">
+      <div class="metric"><strong>14</strong><span>weekly physical states, W00–W13</span></div>
+      <div class="metric"><strong>44</strong><span>approved SVG/SPICE pairs in capstone</span></div>
+      <div class="metric"><strong>78</strong><span>connectivity receipts in generated history</span></div>
+      <div class="metric"><strong>113</strong><span>tests in the final integration run</span></div>
+      <div class="metric"><strong>0/2</strong><span>Week 9 electrical gate score: still blocked</span></div>
+    </div>
+  </header>
+
+  <main>
+    <nav aria-label="Development journey navigation">
+      <strong>Contents</strong>
+      <a href="#coverage">Evidence boundary</a>
+      <a href="#grok">1 · Grok-era journey</a>
+      <a href="#turn">2 · The turning point</a>
+      <a href="#codex">3 · Codex journey</a>
+      <a href="#corrections">4 · Corrections</a>
+      <a href="#grounding">5 · How grounding works</a>
+      <a href="#example">6 · One live example</a>
+      <a href="#status">7 · Current truth</a>
+      <a href="#records">8 · Record inventory</a>
+    </nav>
+
+    <article>
+      <section id="coverage" class="coverage">
+        <h2>Evidence boundary</h2>
+        <p>This account uses the project records under this folder: 13 early visual-generation records, seven governance surfaces, five specification/audit drafts, 28 durable decision records, 26 weekly graph/manifests/README records, 41 layout overlays, eight review pages, 17 test modules, 78 generated connectivity receipts, the local Roberge PDF and book crops, and the final integrated capstone. Generated SVGs and decks are treated as derived evidence, not independent design authorities.</p>
+        <p><strong>Coverage:</strong> textual and tabular records are substantial and locally addressable; visual evolution is sampled through the historical HTML/SVG surfaces; full conversation transcripts are not present in the folder. File modification times establish an ordering, not authorship.</p>
+      </section>
+
+      <section class="callout attribution">
+        <h3>Attribution note</h3>
+        <p>The early files do not name their model author. Calling the first phase “Grok’s journey” follows the user’s explicit attribution. Everything said about what those files contain is directly observed; attribution of those records to Grok is <span class="inference">user-supplied provenance</span>, not a fact encoded in the files themselves.</p>
+      </section>
+
+      <section id="grok">
+        <p class="eyebrow">Part I</p>
+        <h2>The Grok-era journey: increasingly sophisticated drawings without electrical authority</h2>
+        <div class="timeline">
+          <article class="event"><span class="tag">Attempt 1</span><div><h3>Hand-authored weekly SVGs</h3><p><a href="schematics_v1.html">schematics_v1.html</a> and <a href="_gen_schematics.py">_gen_schematics.py</a> attempted to tell the entire W1–W13 cumulative story with coordinate-authored SVG. The work established the chapter sequence, color language, chassis metaphor, and many recognizably analog symbols. Connectivity, however, lived in geometry: a line touching a symbol looked connected whether or not any electrical model agreed.</p></div></article>
+          <article class="event"><span class="tag">Attempt 2</span><div><h3>Geometry checking after the drawing</h3><p><a href="check_schematic_connections.py">check_schematic_connections.py</a> searched for wires entering op-amp triangles, transistor-body collisions, and unmarked T-junctions. The <a href="attempt-log.txt">attempt log</a> records repeated failures and “three-attempt stop” waivers, including Week 8–10 discrete-amplifier drawings. This was useful picture lint, but a waived geometry failure could still allow the checker to exit successfully.</p></div></article>
+          <article class="event"><span class="tag">Attempt 3</span><div><h3>Textbook crops as visual authority</h3><p><a href="schematics-other.html">schematics-other.html</a> and <a href="_gen_book_and_schemdraw.py">_gen_book_and_schemdraw.py</a> juxtaposed Roberge crops with generated circuits. This was an epistemically valuable move: the book images became a visual specification and exposed where the generated drawings had drifted. But a crop could not express the project’s cumulative physical state, build additions, or a matched SPICE implementation.</p></div></article>
+          <article class="event"><span class="tag">Attempt 4</span><div><h3>Schemdraw chassis maps</h3><p><a href="schematics-schemdraw.html">schematics-schemdraw.html</a> and <a href="_gen_schemdraw_box.py">_gen_schemdraw_box.py</a> adopted a schematic library and pin anchors. The diagrams looked more conventional, yet weekly chassis maps still mixed separate modules, empty sockets, inactive hardware, and experiment wiring. Pin anchors improved placement; they did not establish one canonical net.</p></div></article>
+          <article class="event"><span class="tag">Attempt 5</span><div><h3>One “complete circuit” per sheet</h3><p><a href="schematics-engine.html">schematics-engine.html</a>, its <a href="schematics-engine-grid.html">contact sheet</a>, and <a href="_gen_engine.py">_gen_engine.py</a> narrowed each picture to one circuit. This reduced clutter and produced a useful catalog. It still used turtle-style drawing commands: “go right, go up, route around the triangle.” The circuit existed as a sequence of pen moves, not a graph from which SPICE could be generated.</p></div></article>
+        </div>
+
+        <div class="two">
+          <div class="card"><h3>What this phase accomplished</h3><ul><li>Made the cumulative one-chassis concept visible.</li><li>Established the need for active/inactive/change styling.</li><li>Collected and cropped relevant Roberge figures.</li><li>Built a concrete failure corpus rather than hiding bad drawings.</li><li>Recognized that complex Week 8–10 transistor sheets were the stress test.</li></ul></div>
+          <div class="card"><h3>Why it could not close</h3><ul><li>No stable component, pin, or net identity.</li><li>No mechanism forcing SVG and SPICE to describe the same circuit.</li><li>Junctions and crossings were drawing decorations.</li><li>Geometric lint could diagnose symptoms but not prove topology.</li><li>Some conceptual circuits were wrong, most notably the Week 2 sign chain.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="turn">
+        <p class="eyebrow">The inflection point</p>
+        <h2>“The gap is the representation, not the coordinates.”</h2>
+        <p><a href="schematic-methods.html">schematic-methods.html</a> is the most important Grok-era record because it diagnoses the failure correctly. It contrasts a coordinate program—resistor, line, op-amp—with a net declaration in which <code>vm</code> is one node shared by R1, the inverting input, and Rf. It recommends lcapy/CircuiTikZ first and KiCad second, rejects further Schemdraw patching, and explicitly says one netlist should exist per electrical circuit rather than per chassis picture.</p>
+        <div class="callout warning"><p><strong>The key limitation:</strong> this document reached the correct architectural principle but did not implement it. It still proposed a renderer as the likely source of truth. The later system instead made a project-owned circuit graph the authority and treated every renderer—including lcapy or KiCad—as a replaceable projection.</p></div>
+      </section>
+
+      <section id="codex">
+        <p class="eyebrow">Part II</p>
+        <h2>The Codex journey: freeze intent, prove architecture, then scale chronologically</h2>
+        <div class="timeline">
+          <article class="event"><span class="tag">Pre-flight</span><div><h3>Turn preferences into binding invariants</h3><p><a href="preflight-decisions.html">preflight-decisions.html</a> recorded sixteen decisions: complete end-of-week state, strict cumulative inheritance with honest removals, one large sheet unless clutter demands detail, hidden op-amp power pins under an infrastructure contract, symbolic values plus a build table, ±15 V historical operation, LM301A baseline, and SVG/SPICE identity. It also made four deferred projects durable: patch cords, low-voltage redesign, modern parallel implementations, and construction documentation.</p></div></article>
+          <article class="event"><span class="tag">Plan</span><div><h3>Do not scale before the hard proof</h3><p><a href="implementation-plan.html">implementation-plan.html</a> defined gated phases and selected Week 9 as the vertical proof because it combines transistor hierarchy, compensation variants, cumulative state, main/detail sheets, and simulation. <a href="project-controls.html">project-controls.html</a> separated verified, derived, proposed, blocked, generated, and deferred claims.</p></div></article>
+          <article class="event"><span class="tag">Specification</span><div><h3>Read the PDF before encoding circuits</h3><p>Three weekly specification annexes, a <a href="drafts/cross-range-review.md">cross-range review</a>, and a <a href="drafts/requirements-audit.md">requirements audit</a> forced contradictions into the open. The result was the <a href="weekly-electrical-specification.html">weekly electrical specification</a> and <a href="gate-0-integration-register.html">Gate 0 identity register</a>, approved through <a href="spec/decisions/gate-0-approval.md">G0-01 to G0-15</a>.</p></div></article>
+          <article class="event"><span class="tag">Architecture</span><div><h3>Choose a canonical graph, not a drawing package</h3><p><a href="spec/decisions/adr-001-canonical-toolchain.md">ADR-001</a> selected schema-validated JSON, deterministic semantic SVG and SPICE projectors, separate layout overlays, and independent round-trip parsers. A small inverter probe generated byte-identical results twice. <a href="spec/decisions/gate-1-approval.md">Gate 1 approval</a> authorized the Week 9 proof and installation of pinned ngspice 47.</p></div></article>
+          <article class="event"><span class="tag">Vertical proof</span><div><h3>Transcribe Figure 9.1 twice and let failure remain failure</h3><p><a href="spec/decisions/week09-source-map.md">Transcription A/source map</a> and <a href="spec/decisions/week09-transcription-b.md">Transcription B</a> were independently compared in the <a href="spec/decisions/week09-transcription-diff.md">diff</a>. The pipeline passed schema, graph↔SVG↔SPICE connectivity, and human visual review. It executed eight ngspice cases—but the balance, inverter-gain, and integrator-polarity assertions failed. <a href="gate-2-week09-proof.html">Gate 2</a> therefore remained blocked rather than being cosmetically promoted.</p></div></article>
+          <article class="event"><span class="tag">Style acceptance</span><div><h3>Separate presentation approval from electrical approval</h3><p>The user accepted the <a href="spec/decisions/week09-style-acceptance.md">Week 9 visual language</a>: black active circuitry, coral changes, grey installed-inactive hardware, explicit junctions and insulated crossings, large main sheets, and pin-level details when needed. That acceptance allowed chronological topology production without erasing the failed electrical gate.</p></div></article>
+          <article class="event"><span class="tag">Production</span><div><h3>Rebuild W00–W13 as cumulative graph states</h3><p>Production proceeded in review batches: <a href="week00-04-review.html">W00–04</a>, <a href="week05-06-review.html">W05–06</a>, <a href="week07-08-review.html">W07–08</a>, <a href="week09-review.html">W09 reconciliation</a>, then <a href="week10-review.html">W10</a>, <a href="week11-review.html">W11</a>, <a href="week12-review.html">W12</a>, and <a href="week13-review.html">W13</a>. Every approval froze topology and presentation while carrying forward electrical limitations.</p></div></article>
+          <article class="event"><span class="tag">Integration</span><div><h3>Publish only after all weekly reviews</h3><p>After <a href="spec/decisions/w13-acceptance.md">Week 13 acceptance</a>, 44 approved sheets with matched SPICE and connectivity links were embedded in <a href="capstone.html">capstone.html</a>. The final integration check found every referenced artifact present, every embedded receipt passing, JavaScript syntax valid, and 113 tests passing.</p></div></article>
+        </div>
+      </section>
+
+      <section id="corrections">
+        <p class="eyebrow">What changed under evidence pressure</p>
+        <h2>The correction ledger</h2>
+        <table>
+          <thead><tr><th>Issue inherited or discovered</th><th>Correction</th><th>Authority</th></tr></thead>
+          <tbody>
+            <tr><td>Week 2 prose implied SUM + INT could realize stable <code>dx/dt = -x</code>.</td><td>Approved sign-correct chain became SUM1 → INV1 → INT1.</td><td><a href="spec/decisions/w00-04-production-decisions.md">W00–04 decisions</a></td></tr>
+            <tr><td>Figure 5.3 was symbolic, not a build BOM.</td><td>Bound to a low-power 10 V plant, external 18 V/35 mA-limited source, BD139 pass device, explicit load/capacitor cases, bleeder, and discharge diode.</td><td><a href="spec/decisions/w05-06-production-decisions.md">W05–06 decisions</a></td></tr>
+            <tr><td>Reusing an installed computing integrator for the Week 6 oscillator broke cumulative persistence.</td><td>Reserved INT3 became a dedicated oscillator integrator with a separate Schmitt stage.</td><td><a href="week05-06-review.html">W05–06 review</a></td></tr>
+            <tr><td>Week 7 claimed hold-capacitor drift from a front end that had no functional output path.</td><td>Week 7 was made prominently incomplete and nonfunctional; only pair characterization was claimed.</td><td><a href="spec/decisions/w07-08-production-decisions.md">W07–08 decisions</a></td></tr>
+            <tr><td>A collage of Figures 8.8, 8.13, and 8.27 did not uniquely define the path to Figure 9.1.</td><td>Week 8 became the exact permanent Q1–Q11 subset; Week 9 added only Q12/Q13.</td><td><a href="spec/decisions/w09-reconciliation.md">W09 reconciliation</a></td></tr>
+            <tr><td>The initial Week 9 proof graph was not the chronological child of accepted Week 8.</td><td>A reconciled W09 graph became the cumulative authority; the earlier proof remained historical evidence.</td><td><a href="spec/decisions/w09-reconciliation.md">W09 reconciliation</a></td></tr>
+            <tr><td>Figure 10.9 could have been misread as an addition parallel to the passive collector load.</td><td>The PNP mirror replaced the passive load electrically; old parts stayed physically installed but inactive.</td><td><a href="spec/decisions/w10-production-decisions.md">W10 decisions</a></td></tr>
+            <tr><td>The local image named <code>fig-11.18.png</code> actually showed Figure 11.19.</td><td>Week 11 used the source-correct Figure 11.18 grounded half-wave rectifier; the floating bridge was deferred.</td><td><a href="spec/decisions/w11-production-decisions.md">W11 decisions</a></td></tr>
+            <tr><td>Figure 11.28’s two-quadrant multiplier was inadequate for bipolar Van der Pol states.</td><td>Week 12 used two four-quadrant AD633 blocks; Figure 12.9 remained a separate historical alternative.</td><td><a href="spec/decisions/w12-production-decisions.md">W12 decisions</a></td></tr>
+            <tr><td>Figure 13.21 example values were tempting to copy into an unrelated regulator loop.</td><td>Week 13 topologies were encoded, but compensation values remained symbolic pending measured return ratio and robustness data.</td><td><a href="spec/decisions/w13-production-decisions.md">W13 decisions</a></td></tr>
+            <tr><td>The Week 13 SUM1/INV1 labels overlapped during review.</td><td>Labels were repositioned and regenerated before acceptance.</td><td><a href="spec/decisions/w13-acceptance.md">W13 acceptance</a></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="grounding">
+        <p class="eyebrow">The electrical contract</p>
+        <h2>How the circuit schematics are grounded</h2>
+        <p>“Grounded” here does not mean “looks like the textbook.” It means each visible electrical claim can be traced through an evidence and representation chain, and each layer has a deliberately limited authority.</p>
+        <div class="pipeline" aria-label="Canonical circuit pipeline">
+          <div class="stage"><strong>1 · Sources and decisions</strong><p>Roberge figures/equations, primary device data, user approvals, and explicit proposed/derived additions.</p></div>
+          <div class="stage"><strong>2 · Canonical graph</strong><p>Stable component IDs, logical pins, named nets, values, hierarchy, physical state, weekly inheritance, and variants.</p></div>
+          <div class="stage"><strong>3 · Controlled projections</strong><p>Semantic SVG plus SPICE emitted from the same resolved graph. Layout overlays may position—but never connect—parts.</p></div>
+          <div class="stage"><strong>4 · Independent equivalence</strong><p>Parse actual SVG terminal metadata and actual SPICE terminal order; compare both back to the graph.</p></div>
+          <div class="stage"><strong>5 · Separate gates</strong><p>Schema, connectivity, visual publication, and electrical performance are scored independently.</p></div>
+        </div>
+
+        <h3>1. Source grounding</h3>
+        <p>The PDF is read figure-by-figure and section-by-section. Where a book figure is conceptual rather than build-ready, the project labels added parts and values as <em>proposed</em> or <em>derived</em>. A value is not upgraded to “Roberge specified this” merely because it makes the circuit work. Week 9 was transcribed twice; disagreements were adjudicated before encoding.</p>
+
+        <h3>2. Identity and cumulative-state grounding</h3>
+        <p>A physical object keeps one identity across weeks. A socket, its occupant, and its passive network are distinct. Week N inherits Week N−1 and applies a replayable delta. Installed-but-inactive, removed-off-circuit, reserved-unpopulated, and configuration-only fixtures are different states. This is why Week 7 can truthfully show a nonfunctional channel and Week 10 can retain unused passive-load parts without leaving them electrically parallel to the mirror.</p>
+
+        <h3>3. Projection grounding</h3>
+        <p>The <a href="circuits/schema/circuit-graph.schema.json">JSON schema</a> and validator reject unknown pins/nets, duplicate identities, illegal inheritance, hierarchy errors, and invalid state transitions. The SVG renderer writes semantic terminal and net identifiers into the file. The SPICE projector owns the terminal order for each primitive and hierarchical subcircuit. A separate layout JSON can move symbols and specify routing corridors, but it cannot invent a component, wire, value, pin, or model.</p>
+
+        <h3>4. Equivalence grounding</h3>
+        <p>The connectivity receipt is not a comment written by the generator saying “trust me.” The verifier parses the emitted SVG and emitted SPICE, reconstructs component/pin/net maps, and compares them to the resolved canonical graph. Main and detail sheets share the same module-port boundary. Missing terminals, wrong subcircuit pin counts, SVG-only wires, and SPICE-only elements fail tests.</p>
+
+        <h3>5. Simulation and claim grounding</h3>
+        <p>ngspice execution is downstream of connectivity proof, not a substitute for it. Ideal/topology models can verify deck construction and qualitative topology but cannot validate historical drift, matching, bandwidth, thermal behavior, or compensation margins. Realistic models require lawful provenance, version/hash records, package mappings, and characterization. The Week 9 proof’s three failed electrical assertions remained visible through every later acceptance record.</p>
+
+        <h3>6. Human visual grounding</h3>
+        <p>Machine-equivalent connectivity can still render badly. Human review checks overlap, clipping, ambiguous crossings, label collisions, hierarchy readability, desktop/print presentation, and whether the sheet faithfully communicates the week’s actual state. Visual acceptance is therefore necessary—but it is not electrical proof.</p>
+      </section>
+
+      <section id="example">
+        <p class="eyebrow">A current example of the boundary</p>
+        <h2>The Week 0 dummy-load resistor is connected correctly and drawn badly</h2>
+        <div class="finding failure">
+          <p>The current <a href="generated/weeks00_04/w00-infra_test-ideal.svg">Week 0 infrastructure SVG</a> draws a black PGND route over the red 3.3 kΩ dummy-load symbol. That is a publication-layout defect caused by placing the PGND trunk inside the resistor’s symbol span.</p>
+          <p>The electrical evidence nevertheless agrees: the canonical graph assigns the right-hand <code>INF.RDUMMY_N</code> upper pin to PGND and lower pin to N15; the SVG terminal metadata says the same; and the <a href="generated/weeks00_04/w00-infra_test-ideal.cir">SPICE deck</a> connects the 3.3 kΩ resistor between PGND and N15. The <a href="generated/weeks00_04/w00-infra_test-ideal.connectivity.json">receipt</a> passes.</p>
+          <p><strong>Conclusion:</strong> topology is confirmed; presentation is not acceptable at that location. This is precisely why connectivity and visual gates must remain separate.</p>
+        </div>
+      </section>
+
+      <section id="status">
+        <p class="eyebrow">Current state, without inflation</p>
+        <h2>What is complete, and what is still open</h2>
+        <table>
+          <thead><tr><th>Claim</th><th>Status</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Weekly specification and topology decisions</td><td class="good">Complete</td><td>W00–W13 states, configurations, adaptations, and deferred boundaries are recorded.</td></tr>
+            <tr><td>Canonical graph/schema pipeline</td><td class="good">Implemented</td><td>Graphs, variants, layout overlays, SVG/SPICE projectors, parsers, receipts, and tests exist.</td></tr>
+            <tr><td>Weekly topology and presentation acceptance</td><td class="good">Accepted</td><td>All chronological review batches were approved, with explicit claim boundaries.</td></tr>
+            <tr><td>Capstone integration</td><td class="good">Implemented</td><td>44 approved sheets and matched SPICE/receipt links are embedded in <a href="capstone.html">capstone.html</a>.</td></tr>
+            <tr><td>Week 0 publication polish</td><td class="open">Open defect</td><td>The dummy-load/PGND overlap must be rerouted and re-reviewed.</td></tr>
+            <tr><td>Week 9/10 quantitative electrical acceptance</td><td class="open">Blocked</td><td>Balance, inverter gain, and integrator polarity failures remain unresolved.</td></tr>
+            <tr><td>Realistic historical semiconductor behavior</td><td class="open">Unsupported</td><td>Lawful characterized models, exact package pins, matching, leakage, temperature, and parasitics remain incomplete.</td></tr>
+            <tr><td>Week 12/13 measured values</td><td class="open">Measurement-dependent</td><td>Regulator-twin calibration and compensation networks require the assembled plant and measured loop.</td></tr>
+            <tr><td>Construction release</td><td class="open">Deferred</td><td>Patch cords, PCB/enclosure/harness/thermal documentation, modern parallel build, and low-voltage redesign are separate projects.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="records">
+        <p class="eyebrow">Source inventory</p>
+        <h2>Historical records used</h2>
+        <p>The companion <a href="development-journey-source-manifest.json">source manifest</a> records the directory boundary, group counts, exclusions, and coverage. The lists below expose the human-readable evidence map.</p>
+
+        <details open><summary>Early visual/Grok-era records · 13 files</summary><div><ul class="file-list">
+          <li><a href="schematics_v1.html">schematics_v1.html</a></li><li><a href="_gen_schematics.py">_gen_schematics.py</a></li><li><a href="check_schematic_connections.py">check_schematic_connections.py</a></li><li><a href="attempt-log.txt">attempt-log.txt</a></li><li><a href="_gen_book_and_schemdraw.py">_gen_book_and_schemdraw.py</a></li><li><a href="schematics.html">schematics.html</a></li><li><a href="schematics-other.html">schematics-other.html</a></li><li><a href="_gen_schemdraw_box.py">_gen_schemdraw_box.py</a></li><li><a href="schematics-schemdraw.html">schematics-schemdraw.html</a></li><li><a href="_gen_engine.py">_gen_engine.py</a></li><li><a href="schematics-engine.html">schematics-engine.html</a></li><li><a href="schematics-engine-grid.html">schematics-engine-grid.html</a></li><li><a href="schematic-methods.html">schematic-methods.html</a></li>
+        </ul></div></details>
+
+        <details><summary>Governance, specifications, and audits · 12 files</summary><div><ul class="file-list">
+          <li><a href="preflight-decisions.html">preflight-decisions.html</a></li><li><a href="implementation-plan.html">implementation-plan.html</a></li><li><a href="project-controls.html">project-controls.html</a></li><li><a href="gate-0-integration-register.html">gate-0-integration-register.html</a></li><li><a href="gate-1-architecture-review.html">gate-1-architecture-review.html</a></li><li><a href="gate-2-week09-proof.html">gate-2-week09-proof.html</a></li><li><a href="weekly-electrical-specification.html">weekly-electrical-specification.html</a></li><li><a href="drafts/spec-weeks-00-04.md">drafts/spec-weeks-00-04.md</a></li><li><a href="drafts/spec-weeks-05-09.md">drafts/spec-weeks-05-09.md</a></li><li><a href="drafts/spec-weeks-10-13.md">drafts/spec-weeks-10-13.md</a></li><li><a href="drafts/cross-range-review.md">drafts/cross-range-review.md</a></li><li><a href="drafts/requirements-audit.md">drafts/requirements-audit.md</a></li>
+        </ul></div></details>
+
+        <details><summary>Architecture, Gate, source-transcription, and model records · 12 files</summary><div><ul class="file-list">
+          <li><a href="spec/decisions/gate-0-approval.md">gate-0-approval.md</a></li><li><a href="spec/decisions/gate-1-approval.md">gate-1-approval.md</a></li><li><a href="spec/decisions/gate-2-week09-status.md">gate-2-week09-status.md</a></li><li><a href="spec/decisions/adr-001-canonical-toolchain.md">adr-001-canonical-toolchain.md</a></li><li><a href="spec/decisions/phase2-environment.md">phase2-environment.md</a></li><li><a href="spec/decisions/dependency-lock.json">dependency-lock.json</a></li><li><a href="spec/decisions/week09-source-map.md">week09-source-map.md</a></li><li><a href="spec/decisions/week09-transcription-b.md">week09-transcription-b.md</a></li><li><a href="spec/decisions/week09-transcription-diff.md">week09-transcription-diff.md</a></li><li><a href="spec/decisions/week09-proof-values.md">week09-proof-values.md</a></li><li><a href="spec/decisions/week09-model-bindings.md">week09-model-bindings.md</a></li><li><a href="spec/decisions/week09-style-acceptance.md">week09-style-acceptance.md</a></li>
+        </ul></div></details>
+
+        <details><summary>Chronological production and acceptance records · 16 files</summary><div><ul class="file-list">
+          <li><a href="spec/decisions/w00-04-production-decisions.md">w00-04-production-decisions.md</a></li><li><a href="spec/decisions/w00-04-acceptance.md">w00-04-acceptance.md</a></li><li><a href="spec/decisions/w05-06-production-decisions.md">w05-06-production-decisions.md</a></li><li><a href="spec/decisions/w05-06-acceptance.md">w05-06-acceptance.md</a></li><li><a href="spec/decisions/w07-08-production-decisions.md">w07-08-production-decisions.md</a></li><li><a href="spec/decisions/w07-08-acceptance.md">w07-08-acceptance.md</a></li><li><a href="spec/decisions/w09-reconciliation.md">w09-reconciliation.md</a></li><li><a href="spec/decisions/w09-acceptance.md">w09-acceptance.md</a></li><li><a href="spec/decisions/w10-production-decisions.md">w10-production-decisions.md</a></li><li><a href="spec/decisions/w10-acceptance.md">w10-acceptance.md</a></li><li><a href="spec/decisions/w11-production-decisions.md">w11-production-decisions.md</a></li><li><a href="spec/decisions/w11-acceptance.md">w11-acceptance.md</a></li><li><a href="spec/decisions/w12-production-decisions.md">w12-production-decisions.md</a></li><li><a href="spec/decisions/w12-acceptance.md">w12-acceptance.md</a></li><li><a href="spec/decisions/w13-production-decisions.md">w13-production-decisions.md</a></li><li><a href="spec/decisions/w13-acceptance.md">w13-acceptance.md</a></li>
+        </ul></div></details>
+
+        <details><summary>Review surfaces · 8 files</summary><div><ul class="file-list">
+          <li><a href="week00-04-review.html">week00-04-review.html</a></li><li><a href="week05-06-review.html">week05-06-review.html</a></li><li><a href="week07-08-review.html">week07-08-review.html</a></li><li><a href="week09-review.html">week09-review.html</a></li><li><a href="week10-review.html">week10-review.html</a></li><li><a href="week11-review.html">week11-review.html</a></li><li><a href="week12-review.html">week12-review.html</a></li><li><a href="week13-review.html">week13-review.html</a></li>
+        </ul></div></details>
+
+        <details><summary>Canonical implementation records · grouped coverage</summary><div>
+          <p><span class="source-type">Schema</span><a href="circuits/schema/README.md">schema README</a> and <a href="circuits/schema/circuit-graph.schema.json">JSON Schema</a>.</p>
+          <p><span class="source-type">Models</span><a href="circuits/models/README.md">model policy</a>, <a href="circuits/models/model-registry.json">model registry</a>, and topology-baseline library.</p>
+          <p><span class="source-type">Graphs</span>All graph, case-manifest, and README records under <code>circuits/weeks/w00_04</code>, <code>w05_06</code>, <code>w07_08</code>, <code>w09</code>, <code>w09_reconciled</code>, <code>w10</code>, <code>w11</code>, <code>w12</code>, and <code>w13</code>: 26 files.</p>
+          <p><span class="source-type">Layouts</span>All 41 JSON overlays under <code>layout/weeks/</code>. They are presentation evidence only and cannot create electrical connectivity.</p>
+          <p><span class="source-type">Verification</span>All 17 test modules and 78 generated connectivity receipts were included as aggregate implementation evidence. Generated SVG/SPICE files were not treated as independent sources.</p>
+        </div></details>
+
+        <details><summary>Primary and peripheral local source representations</summary><div>
+          <p><a href="op_amps_roberge.pdf">Operational Amplifiers: Theory and Practice</a> is the principal historical circuit source. Twenty locally extracted book-figure files under <code>figures/book/</code> supplied visual comparison evidence; one was discovered to be mislabeled, which is recorded above.</p>
+          <p><a href="Top 10 fundamental operational amplifier circuits.html">The saved Arrow article</a> and its asset folder are peripheral background representations, not authorities for the weekly Roberge topology. They were inventoried but did not override the book, user decisions, or canonical graph.</p>
+        </div></details>
+      </section>
+
+      <section class="coverage">
+        <h2>Bottom line</h2>
+        <p>The Grok-era work was not wasted: it made the project visible, accumulated a failure corpus, and articulated the right diagnosis. The decisive change was to stop treating a schematic as artwork whose connectivity could be inspected afterward. The Codex phase made the circuit graph primary, made SVG and SPICE disposable but checkable views, and kept source uncertainty, topology acceptance, visual acceptance, and electrical performance as separate claims.</p>
+        <p>The result is much harder to fool: an electrically correct graph can still expose a bad drawing—as the Week 0 overlap now demonstrates—and a simulator can execute successfully while the electrical acceptance gate still fails—as Week 9 demonstrates. That separation is the project’s central engineering achievement.</p>
+      </section>
+    </article>
+  </main>
+  <footer>Local, offline development record. No remote scripts, fonts, trackers, or source-provided executable content.</footer>
+</body>
+</html>

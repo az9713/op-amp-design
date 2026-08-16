@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 210" role="img" aria-labelledby="title">
+<title id="title">Canonical-graph inverter probe</title>
+<style>text{font-family:Arial,sans-serif;font-size:9px}.wire{fill:none;stroke:#263238;stroke-width:2}.part{fill:none;stroke:#111820;stroke-width:2}.pin{fill:#d85a45}</style>
+<g data-component-id="SRC.VIN" data-kind="voltage_source">
+<circle class="part" cx="45.0" cy="122.5" r="11"/>
+<text x="25.0" y="108.5">SRC.VIN</text>
+<circle class="pin" cx="45" cy="145" r="2.4" data-pin="n" data-net="SGND"/>
+<circle class="pin" cx="45" cy="100" r="2.4" data-pin="p" data-net="VIN"/>
+</g>
+<g data-component-id="MOD.INV1.RIN" data-kind="resistor">
+<path class="part" d="M75 100 L85 100 l8 -6 l12 12 l12 -12 l12 12 l8 -6 L145 100"/>
+<text x="90.0" y="86.0">MOD.INV1.RIN</text>
+<circle class="pin" cx="75" cy="100" r="2.4" data-pin="1" data-net="VIN"/>
+<circle class="pin" cx="145" cy="100" r="2.4" data-pin="2" data-net="SUM"/>
+</g>
+<g data-component-id="MOD.INV1.RFB" data-kind="resistor">
+<path class="part" d="M260 45 L270 45 l8 -6 l12 12 l12 -12 l12 12 l8 -6 L145 45"/>
+<text x="182.5" y="31.0">MOD.INV1.RFB</text>
+<circle class="pin" cx="260" cy="45" r="2.4" data-pin="1" data-net="OUT"/>
+<circle class="pin" cx="145" cy="45" r="2.4" data-pin="2" data-net="SUM"/>
+</g>
+<g data-component-id="DEV.U_INV1" data-kind="opamp">
+<path class="part" d="M170 80 L170 150 L260 115 Z"/>
+<text x="182" y="102">−</text><text x="182" y="135">+</text>
+<text x="184.0" y="101.0">DEV.U_INV1</text>
+<circle class="pin" cx="170" cy="100" r="2.4" data-pin="inv" data-net="SUM"/>
+<circle class="pin" cx="170" cy="130" r="2.4" data-pin="noninv" data-net="SGND"/>
+<circle class="pin" cx="260" cy="115" r="2.4" data-pin="out" data-net="OUT"/>
+<circle class="pin" cx="210" cy="155" r="2.4" data-pin="vn" data-net="N15"/>
+<circle class="pin" cx="210" cy="75" r="2.4" data-pin="vp" data-net="P15"/>
+</g>
+<g data-component-id="INF.VP" data-kind="dc_source">
+<circle class="part" cx="310.0" cy="100.0" r="11"/>
+<text x="290.0" y="86.0">INF.VP</text>
+<circle class="pin" cx="310" cy="145" r="2.4" data-pin="n" data-net="SGND"/>
+<circle class="pin" cx="310" cy="55" r="2.4" data-pin="p" data-net="P15"/>
+</g>
+<g data-component-id="INF.VN" data-kind="dc_source">
+<circle class="part" cx="350.0" cy="160.0" r="11"/>
+<text x="330.0" y="146.0">INF.VN</text>
+<circle class="pin" cx="350" cy="175" r="2.4" data-pin="n" data-net="SGND"/>
+<circle class="pin" cx="350" cy="145" r="2.4" data-pin="p" data-net="N15"/>
+</g>
+<path class="wire" data-net="N15" data-endpoints="DEV.U_INV1.vn|INF.VN.p" d="M210 155 H280 V145 H350"/>
+<path class="wire" data-net="OUT" data-endpoints="MOD.INV1.RFB.1|DEV.U_INV1.out" d="M260 45 H260 V115 H260"/>
+<path class="wire" data-net="P15" data-endpoints="DEV.U_INV1.vp|INF.VP.p" d="M210 75 H260 V55 H310"/>
+<path class="wire" data-net="SGND" data-endpoints="SRC.VIN.n|DEV.U_INV1.noninv" d="M45 145 H107 V130 H170"/>
+<path class="wire" data-net="SGND" data-endpoints="SRC.VIN.n|INF.VP.n" d="M45 145 H177 V145 H310"/>
+<path class="wire" data-net="SGND" data-endpoints="SRC.VIN.n|INF.VN.n" d="M45 145 H197 V175 H350"/>
+<path class="wire" data-net="SUM" data-endpoints="MOD.INV1.RIN.2|MOD.INV1.RFB.2" d="M145 100 H145 V45 H145"/>
+<path class="wire" data-net="SUM" data-endpoints="MOD.INV1.RIN.2|DEV.U_INV1.inv" d="M145 100 H157 V100 H170"/>
+<path class="wire" data-net="VIN" data-endpoints="SRC.VIN.p|MOD.INV1.RIN.1" d="M45 100 H60 V100 H75"/>
+</svg>

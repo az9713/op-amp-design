@@ -1,0 +1,497 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1180" role="img" data-project-id="ROBERGE.ONEBOX.W00_04" data-variant-id="W03.LOOP_RESTORED" data-fidelity="ideal" data-view="main" data-detail-module-id="" data-layout-id="W01_03.MAIN">
+  <title>Main circuit projection: ROBERGE.ONEBOX.W00_04</title>
+  <style>.symbol-line,.port-line,.wire,.port-wire,.net-trunk,.control-line{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.symbol-fill{fill:#171717;stroke:#171717;stroke-width:1}.symbol-paper{fill:#fff}.component.inactive{opacity:.34}.component.changed .symbol-line,.component.changed .symbol-fill{stroke:#d85c41}.component.changed .symbol-fill{fill:#d85c41}.designator.inactive,.value.inactive{opacity:.34}.module-boundary{fill:none;stroke:#8b9299;stroke-width:1;stroke-dasharray:6 4}.junction{fill:#171717}.crossing{fill:#fff;stroke:#171717;stroke-width:1}.designator{font:600 11px system-ui;fill:#171717}.value{font:10px system-ui;fill:#555}.pin-label,.port-label{font:9px ui-monospace;fill:#555}.module-label{font:600 12px system-ui;fill:#555}.collapsed-title{font:700 22px system-ui;fill:#171717}.collapsed-subtitle,.net-label{font:11px system-ui;fill:#555}.polarity{font:16px system-ui;fill:#171717}.collapsed-module.inactive{opacity:.38}.zone{fill:#f8fafb;stroke:#c5cbd1;stroke-width:1}.zone-label{font:600 11px system-ui;fill:#737b83}.semantic-ledger{display:none}</style>
+  <g class="zone-layer" />
+  <g class="boundary-layer">
+    <g id="module-Z43484153534953" class="module semantic-ledger" data-module-id="CHASSIS" data-parent-id="">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="PGND" data-net-id="PGND" />
+    </g>
+    <g id="module-Z4445562E494E5431" class="module collapsed-module" data-module-id="DEV.INT1" data-parent-id="MOD.INT1" data-detail-ref="">
+      <rect x="410.0" y="740.0" width="185.0" height="135.0" rx="8" class="module-boundary" />
+      <text x="420.0" y="758.0" class="module-label">INT1</text>
+      <text x="467.5" y="807.5" class="collapsed-title">INT1</text>
+      <text x="427.5" y="831.5" class="collapsed-subtitle">LM301A core · detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="410.0" cy="800.0" r="3" data-port-id="INM" data-net-id="INT1.SUM" />
+      <text x="416.0" y="794.0" class="port-label">INM</text>
+      <circle class="module-port" cx="595.0" cy="800.0" r="3" data-port-id="OUT" data-net-id="INT1.OUT" />
+      <text x="550.0" y="794.0" class="port-label">OUT</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E494E5631" class="module collapsed-module" data-module-id="DEV.INV1" data-parent-id="MOD.INV1" data-detail-ref="">
+      <rect x="920.0" y="240.0" width="185.0" height="135.0" rx="8" class="module-boundary" />
+      <text x="930.0" y="258.0" class="module-label">INV1</text>
+      <text x="977.5" y="307.5" class="collapsed-title">INV1</text>
+      <text x="937.5" y="331.5" class="collapsed-subtitle">LM301A core · detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="920.0" cy="300.0" r="3" data-port-id="INM" data-net-id="INV1.SUM" />
+      <text x="926.0" y="294.0" class="port-label">INM</text>
+      <circle class="module-port" cx="1105.0" cy="300.0" r="3" data-port-id="OUT" data-net-id="INV1.OUT" />
+      <text x="1060.0" y="294.0" class="port-label">OUT</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E53554D31" class="module collapsed-module" data-module-id="DEV.SUM1" data-parent-id="MOD.SUM1" data-detail-ref="">
+      <rect x="410.0" y="240.0" width="185.0" height="135.0" rx="8" class="module-boundary" />
+      <text x="420.0" y="258.0" class="module-label">SUM1</text>
+      <text x="467.5" y="307.5" class="collapsed-title">SUM1</text>
+      <text x="427.5" y="331.5" class="collapsed-subtitle">LM301A core · detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="410.0" cy="300.0" r="3" data-port-id="INM" data-net-id="SUM1.SUM" />
+      <text x="416.0" y="294.0" class="port-label">INM</text>
+      <circle class="module-port" cx="595.0" cy="300.0" r="3" data-port-id="OUT" data-net-id="SUM1.OUT" />
+      <text x="550.0" y="294.0" class="port-label">OUT</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z494E462E5057525F454E545259" class="module collapsed-module" data-module-id="INF.PWR_ENTRY" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="1320.0" y="40.0" width="390.0" height="105.0" rx="8" class="module-boundary" />
+      <text x="1330.0" y="58.0" class="module-label">±15 V INFRASTRUCTURE</text>
+      <text x="1480.0" y="92.5" class="collapsed-title">±15 V INFRASTRUCTURE</text>
+      <text x="1440.0" y="116.5" class="collapsed-subtitle">see permanent W00 sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="1320.0" cy="153.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="1326.0" y="147.0" class="port-label">SGND</text>
+      <line x1="1320.0" y1="155.0" x2="1320.0" y2="164.0" class="port-line ground-symbol" />
+      <line x1="1310.0" y1="164.0" x2="1330.0" y2="164.0" class="port-line ground-symbol" />
+      <line x1="1313.0" y1="168.0" x2="1327.0" y2="168.0" class="port-line ground-symbol" />
+      <line x1="1317.0" y1="172.0" x2="1323.0" y2="172.0" class="port-line ground-symbol" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="PGND" data-net-id="PGND" />
+    </g>
+    <g id="module-Z4D4541532E46495854555245" class="module" data-module-id="MEAS.FIXTURE" data-parent-id="CHASSIS">
+      <rect x="1300.0" y="165.0" width="440.0" height="820.0" rx="8" class="module-boundary" />
+      <text x="1310.0" y="183.0" class="module-label">MEAS.FIXTURE</text>
+      <circle class="module-port" cx="1300.0" cy="210.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="1306.0" y="204.0" class="port-label">SGND</text>
+      <line x1="1300.0" y1="212.0" x2="1300.0" y2="221.0" class="port-line ground-symbol" />
+      <line x1="1290.0" y1="221.0" x2="1310.0" y2="221.0" class="port-line ground-symbol" />
+      <line x1="1293.0" y1="225.0" x2="1307.0" y2="225.0" class="port-line ground-symbol" />
+      <line x1="1297.0" y1="229.0" x2="1303.0" y2="229.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z4D4F442E494E5431" class="module" data-module-id="MOD.INT1" data-parent-id="CHASSIS">
+      <rect x="55.0" y="585.0" width="660.0" height="430.0" rx="8" class="module-boundary" />
+      <text x="65.0" y="603.0" class="module-label">INT1 PASSIVE NETWORK</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="IN" data-net-id="INT1.IN" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="INT1.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="JACK" data-net-id="INT1.JACK" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4D4F442E494E5631" class="module" data-module-id="MOD.INV1" data-parent-id="CHASSIS">
+      <rect x="745.0" y="105.0" width="520.0" height="430.0" rx="8" class="module-boundary" />
+      <text x="755.0" y="123.0" class="module-label">INV1 PASSIVE NETWORK</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="IN" data-net-id="INV1.IN" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="INV1.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="JACK" data-net-id="INV1.JACK" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4D4F442E534F434B455453" class="module collapsed-module inactive" data-module-id="MOD.SOCKETS" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="1300.0" y="1015.0" width="440.0" height="105.0" rx="8" class="module-boundary" />
+      <text x="1310.0" y="1033.0" class="module-label">RESERVED SOCKETS</text>
+      <text x="1485.0" y="1067.5" class="collapsed-title">RESERVED SOCKETS</text>
+      <text x="1445.0" y="1091.5" class="collapsed-subtitle">INT2/INT3 occupancy tracked in weekly manifest</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4D4F442E53554D31" class="module" data-module-id="MOD.SUM1" data-parent-id="CHASSIS">
+      <rect x="55.0" y="105.0" width="660.0" height="430.0" rx="8" class="module-boundary" />
+      <text x="65.0" y="123.0" class="module-label">SUM1 PASSIVE NETWORK</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INA" data-net-id="SUM1.INA" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INB" data-net-id="SUM1.INB" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INC" data-net-id="SUM1.INC" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="SUM1.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="JACK" data-net-id="SUM1.JACK" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+  </g>
+  <g class="wire-layer">
+    <g class="net" data-net-id="FIX.IC">
+      <line class="net-trunk" x1="175.0" y1="545.0" x2="1360.0" y2="545.0" data-net-id="FIX.IC" />
+      <polyline class="wire" points="1360.0,545.0 1360.0,545.0" data-terminal-ref="FIX.V_IC::P" data-net-id="FIX.IC" fill="none" />
+      <polyline class="wire" points="175.0,350.0 175.0,545.0" data-terminal-ref="SUM1.RIN_C::P" data-net-id="FIX.IC" fill="none" />
+    </g>
+    <g class="net" data-net-id="INT1.JACK">
+      <line class="net-trunk" x1="695.0" y1="800.0" x2="1570.0" y2="800.0" data-net-id="INT1.JACK" />
+      <polyline class="wire" points="1570.0,665.0 1584.0,665.0 1584.0,800.0 1570.0,800.0" data-terminal-ref="FIX.RLOAD::P" data-net-id="INT1.JACK" fill="none" />
+      <polyline class="wire" points="695.0,800.0 695.0,800.0" data-terminal-ref="INT1.ROUT::N" data-net-id="INT1.JACK" fill="none" />
+    </g>
+    <g class="net" data-net-id="INT1.OUT">
+      <line class="net-trunk" x1="613.0" y1="220.0" x2="613.0" y2="970.0" data-net-id="INT1.OUT" />
+      <polyline class="wire" points="425.0,970.0 425.0,984.0 613.0,984.0 613.0,970.0" data-terminal-ref="INT1.CFB::P" data-net-id="INT1.OUT" fill="none" />
+      <circle cx="613.0" cy="970.0" r="3.5" class="junction" data-net-id="INT1.OUT" />
+      <polyline class="wire" points="605.0,800.0 613.0,800.0" data-terminal-ref="INT1.ROUT::P" data-net-id="INT1.OUT" fill="none" />
+      <circle cx="613.0" cy="800.0" r="3.5" class="junction" data-net-id="INT1.OUT" />
+      <polyline class="wire" points="175.0,220.0 175.0,234.0 613.0,234.0 613.0,220.0" data-terminal-ref="SUM1.RIN_A::P" data-net-id="INT1.OUT" fill="none" />
+      <circle cx="613.0" cy="220.0" r="3.5" class="junction" data-net-id="INT1.OUT" />
+      <polyline class="port-wire" points="595.0,800.0 613.0,800.0" data-port-ref="DEV.INT1::OUT" data-net-id="INT1.OUT" fill="none" />
+      <circle cx="613.0" cy="800.0" r="3.5" class="junction" data-net-id="INT1.OUT" />
+      <text x="617.0" y="214.0" class="net-label">INT1 OUT</text>
+    </g>
+    <g class="net" data-net-id="INT1.SUM">
+      <line class="net-trunk" x1="265.0" y1="800.0" x2="515.0" y2="800.0" data-net-id="INT1.SUM" />
+      <polyline class="wire" points="515.0,970.0 515.0,800.0" data-terminal-ref="INT1.CFB::N" data-net-id="INT1.SUM" fill="none" />
+      <circle cx="515.0" cy="800.0" r="3.5" class="junction" data-net-id="INT1.SUM" />
+      <polyline class="wire" points="265.0,800.0 265.0,800.0" data-terminal-ref="INT1.RIN::N" data-net-id="INT1.SUM" fill="none" />
+      <circle cx="265.0" cy="800.0" r="3.5" class="junction" data-net-id="INT1.SUM" />
+      <polyline class="port-wire" points="410.0,800.0 410.0,800.0" data-port-ref="DEV.INT1::INM" data-net-id="INT1.SUM" fill="none" />
+      <circle cx="410.0" cy="800.0" r="3.5" class="junction" data-net-id="INT1.SUM" />
+    </g>
+    <g class="net" data-net-id="INV1.JACK">
+      <polyline class="wire" points="1225.0,300.0 1225.0,300.0" data-terminal-ref="INV1.ROUT::N" data-net-id="INV1.JACK" fill="none" />
+    </g>
+    <g class="net" data-net-id="INV1.OUT">
+      <line class="net-trunk" x1="175.0" y1="473.0" x2="1135.0" y2="473.0" data-net-id="INV1.OUT" />
+      <polyline class="wire" points="175.0,800.0 175.0,473.0" data-terminal-ref="INT1.RIN::P" data-net-id="INV1.OUT" fill="none" />
+      <circle cx="175.0" cy="473.0" r="3.5" class="junction" data-net-id="INV1.OUT" />
+      <polyline class="wire" points="975.0,455.0 975.0,473.0" data-terminal-ref="INV1.RFB::P" data-net-id="INV1.OUT" fill="none" />
+      <circle cx="975.0" cy="473.0" r="3.5" class="junction" data-net-id="INV1.OUT" />
+      <polyline class="wire" points="1135.0,300.0 1135.0,473.0" data-terminal-ref="INV1.ROUT::P" data-net-id="INV1.OUT" fill="none" />
+      <circle cx="1135.0" cy="473.0" r="3.5" class="junction" data-net-id="INV1.OUT" />
+      <polyline class="port-wire" points="1105.0,300.0 1105.0,473.0" data-port-ref="DEV.INV1::OUT" data-net-id="INV1.OUT" fill="none" />
+      <circle cx="1105.0" cy="473.0" r="3.5" class="junction" data-net-id="INV1.OUT" />
+      <text x="179.0" y="467.0" class="net-label">INV OUT</text>
+    </g>
+    <g class="net" data-net-id="INV1.SUM">
+      <line class="net-trunk" x1="845.0" y1="300.0" x2="1065.0" y2="300.0" data-net-id="INV1.SUM" />
+      <polyline class="wire" points="1065.0,455.0 1065.0,300.0" data-terminal-ref="INV1.RFB::N" data-net-id="INV1.SUM" fill="none" />
+      <circle cx="1065.0" cy="300.0" r="3.5" class="junction" data-net-id="INV1.SUM" />
+      <polyline class="wire" points="845.0,300.0 845.0,300.0" data-terminal-ref="INV1.RIN::N" data-net-id="INV1.SUM" fill="none" />
+      <circle cx="845.0" cy="300.0" r="3.5" class="junction" data-net-id="INV1.SUM" />
+      <polyline class="port-wire" points="920.0,300.0 920.0,300.0" data-port-ref="DEV.INV1::INM" data-net-id="INV1.SUM" fill="none" />
+      <circle cx="920.0" cy="300.0" r="3.5" class="junction" data-net-id="INV1.SUM" />
+    </g>
+    <g class="net" data-net-id="SGND">
+      <line class="net-trunk" x1="175.0" y1="635.0" x2="1570.0" y2="635.0" data-net-id="SGND" />
+      <polyline class="wire" points="1570.0,755.0 1584.0,755.0 1584.0,635.0 1570.0,635.0" data-terminal-ref="FIX.RLOAD::N" data-net-id="SGND" fill="none" />
+      <circle cx="1570.0" cy="635.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="1360.0,635.0 1360.0,635.0" data-terminal-ref="FIX.V_IC::N" data-net-id="SGND" fill="none" />
+      <circle cx="1360.0" cy="635.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="175.0,285.0 189.0,285.0 189.0,635.0 175.0,635.0" data-terminal-ref="SUM1.RIN_B::P" data-net-id="SGND" fill="none" />
+      <circle cx="175.0" cy="635.0" r="3.5" class="junction" data-net-id="SGND" />
+    </g>
+    <g class="net" data-net-id="SUM1.JACK">
+      <polyline class="wire" points="645.0,285.0 645.0,285.0" data-terminal-ref="SUM1.ROUT::N" data-net-id="SUM1.JACK" fill="none" />
+    </g>
+    <g class="net" data-net-id="SUM1.OUT">
+      <line class="net-trunk" x1="385.0" y1="318.0" x2="755.0" y2="318.0" data-net-id="SUM1.OUT" />
+      <polyline class="wire" points="755.0,300.0 755.0,318.0" data-terminal-ref="INV1.RIN::P" data-net-id="SUM1.OUT" fill="none" />
+      <circle cx="755.0" cy="318.0" r="3.5" class="junction" data-net-id="SUM1.OUT" />
+      <polyline class="wire" points="385.0,430.0 385.0,318.0" data-terminal-ref="SUM1.RFB::P" data-net-id="SUM1.OUT" fill="none" />
+      <circle cx="385.0" cy="318.0" r="3.5" class="junction" data-net-id="SUM1.OUT" />
+      <polyline class="wire" points="555.0,285.0 555.0,318.0" data-terminal-ref="SUM1.ROUT::P" data-net-id="SUM1.OUT" fill="none" />
+      <circle cx="555.0" cy="318.0" r="3.5" class="junction" data-net-id="SUM1.OUT" />
+      <polyline class="port-wire" points="595.0,300.0 595.0,318.0" data-port-ref="DEV.SUM1::OUT" data-net-id="SUM1.OUT" fill="none" />
+      <circle cx="595.0" cy="318.0" r="3.5" class="junction" data-net-id="SUM1.OUT" />
+      <text x="389.0" y="312.0" class="net-label">SUM OUT</text>
+    </g>
+    <g class="net" data-net-id="SUM1.SUM">
+      <line class="net-trunk" x1="265.0" y1="300.0" x2="475.0" y2="300.0" data-net-id="SUM1.SUM" />
+      <polyline class="wire" points="475.0,430.0 475.0,300.0" data-terminal-ref="SUM1.RFB::N" data-net-id="SUM1.SUM" fill="none" />
+      <circle cx="475.0" cy="300.0" r="3.5" class="junction" data-net-id="SUM1.SUM" />
+      <polyline class="wire" points="265.0,220.0 265.0,300.0" data-terminal-ref="SUM1.RIN_A::N" data-net-id="SUM1.SUM" fill="none" />
+      <circle cx="265.0" cy="300.0" r="3.5" class="junction" data-net-id="SUM1.SUM" />
+      <polyline class="wire" points="265.0,285.0 265.0,300.0" data-terminal-ref="SUM1.RIN_B::N" data-net-id="SUM1.SUM" fill="none" />
+      <circle cx="265.0" cy="300.0" r="3.5" class="junction" data-net-id="SUM1.SUM" />
+      <polyline class="wire" points="265.0,350.0 265.0,300.0" data-terminal-ref="SUM1.RIN_C::N" data-net-id="SUM1.SUM" fill="none" />
+      <circle cx="265.0" cy="300.0" r="3.5" class="junction" data-net-id="SUM1.SUM" />
+      <polyline class="port-wire" points="410.0,300.0 410.0,300.0" data-port-ref="DEV.SUM1::INM" data-net-id="SUM1.SUM" fill="none" />
+      <circle cx="410.0" cy="300.0" r="3.5" class="junction" data-net-id="SUM1.SUM" />
+    </g>
+  </g>
+  <g class="symbol-layer">
+    <g id="component-Z4649582E524C4F4144" class="component active" transform="translate(1570.0 710.0) rotate(90)" data-component-id="FIX.RLOAD" data-module-id="MEAS.FIXTURE" data-state-class="configuration-only-fixture" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>FIX.RLOAD</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INT1.JACK" data-open="false" data-global-x="1570.0" data-global-y="665.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="1570.0" data-global-y="755.0" />
+    </g>
+    <g id="component-Z4649582E565F4943" class="component active" transform="translate(1360.0 590.0) rotate(0)" data-component-id="FIX.V_IC" data-module-id="MEAS.FIXTURE" data-state-class="configuration-only-fixture" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V" data-rotation="0" data-mirror="false">
+      <title>FIX.V_IC</title>
+      <line x1="0" y1="-45" x2="0" y2="-28" class="symbol-line" />
+      <line x1="0" y1="28" x2="0" y2="45" class="symbol-line" />
+      <circle cx="0" cy="0" r="28" class="symbol-line symbol-paper source-body" />
+      <line x1="-7" y1="-10" x2="7" y2="-10" class="symbol-line voltage-polarity" />
+      <line x1="0" y1="-17" x2="0" y2="-3" class="symbol-line voltage-polarity" />
+      <line x1="-7" y1="12" x2="7" y2="12" class="symbol-line voltage-polarity" />
+      <circle class="terminal" cx="0" cy="-45" r="3" data-pin-id="P" data-net-id="FIX.IC" data-open="false" data-global-x="1360.0" data-global-y="545.0" />
+      <circle class="terminal" cx="0" cy="45" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="1360.0" data-global-y="635.0" />
+    </g>
+    <g id="component-Z494E54312E434642" class="component active" transform="translate(470.0 970.0) rotate(0)" data-component-id="INT1.CFB" data-module-id="MOD.INT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="0" data-mirror="false">
+      <title>INT1.CFB</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INT1.OUT" data-open="false" data-global-x="425.0" data-global-y="970.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INT1.SUM" data-open="false" data-global-x="515.0" data-global-y="970.0" />
+    </g>
+    <g id="component-Z494E54312E52494E" class="component active" transform="translate(220.0 800.0) rotate(0)" data-component-id="INT1.RIN" data-module-id="MOD.INT1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INT1.RIN</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INV1.OUT" data-open="false" data-global-x="175.0" data-global-y="800.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INT1.SUM" data-open="false" data-global-x="265.0" data-global-y="800.0" />
+    </g>
+    <g id="component-Z494E54312E524F5554" class="component active" transform="translate(650.0 800.0) rotate(0)" data-component-id="INT1.ROUT" data-module-id="MOD.INT1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INT1.ROUT</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INT1.OUT" data-open="false" data-global-x="605.0" data-global-y="800.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INT1.JACK" data-open="false" data-global-x="695.0" data-global-y="800.0" />
+    </g>
+    <g id="component-Z494E56312E524642" class="component active" transform="translate(1020.0 455.0) rotate(0)" data-component-id="INV1.RFB" data-module-id="MOD.INV1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INV1.RFB</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INV1.OUT" data-open="false" data-global-x="975.0" data-global-y="455.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INV1.SUM" data-open="false" data-global-x="1065.0" data-global-y="455.0" />
+    </g>
+    <g id="component-Z494E56312E52494E" class="component active" transform="translate(800.0 300.0) rotate(0)" data-component-id="INV1.RIN" data-module-id="MOD.INV1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INV1.RIN</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SUM1.OUT" data-open="false" data-global-x="755.0" data-global-y="300.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INV1.SUM" data-open="false" data-global-x="845.0" data-global-y="300.0" />
+    </g>
+    <g id="component-Z494E56312E524F5554" class="component active" transform="translate(1180.0 300.0) rotate(0)" data-component-id="INV1.ROUT" data-module-id="MOD.INV1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INV1.ROUT</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INV1.OUT" data-open="false" data-global-x="1135.0" data-global-y="300.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INV1.JACK" data-open="false" data-global-x="1225.0" data-global-y="300.0" />
+    </g>
+    <g id="component-Z53554D312E524642" class="component active" transform="translate(430.0 430.0) rotate(0)" data-component-id="SUM1.RFB" data-module-id="MOD.SUM1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>SUM1.RFB</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SUM1.OUT" data-open="false" data-global-x="385.0" data-global-y="430.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" data-global-x="475.0" data-global-y="430.0" />
+    </g>
+    <g id="component-Z53554D312E52494E5F41" class="component active" transform="translate(220.0 220.0) rotate(0)" data-component-id="SUM1.RIN_A" data-module-id="MOD.SUM1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>SUM1.RIN_A</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INT1.OUT" data-open="false" data-global-x="175.0" data-global-y="220.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" data-global-x="265.0" data-global-y="220.0" />
+    </g>
+    <g id="component-Z53554D312E52494E5F42" class="component active" transform="translate(220.0 285.0) rotate(0)" data-component-id="SUM1.RIN_B" data-module-id="MOD.SUM1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>SUM1.RIN_B</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SGND" data-open="false" data-global-x="175.0" data-global-y="285.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" data-global-x="265.0" data-global-y="285.0" />
+    </g>
+    <g id="component-Z53554D312E52494E5F43" class="component active" transform="translate(220.0 350.0) rotate(0)" data-component-id="SUM1.RIN_C" data-module-id="MOD.SUM1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>SUM1.RIN_C</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="FIX.IC" data-open="false" data-global-x="175.0" data-global-y="350.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" data-global-x="265.0" data-global-y="350.0" />
+    </g>
+    <g id="component-Z53554D312E524F5554" class="component active" transform="translate(600.0 285.0) rotate(0)" data-component-id="SUM1.ROUT" data-module-id="MOD.SUM1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>SUM1.ROUT</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SUM1.OUT" data-open="false" data-global-x="555.0" data-global-y="285.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SUM1.JACK" data-open="false" data-global-x="645.0" data-global-y="285.0" />
+    </g>
+  </g>
+  <g class="annotation-layer">
+    <circle cx="189.0" cy="473.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="189.0" cy="545.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="265.0" cy="234.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="475.0" cy="318.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="613.0" cy="318.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="613.0" cy="473.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="613.0" cy="545.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="613.0" cy="635.0" r="4" class="crossing" data-connected="false" />
+    <text x="1538.0" y="662.0" class="designator active">SCOPE</text>
+    <text x="1545.0" y="768.0" class="value active">10Meg</text>
+    <text x="1328.0" y="542.0" class="designator active">IC PULSE</text>
+    <text x="1335.0" y="648.0" class="value active">PULSE(0 1 1m 10u 10u 500u 100m)</text>
+    <text x="438.0" y="922.0" class="designator active">Cf</text>
+    <text x="445.0" y="1028.0" class="value active">1u</text>
+    <text x="188.0" y="752.0" class="designator active">Rin</text>
+    <text x="195.0" y="858.0" class="value active">10k</text>
+    <text x="618.0" y="752.0" class="designator active">Rout</text>
+    <text x="625.0" y="858.0" class="value active">100</text>
+    <text x="988.0" y="407.0" class="designator active">Rf</text>
+    <text x="995.0" y="513.0" class="value active">4.70k</text>
+    <text x="768.0" y="252.0" class="designator active">Rin</text>
+    <text x="775.0" y="358.0" class="value active">4.70k</text>
+    <text x="1148.0" y="252.0" class="designator active">Rout</text>
+    <text x="1155.0" y="358.0" class="value active">100</text>
+    <text x="398.0" y="382.0" class="designator active">Rf</text>
+    <text x="405.0" y="488.0" class="value active">10k</text>
+    <text x="188.0" y="172.0" class="designator active">Rin A</text>
+    <text x="195.0" y="278.0" class="value active">10k</text>
+    <text x="188.0" y="237.0" class="designator active">Rin B</text>
+    <text x="195.0" y="343.0" class="value active">10k</text>
+    <text x="188.0" y="302.0" class="designator active">Rin C</text>
+    <text x="195.0" y="408.0" class="value active">10k</text>
+    <text x="568.0" y="237.0" class="designator active">Rout</text>
+    <text x="575.0" y="343.0" class="value active">100</text>
+  </g>
+  <g class="semantic-ledger">
+    <g class="component collapsed-member" data-component-id="DEV.U_INT1_STOCK" data-module-id="DEV.INT1" data-state-class="persistent-installed" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="INT1.SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="INT1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="INT1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="INT1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::INM" data-net-id="INT1.SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::OUT" data-net-id="INT1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::COMPA" data-net-id="INT1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT1_STOCK::COMPB" data-net-id="INT1.COMPB" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INV1" data-module-id="DEV.INV1" data-state-class="persistent-installed" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="INV1.SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="INV1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="INV1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="INV1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::INM" data-net-id="INV1.SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::OUT" data-net-id="INV1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::COMPA" data-net-id="INV1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::COMPB" data-net-id="INV1.COMPB" />
+    <g class="component collapsed-member" data-component-id="DEV.U_SUM1" data-module-id="DEV.SUM1" data-state-class="persistent-installed" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="SUM1.SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="SUM1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="SUM1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="SUM1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::INM" data-net-id="SUM1.SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::OUT" data-net-id="SUM1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::COMPA" data-net-id="SUM1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::COMPB" data-net-id="SUM1.COMPB" />
+    <g class="component collapsed-member" data-component-id="INF.CBN" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INF.CBP" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INF.GND_TIE" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="PGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.GND_TIE::P" data-net-id="PGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.GND_TIE::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INF.VN15" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="PGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VN15::P" data-net-id="PGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VN15::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INF.VP15" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="PGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VP15::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VP15::N" data-net-id="PGND" />
+    <g class="component collapsed-member" data-component-id="INT1.CC220" data-module-id="DEV.INT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INT1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INT1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT1.CC220::P" data-net-id="INT1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT1.CC220::N" data-net-id="INT1.COMPB" />
+    <g class="component collapsed-member" data-component-id="INT1.CN" data-module-id="DEV.INT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT1.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT1.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INT1.CP" data-module-id="DEV.INT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT1.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT1.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INV1.CC30" data-module-id="DEV.INV1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INV1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INV1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CC30::P" data-net-id="INV1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CC30::N" data-net-id="INV1.COMPB" />
+    <g class="component collapsed-member" data-component-id="INV1.CN" data-module-id="DEV.INV1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INV1.CP" data-module-id="DEV.INV1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="SLOT.INT2.MARKER" data-module-id="MOD.SOCKETS" data-state-class="persistent-inactive" data-kind="module_placeholder" data-model-id="MODEL.W00_04.SOCKET.I" data-model-reference="W00_04_EMPTY_SOCKET">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="GND" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="IN" data-net-id="SLOT.INT2.IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="SLOT.INT2.OUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::GND" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::IN" data-net-id="SLOT.INT2.IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::OUT" data-net-id="SLOT.INT2.OUT" />
+    <g class="component collapsed-member" data-component-id="SLOT.INT3.MARKER" data-module-id="MOD.SOCKETS" data-state-class="persistent-inactive" data-kind="module_placeholder" data-model-id="MODEL.W00_04.SOCKET.I" data-model-reference="W00_04_EMPTY_SOCKET">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="GND" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="IN" data-net-id="SLOT.INT3.IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="SLOT.INT3.OUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT3.MARKER::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT3.MARKER::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT3.MARKER::GND" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT3.MARKER::IN" data-net-id="SLOT.INT3.IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT3.MARKER::OUT" data-net-id="SLOT.INT3.OUT" />
+    <g class="component collapsed-member" data-component-id="SUM1.CC30" data-module-id="DEV.SUM1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CC30::P" data-net-id="SUM1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CC30::N" data-net-id="SUM1.COMPB" />
+    <g class="component collapsed-member" data-component-id="SUM1.CN" data-module-id="DEV.SUM1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="SUM1.CP" data-module-id="DEV.SUM1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CP::N" data-net-id="SGND" />
+  </g>
+</svg>

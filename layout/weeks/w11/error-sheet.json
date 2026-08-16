@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w11/graph.json",
+  "sheet_id": "W11.ERROR",
+  "title": "Week 11 Figure 11.2 DUT measurement",
+  "status": "graph.json is electrical authority",
+  "viewport": {
+    "width": 1200,
+    "height": 850
+  },
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "MOD.INV1",
+    "MOD.SUM1",
+    "MOD.INT1",
+    "MOD.INT2",
+    "MOD.SOCKETS",
+    "REG1",
+    "OSC1",
+    "AMP1",
+    "W11.MODE.I1",
+    "W11.MODE.I2",
+    "RECT1"
+  ],
+  "module_positions": {
+    "AMP1": {
+      "x": 500,
+      "y": 180,
+      "width": 340,
+      "height": 340,
+      "title": "Discrete DUT",
+      "subtitle": "Week 10 AMP1",
+      "ports": {
+        "INV_IN": {
+          "x": 500,
+          "y": 280
+        },
+        "NONINV_IN": {
+          "x": 500,
+          "y": 420
+        },
+        "OUT": {
+          "x": 840,
+          "y": 280
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        }
+      }
+    },
+    "W11.ERROR_FIXTURE": {
+      "x": 80,
+      "y": 80,
+      "width": 1000,
+      "height": 480,
+      "ports": {
+        "INM": {
+          "visible": false
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      }
+    },
+    "INF.PWR_ENTRY": {
+      "x": 40,
+      "y": 745,
+      "width": 160,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "PGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "MOD.INV1": {
+      "x": 210,
+      "y": 745,
+      "width": 130,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "MOD.SUM1": {
+      "x": 350,
+      "y": 745,
+      "width": 130,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "INA": {
+          "visible": false
+        },
+        "INB": {
+          "visible": false
+        },
+        "INC": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "MOD.INT1": {
+      "x": 490,
+      "y": 745,
+      "width": 130,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "MOD.INT2": {
+      "x": 630,
+      "y": 745,
+      "width": 130,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "REG1": {
+      "x": 770,
+      "y": 745,
+      "width": 120,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "VUNREG": {
+          "visible": false
+        },
+        "VOUT": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "OSC1": {
+      "x": 900,
+      "y": 745,
+      "width": 120,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "SQUARE": {
+          "visible": false
+        },
+        "TRIANGLE": {
+          "visible": false
+        },
+        "VC": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "MOD.SOCKETS": {
+      "x": 1030,
+      "y": 745,
+      "width": 130,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "RECT1": {
+      "x": 830,
+      "y": 665,
+      "width": 160,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "W11.MODE.I1": {
+      "x": 40,
+      "y": 665,
+      "width": 250,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "SIGNAL_IN": {
+          "visible": false
+        },
+        "IC_IN": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "NONINV": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "visible": false
+        },
+        "MODE_RST": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    },
+    "W11.MODE.I2": {
+      "x": 300,
+      "y": 665,
+      "width": 250,
+      "height": 55,
+      "style": "inactive",
+      "connect_ports": false,
+      "ports": {
+        "SIGNAL_IN": {
+          "visible": false
+        },
+        "IC_IN": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "visible": false
+        },
+        "MODE_RST": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "retained"
+    }
+  },
+  "components": {
+    "W11.ERR.R_EO_G": {
+      "x": 360,
+      "y": 330,
+      "rotation": 90
+    },
+    "W11.ERR.R_EO_FB": {
+      "x": 680,
+      "y": 120,
+      "rotation": 0
+    },
+    "W11.ERR.R_IM": {
+      "x": 680,
+      "y": 120,
+      "rotation": 0
+    },
+    "W11.ERR.R_IP": {
+      "x": 350,
+      "y": 470,
+      "rotation": 90
+    },
+    "W11.ERR.VFOLLOW": {
+      "x": 680,
+      "y": 120,
+      "rotation": 0
+    },
+    "W11.ERR.NONINV_GND": {
+      "x": 430,
+      "y": 480,
+      "rotation": 90
+    },
+    "W11.ERR.R_LOAD": {
+      "x": 940,
+      "y": 400,
+      "rotation": 90
+    }
+  },
+  "net_routes": {
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 630
+    }
+  },
+  "notes": [
+    "Only one Figure 11.2 wiring is active per configuration.",
+    "Correct the input-current results using the separately measured EO value."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "policy": "No ideal/default semiconductor card may be relabeled realistic. A realistic netlist requires lawful model provenance and explicit bindings.",
+  "reason": "AMP1.CC: no realistic model binding",
+  "requested_projection": "W09.INVERTER_TEST realistic",
+  "status": "BLOCKED"
+}

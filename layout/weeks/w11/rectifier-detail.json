@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w11/graph.json",
+  "sheet_id": "W11.RECT",
+  "title": "Week 11 Figure 11.18 grounded half-wave precision rectifier",
+  "status": "graph.json is electrical authority",
+  "strict_components": true,
+  "viewport": {
+    "width": 1100,
+    "height": 700
+  },
+  "module_positions": {
+    "RECT1": {
+      "x": 60,
+      "y": 50,
+      "width": 960,
+      "height": 570,
+      "ports": {
+        "IN": {
+          "x": 60,
+          "y": 300
+        },
+        "OUT": {
+          "x": 1020,
+          "y": 300
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      }
+    }
+  },
+  "components": {
+    "RECT1.VIN": {
+      "x": 160,
+      "y": 390,
+      "rotation": 0
+    },
+    "RECT1.U1": {
+      "x": 450,
+      "y": 300,
+      "rotation": 0
+    },
+    "RECT1.C_COMP": {
+      "x": 470,
+      "y": 450,
+      "rotation": 0
+    },
+    "RECT1.D1": {
+      "x": 690,
+      "y": 300,
+      "rotation": 0
+    },
+    "RECT1.R_LOAD": {
+      "x": 850,
+      "y": 440,
+      "rotation": 90
+    },
+    "RECT1.CP": {
+      "x": 320,
+      "y": 520,
+      "rotation": 90
+    },
+    "RECT1.CN": {
+      "x": 410,
+      "y": 520,
+      "rotation": 90
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 35
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 650
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 675
+    }
+  },
+  "annotations": [
+    "This is actual Figure 11.18: grounded half-wave precision rectifier.",
+    "The floating-load full-wave bridge is Figure 11.19 and is not installed in the Week 11 baseline."
+  ]
+}

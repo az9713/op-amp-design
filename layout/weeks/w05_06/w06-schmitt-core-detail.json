@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "sheet_id": "W06.SCHMITT_DETAIL",
+  "title": "Week 6 LM301A Schmitt-core detail",
+  "viewport": {"width": 1000, "height": 720},
+  "strict_components": true,
+  "module_positions": {
+    "DEV.OSC1.SCHMITT": {"x":70,"y":65,"width":860,"height":570,"title":"OSC1 SCHMITT CORE","ports":{"INP":{"x":70,"y":290},"INM":{"x":70,"y":370},"OUT":{"x":930,"y":330},"P15":{"visible":false},"N15":{"visible":false},"SGND":{"visible":false}}}
+  },
+  "components": {
+    "OSC1.U_SCHMITT":{"x":500,"y":330,"label":"USCH LM301A","label_dx":-45,"label_dy":-82},
+    "OSC1.U_SCHMITT.CC":{"x":575,"y":510,"label":"Cc"},
+    "OSC1.U_SCHMITT.CP":{"x":255,"y":225,"rotation":90,"label":"local + bypass"},
+    "OSC1.U_SCHMITT.CN":{"x":745,"y":435,"rotation":90,"label":"local − bypass"}
+  },
+  "net_routes":{"P15":{"rail":"top","coordinate":115},"SGND":{"rail":"middle","coordinate":600},"N15":{"rail":"bottom","coordinate":655}}
+}

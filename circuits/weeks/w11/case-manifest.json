@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "manifest_id": "W11.CASE_MANIFEST",
+  "graph": "graph.json",
+  "status": "topology review; electrical performance not approved",
+  "mode_truth_table": {
+    "OPERATE": {
+      "operate": "closed/high",
+      "reset": "open/low"
+    },
+    "RESET": {
+      "operate": "open/low",
+      "reset": "closed/high"
+    },
+    "HOLD": {
+      "operate": "open/low",
+      "reset": "open/low"
+    },
+    "FORBIDDEN": {
+      "operate": "closed/high",
+      "reset": "closed/high"
+    }
+  },
+  "safe_default": "100 kohm pull-downs hold both logic inputs low; power-up state is HOLD",
+  "reset_target": "Vout tends to -V_IC; selected V_IC=+1.000 V",
+  "operate_scale": "-1 / ((9.975 kohm + measured rds_on) * 1 uF)",
+  "error_extraction": {
+    "EO": "Vout/1000 approximately",
+    "I_MINUS": "Vout/10 Mohm after offset correction",
+    "I_PLUS": "-Vout/10 Mohm after offset correction",
+    "IB": "(I_PLUS+I_MINUS)/2",
+    "IOS": "abs(I_PLUS-I_MINUS)"
+  },
+  "rectifier_source_correction": "Actual Figure 11.18 is the grounded half-wave circuit. Figure 11.19 is the floating-load full-wave bridge. The previously extracted figures/book/fig-11.18.png is mislabeled and is not canonical.",
+  "deferred": [
+    "Figure 11.19 bridge module",
+    "realistic 2N4391/2N4091 switch models and leakage",
+    "package pin maps",
+    "break-before-make hardware interlock beyond documented control sequencing"
+  ],
+  "claim_boundary": "Graph/SVG/SPICE connectivity only; inherited Week 9/10 electrical failures remain open."
+}

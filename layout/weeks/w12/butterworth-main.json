@@ -1,0 +1,470 @@
+{
+  "annotations": [
+    "Outputs alternate signs: -x''', x'', -x', x.",
+    "All Figure 12.13 impedances are divided by ten and all integrating capacitors multiplied by ten; RC remains 1 s."
+  ],
+  "collapsed_modules": [
+    "DEV.SUM1",
+    "AMP1",
+    "DEV.INT2",
+    "DEV.INT3",
+    "DEV.INV1",
+    "INF.PWR_ENTRY",
+    "REG1",
+    "RECT1",
+    "MOD.SOCKETS"
+  ],
+  "components": {
+    "W12.BW.C_I0": {
+      "x": 470,
+      "y": 190
+    },
+    "W12.BW.C_I1": {
+      "x": 820,
+      "y": 190
+    },
+    "W12.BW.C_I2": {
+      "x": 1190,
+      "y": 190
+    },
+    "W12.BW.C_I3": {
+      "x": 1560,
+      "y": 190
+    },
+    "W12.BW.R_COMB": {
+      "x": 520,
+      "y": 750
+    },
+    "W12.BW.R_F": {
+      "x": 220,
+      "y": 350
+    },
+    "W12.BW.R_I1": {
+      "x": 635,
+      "y": 350
+    },
+    "W12.BW.R_I1_GND": {
+      "x": 760,
+      "y": 500
+    },
+    "W12.BW.R_I2": {
+      "x": 1000,
+      "y": 350
+    },
+    "W12.BW.R_I3": {
+      "x": 1370,
+      "y": 350
+    },
+    "W12.BW.R_INV_FB": {
+      "x": 940,
+      "y": 900
+    },
+    "W12.BW.R_INV_X": {
+      "x": 1330,
+      "y": 750
+    },
+    "W12.BW.R_INV_X2": {
+      "x": 1190,
+      "y": 620
+    },
+    "W12.BW.R_Q1": {
+      "x": 650,
+      "y": 570
+    },
+    "W12.BW.R_Q3": {
+      "x": 470,
+      "y": 520
+    },
+    "W12.BW.R_SCOPE_X": {
+      "rotation": 90,
+      "x": 1740,
+      "y": 530
+    },
+    "W12.BW.VF": {
+      "x": 110,
+      "y": 350
+    }
+  },
+  "graph": "../../../circuits/weeks/w12/graph.json",
+  "module_positions": {
+    "AMP1": {
+      "height": 180,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        },
+        "INV_IN": {
+          "x": 700,
+          "y": 350
+        },
+        "NONINV_IN": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 940,
+          "y": 350
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "discrete integrator",
+      "title": "I1 \u00b7 AMP1",
+      "width": 240,
+      "x": 700,
+      "y": 270
+    },
+    "DEV.INT2": {
+      "height": 180,
+      "ports": {
+        "INM": {
+          "x": 1070,
+          "y": 350
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 1310,
+          "y": 350
+        },
+        "SGND": {
+          "visible": false
+        },
+        "TWIN_OUT": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "LM301A integrator",
+      "title": "I2 \u00b7 INT2",
+      "width": 240,
+      "x": 1070,
+      "y": 270
+    },
+    "DEV.INT3": {
+      "height": 180,
+      "ports": {
+        "BW_IN": {
+          "x": 1440,
+          "y": 350
+        },
+        "BW_OUT": {
+          "x": 1680,
+          "y": 350
+        },
+        "INM": {
+          "visible": false
+        },
+        "INP": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "oscillator channel repurposed",
+      "title": "I3 \u00b7 INT3",
+      "width": 240,
+      "x": 1440,
+      "y": 270
+    },
+    "DEV.INV1": {
+      "height": 180,
+      "ports": {
+        "INM": {
+          "x": 810,
+          "y": 750
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 1070,
+          "y": 750
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "-x - 3.42 x''",
+      "title": "INV1 coefficient combiner",
+      "width": 260,
+      "x": 810,
+      "y": 670
+    },
+    "DEV.SUM1": {
+      "height": 180,
+      "ports": {
+        "INM": {
+          "x": 330,
+          "y": 350
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 570,
+          "y": 350
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "integrating summer",
+      "title": "I0 \u00b7 SUM1",
+      "width": 240,
+      "x": 330,
+      "y": 270
+    },
+    "INF.PWR_ENTRY": {
+      "connect_ports": false,
+      "height": 65,
+      "ports": {
+        "PGND": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 190,
+      "x": 40,
+      "y": 1000
+    },
+    "MOD.SOCKETS": {
+      "connect_ports": false,
+      "height": 65,
+      "ports": {
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 220,
+      "x": 1110,
+      "y": 1000
+    },
+    "RECT1": {
+      "connect_ports": false,
+      "height": 65,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 170,
+      "x": 440,
+      "y": 1000
+    },
+    "REG1": {
+      "connect_ports": false,
+      "height": 65,
+      "ports": {
+        "N15": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VOUT": {
+          "visible": false
+        },
+        "VUNREG": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 170,
+      "x": 250,
+      "y": 1000
+    },
+    "W11.MODE.I1": {
+      "connect_ports": false,
+      "height": 65,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "IC_IN": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "visible": false
+        },
+        "MODE_RST": {
+          "visible": false
+        },
+        "NONINV": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SIGNAL_IN": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 220,
+      "x": 630,
+      "y": 1000
+    },
+    "W11.MODE.I2": {
+      "connect_ports": false,
+      "height": 65,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "IC_IN": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "visible": false
+        },
+        "MODE_RST": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SIGNAL_IN": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 220,
+      "x": 870,
+      "y": 1000
+    },
+    "W12.BW.NET": {
+      "height": 880,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "F": {
+          "visible": false
+        },
+        "Q1": {
+          "visible": false
+        },
+        "Q2": {
+          "visible": false
+        },
+        "Q3": {
+          "visible": false
+        },
+        "X": {
+          "visible": false
+        }
+      },
+      "width": 1780,
+      "x": 40,
+      "y": 80
+    }
+  },
+  "net_routes": {
+    "SGND": {
+      "coordinate": 940,
+      "rail": "bottom"
+    }
+  },
+  "schema_version": 1,
+  "sheet_id": "W12.BW",
+  "status": "graph.json is electrical authority",
+  "title": "Week 12 Figure 12.13 fourth-order Butterworth",
+  "viewport": {
+    "height": 1150,
+    "width": 1900
+  }
+}

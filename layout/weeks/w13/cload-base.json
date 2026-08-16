@@ -1,0 +1,219 @@
+{
+  "annotations": [
+    "Baseline retains the accepted 30 pF one-pole error-amplifier compensation.",
+    "CL_CASE, ESR, probe loading, and loop margin must be recorded before comparing the compensated graph."
+  ],
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "DEV.REG1.ERR"
+  ],
+  "components": {
+    "REG1.C_LOAD": {
+      "label": "CL SELECT",
+      "rotation": 90,
+      "x": 1100,
+      "y": 680
+    },
+    "REG1.C_REF": {
+      "label": "Cref",
+      "rotation": 90,
+      "x": 310,
+      "y": 530
+    },
+    "REG1.D_DISCH": {
+      "label": "DISCHARGE",
+      "x": 990,
+      "y": 230
+    },
+    "REG1.D_REF": {
+      "label": "10 V ZENER",
+      "rotation": 90,
+      "x": 190,
+      "y": 530
+    },
+    "REG1.I_DIST": {
+      "label": "10 mA STEP",
+      "x": 1440,
+      "y": 430
+    },
+    "REG1.Q_PASS": {
+      "label": "QPASS BD139",
+      "x": 860,
+      "y": 375
+    },
+    "REG1.R_BASE": {
+      "label": "Rbase",
+      "x": 710,
+      "y": 375
+    },
+    "REG1.R_BLEED": {
+      "label": "BLEED",
+      "rotation": 90,
+      "x": 1380,
+      "y": 570
+    },
+    "REG1.R_EMIT": {
+      "label": "Remit",
+      "x": 1010,
+      "y": 410
+    },
+    "REG1.R_ESR": {
+      "label": "ESR",
+      "rotation": 90,
+      "x": 1100,
+      "y": 570
+    },
+    "REG1.R_LOAD": {
+      "label": "RL SELECT",
+      "rotation": 90,
+      "x": 1260,
+      "y": 570
+    },
+    "REG1.R_REF": {
+      "label": "Rref",
+      "rotation": 90,
+      "x": 190,
+      "y": 220
+    },
+    "REG1.R_SCOPE": {
+      "label": "SCOPE",
+      "rotation": 90,
+      "x": 1440,
+      "y": 650
+    },
+    "REG1.V_LOOP_INJ": {
+      "label": "0 V / AC 1",
+      "x": 1120,
+      "y": 410
+    },
+    "REG1.V_UNREG": {
+      "label": "18 V / 35 mA LIMIT",
+      "x": 800,
+      "y": 150
+    }
+  },
+  "graph": "../../../circuits/weeks/w13/graph.json",
+  "module_positions": {
+    "DEV.REG1.ERR": {
+      "height": 150,
+      "ports": {
+        "COMPA": {
+          "visible": false
+        },
+        "COMPB": {
+          "visible": false
+        },
+        "INM": {
+          "x": 420,
+          "y": 410
+        },
+        "INP": {
+          "x": 420,
+          "y": 340
+        },
+        "N15": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 650,
+          "y": 375
+        },
+        "P15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "LM301A \u00b7 detail",
+      "title": "ERROR AMP",
+      "width": 230,
+      "x": 420,
+      "y": 300
+    },
+    "INF.PWR_ENTRY": {
+      "connect_ports": false,
+      "height": 90,
+      "subtitle": "permanent sheet",
+      "title": "\u00b115 V INFRA",
+      "width": 290,
+      "x": 1260,
+      "y": 35
+    },
+    "REG1": {
+      "connect_ports": false,
+      "height": 740,
+      "ports": {
+        "COMPA": {
+          "visible": false
+        },
+        "COMPB": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "QEMIT": {
+          "visible": false
+        },
+        "SENSE": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VOUT": {
+          "visible": false
+        },
+        "VUNREG": {
+          "visible": false
+        }
+      },
+      "title": "REG1 \u2014 10 V LOW-POWER REGULATOR",
+      "width": 1480,
+      "x": 40,
+      "y": 55
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "coordinate": 85,
+      "label": "+15 V ERROR-AMP / REFERENCE RAIL",
+      "rail": "top"
+    },
+    "REG1.VOUT": {
+      "label": "REGULATED OUTPUT 10 V NOMINAL",
+      "priority": "critical"
+    },
+    "REG1.VREF": {
+      "label": "10 V REFERENCE",
+      "priority": "critical"
+    },
+    "REG1.VUNREG": {
+      "coordinate": 145,
+      "label": "VUNREG 18 V \u2014 EXTERNAL CURRENT LIMIT 35 mA",
+      "rail": "top"
+    },
+    "SGND": {
+      "coordinate": 760,
+      "rail": "bottom"
+    }
+  },
+  "notes": [
+    "Figure 5.3 is symbolic; component values here are the approved low-power teaching implementation.",
+    "No short-circuit test is permitted; the external plant source current limit is part of the safety boundary.",
+    "RL and CL cases are enumerated in the matched case manifest."
+  ],
+  "schema_version": 1,
+  "sheet_id": "W13.CLOAD_BASE",
+  "status": "graph.json is electrical authority",
+  "strict_components": false,
+  "title": "Week 13 capacitively loaded REG1 baseline",
+  "viewport": {
+    "height": 1000,
+    "width": 1600
+  }
+}

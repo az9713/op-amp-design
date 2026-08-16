@@ -1,0 +1,29 @@
+* Week 9 model-library syntax/load smoke test
+* Run from the repository root so the relative include is deterministic.
+.include circuits/models/w09-topology-baseline.lib
+
+VCC VCC 0 5
+VEE VEE 0 -5
+
+* Exercise the default NPN model in a resistor-limited bias circuit.
+VBN BN 0 0.7
+RCN VCC CN 1k
+QN CN BN 0 W09_NPN_BASE
+
+* Exercise the default PNP model in a resistor-limited bias circuit.
+VBP BP 0 4.3
+RCP CP VEE 1k
+QP CP BP VCC W09_PNP_BASE
+
+* Exercise the default N-channel JFET model.
+VG G 0 -1
+RD VCC ND 1k
+JN ND G 0 W09_NJF_BASE
+
+* Exercise the default diode model.
+RDIODE VCC DA 1k
+DTEST DA 0 W09_D_BASE
+
+.op
+.end
+

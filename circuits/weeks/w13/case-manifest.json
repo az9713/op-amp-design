@@ -1,0 +1,52 @@
+{
+  "claim_boundary": "Canonical topology and SVG/SPICE connectivity only. Compensation values requiring measured loop dynamics remain symbolic and are not approved for construction or performance claims.",
+  "configurations": {
+    "W13.CLOAD_BASE": {
+      "active_network": "REG1 with accepted 30 pF one-pole compensation, R_EMIT, ESR, and CL_CASE",
+      "purpose": "uncompensated capacitive-load baseline"
+    },
+    "W13.CLOAD_COMP": {
+      "active_network": "R_FPATH from VOUT to SENSE and C_F from QEMIT to SENSE",
+      "purpose": "Figure 13.8-derived regulator-specific dual-feedback-path comparison",
+      "values": "derive after measured REG1 return ratio and load envelope"
+    },
+    "W13.LAG_INV1": {
+      "active_network": "series R_LAG_INV-C_LAG_INV from INV1 summing node to ground",
+      "purpose": "Figure 13.1 fixed-amplifier input compensation"
+    },
+    "W13.LAG_SUM1": {
+      "active_network": "series R_LAG_SUM-C_LAG_SUM from SUM1 summing node to ground",
+      "purpose": "Figure 13.1 fixed-amplifier input compensation"
+    },
+    "W13.ONEPOLE_AMP1": {
+      "candidate_sweep": ["20p", "47p", "100p"],
+      "selected_start": "47p",
+      "purpose": "discrete AMP1 adjustable one-pole compensation"
+    },
+    "W13.ONEPOLE_INT2": {
+      "candidate_sweep": ["12p", "30p", "220p"],
+      "selected_start": "30p",
+      "purpose": "LM301A INT2 unity-inverter one-pole compensation"
+    },
+    "W13.TWOPOLE_REG1": {
+      "active_network": "C1_2P - midpoint(R_2P to ground) - C2_2P between REG1 COMPA and COMPB",
+      "purpose": "Figure 13.19 true two-port compensation",
+      "values": "derive after measured REG1 return ratio; never copy Figure 13.21 demonstration values"
+    }
+  },
+  "graph": "graph.json",
+  "manifest_id": "W13.CASE_MANIFEST",
+  "measurement_gate": {
+    "required": [
+      "uncompensated return ratio and crossover",
+      "phase and gain margins",
+      "REG1 RL/CL/ESR tolerance envelope",
+      "probe and loop-break loading",
+      "closed-loop step response and overload recovery"
+    ],
+    "target": "choose values only after a declared robust phase-margin and settling criterion is approved"
+  },
+  "schema_version": 1,
+  "status": "topology and presentation review; electrical performance open"
+}
+

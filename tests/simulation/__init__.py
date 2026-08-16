@@ -1,0 +1,1 @@
+"""Ngspice simulation pipeline tests."""

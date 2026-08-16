@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "mode": "build",
+  "created_on": "2026-08-15",
+  "input_boundary": {
+    "type": "directory",
+    "locator": ".",
+    "scope": "Project-history records and implementation evidence under the op_amps_roberge workspace"
+  },
+  "attribution_boundary": {
+    "grok_phase": "User-attributed. Early files do not self-identify their model author.",
+    "codex_phase": "Gate and acceptance records explicitly cite the active Codex task where authorship authority is recorded."
+  },
+  "coverage": {
+    "identity": "full",
+    "textual": "substantial",
+    "visual": "substantial",
+    "tabular": "substantial",
+    "temporal": "substantial",
+    "citation": "local-file-addressable",
+    "verification": "local links, HTML safety, artifact counts, receipt status, and project tests"
+  },
+  "source_groups": [
+    {
+      "id": "SRC.EARLY_VISUAL",
+      "role": "User-attributed Grok-era visual development and failure analysis",
+      "count": 13,
+      "members": [
+        "schematics_v1.html",
+        "_gen_schematics.py",
+        "check_schematic_connections.py",
+        "attempt-log.txt",
+        "_gen_book_and_schemdraw.py",
+        "schematics.html",
+        "schematics-other.html",
+        "_gen_schemdraw_box.py",
+        "schematics-schemdraw.html",
+        "_gen_engine.py",
+        "schematics-engine.html",
+        "schematics-engine-grid.html",
+        "schematic-methods.html"
+      ]
+    },
+    {
+      "id": "SRC.GOVERNANCE",
+      "role": "Pre-flight contract, implementation plan, gates, integrated weekly specification, and audits",
+      "count": 12,
+      "members": [
+        "preflight-decisions.html",
+        "implementation-plan.html",
+        "project-controls.html",
+        "gate-0-integration-register.html",
+        "gate-1-architecture-review.html",
+        "gate-2-week09-proof.html",
+        "weekly-electrical-specification.html",
+        "drafts/spec-weeks-00-04.md",
+        "drafts/spec-weeks-05-09.md",
+        "drafts/spec-weeks-10-13.md",
+        "drafts/cross-range-review.md",
+        "drafts/requirements-audit.md"
+      ]
+    },
+    {
+      "id": "SRC.DECISIONS",
+      "role": "Architecture, environment, source transcription, production decisions, and user acceptance records",
+      "count": 28,
+      "locator": "spec/decisions/*.{md,json}",
+      "inventory_visibility": "All records are linked or grouped in development-journey.html"
+    },
+    {
+      "id": "SRC.WEEKLY_CANONICAL",
+      "role": "Canonical weekly graph, case manifest, and README records",
+      "count": 26,
+      "locator": "circuits/weeks/**/*.{json,md}",
+      "included_families": ["w00_04", "w05_06", "w07_08", "w09", "w09_reconciled", "w10", "w11", "w12", "w13"]
+    },
+    {
+      "id": "SRC.LAYOUT",
+      "role": "Non-electrical placement and routing overlays",
+      "count": 41,
+      "locator": "layout/weeks/**/*.json",
+      "authority_limit": "May position and route canonical nets but may not create electrical objects or connectivity"
+    },
+    {
+      "id": "SRC.REVIEWS",
+      "role": "Chronological user review surfaces",
+      "count": 8,
+      "locator": "week*-review.html"
+    },
+    {
+      "id": "SRC.VERIFICATION",
+      "role": "Implementation and generated-equivalence evidence",
+      "counts": {"test_modules": 17, "connectivity_receipts": 78},
+      "locators": ["tests/**/test_*.py", "generated/**/*.connectivity.json"]
+    },
+    {
+      "id": "SRC.PRIMARY_LOCAL",
+      "role": "Historical circuit source and local visual representations",
+      "count": 22,
+      "members_or_locators": ["op_amps_roberge.pdf", "figures/book/*", "Top 10 fundamental operational amplifier circuits.html"]
+    }
+  ],
+  "excluded_from_claim_authorship": [
+    {"locator": "generated/**/*.svg", "reason": "Derived projection, not an independently authored circuit source"},
+    {"locator": "generated/**/*.cir", "reason": "Derived projection, not an independently authored circuit source"},
+    {"locator": "proof/**", "reason": "Generated proof payload summarized through Gate 2 records and receipts"},
+    {"locator": "Top 10 fundamental operational amplifier circuits_files/**", "reason": "Peripheral saved-page dependencies; inventoried as one representation rather than individual intellectual works"},
+    {"locator": "spec/decisions/probes/**/__pycache__/**", "reason": "Interpreter cache"},
+    {"locator": "development-journey.html", "reason": "Current derived artifact; excluded from its own source set"},
+    {"locator": "development-journey-source-manifest.json", "reason": "Current manifest; excluded from its own source set"}
+  ],
+  "key_snapshot_hashes_sha256": {
+    "schematics_v1.html": "17A19CF9ACB998400839708B2F539AE7BA1DB43EE48B6C92ED0615C0B4A7A0BF",
+    "schematic-methods.html": "685675389214861A537C78899643D7E8BD27A4BC5E4B5A32E4E6F164977ED019",
+    "preflight-decisions.html": "77068985EE2FFA206A4C0DF37C85757515EEAC134671B2D4A352356D768BED3B",
+    "implementation-plan.html": "6967D56DCCD5C1C57747CDD967468F0D68C16B7E8660651DDA2E82E6FB5C60ED",
+    "weekly-electrical-specification.html": "13C98D43916ABC93F7B6CA05E71F6D8E63DA60D0C5543592A3930367AF2D8BC0",
+    "spec/decisions/adr-001-canonical-toolchain.md": "C3CEBAD9ABD9602889C85CDE1866E8D55BDAF073A880D46684F3DA0416E3FC7F",
+    "spec/decisions/gate-2-week09-status.md": "F6030AD2556D1ACFA8C2E3243240FE90DC8A7292239B20DBAFAB07E98D0305CF",
+    "capstone.html": "52DAF34B12613D4A98667CF8517AE1315917442546210DF239B2EFD6A3515804"
+  },
+  "primary_artifact": "development-journey.html"
+}

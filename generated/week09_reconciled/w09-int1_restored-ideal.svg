@@ -1,0 +1,1061 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" data-project-id="CAPSTONE.W00_W09.RECONCILED" data-variant-id="W09.INT1_RESTORED" data-fidelity="ideal" data-view="main" data-detail-module-id="" data-layout-id="W09.RECONCILED.END_STATE">
+  <title>Main circuit projection: CAPSTONE.W00_W09.RECONCILED</title>
+  <style>.symbol-line,.port-line,.wire,.port-wire,.net-trunk,.control-line{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.symbol-fill{fill:#171717;stroke:#171717;stroke-width:1}.symbol-paper{fill:#fff}.component.inactive{opacity:.34}.component.changed .symbol-line,.component.changed .symbol-fill{stroke:#d85c41}.component.changed .symbol-fill{fill:#d85c41}.designator.inactive,.value.inactive{opacity:.34}.module-boundary{fill:none;stroke:#8b9299;stroke-width:1;stroke-dasharray:6 4}.junction{fill:#171717}.crossing{fill:#fff;stroke:#171717;stroke-width:1}.designator{font:600 11px system-ui;fill:#171717}.value{font:10px system-ui;fill:#555}.pin-label,.port-label{font:9px ui-monospace;fill:#555}.module-label{font:600 12px system-ui;fill:#555}.collapsed-title{font:700 22px system-ui;fill:#171717}.collapsed-subtitle,.net-label{font:11px system-ui;fill:#555}.polarity{font:16px system-ui;fill:#171717}.collapsed-module.inactive{opacity:.38}.zone{fill:#f8fafb;stroke:#c5cbd1;stroke-width:1}.zone-label{font:600 11px system-ui;fill:#737b83}.semantic-ledger{display:none}</style>
+  <g class="zone-layer" />
+  <g class="boundary-layer">
+    <g id="module-Z414D5031" class="module collapsed-module" data-module-id="AMP1" data-parent-id="CHASSIS" data-detail-ref="W09.AMP1_DETAIL">
+      <rect x="735.0" y="265.0" width="350.0" height="380.0" rx="8" class="module-boundary" />
+      <text x="745.0" y="283.0" class="module-label">AMP1</text>
+      <text x="875.0" y="455.0" class="collapsed-title">AMP1</text>
+      <text x="835.0" y="479.0" class="collapsed-subtitle">complete Q1-Q13 Figure 9.1 amplifier</text>
+      <circle class="module-port" cx="735.0" cy="355.0" r="3" data-port-id="INV_IN" data-net-id="AMP1.INV_IN" />
+      <text x="741.0" y="349.0" class="port-label">INV_IN</text>
+      <circle class="module-port" cx="735.0" cy="515.0" r="3" data-port-id="NONINV_IN" data-net-id="AMP1.NONINV_IN" />
+      <text x="741.0" y="509.0" class="port-label">NONINV_IN</text>
+      <circle class="module-port" cx="1085.0" cy="355.0" r="3" data-port-id="OUT" data-net-id="AMP1.OUT" />
+      <text x="1040.0" y="349.0" class="port-label">OUT</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="COMP_A" data-net-id="AMP1.COMP_A" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="COMP_B" data-net-id="AMP1.COMP_B" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="820.0" cy="645.0" r="3" data-port-id="AGND" data-net-id="SGND" />
+      <text x="775.0" y="639.0" class="port-label">AGND</text>
+      <line x1="820.0" y1="647.0" x2="820.0" y2="656.0" class="port-line ground-symbol" />
+      <line x1="810.0" y1="656.0" x2="830.0" y2="656.0" class="port-line ground-symbol" />
+      <line x1="813.0" y1="660.0" x2="827.0" y2="660.0" class="port-line ground-symbol" />
+      <line x1="817.0" y1="664.0" x2="823.0" y2="664.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z43484153534953" class="module semantic-ledger" data-module-id="CHASSIS" data-parent-id="">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="PGND" data-net-id="PGND" />
+    </g>
+    <g id="module-Z4445562E494E5432" class="module semantic-ledger" data-module-id="DEV.INT2" data-parent-id="MOD.INT2">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="INM" data-net-id="INT2.SUM" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="OUT" data-net-id="INT2.OUT" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="181" r="3" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="215" r="3" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E494E5433" class="module semantic-ledger" data-module-id="DEV.INT3" data-parent-id="OSC1">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="INM" data-net-id="OSC1.INT_SUM" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="OUT" data-net-id="OSC1.TRIANGLE" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="P15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="181" r="3" data-port-id="N15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="215" r="3" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E494E5631" class="module semantic-ledger" data-module-id="DEV.INV1" data-parent-id="MOD.INV1">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="INM" data-net-id="INV1.SUM" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="OUT" data-net-id="INV1.OUT" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="181" r="3" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="215" r="3" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E4F5343312E5343484D495454" class="module semantic-ledger" data-module-id="DEV.OSC1.SCHMITT" data-parent-id="OSC1">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="INP" data-net-id="OSC1.SCHMITT_SUM" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="INM" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="OUT" data-net-id="OSC1.RAW_SQUARE" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="P15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="181" r="3" data-port-id="N15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="215" r="3" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E524547312E455252" class="module semantic-ledger" data-module-id="DEV.REG1.ERR" data-parent-id="REG1">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="INP" data-net-id="REG1.VREF" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="INM" data-net-id="REG1.SENSE" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="OUT" data-net-id="REG1.ERR_OUT" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="P15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="181" r="3" data-port-id="N15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="215" r="3" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z4445562E53554D31" class="module semantic-ledger" data-module-id="DEV.SUM1" data-parent-id="MOD.SUM1">
+      <circle class="module-port" cx="0" cy="45" r="3" data-port-id="INP" data-net-id="SGND" />
+      <circle class="module-port" cx="0" cy="79" r="3" data-port-id="INM" data-net-id="SUM1.SUM" />
+      <circle class="module-port" cx="0" cy="113" r="3" data-port-id="OUT" data-net-id="SUM1.OUT" />
+      <circle class="module-port" cx="0" cy="147" r="3" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port" cx="0" cy="181" r="3" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="0" cy="215" r="3" data-port-id="SGND" data-net-id="SGND" />
+    </g>
+    <g id="module-Z494E462E5057525F454E545259" class="module collapsed-module" data-module-id="INF.PWR_ENTRY" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="50.0" y="70.0" width="330.0" height="170.0" rx="8" class="module-boundary" />
+      <text x="60.0" y="88.0" class="module-label">INF.PWR_ENTRY</text>
+      <text x="180.0" y="155.0" class="collapsed-title">INF.PWR_ENTRY</text>
+      <text x="140.0" y="179.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="50.0" cy="183.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="56.0" y="177.0" class="port-label">SGND</text>
+      <line x1="50.0" y1="185.0" x2="50.0" y2="194.0" class="port-line ground-symbol" />
+      <line x1="40.0" y1="194.0" x2="60.0" y2="194.0" class="port-line ground-symbol" />
+      <line x1="43.0" y1="198.0" x2="57.0" y2="198.0" class="port-line ground-symbol" />
+      <line x1="47.0" y1="202.0" x2="53.0" y2="202.0" class="port-line ground-symbol" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="PGND" data-net-id="PGND" />
+    </g>
+    <g id="module-Z4D4F442E494E5431" class="module" data-module-id="MOD.INT1" data-parent-id="CHASSIS">
+      <rect x="1120.0" y="300.0" width="400.0" height="300.0" rx="8" class="module-boundary" />
+      <text x="1130.0" y="318.0" class="module-label">MOD.INT1</text>
+      <circle class="module-port" cx="1120.0" cy="345.0" r="3" data-port-id="IN" data-net-id="INT1.IN" />
+      <text x="1126.0" y="339.0" class="port-label">IN</text>
+      <circle class="module-port" cx="1120.0" cy="379.0" r="3" data-port-id="OUT" data-net-id="INT1.OUT" />
+      <text x="1126.0" y="373.0" class="port-label">OUT</text>
+      <circle class="module-port" cx="1120.0" cy="413.0" r="3" data-port-id="JACK" data-net-id="INT1.JACK" />
+      <text x="1126.0" y="407.0" class="port-label">JACK</text>
+      <circle class="module-port" cx="1120.0" cy="447.0" r="3" data-port-id="VP15" data-net-id="P15" />
+      <text x="1126.0" y="441.0" class="port-label">VP15</text>
+      <line x1="1120.0" y1="449.0" x2="1120.0" y2="435.0" class="port-line" />
+      <polygon points="1120.0,429.0 1114.0,438.0 1126.0,438.0" class="symbol-fill power-arrow" data-rail-polarity="positive" />
+      <circle class="module-port" cx="1120.0" cy="481.0" r="3" data-port-id="VN15" data-net-id="N15" />
+      <text x="1126.0" y="475.0" class="port-label">VN15</text>
+      <line x1="1120.0" y1="483.0" x2="1120.0" y2="497.0" class="port-line" />
+      <polygon points="1120.0,503.0 1114.0,494.0 1126.0,494.0" class="symbol-fill power-arrow" data-rail-polarity="negative" />
+      <circle class="module-port" cx="1120.0" cy="515.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="1126.0" y="509.0" class="port-label">SGND</text>
+      <line x1="1120.0" y1="517.0" x2="1120.0" y2="526.0" class="port-line ground-symbol" />
+      <line x1="1110.0" y1="526.0" x2="1130.0" y2="526.0" class="port-line ground-symbol" />
+      <line x1="1113.0" y1="530.0" x2="1127.0" y2="530.0" class="port-line ground-symbol" />
+      <line x1="1117.0" y1="534.0" x2="1123.0" y2="534.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z4D4F442E494E5432" class="module collapsed-module inactive" data-module-id="MOD.INT2" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="505.0" y="810.0" width="210.0" height="90.0" rx="8" class="module-boundary" />
+      <text x="515.0" y="828.0" class="module-label">MOD.INT2</text>
+      <text x="575.0" y="855.0" class="collapsed-title">MOD.INT2</text>
+      <text x="535.0" y="879.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="IN" data-net-id="INT2.IN" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="INT2.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="JACK" data-net-id="INT2.JACK" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="505.0" cy="1025.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="511.0" y="1019.0" class="port-label">SGND</text>
+      <line x1="505.0" y1="1027.0" x2="505.0" y2="1036.0" class="port-line ground-symbol" />
+      <line x1="495.0" y1="1036.0" x2="515.0" y2="1036.0" class="port-line ground-symbol" />
+      <line x1="498.0" y1="1040.0" x2="512.0" y2="1040.0" class="port-line ground-symbol" />
+      <line x1="502.0" y1="1044.0" x2="508.0" y2="1044.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z4D4F442E494E5631" class="module collapsed-module inactive" data-module-id="MOD.INV1" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="280.0" y="810.0" width="210.0" height="90.0" rx="8" class="module-boundary" />
+      <text x="290.0" y="828.0" class="module-label">MOD.INV1</text>
+      <text x="350.0" y="855.0" class="collapsed-title">MOD.INV1</text>
+      <text x="310.0" y="879.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="IN" data-net-id="INV1.IN" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="INV1.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="JACK" data-net-id="INV1.JACK" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="280.0" cy="1025.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="286.0" y="1019.0" class="port-label">SGND</text>
+      <line x1="280.0" y1="1027.0" x2="280.0" y2="1036.0" class="port-line ground-symbol" />
+      <line x1="270.0" y1="1036.0" x2="290.0" y2="1036.0" class="port-line ground-symbol" />
+      <line x1="273.0" y1="1040.0" x2="287.0" y2="1040.0" class="port-line ground-symbol" />
+      <line x1="277.0" y1="1044.0" x2="283.0" y2="1044.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z4D4F442E534F434B455453" class="module collapsed-module inactive" data-module-id="MOD.SOCKETS" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="1180.0" y="810.0" width="330.0" height="90.0" rx="8" class="module-boundary" />
+      <text x="1190.0" y="828.0" class="module-label">MOD.SOCKETS</text>
+      <text x="1310.0" y="855.0" class="collapsed-title">MOD.SOCKETS</text>
+      <text x="1270.0" y="879.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="1180.0" cy="923.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="1186.0" y="917.0" class="port-label">SGND</text>
+      <line x1="1180.0" y1="925.0" x2="1180.0" y2="934.0" class="port-line ground-symbol" />
+      <line x1="1170.0" y1="934.0" x2="1190.0" y2="934.0" class="port-line ground-symbol" />
+      <line x1="1173.0" y1="938.0" x2="1187.0" y2="938.0" class="port-line ground-symbol" />
+      <line x1="1177.0" y1="942.0" x2="1183.0" y2="942.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z4D4F442E53554D31" class="module collapsed-module inactive" data-module-id="MOD.SUM1" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="55.0" y="810.0" width="210.0" height="90.0" rx="8" class="module-boundary" />
+      <text x="65.0" y="828.0" class="module-label">MOD.SUM1</text>
+      <text x="125.0" y="855.0" class="collapsed-title">MOD.SUM1</text>
+      <text x="85.0" y="879.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INA" data-net-id="SUM1.INA" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INB" data-net-id="SUM1.INB" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="INC" data-net-id="SUM1.INC" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="SUM1.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="JACK" data-net-id="SUM1.JACK" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port" cx="55.0" cy="1093.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="61.0" y="1087.0" class="port-label">SGND</text>
+      <line x1="55.0" y1="1095.0" x2="55.0" y2="1104.0" class="port-line ground-symbol" />
+      <line x1="45.0" y1="1104.0" x2="65.0" y2="1104.0" class="port-line ground-symbol" />
+      <line x1="48.0" y1="1108.0" x2="62.0" y2="1108.0" class="port-line ground-symbol" />
+      <line x1="52.0" y1="1112.0" x2="58.0" y2="1112.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z4F534331" class="module collapsed-module inactive" data-module-id="OSC1" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="955.0" y="810.0" width="210.0" height="90.0" rx="8" class="module-boundary" />
+      <text x="965.0" y="828.0" class="module-label">OSC1</text>
+      <text x="1025.0" y="855.0" class="collapsed-title">OSC1</text>
+      <text x="985.0" y="879.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SQUARE" data-net-id="OSC1.SQUARE" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="TRIANGLE" data-net-id="OSC1.TRIANGLE" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VC" data-net-id="OSC1.VC" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="P15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="N15" data-net-id="N15" />
+      <circle class="module-port" cx="955.0" cy="1025.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="961.0" y="1019.0" class="port-label">SGND</text>
+      <line x1="955.0" y1="1027.0" x2="955.0" y2="1036.0" class="port-line ground-symbol" />
+      <line x1="945.0" y1="1036.0" x2="965.0" y2="1036.0" class="port-line ground-symbol" />
+      <line x1="948.0" y1="1040.0" x2="962.0" y2="1040.0" class="port-line ground-symbol" />
+      <line x1="952.0" y1="1044.0" x2="958.0" y2="1044.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z52454731" class="module collapsed-module inactive" data-module-id="REG1" data-parent-id="CHASSIS" data-detail-ref="">
+      <rect x="730.0" y="810.0" width="210.0" height="90.0" rx="8" class="module-boundary" />
+      <text x="740.0" y="828.0" class="module-label">REG1</text>
+      <text x="800.0" y="855.0" class="collapsed-title">REG1</text>
+      <text x="760.0" y="879.0" class="collapsed-subtitle">collapsed module; see detail sheet</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VUNREG" data-net-id="REG1.VUNREG" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VOUT" data-net-id="REG1.VOUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="P15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="N15" data-net-id="N15" />
+      <circle class="module-port" cx="730.0" cy="991.0" r="3" data-port-id="SGND" data-net-id="SGND" />
+      <text x="736.0" y="985.0" class="port-label">SGND</text>
+      <line x1="730.0" y1="993.0" x2="730.0" y2="1002.0" class="port-line ground-symbol" />
+      <line x1="720.0" y1="1002.0" x2="740.0" y2="1002.0" class="port-line ground-symbol" />
+      <line x1="723.0" y1="1006.0" x2="737.0" y2="1006.0" class="port-line ground-symbol" />
+      <line x1="727.0" y1="1010.0" x2="733.0" y2="1010.0" class="port-line ground-symbol" />
+    </g>
+    <g id="module-Z5730392E46495854555245" class="module" data-module-id="W09.FIXTURE" data-parent-id="CHASSIS">
+      <rect x="520.0" y="430.0" width="200.0" height="250.0" rx="8" class="module-boundary" />
+      <text x="530.0" y="448.0" class="module-label">End-state load / ground fixture</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VIN" data-net-id="W09.VIN" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="SUM" data-net-id="AMP1.INV_IN" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="OUT" data-net-id="AMP1.OUT" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="AGND" data-net-id="SGND" />
+    </g>
+  </g>
+  <g class="wire-layer">
+    <g class="net" data-net-id="AMP1.INV_IN">
+      <line class="net-trunk" x1="735.0" y1="433.0" x2="1435.0" y2="433.0" data-net-id="AMP1.INV_IN" />
+      <polyline class="wire" points="1435.0,485.0 1435.0,433.0" data-terminal-ref="INT1.CFB::N" data-net-id="AMP1.INV_IN" fill="none" />
+      <circle cx="1435.0" cy="433.0" r="3.5" class="junction" data-net-id="AMP1.INV_IN" />
+      <polyline class="wire" points="1255.0,415.0 1255.0,433.0" data-terminal-ref="INT1.RIN::N" data-net-id="AMP1.INV_IN" fill="none" />
+      <circle cx="1255.0" cy="433.0" r="3.5" class="junction" data-net-id="AMP1.INV_IN" />
+      <polyline class="port-wire" points="735.0,355.0 735.0,433.0" data-port-ref="AMP1::INV_IN" data-net-id="AMP1.INV_IN" fill="none" />
+      <circle cx="735.0" cy="433.0" r="3.5" class="junction" data-net-id="AMP1.INV_IN" />
+    </g>
+    <g class="net" data-net-id="AMP1.NONINV_IN">
+      <line class="net-trunk" x1="650.0" y1="545.0" x2="735.0" y2="545.0" data-net-id="AMP1.NONINV_IN" />
+      <polyline class="wire" points="650.0,545.0 650.0,545.0" data-terminal-ref="W09.NONINV_GROUND::P" data-net-id="AMP1.NONINV_IN" fill="none" />
+      <polyline class="port-wire" points="735.0,515.0 735.0,545.0" data-port-ref="AMP1::NONINV_IN" data-net-id="AMP1.NONINV_IN" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.OUT">
+      <line class="net-trunk" x1="600.0" y1="455.0" x2="1385.0" y2="455.0" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="1345.0,485.0 1345.0,455.0" data-terminal-ref="INT1.CFB::P" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1345.0" cy="455.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="1385.0,390.0 1385.0,455.0" data-terminal-ref="INT1.ROUT::P" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1385.0" cy="455.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="600.0,455.0 600.0,455.0" data-terminal-ref="W09.LOAD::P" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="600.0" cy="455.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="port-wire" points="1085.0,355.0 1085.0,455.0" data-port-ref="AMP1::OUT" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1085.0" cy="455.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+    </g>
+    <g class="net" data-net-id="INT1.IN">
+      <polyline class="wire" points="1165.0,415.0 1165.0,415.0" data-terminal-ref="INT1.RIN::P" data-net-id="INT1.IN" fill="none" />
+    </g>
+    <g class="net" data-net-id="INT1.JACK">
+      <polyline class="wire" points="1475.0,390.0 1475.0,390.0" data-terminal-ref="INT1.ROUT::N" data-net-id="INT1.JACK" fill="none" />
+    </g>
+    <g class="net" data-net-id="SGND">
+      <line class="net-trunk" x1="50.0" y1="740.0" x2="820.0" y2="740.0" data-net-id="SGND" />
+      <polyline class="wire" points="600.0,545.0 600.0,740.0" data-terminal-ref="W09.LOAD::N" data-net-id="SGND" fill="none" />
+      <circle cx="600.0" cy="740.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="650.0,635.0 650.0,740.0" data-terminal-ref="W09.NONINV_GROUND::N" data-net-id="SGND" fill="none" />
+      <circle cx="650.0" cy="740.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="port-wire" points="820.0,645.0 820.0,740.0" data-port-ref="AMP1::AGND" data-net-id="SGND" fill="none" />
+      <circle cx="820.0" cy="740.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="port-wire" points="50.0,183.0 50.0,740.0" data-port-ref="INF.PWR_ENTRY::SGND" data-net-id="SGND" fill="none" />
+      <circle cx="50.0" cy="740.0" r="3.5" class="junction" data-net-id="SGND" />
+      <text x="54.0" y="734.0" class="net-label">SGND</text>
+    </g>
+  </g>
+  <g class="symbol-layer">
+    <g id="component-Z494E54312E434642" class="component active" transform="translate(1390.0 485.0) rotate(0)" data-component-id="INT1.CFB" data-module-id="MOD.INT1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C" data-rotation="0" data-mirror="false">
+      <title>INT1.CFB</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.OUT" data-open="false" data-global-x="1345.0" data-global-y="485.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.INV_IN" data-open="false" data-global-x="1435.0" data-global-y="485.0" />
+    </g>
+    <g id="component-Z494E54312E52494E" class="component active" transform="translate(1210.0 415.0) rotate(0)" data-component-id="INT1.RIN" data-module-id="MOD.INT1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INT1.RIN</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="INT1.IN" data-open="false" data-global-x="1165.0" data-global-y="415.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.INV_IN" data-open="false" data-global-x="1255.0" data-global-y="415.0" />
+    </g>
+    <g id="component-Z494E54312E524F5554" class="component active" transform="translate(1430.0 390.0) rotate(0)" data-component-id="INT1.ROUT" data-module-id="MOD.INT1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>INT1.ROUT</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.OUT" data-open="false" data-global-x="1385.0" data-global-y="390.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="INT1.JACK" data-open="false" data-global-x="1475.0" data-global-y="390.0" />
+    </g>
+    <g id="component-Z5730392E4C4F4144" class="component active" transform="translate(600.0 500.0) rotate(90)" data-component-id="W09.LOAD" data-module-id="W09.FIXTURE" data-state-class="configuration-only-fixture" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>W09.LOAD</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.OUT" data-open="false" data-global-x="600.0" data-global-y="455.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="600.0" data-global-y="545.0" />
+    </g>
+    <g id="component-Z5730392E4E4F4E494E565F47524F554E44" class="component active" transform="translate(650.0 590.0) rotate(90)" data-component-id="W09.NONINV_GROUND" data-module-id="W09.FIXTURE" data-state-class="configuration-only-fixture" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>W09.NONINV_GROUND</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.NONINV_IN" data-open="false" data-global-x="650.0" data-global-y="545.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="650.0" data-global-y="635.0" />
+    </g>
+  </g>
+  <g class="annotation-layer">
+    <circle cx="1085.0" cy="433.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1385.0" cy="433.0" r="4" class="crossing" data-connected="false" />
+    <text x="1358.0" y="437.0" class="designator active">CFB</text>
+    <text x="1365.0" y="543.0" class="value active">1u</text>
+    <text x="1178.0" y="367.0" class="designator active">RIN</text>
+    <text x="1185.0" y="473.0" class="value active">10k</text>
+    <text x="1398.0" y="342.0" class="designator active">ROUT</text>
+    <text x="1405.0" y="448.0" class="value active">100</text>
+    <text x="568.0" y="452.0" class="designator active">RL</text>
+    <text x="575.0" y="558.0" class="value active">10Meg</text>
+    <text x="618.0" y="542.0" class="designator active">NONINV→GND</text>
+  </g>
+  <g class="semantic-ledger">
+    <g class="component collapsed-member" data-component-id="AMP1.CC" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.COMP_A" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.COMP_B" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.CC::P" data-net-id="AMP1.COMP_A" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.CC::N" data-net-id="AMP1.COMP_B" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_BIAS_G" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BIAS_NEG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_BIAS_G::P" data-net-id="AMP1.N.BIAS_NEG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_BIAS_G::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_BIAS_N" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BIAS_NEG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_BIAS_N::P" data-net-id="AMP1.N.BIAS_NEG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_BIAS_N::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_Q45_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.Q45E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_Q45_E::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_Q45_E::N" data-net-id="AMP1.N.Q45E" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_Q4B_BYP" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_Q4B_BYP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_Q4B_BYP::N" data-net-id="AMP1.N.Q1C_Q4B" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_Q6_BYP" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.Q6B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_Q6_BYP::P" data-net-id="AMP1.N.Q6B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_Q6_BYP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_VN_BULK" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VN_BULK::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VN_BULK::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_VN_FAST" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VN_FAST::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VN_FAST::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_VP_BULK" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VP_BULK::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VP_BULK::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="AMP1.C_VP_FAST" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VP_FAST::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.C_VP_FAST::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="AMP1.D_BAL" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="AMP1.N.BAL_W" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_BAL::A" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_BAL::K" data-net-id="AMP1.N.BAL_W" />
+    <g class="component collapsed-member" data-component-id="AMP1.D_BIAS" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="AMP1.N.BIAS_DIODE_A" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_BIAS::A" data-net-id="AMP1.N.BIAS_DIODE_A" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_BIAS::K" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="AMP1.D_DRV_1" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="AMP1.COMP_B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="AMP1.N.DRV_DIODE_MID" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_DRV_1::A" data-net-id="AMP1.COMP_B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_DRV_1::K" data-net-id="AMP1.N.DRV_DIODE_MID" />
+    <g class="component collapsed-member" data-component-id="AMP1.D_DRV_2" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="AMP1.N.DRV_DIODE_MID" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_DRV_2::A" data-net-id="AMP1.N.DRV_DIODE_MID" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.D_DRV_2::K" data-net-id="AMP1.N.DRV_N_Q9C" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q1" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.INV_IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.TAIL" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q1::C" data-net-id="AMP1.N.Q1C_Q4B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q1::B" data-net-id="AMP1.INV_IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q1::E" data-net-id="AMP1.N.TAIL" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q10" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.COMP_B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.OUT_P_SENSE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q10::C" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q10::B" data-net-id="AMP1.COMP_B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q10::E" data-net-id="AMP1.N.OUT_P_SENSE" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q11" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.OUT_N_SENSE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q11::C" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q11::B" data-net-id="AMP1.N.DRV_N_Q9C" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q11::E" data-net-id="AMP1.N.OUT_N_SENSE" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q12" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.COMP_B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.OUT_P_SENSE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.OUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q12::C" data-net-id="AMP1.COMP_B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q12::B" data-net-id="AMP1.N.OUT_P_SENSE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q12::E" data-net-id="AMP1.OUT" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q13" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.OUT_N_SENSE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.OUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q13::C" data-net-id="AMP1.N.DRV_N_Q9C" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q13::B" data-net-id="AMP1.N.OUT_N_SENSE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q13::E" data-net-id="AMP1.OUT" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q2" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.COMP_A" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.NONINV_IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.TAIL" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q2::C" data-net-id="AMP1.COMP_A" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q2::B" data-net-id="AMP1.NONINV_IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q2::E" data-net-id="AMP1.N.TAIL" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q3" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.TAIL" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.BIAS_NEG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.Q3E_SERIES" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q3::C" data-net-id="AMP1.N.TAIL" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q3::B" data-net-id="AMP1.N.BIAS_NEG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q3::E" data-net-id="AMP1.N.Q3E_SERIES" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q4" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.Q45E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q4::C" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q4::B" data-net-id="AMP1.N.Q1C_Q4B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q4::E" data-net-id="AMP1.N.Q45E" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q5" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.Q5C_Q6E" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.COMP_A" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.Q45E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q5::C" data-net-id="AMP1.N.Q5C_Q6E" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q5::B" data-net-id="AMP1.COMP_A" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q5::E" data-net-id="AMP1.N.Q45E" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q6" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.HIGH_Z" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.Q6B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.Q5C_Q6E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q6::C" data-net-id="AMP1.N.HIGH_Z" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q6::B" data-net-id="AMP1.N.Q6B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q6::E" data-net-id="AMP1.N.Q5C_Q6E" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q7" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.HIGH_Z" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.BIAS_NEG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.Q7E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q7::C" data-net-id="AMP1.N.HIGH_Z" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q7::B" data-net-id="AMP1.N.BIAS_NEG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q7::E" data-net-id="AMP1.N.Q7E" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q8" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="jfet" data-model-id="MODEL.W09.NJF.I" data-model-reference="W09_NJF_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="D" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="G" data-net-id="AMP1.N.HIGH_Z" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="S" data-net-id="AMP1.COMP_B" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q8::D" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q8::G" data-net-id="AMP1.N.HIGH_Z" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q8::S" data-net-id="AMP1.COMP_B" />
+    <g class="component collapsed-member" data-component-id="AMP1.Q9" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="AMP1.N.BIAS_NEG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="AMP1.N.Q9E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q9::C" data-net-id="AMP1.N.DRV_N_Q9C" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q9::B" data-net-id="AMP1.N.BIAS_NEG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.Q9::E" data-net-id="AMP1.N.Q9E" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_BAL_L" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BAL_L" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.BAL_W" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_BAL_L::P" data-net-id="AMP1.N.BAL_L" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_BAL_L::N" data-net-id="AMP1.N.BAL_W" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_BAL_R" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BAL_W" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.BAL_R" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_BAL_R::P" data-net-id="AMP1.N.BAL_W" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_BAL_R::N" data-net-id="AMP1.N.BAL_R" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_BIAS_TC" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BIAS_NEG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.BIAS_DIODE_A" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_BIAS_TC::P" data-net-id="AMP1.N.BIAS_NEG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_BIAS_TC::N" data-net-id="AMP1.N.BIAS_DIODE_A" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_COL_L" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BAL_L" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_COL_L::P" data-net-id="AMP1.N.BAL_L" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_COL_L::N" data-net-id="AMP1.N.Q1C_Q4B" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_COL_R" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.BAL_R" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.COMP_A" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_COL_R::P" data-net-id="AMP1.N.BAL_R" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_COL_R::N" data-net-id="AMP1.COMP_A" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_OUT_N" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.OUT_N_SENSE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_OUT_N::P" data-net-id="AMP1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_OUT_N::N" data-net-id="AMP1.N.OUT_N_SENSE" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_OUT_P" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.OUT_P_SENSE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.OUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_OUT_P::P" data-net-id="AMP1.N.OUT_P_SENSE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_OUT_P::N" data-net-id="AMP1.OUT" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q3_180K" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.Q3E_MID" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q3_180K::P" data-net-id="AMP1.N.Q3E_MID" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q3_180K::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q3_5K6" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.Q3E_SERIES" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.Q3E_MID" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q3_5K6::P" data-net-id="AMP1.N.Q3E_SERIES" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q3_5K6::N" data-net-id="AMP1.N.Q3E_MID" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q45_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.Q45E" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q45_E::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q45_E::N" data-net-id="AMP1.N.Q45E" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q6_BG" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.Q6B" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q6_BG::P" data-net-id="AMP1.N.Q6B" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q6_BG::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q6_BP" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="AMP1.N.Q6B" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q6_BP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q6_BP::N" data-net-id="AMP1.N.Q6B" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q7_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.Q7E" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q7_E::P" data-net-id="AMP1.N.Q7E" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q7_E::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="AMP1.R_Q9_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="AMP1.N.Q9E" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q9_E::P" data-net-id="AMP1.N.Q9E" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="AMP1.R_Q9_E::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INT2" data-module-id="DEV.INT2" data-state-class="persistent-inactive" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="INT2.SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="INT2.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="INT2.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="INT2.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::INM" data-net-id="INT2.SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::OUT" data-net-id="INT2.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::COMPA" data-net-id="INT2.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT2::COMPB" data-net-id="INT2.COMPB" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INT3_OSC" data-module-id="DEV.INT3" data-state-class="persistent-inactive" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="OSC1.INT_SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="OSC1.TRIANGLE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="OSC1.INT_COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="OSC1.INT_COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::INM" data-net-id="OSC1.INT_SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::OUT" data-net-id="OSC1.TRIANGLE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::COMPA" data-net-id="OSC1.INT_COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC::COMPB" data-net-id="OSC1.INT_COMPB" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INT3_OSC.CC" data-module-id="DEV.INT3" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.INT_COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.INT_COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC.CC::P" data-net-id="OSC1.INT_COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC.CC::N" data-net-id="OSC1.INT_COMPB" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INT3_OSC.CN" data-module-id="DEV.INT3" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INT3_OSC.CP" data-module-id="DEV.INT3" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INT3_OSC.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="DEV.U_INV1" data-module-id="DEV.INV1" data-state-class="persistent-inactive" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="INV1.SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="INV1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="INV1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="INV1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::INM" data-net-id="INV1.SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::OUT" data-net-id="INV1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::COMPA" data-net-id="INV1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_INV1::COMPB" data-net-id="INV1.COMPB" />
+    <g class="component collapsed-member" data-component-id="DEV.U_SUM1" data-module-id="DEV.SUM1" data-state-class="persistent-inactive" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="SUM1.SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="SUM1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="SUM1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="SUM1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::INP" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::INM" data-net-id="SUM1.SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::OUT" data-net-id="SUM1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::COMPA" data-net-id="SUM1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="DEV.U_SUM1::COMPB" data-net-id="SUM1.COMPB" />
+    <g class="component collapsed-member" data-component-id="INF.CBN" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INF.CBP" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.CBP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INF.GND_TIE" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="PGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.GND_TIE::P" data-net-id="PGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.GND_TIE::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INF.VN15" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="PGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VN15::P" data-net-id="PGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VN15::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INF.VP15" data-module-id="INF.PWR_ENTRY" data-state-class="persistent-installed" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="PGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VP15::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INF.VP15::N" data-net-id="PGND" />
+    <g class="component collapsed-member" data-component-id="INT2.CC30" data-module-id="DEV.INT2" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INT2.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INT2.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CC30::P" data-net-id="INT2.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CC30::N" data-net-id="INT2.COMPB" />
+    <g class="component collapsed-member" data-component-id="INT2.CFB" data-module-id="MOD.INT2" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INT2.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INT2.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CFB::P" data-net-id="INT2.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CFB::N" data-net-id="INT2.SUM" />
+    <g class="component collapsed-member" data-component-id="INT2.CN" data-module-id="DEV.INT2" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INT2.CP" data-module-id="DEV.INT2" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INT2.RIN" data-module-id="MOD.INT2" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INT2.IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INT2.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.RIN::P" data-net-id="INT2.IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.RIN::N" data-net-id="INT2.SUM" />
+    <g class="component collapsed-member" data-component-id="INT2.ROUT" data-module-id="MOD.INT2" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INT2.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INT2.JACK" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.ROUT::P" data-net-id="INT2.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INT2.ROUT::N" data-net-id="INT2.JACK" />
+    <g class="component collapsed-member" data-component-id="INV1.CC30" data-module-id="DEV.INV1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INV1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INV1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CC30::P" data-net-id="INV1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CC30::N" data-net-id="INV1.COMPB" />
+    <g class="component collapsed-member" data-component-id="INV1.CN" data-module-id="DEV.INV1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="INV1.CP" data-module-id="DEV.INV1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="INV1.RFB" data-module-id="MOD.INV1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INV1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INV1.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.RFB::P" data-net-id="INV1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.RFB::N" data-net-id="INV1.SUM" />
+    <g class="component collapsed-member" data-component-id="INV1.RIN" data-module-id="MOD.INV1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INV1.IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INV1.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.RIN::P" data-net-id="INV1.IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.RIN::N" data-net-id="INV1.SUM" />
+    <g class="component collapsed-member" data-component-id="INV1.ROUT" data-module-id="MOD.INV1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="INV1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="INV1.JACK" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.ROUT::P" data-net-id="INV1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="INV1.ROUT::N" data-net-id="INV1.JACK" />
+    <g class="component collapsed-member" data-component-id="OSC1.C_INT" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.TRIANGLE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.INT_SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.C_INT::P" data-net-id="OSC1.TRIANGLE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.C_INT::N" data-net-id="OSC1.INT_SUM" />
+    <g class="component collapsed-member" data-component-id="OSC1.D_ZN" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="diode" data-model-id="MODEL.W05_06.Z5V1.I" data-model-reference="W0506_Z5V1">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="OSC1.ZMID" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.D_ZN::A" data-net-id="OSC1.ZMID" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.D_ZN::K" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="OSC1.D_ZP" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="diode" data-model-id="MODEL.W05_06.Z5V1.I" data-model-reference="W0506_Z5V1">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="OSC1.ZMID" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="OSC1.SQUARE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.D_ZP::A" data-net-id="OSC1.ZMID" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.D_ZP::K" data-net-id="OSC1.SQUARE" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_HYS" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.SQUARE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.SCHMITT_SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_HYS::P" data-net-id="OSC1.SQUARE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_HYS::N" data-net-id="OSC1.SCHMITT_SUM" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_INT" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.SQUARE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.INT_SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_INT::P" data-net-id="OSC1.SQUARE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_INT::N" data-net-id="OSC1.INT_SUM" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_LIMIT" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.RAW_SQUARE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.SQUARE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_LIMIT::P" data-net-id="OSC1.RAW_SQUARE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_LIMIT::N" data-net-id="OSC1.SQUARE" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_SCOPE_SQ" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.SQUARE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_SCOPE_SQ::P" data-net-id="OSC1.SQUARE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_SCOPE_SQ::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_SCOPE_TRI" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.TRIANGLE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_SCOPE_TRI::P" data-net-id="OSC1.TRIANGLE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_SCOPE_TRI::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_TRI" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.TRIANGLE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.SCHMITT_SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_TRI::P" data-net-id="OSC1.TRIANGLE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_TRI::N" data-net-id="OSC1.SCHMITT_SUM" />
+    <g class="component collapsed-member" data-component-id="OSC1.R_VC" data-module-id="OSC1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.VC" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_VC::P" data-net-id="OSC1.VC" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.R_VC::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="OSC1.U_SCHMITT" data-module-id="DEV.OSC1.SCHMITT" data-state-class="persistent-inactive" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="OSC1.SCHMITT_SUM" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="OSC1.RAW_SQUARE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="OSC1.SCH_COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="OSC1.SCH_COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::INP" data-net-id="OSC1.SCHMITT_SUM" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::INM" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::OUT" data-net-id="OSC1.RAW_SQUARE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::COMPA" data-net-id="OSC1.SCH_COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT::COMPB" data-net-id="OSC1.SCH_COMPB" />
+    <g class="component collapsed-member" data-component-id="OSC1.U_SCHMITT.CC" data-module-id="DEV.OSC1.SCHMITT" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="OSC1.SCH_COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="OSC1.SCH_COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT.CC::P" data-net-id="OSC1.SCH_COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT.CC::N" data-net-id="OSC1.SCH_COMPB" />
+    <g class="component collapsed-member" data-component-id="OSC1.U_SCHMITT.CN" data-module-id="DEV.OSC1.SCHMITT" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="OSC1.U_SCHMITT.CP" data-module-id="DEV.OSC1.SCHMITT" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="OSC1.U_SCHMITT.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.CC" data-module-id="DEV.REG1.ERR" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="REG1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.CC::P" data-net-id="REG1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.CC::N" data-net-id="REG1.COMPB" />
+    <g class="component collapsed-member" data-component-id="REG1.CN" data-module-id="DEV.REG1.ERR" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="REG1.CP" data-module-id="DEV.REG1.ERR" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.C_LOAD" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.CLOAD_N" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.C_LOAD::P" data-net-id="REG1.CLOAD_N" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.C_LOAD::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.C_REF" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VREF" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.C_REF::P" data-net-id="REG1.VREF" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.C_REF::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.D_DISCH" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="diode" data-model-id="MODEL.W05_06.RECT.I" data-model-reference="W0506_RECT">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="REG1.VUNREG" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.D_DISCH::A" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.D_DISCH::K" data-net-id="REG1.VUNREG" />
+    <g class="component collapsed-member" data-component-id="REG1.D_REF" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="diode" data-model-id="MODEL.W05_06.Z10.I" data-model-reference="W0506_Z10">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="A" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="K" data-net-id="REG1.VREF" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.D_REF::A" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.D_REF::K" data-net-id="REG1.VREF" />
+    <g class="component collapsed-member" data-component-id="REG1.I_DIST" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="current_source" data-model-id="MODEL.W05_06.I.I" data-model-reference="I">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.I_DIST::P" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.I_DIST::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.Q_PASS" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="bjt" data-model-id="MODEL.W05_06.NPN.I" data-model-reference="W0506_NPN_BASE">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="C" data-net-id="REG1.VUNREG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="B" data-net-id="REG1.QBASE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="E" data-net-id="REG1.QEMIT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.Q_PASS::C" data-net-id="REG1.VUNREG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.Q_PASS::B" data-net-id="REG1.QBASE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.Q_PASS::E" data-net-id="REG1.QEMIT" />
+    <g class="component collapsed-member" data-component-id="REG1.R_BASE" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.ERR_OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="REG1.QBASE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_BASE::P" data-net-id="REG1.ERR_OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_BASE::N" data-net-id="REG1.QBASE" />
+    <g class="component collapsed-member" data-component-id="REG1.R_BLEED" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_BLEED::P" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_BLEED::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.R_EMIT" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.QEMIT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="REG1.VOUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_EMIT::P" data-net-id="REG1.QEMIT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_EMIT::N" data-net-id="REG1.VOUT" />
+    <g class="component collapsed-member" data-component-id="REG1.R_ESR" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="REG1.CLOAD_N" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_ESR::P" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_ESR::N" data-net-id="REG1.CLOAD_N" />
+    <g class="component collapsed-member" data-component-id="REG1.R_LOAD" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_LOAD::P" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_LOAD::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.R_REF" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="REG1.VREF" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_REF::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_REF::N" data-net-id="REG1.VREF" />
+    <g class="component collapsed-member" data-component-id="REG1.R_SCOPE" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_SCOPE::P" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.R_SCOPE::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="REG1.U_ERR" data-module-id="DEV.REG1.ERR" data-state-class="persistent-inactive" data-kind="opamp" data-model-id="MODEL.W00_04.OPAMP.I" data-model-reference="W00_04_IDEAL_OPAMP">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INP" data-net-id="REG1.VREF" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="INM" data-net-id="REG1.SENSE" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="REG1.ERR_OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPA" data-net-id="REG1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="COMPB" data-net-id="REG1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::INP" data-net-id="REG1.VREF" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::INM" data-net-id="REG1.SENSE" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::OUT" data-net-id="REG1.ERR_OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::COMPA" data-net-id="REG1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.U_ERR::COMPB" data-net-id="REG1.COMPB" />
+    <g class="component collapsed-member" data-component-id="REG1.V_LOOP_INJ" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VOUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="REG1.SENSE" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.V_LOOP_INJ::P" data-net-id="REG1.VOUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.V_LOOP_INJ::N" data-net-id="REG1.SENSE" />
+    <g class="component collapsed-member" data-component-id="REG1.V_UNREG" data-module-id="REG1" data-state-class="persistent-inactive" data-kind="voltage_source" data-model-id="MODEL.W00_04.V.I" data-model-reference="V">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="REG1.VUNREG" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.V_UNREG::P" data-net-id="REG1.VUNREG" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="REG1.V_UNREG::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="SLOT.INT2.MARKER" data-module-id="MOD.SOCKETS" data-state-class="persistent-inactive" data-kind="module_placeholder" data-model-id="MODEL.W00_04.SOCKET.I" data-model-reference="W00_04_EMPTY_SOCKET">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VP" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="VN" data-net-id="N15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="GND" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="IN" data-net-id="SLOT.INT2.IN" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="OUT" data-net-id="SLOT.INT2.OUT" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::VP" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::VN" data-net-id="N15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::GND" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::IN" data-net-id="SLOT.INT2.IN" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SLOT.INT2.MARKER::OUT" data-net-id="SLOT.INT2.OUT" />
+    <g class="component collapsed-member" data-component-id="SUM1.CC30" data-module-id="DEV.SUM1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.COMPA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.COMPB" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CC30::P" data-net-id="SUM1.COMPA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CC30::N" data-net-id="SUM1.COMPB" />
+    <g class="component collapsed-member" data-component-id="SUM1.CN" data-module-id="DEV.SUM1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SGND" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="N15" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CN::P" data-net-id="SGND" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CN::N" data-net-id="N15" />
+    <g class="component collapsed-member" data-component-id="SUM1.CP" data-module-id="DEV.SUM1" data-state-class="persistent-inactive" data-kind="capacitor" data-model-id="MODEL.W00_04.C.I" data-model-reference="C">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="P15" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SGND" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CP::P" data-net-id="P15" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.CP::N" data-net-id="SGND" />
+    <g class="component collapsed-member" data-component-id="SUM1.RFB" data-module-id="MOD.SUM1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RFB::P" data-net-id="SUM1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RFB::N" data-net-id="SUM1.SUM" />
+    <g class="component collapsed-member" data-component-id="SUM1.RIN_A" data-module-id="MOD.SUM1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.INA" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RIN_A::P" data-net-id="SUM1.INA" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RIN_A::N" data-net-id="SUM1.SUM" />
+    <g class="component collapsed-member" data-component-id="SUM1.RIN_B" data-module-id="MOD.SUM1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.INB" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RIN_B::P" data-net-id="SUM1.INB" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RIN_B::N" data-net-id="SUM1.SUM" />
+    <g class="component collapsed-member" data-component-id="SUM1.RIN_C" data-module-id="MOD.SUM1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.INC" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.SUM" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RIN_C::P" data-net-id="SUM1.INC" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.RIN_C::N" data-net-id="SUM1.SUM" />
+    <g class="component collapsed-member" data-component-id="SUM1.ROUT" data-module-id="MOD.SUM1" data-state-class="persistent-inactive" data-kind="resistor" data-model-id="MODEL.W00_04.R.I" data-model-reference="R">
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="P" data-net-id="SUM1.OUT" data-open="false" />
+      <circle class="terminal" cx="0" cy="0" r="0" data-pin-id="N" data-net-id="SUM1.JACK" data-open="false" />
+    </g>
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.ROUT::P" data-net-id="SUM1.OUT" />
+    <polyline class="wire" points="0,0 1,0" data-terminal-ref="SUM1.ROUT::N" data-net-id="SUM1.JACK" />
+  </g>
+</svg>

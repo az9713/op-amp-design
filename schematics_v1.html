@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roberge one-box — schematics</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--book);
+      color: var(--slate);
+      padding-bottom: 48px;
+    }
+    .deck {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    @media (min-width: 900px) {
+      .deck { padding: 0 48px 64px; }
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0 8px;
+    }
+    .top img { width: 22px; height: 22px; }
+    .top .eyebrow { margin: 0; }
+    h1.display {
+      margin: 8px 0 12px;
+      font-size: clamp(32px, 6vw, 48px);
+    }
+    .lede { margin: 0 0 16px; max-width: 40rem; }
+    .rules {
+      margin: 0 0 24px;
+      padding: 12px 16px;
+      background: var(--bg-elev);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      max-width: 40rem;
+    }
+    .rules ol {
+      margin: 8px 0 0;
+      padding-left: 1.2rem;
+    }
+    .rules li { margin: 0 0 4px; }
+    nav.jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 32px;
+    }
+    nav.jump a {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      padding: 6px 10px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
+      background: var(--bg-elev);
+      text-decoration: none;
+      color: var(--fg);
+    }
+    nav.jump a:hover { color: var(--accent-hover); }
+    h2 { margin: 48px 0 8px; }
+    .week-lead {
+      margin: 0 0 16px;
+      color: var(--fg-muted);
+      max-width: 40rem;
+    }
+    .card {
+      background: var(--bg-elev);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      padding: 16px 16px 12px;
+      margin: 0 0 16px;
+    }
+    .card h3 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 20px;
+      margin: 0 0 4px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--crail-deep);
+      margin: 0 0 12px;
+    }
+    .note {
+      font-size: 14px;
+      color: var(--fg-muted);
+      margin: 10px 0 0;
+    }
+    svg.sch {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+      border-radius: var(--r-xs);
+      border: 1px solid var(--hairline);
+    }
+    .back { font-family: var(--font-sans); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="oa" fill="#fff" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter">
+        <polygon points="0,-40 0,40 74,0"/>
+      </g>
+      <g id="res" fill="#fff" stroke="#1F1E1D" stroke-width="1.8">
+        <rect x="-20" y="-8" width="40" height="16" rx="1.2"/>
+      </g>
+      <g id="resv" fill="#fff" stroke="#1F1E1D" stroke-width="1.8">
+        <rect x="-8" y="-20" width="16" height="40" rx="1.2"/>
+      </g>
+      <g id="cap" fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linecap="butt">
+        <line x1="-5" y1="-12" x2="-5" y2="12"/>
+        <line x1="5" y1="-12" x2="5" y2="12"/>
+      </g>
+      <g id="capv" fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linecap="butt">
+        <line x1="-12" y1="-5" x2="12" y2="-5"/>
+        <line x1="-12" y1="5" x2="12" y2="5"/>
+      </g>
+      <g id="gnd" fill="#1F1E1D" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter">
+        <line x1="0" y1="0" x2="0" y2="14"/>
+        <polygon points="-6.5,14 6.5,14 0,26"/>
+      </g>
+      <g id="dot" fill="#1F1E1D" stroke="none">
+        <circle cx="0" cy="0" r="2.8"/>
+      </g>
+      <g id="varr" fill="#1F1E1D" stroke="#1F1E1D" stroke-width="1.5" stroke-linejoin="miter">
+        <line x1="0" y1="10" x2="0" y2="-16"/>
+        <polygon points="-4,-10 4,-10 0,-18"/>
+      </g>
+      <g id="diode" fill="#fff" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter">
+        <polygon points="0,-8 0,8 14,0"/>
+        <line x1="14" y1="-8" x2="14" y2="8"/>
+      </g>
+      <g id="npn" fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter">
+        <line x1="0" y1="0" x2="16" y2="0"/>
+        <line x1="16" y1="-13" x2="16" y2="13" stroke-width="2.6"/>
+        <line x1="16" y1="-10" x2="16" y2="-36"/>
+        <line x1="16" y1="10" x2="16" y2="36"/>
+        <polygon points="12,22 20,22 16,31" fill="#1F1E1D" stroke="none"/>
+      </g>
+      <g id="pnp" fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter">
+        <line x1="0" y1="0" x2="16" y2="0"/>
+        <line x1="16" y1="-13" x2="16" y2="13" stroke-width="2.6"/>
+        <line x1="16" y1="-36" x2="16" y2="-10"/>
+        <line x1="16" y1="10" x2="16" y2="36"/>
+        <polygon points="12,-22 20,-22 16,-13" fill="#1F1E1D" stroke="none"/>
+      </g>
+      <g id="npnr" fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter">
+        <line x1="0" y1="0" x2="-16" y2="0"/>
+        <line x1="-16" y1="-13" x2="-16" y2="13" stroke-width="2.6"/>
+        <line x1="-16" y1="-10" x2="-16" y2="-36"/>
+        <line x1="-16" y1="10" x2="-16" y2="36"/>
+        <polygon points="-20,22 -12,22 -16,31" fill="#1F1E1D" stroke="none"/>
+      </g>
+      <g id="sw" fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linecap="round">
+        <line x1="-14" y1="0" x2="-2" y2="0"/>
+        <circle cx="-2" cy="0" r="2.2" fill="#fff"/>
+        <line x1="-2" y1="0" x2="10" y2="-10"/>
+        <circle cx="14" cy="0" r="2.2" fill="#fff"/>
+        <line x1="16" y1="0" x2="14" y2="0"/>
+      </g>
+    </defs>
+  </svg>
+
+  <div class="deck">
+    <header>
+      <div class="top">
+        <img src="design-system/anthropic-mark.svg" alt="">
+        <p class="eyebrow">Visual guide · one chassis</p>
+      </div>
+      <h1 class="display">Schematics for the box</h1>
+      <p class="lede">Textbook topologies, drawn the way Arrow draws them. Every wire ends on a pin. IEC boxes. Feedback over the top.</p>
+      <div class="rules">
+        <p class="tag" style="margin:0">How to read one of these</p>
+        <ol>
+          <li>Input hits a box, then the − (or +) stub. It never dives into the triangle.</li>
+          <li>Feedback leaves the output, goes over the top, and T-joins the input wire <em>before</em> the pin.</li>
+          <li>+ to ground is a short stub and a down-arrow, same as the Arrow page.</li>
+        </ol>
+      </div>
+      <p class="back"><a href="capstone.html">Back to the build log</a></p>
+    </header>
+
+    <nav class="jump">
+      <a href="#w1">Week 1</a>
+      <a href="#w2">Week 2</a>
+      <a href="#w4">Week 4</a>
+      <a href="#w5">Week 5</a>
+      <a href="#w6">Week 6</a>
+      <a href="#w7">Week 7</a>
+      <a href="#w8">Week 8</a>
+      <a href="#w10">Week 10</a>
+      <a href="#w11">Week 11</a>
+      <a href="#w12">Week 12</a>
+      <a href="#w13">Week 13</a>
+    </nav>
+
+    <!-- ═══════════════ WEEK 1 ═══════════════ -->
+    <h2 id="w1">Week 1 — computing core</h2>
+    <p class="week-lead">Three IC blocks stay on the chassis. Empty sockets for integrators 2 and 3.</p>
+
+    <article class="card">
+      <h3>Inverter — socket INV</h3>
+      <p class="tag">Figure 1.2a · §1.2.1 · week 1</p>
+      <svg class="sch" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 1.2a inverting amplifier">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="300" y="120"/>
+          <line x1="56" y1="104" x2="90" y2="104"/>
+          <use href="#res" x="110" y="104"/>
+          <line x1="130" y1="104" x2="300" y2="104"/>
+          <use href="#dot" x="210" y="104"/>
+          <line x1="210" y1="104" x2="210" y2="48"/>
+          <line x1="210" y1="48" x2="250" y2="48"/>
+          <use href="#res" x="270" y="48"/>
+          <line x1="290" y1="48" x2="400" y2="48"/>
+          <line x1="400" y1="48" x2="400" y2="120"/>
+          <use href="#dot" x="400" y="120"/>
+          <line x1="374" y1="120" x2="490" y2="120"/>
+          <line x1="284" y1="136" x2="300" y2="136"/>
+          <use href="#gnd" x="284" y="136"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="48" y="104"/>
+          <text x="22" y="108" font-size="13">Vi</text>
+          <text x="100" y="90" font-size="13">Z1</text>
+          <text x="258" y="34" font-size="13">Z2</text>
+          <text x="312" y="112" font-size="16">−</text>
+          <text x="312" y="144" font-size="16">+</text>
+          <text x="338" y="124" font-size="12">a</text>
+          <use href="#varr" x="508" y="120"/>
+          <text x="518" y="124" font-size="13">Vo</text>
+          <text x="518" y="140" font-size="11" fill="#BD5D3A">jack INV</text>
+          <text x="16" y="28" font-size="12" fill="#BD5D3A">Ideal: Vo/Vi = −Z2/Z1</text>
+        </g>
+      </svg>
+      <p class="note">Build first with Z1 = Z2 = 10 kΩ (gain −1). This IC stays. Later it is the analog-computer sign inverter.</p>
+    </article>
+
+    <article class="card">
+      <h3>Weighted summer — socket SUM</h3>
+      <p class="tag">Figure 1.4 · §1.2.3 · week 1</p>
+      <svg class="sch" viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 1.4 summing amplifier">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="320" y="150"/>
+          <line x1="40" y1="50" x2="80" y2="50"/>
+          <use href="#res" x="100" y="50"/>
+          <line x1="120" y1="50" x2="200" y2="50"/>
+          <line x1="40" y1="100" x2="80" y2="100"/>
+          <use href="#res" x="100" y="100"/>
+          <line x1="120" y1="100" x2="200" y2="100"/>
+          <line x1="40" y1="134" x2="80" y2="134"/>
+          <use href="#res" x="100" y="134"/>
+          <line x1="120" y1="134" x2="200" y2="134"/>
+          <line x1="200" y1="50" x2="200" y2="134"/>
+          <use href="#dot" x="200" y="50"/>
+          <use href="#dot" x="200" y="100"/>
+          <use href="#dot" x="200" y="134"/>
+          <line x1="200" y1="134" x2="320" y2="134"/>
+          <line x1="200" y1="50" x2="200" y2="36"/>
+          <line x1="200" y1="36" x2="260" y2="36"/>
+          <use href="#res" x="280" y="36"/>
+          <line x1="300" y1="36" x2="420" y2="36"/>
+          <line x1="420" y1="36" x2="420" y2="150"/>
+          <use href="#dot" x="420" y="150"/>
+          <line x1="394" y1="150" x2="510" y2="150"/>
+          <line x1="304" y1="166" x2="320" y2="166"/>
+          <use href="#gnd" x="304" y="166"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="32" y="50"/>
+          <text x="4" y="46" font-size="12">ViN</text>
+          <text x="88" y="36" font-size="12">ZiN</text>
+          <use href="#varr" x="32" y="100"/>
+          <text x="4" y="96" font-size="12">Vi2</text>
+          <text x="88" y="86" font-size="12">Zi2</text>
+          <use href="#varr" x="32" y="134"/>
+          <text x="4" y="130" font-size="12">Vi1</text>
+          <text x="88" y="120" font-size="12">Zi1</text>
+          <text x="268" y="22" font-size="13">Zf</text>
+          <text x="332" y="142" font-size="16">−</text>
+          <text x="332" y="174" font-size="16">+</text>
+          <use href="#varr" x="528" y="150"/>
+          <text x="538" y="154" font-size="13">Vo</text>
+          <text x="538" y="170" font-size="11" fill="#BD5D3A">jack SUM</text>
+          <text x="16" y="270" font-size="12" fill="#BD5D3A">Ideal: Vo = −(Zf/Zi1)Vi1 − (Zf/Zi2)Vi2 − …</text>
+        </g>
+      </svg>
+      <p class="note">Start with two inputs, Zi1 = Zi2 = Zf = 10 kΩ. Banana jacks on Vi1, Vi2, Vo — this is the patchbay node.</p>
+    </article>
+
+    <article class="card">
+      <h3>Inverting integrator — socket INT1</h3>
+      <p class="tag">Figure 1.2a with Z1 = R, Z2 = C · §1.2.3 · week 1</p>
+      <svg class="sch" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" aria-label="Inverting integrator">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="300" y="120"/>
+          <line x1="56" y1="104" x2="90" y2="104"/>
+          <use href="#res" x="110" y="104"/>
+          <line x1="130" y1="104" x2="300" y2="104"/>
+          <use href="#dot" x="210" y="104"/>
+          <line x1="210" y1="104" x2="210" y2="48"/>
+          <line x1="210" y1="48" x2="265" y2="48"/>
+          <use href="#cap" x="275" y="48"/>
+          <line x1="285" y1="48" x2="400" y2="48"/>
+          <line x1="400" y1="48" x2="400" y2="120"/>
+          <use href="#dot" x="400" y="120"/>
+          <line x1="374" y1="120" x2="490" y2="120"/>
+          <line x1="284" y1="136" x2="300" y2="136"/>
+          <use href="#gnd" x="284" y="136"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="48" y="104"/>
+          <text x="22" y="108" font-size="13">Vi</text>
+          <text x="102" y="90" font-size="13">R</text>
+          <text x="268" y="34" font-size="13">C</text>
+          <text x="312" y="112" font-size="16">−</text>
+          <text x="312" y="144" font-size="16">+</text>
+          <use href="#varr" x="508" y="120"/>
+          <text x="518" y="124" font-size="13">Vo</text>
+          <text x="518" y="140" font-size="11" fill="#BD5D3A">jack INT1</text>
+          <text x="16" y="28" font-size="12" fill="#BD5D3A">Ideal: Vo/Vi = −1/(RCs) · leave two more identical sockets empty</text>
+        </g>
+      </svg>
+      <p class="note">Suggested start: R = 100 kΩ, C = 1 µF so RC = 0.1 s. This IC is the one you pull in week 7.</p>
+    </article>
+
+    <!-- ═══════════════ WEEK 2 ═══════════════ -->
+    <h2 id="w2">Week 2 — close ẋ = −x on those blocks</h2>
+    <p class="week-lead">No new amplifiers. Patch INV or SUM with INT1.</p>
+    <article class="card">
+      <h3>First-order computer</h3>
+      <p class="tag">§1.2.3 + §2.4.1 · uses Figure 1.2a and the integrator</p>
+      <svg class="sch" viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-label="First order analog computer loop">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="180" y="150"/>
+          <line x1="40" y1="134" x2="70" y2="134"/>
+          <use href="#res" x="90" y="134"/>
+          <line x1="110" y1="134" x2="180" y2="134"/>
+          <use href="#dot" x="140" y="134"/>
+          <line x1="140" y1="134" x2="140" y2="78"/>
+          <line x1="140" y1="78" x2="185" y2="78"/>
+          <use href="#cap" x="195" y="78"/>
+          <line x1="205" y1="78" x2="280" y2="78"/>
+          <line x1="280" y1="78" x2="280" y2="150"/>
+          <use href="#dot" x="280" y="150"/>
+          <line x1="254" y1="150" x2="340" y2="150"/>
+          <line x1="164" y1="166" x2="180" y2="166"/>
+          <use href="#gnd" x="164" y="166"/>
+
+          <use href="#oa" x="460" y="150"/>
+          <line x1="340" y1="150" x2="370" y2="150"/>
+          <line x1="370" y1="150" x2="370" y2="134"/>
+          <line x1="370" y1="134" x2="390" y2="134"/>
+          <use href="#res" x="410" y="134"/>
+          <line x1="430" y1="134" x2="460" y2="134"/>
+          <use href="#dot" x="440" y="134"/>
+          <line x1="440" y1="134" x2="440" y2="78"/>
+          <line x1="440" y1="78" x2="470" y2="78"/>
+          <use href="#res" x="490" y="78"/>
+          <line x1="510" y1="78" x2="560" y2="78"/>
+          <line x1="560" y1="78" x2="560" y2="150"/>
+          <use href="#dot" x="560" y="150"/>
+          <line x1="534" y1="150" x2="620" y2="150"/>
+          <line x1="444" y1="166" x2="460" y2="166"/>
+          <use href="#gnd" x="444" y="166"/>
+
+          <line x1="620" y1="150" x2="640" y2="150"/>
+          <line x1="640" y1="150" x2="640" y2="36"/>
+          <line x1="640" y1="36" x2="40" y2="36"/>
+          <line x1="40" y1="36" x2="40" y2="134"/>
+          <use href="#dot" x="40" y="134"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="168" y="64" font-size="12" fill="#BD5D3A">INT1</text>
+          <text x="454" y="64" font-size="12" fill="#BD5D3A">INV  gain −1</text>
+          <text x="82" y="120" font-size="12">R</text>
+          <text x="190" y="64" font-size="12">C</text>
+          <text x="400" y="120" font-size="12">Z1</text>
+          <text x="478" y="64" font-size="12">Z2</text>
+          <text x="192" y="142" font-size="15">−</text>
+          <text x="192" y="174" font-size="15">+</text>
+          <text x="472" y="142" font-size="15">−</text>
+          <text x="472" y="174" font-size="15">+</text>
+          <text x="288" y="144" font-size="12">ẋ</text>
+          <text x="628" y="144" font-size="12">x</text>
+          <text x="200" y="28" font-size="12" fill="#BD5D3A">patch cord · do not solder this loop</text>
+        </g>
+      </svg>
+      <p class="note">INT1 input is x. Its output is ẋ = −x/RC. INV turns ẋ into x when RC is scaled to 1. Measure the time constant. It must be RC, not a property of a.</p>
+    </article>
+
+    <!-- ═══════════════ WEEK 4 ═══════════════ -->
+    <h2 id="w4">Week 4 — add integrator 2</h2>
+    <p class="week-lead">Second-order loop on the same jacks. Week 3 is measurements on week 2, no new drawing.</p>
+    <article class="card">
+      <h3>Two-integrator loop</h3>
+      <p class="tag">§4.4.2 · sockets INT1, INT2, SUM or INV</p>
+      <svg class="sch" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" aria-label="Two integrator analog computer">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="140" y="150"/>
+          <line x1="24" y1="134" x2="50" y2="134"/>
+          <use href="#res" x="70" y="134"/>
+          <line x1="90" y1="134" x2="140" y2="134"/>
+          <use href="#dot" x="110" y="134"/>
+          <line x1="110" y1="134" x2="110" y="78"/>
+          <line x1="110" y1="78" x2="130" y2="78"/>
+          <use href="#res" x="150" y="78"/>
+          <line x1="170" y1="78" x2="230" y2="78"/>
+          <line x1="230" y1="78" x2="230" y2="150"/>
+          <use href="#dot" x="230" y="150"/>
+          <line x1="214" y1="150" x2="270" y2="150"/>
+          <line x1="124" y1="166" x2="140" y2="166"/>
+          <use href="#gnd" x="124" y="166"/>
+
+          <use href="#oa" x="370" y="150"/>
+          <line x1="270" y1="150" x2="300" y2="150"/>
+          <line x1="300" y1="150" x2="300" y2="134"/>
+          <line x1="300" y1="134" x2="320" y2="134"/>
+          <use href="#res" x="340" y="134"/>
+          <line x1="360" y1="134" x2="370" y2="134"/>
+          <use href="#dot" x="360" y="134"/>
+          <line x1="360" y1="134" x2="360" y2="78"/>
+          <line x1="360" y1="78" x2="385" y2="78"/>
+          <use href="#cap" x="395" y="78"/>
+          <line x1="405" y1="78" x2="460" y2="78"/>
+          <line x1="460" y1="78" x2="460" y2="150"/>
+          <use href="#dot" x="460" y="150"/>
+          <line x1="444" y1="150" x2="500" y2="150"/>
+          <line x1="354" y1="166" x2="370" y2="166"/>
+          <use href="#gnd" x="354" y="166"/>
+
+          <use href="#oa" x="600" y="150"/>
+          <line x1="500" y1="150" x2="530" y2="150"/>
+          <line x1="530" y1="150" x2="530" y2="134"/>
+          <line x1="530" y1="134" x2="550" y2="134"/>
+          <use href="#res" x="570" y="134"/>
+          <line x1="590" y1="134" x2="600" y2="134"/>
+          <use href="#dot" x="590" y="134"/>
+          <line x1="590" y1="134" x2="590" y2="78"/>
+          <line x1="590" y1="78" x2="615" y2="78"/>
+          <use href="#cap" x="625" y="78"/>
+          <line x1="635" y1="78" x2="690" y2="78"/>
+          <line x1="690" y1="78" x2="690" y2="150"/>
+          <use href="#dot" x="690" y="150"/>
+          <line x1="674" y1="150" x2="730" y2="150"/>
+          <line x1="584" y1="166" x2="600" y2="166"/>
+          <use href="#gnd" x="584" y="166"/>
+
+          <line x1="730" y1="150" x2="744" y2="150"/>
+          <line x1="744" y1="150" x2="744" y2="28"/>
+          <line x1="744" y1="28" x2="24" y2="28"/>
+          <line x1="24" y1="28" x2="24" y2="134"/>
+          <use href="#dot" x="24" y="134"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="128" y="62" font-size="12" fill="#BD5D3A">SUM → ẍ</text>
+          <text x="358" y="62" font-size="12" fill="#BD5D3A">INT1 → ẋ</text>
+          <text x="588" y="62" font-size="12" fill="#BD5D3A">INT2 → x</text>
+          <text x="152" y="142" font-size="15">−</text>
+          <text x="152" y="174" font-size="15">+</text>
+          <text x="382" y="142" font-size="15">−</text>
+          <text x="382" y="174" font-size="15">+</text>
+          <text x="612" y="142" font-size="15">−</text>
+          <text x="612" y="174" font-size="15">+</text>
+          <text x="236" y="144" font-size="12">ẍ</text>
+          <text x="466" y="144" font-size="12">ẋ</text>
+          <text x="710" y="144" font-size="12">x</text>
+          <text x="180" y="20" font-size="12" fill="#BD5D3A">feedback gains = ODE coefficients · find the gain that sits on jω</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- ═══════════════ WEEK 5 ═══════════════ -->
+    <h2 id="w5">Week 5 — plant on the same chassis</h2>
+    <p class="week-lead">Figure 5.3 lives on the unused end of the board. Not patched to the computer until week 12.</p>
+    <article class="card">
+      <h3>Voltage regulator — the physical plant</h3>
+      <p class="tag">Figure 5.3a · §5.2.2</p>
+      <svg class="sch" viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 5.3 voltage regulator">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="180" y="130"/>
+          <line x1="40" y1="146" x2="164" y2="146"/>
+          <line x1="164" y1="146" x2="180" y2="146"/>
+          <line x1="164" y1="114" x2="180" y2="114"/>
+          <line x1="254" y1="130" x2="320" y2="130"/>
+          <use href="#npn" x="320" y="130"/>
+          <line x1="336" y1="94" x2="336" y2="50"/>
+          <line x1="336" y1="50" x2="520" y2="50"/>
+          <line x1="336" y1="166" x2="336" y2="190"/>
+          <use href="#resv" x="336" y="210"/>
+          <line x1="336" y1="230" x2="336" y2="250"/>
+          <use href="#dot" x="336" y="250"/>
+          <line x1="336" y1="250" x2="500" y2="250"/>
+          <line x1="400" y1="250" x2="400" y2="270"/>
+          <use href="#resv" x="400" y="290"/>
+          <use href="#gnd" x="400" y="310"/>
+          <line x1="460" y1="250" x2="460" y2="268"/>
+          <use href="#capv" x="460" y="278"/>
+          <line x1="460" y1="288" x2="460" y2="310"/>
+          <use href="#gnd" x="460" y="310"/>
+          <line x1="500" y1="250" x2="500" y2="270"/>
+          <circle cx="500" cy="286" r="12"/>
+          <circle cx="500" cy="286" r="7"/>
+          <line x1="500" y1="280" x2="500" y2="294"/>
+          <polygon points="497,290 503,290 500,296" fill="#1F1E1D" stroke="none"/>
+          <line x1="500" y1="298" x2="500" y2="310"/>
+          <use href="#gnd" x="500" y="310"/>
+          <use href="#dot" x="500" y="250"/>
+          <line x1="80" y1="114" x2="164" y2="114"/>
+          <line x1="80" y1="114" x2="80" y2="250"/>
+          <line x1="80" y1="250" x2="336" y2="250"/>
+          <use href="#dot" x="80" y="114"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="32" y="146"/>
+          <text x="8" y="142" font-size="13">VR</text>
+          <text x="192" y="122" font-size="16">−</text>
+          <text x="192" y="154" font-size="16">+</text>
+          <text x="216" y="134" font-size="12">ao</text>
+          <text x="300" y="122" font-size="12">NPN</text>
+          <text x="528" y="54" font-size="13">Vu</text>
+          <text x="528" y="70" font-size="11" fill="#BD5D3A">unregulated</text>
+          <text x="348" y="214" font-size="12">R</text>
+          <text x="348" y="246" font-size="13">Vl</text>
+          <text x="348" y="262" font-size="11" fill="#BD5D3A">jack PLANT</text>
+          <text x="384" y="294" font-size="12">RL</text>
+          <text x="470" y="282" font-size="12">CL</text>
+          <text x="518" y="290" font-size="12">Id</text>
+          <text x="88" y="200" font-size="11" fill="#BD5D3A">sense to −</text>
+        </g>
+      </svg>
+      <p class="note">Series pass as drawn in Figure 5.3a. Emitter resistor R is the 1/R block. Load is RL || CL. Id is a test current sink for load-step experiments, not a permanent part.</p>
+    </article>
+
+    <!-- ═══════════════ WEEK 6 ═══════════════ -->
+    <h2 id="w6">Week 6 — test oscillator on the patchbay</h2>
+    <article class="card">
+      <h3>Schmitt trigger</h3>
+      <p class="tag">Figure 12.7a · §12.2.1</p>
+      <svg class="sch" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 12.7 Schmitt trigger">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="300" y="120"/>
+          <line x1="56" y1="136" x2="90" y2="136"/>
+          <use href="#res" x="110" y="136"/>
+          <line x1="130" y1="136" x2="300" y2="136"/>
+          <use href="#dot" x="210" y="136"/>
+          <line x1="210" y1="136" x2="210" y2="48"/>
+          <line x1="210" y1="48" x2="250" y2="48"/>
+          <use href="#res" x="270" y="48"/>
+          <line x1="290" y1="48" x2="400" y2="48"/>
+          <line x1="400" y1="48" x2="400" y2="120"/>
+          <use href="#dot" x="400" y="120"/>
+          <line x1="374" y1="120" x2="490" y2="120"/>
+          <line x1="284" y1="104" x2="300" y2="104"/>
+          <use href="#gnd" x="284" y="104"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="48" y="136"/>
+          <text x="20" y="140" font-size="13">vI</text>
+          <text x="100" y="122" font-size="13">R1</text>
+          <text x="258" y="34" font-size="13">R2</text>
+          <text x="312" y="112" font-size="16">−</text>
+          <text x="312" y="144" font-size="16">+</text>
+          <use href="#varr" x="508" y="120"/>
+          <text x="518" y="124" font-size="13">vo</text>
+          <text x="518" y="140" font-size="11" fill="#BD5D3A">±VM · jack OSC_SQ</text>
+          <text x="16" y="220" font-size="12" fill="#BD5D3A">Thresholds ±(R1/R2)VM · this is positive feedback to +</text>
+        </g>
+      </svg>
+    </article>
+    <article class="card">
+      <h3>Function generator — Schmitt + integrator</h3>
+      <p class="tag">Figure 12.8 / Figure 6.14 · §6.3.3 · §12.2.1</p>
+      <svg class="sch" viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-label="Schmitt integrator oscillator">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="180" y="150"/>
+          <line x1="40" y1="166" x2="70" y2="166"/>
+          <use href="#res" x="90" y="166"/>
+          <line x1="110" y1="166" x2="180" y2="166"/>
+          <use href="#dot" x="140" y="166"/>
+          <line x1="140" y1="166" x2="140" y2="78"/>
+          <line x1="140" y1="78" x2="170" y2="78"/>
+          <use href="#res" x="190" y="78"/>
+          <line x1="210" y1="78" x2="280" y2="78"/>
+          <line x1="280" y1="78" x2="280" y2="150"/>
+          <use href="#dot" x="280" y="150"/>
+          <line x1="254" y1="150" x2="340" y2="150"/>
+          <line x1="164" y1="134" x2="180" y2="134"/>
+          <use href="#gnd" x="164" y="134"/>
+
+          <use href="#oa" x="460" y="150"/>
+          <line x1="340" y1="150" x2="370" y2="150"/>
+          <line x1="370" y1="150" x2="370" y2="134"/>
+          <line x1="370" y1="134" x2="390" y2="134"/>
+          <use href="#res" x="410" y="134"/>
+          <line x1="430" y1="134" x2="460" y2="134"/>
+          <use href="#dot" x="440" y="134"/>
+          <line x1="440" y1="134" x2="440" y2="78"/>
+          <line x1="440" y1="78" x2="475" y2="78"/>
+          <use href="#cap" x="485" y="78"/>
+          <line x1="495" y1="78" x2="560" y2="78"/>
+          <line x1="560" y1="78" x2="560" y2="150"/>
+          <use href="#dot" x="560" y="150"/>
+          <line x1="534" y1="150" x2="620" y2="150"/>
+          <line x1="444" y1="166" x2="460" y2="166"/>
+          <use href="#gnd" x="444" y="166"/>
+
+          <line x1="620" y1="150" x2="640" y2="150"/>
+          <line x1="640" y1="150" x2="640" y2="36"/>
+          <line x1="640" y1="36" x2="40" y2="36"/>
+          <line x1="40" y1="36" x2="40" y2="166"/>
+          <use href="#dot" x="40" y="166"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="150" y="64" font-size="12" fill="#BD5D3A">Figure 12.7 Schmitt</text>
+          <text x="448" y="64" font-size="12" fill="#BD5D3A">INT  (can share INT3)</text>
+          <text x="192" y="142" font-size="15">−</text>
+          <text x="192" y="174" font-size="15">+</text>
+          <text x="472" y="142" font-size="15">−</text>
+          <text x="472" y="174" font-size="15">+</text>
+          <text x="80" y="152" font-size="12">R1</text>
+          <text x="178" y="64" font-size="12">R2</text>
+          <text x="400" y="120" font-size="12">R</text>
+          <text x="480" y="64" font-size="12">C</text>
+          <text x="286" y="144" font-size="12">vB</text>
+          <text x="286" y="168" font-size="11" fill="#BD5D3A">OSC_SQ</text>
+          <text x="624" y="144" font-size="12">vA</text>
+          <text x="624" y="168" font-size="11" fill="#BD5D3A">OSC_TRI</text>
+          <text x="180" y="28" font-size="12" fill="#BD5D3A">close this loop · period 4RC when VM = 10 V and slope = 10/RC</text>
+        </g>
+      </svg>
+      <p class="note">Reuse a spare integrator socket if you have one; do not steal INT1. Triangle vA drives the Schmitt + input. Square vB drives the integrator through R.</p>
+    </article>
+
+    <!-- ═══════════════ WEEK 7 ═══════════════ -->
+    <h2 id="w7">Week 7 — discrete front end in the INT1 socket</h2>
+    <article class="card">
+      <h3>Differential pair</h3>
+      <p class="tag">Figure 7.4 · §7.3.1 · pull the INT1 IC first</p>
+      <svg class="sch" viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 7.4 differential amplifier">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="80" y1="36" x2="560" y2="36"/>
+          <line x1="196" y1="36" x2="196" y2="56"/>
+          <use href="#resv" x="196" y="76"/>
+          <line x1="196" y1="96" x2="196" y2="114"/>
+          <line x1="396" y1="36" x2="396" y2="56"/>
+          <use href="#resv" x="396" y="76"/>
+          <line x1="396" y1="96" x2="396" y2="114"/>
+          <use href="#npn" x="180" y="150"/>
+          <use href="#npnr" x="412" y="150"/>
+          <line x1="40" y1="150" x2="180" y2="150"/>
+          <line x1="600" y1="150" x2="412" y2="150"/>
+          <line x1="196" y1="186" x2="196" y2="230"/>
+          <line x1="396" y1="186" x2="396" y2="230"/>
+          <line x1="196" y1="230" x2="396" y2="230"/>
+          <use href="#dot" x="296" y="230"/>
+          <line x1="296" y1="230" x2="296" y2="250"/>
+          <use href="#resv" x="296" y="270"/>
+          <line x1="296" y1="290" x2="296" y2="310"/>
+          <line x1="80" y1="310" x2="560" y2="310"/>
+          <line x1="196" y1="114" x2="280" y2="114"/>
+          <line x1="396" y1="114" x2="312" y2="114"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="568" y="40" font-size="13">+V</text>
+          <text x="568" y="314" font-size="13">−V2</text>
+          <text x="208" y="80" font-size="12">RL</text>
+          <text x="408" y="80" font-size="12">RL</text>
+          <text x="156" y="140" font-size="12">Q1</text>
+          <text x="408" y="140" font-size="12">Q2</text>
+          <text x="308" y="274" font-size="12">RE</text>
+          <use href="#varr" x="32" y="150"/>
+          <text x="4" y="146" font-size="12">vI1</text>
+          <text x="4" y="162" font-size="11" fill="#BD5D3A">− in</text>
+          <use href="#varr" x="612" y="150"/>
+          <text x="552" y="146" font-size="12">vI2</text>
+          <text x="552" y="162" font-size="11" fill="#BD5D3A">+ in</text>
+          <text x="284" y="104" font-size="12">vo</text>
+          <text x="16" y="24" font-size="12" fill="#BD5D3A">INT1 inverting pin ← Q1 base · INT1 noninverting ← Q2 base</text>
+        </g>
+      </svg>
+    </article>
+    <article class="card">
+      <h3>Equal-VBE balance — use this, not the emitter pot</h3>
+      <p class="tag">Figure 7.10 · §7.3.4 · do not use Figure 7.9 for drift</p>
+      <svg class="sch" viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 7.10 collector pot balance">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="280" y1="24" x2="280" y2="48"/>
+          <line x1="160" y1="70" x2="400" y2="70"/>
+          <use href="#res" x="280" y="70"/>
+          <line x1="160" y1="70" x2="160" y2="90"/>
+          <use href="#resv" x="160" y="110"/>
+          <line x1="160" y1="130" x2="160" y2="150"/>
+          <line x1="400" y1="70" x2="400" y2="90"/>
+          <use href="#resv" x="400" y="110"/>
+          <line x1="400" y1="130" x2="400" y2="150"/>
+          <use href="#npn" x="144" y="186"/>
+          <use href="#npnr" x="416" y="186"/>
+          <line x1="80" y1="186" x2="144" y2="186"/>
+          <line x1="480" y1="186" x2="416" y2="186"/>
+          <line x1="80" y1="186" x2="80" y2="168"/>
+          <line x1="80" y1="168" x2="480" y2="168"/>
+          <line x1="480" y1="168" x2="480" y2="186"/>
+          <line x1="160" y1="222" x2="160" y2="250"/>
+          <line x1="400" y1="222" x2="400" y2="250"/>
+          <line x1="160" y1="250" x2="400" y2="250"/>
+          <use href="#dot" x="280" y="250"/>
+          <line x1="280" y1="250" x2="280" y2="270"/>
+          <use href="#gnd" x="280" y="270"/>
+          <line x1="280" y1="48" x2="280" y2="62"/>
+          <line x1="272" y1="56" x2="288" y2="70"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="292" y="36" font-size="13">+Vc  pot wiper</text>
+          <text x="268" y="58" font-size="11">R</text>
+          <text x="128" y="114" font-size="12">RL</text>
+          <text x="412" y="114" font-size="12">RL</text>
+          <text x="118" y="180" font-size="12">Q1</text>
+          <text x="412" y="180" font-size="12">Q2</text>
+          <text x="16" y="20" font-size="12" fill="#BD5D3A">Bases shorted while balancing · pot is in the collectors</text>
+        </g>
+      </svg>
+      <p class="note">Figure 7.9 (emitter pot) equalizes IC and leaves a drift of ΔV/T. Figure 7.10 equalizes VBE. Short the INT1 inputs, adjust until collector difference is zero, then remove the short.</p>
+    </article>
+
+    <!-- ═══════════════ WEEK 8 ═══════════════ -->
+    <h2 id="w8">Week 8 — finish the INT1 amplifier</h2>
+    <article class="card">
+      <h3>Two-stage core</h3>
+      <p class="tag">Figure 8.8 · §8.2.3 · hangs on the week-7 pair</p>
+      <svg class="sch" viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 8.8 two-stage amplifier">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="40" y1="28" x2="680" y2="28"/>
+          <line x1="40" y1="312" x2="680" y2="312"/>
+          <use href="#npn" x="80" y="140"/>
+          <use href="#npnr" x="232" y="140"/>
+          <line x1="96" y1="104" x2="96" y2="28"/>
+          <line x1="216" y1="104" x2="216" y2="56"/>
+          <use href="#resv" x="216" y="76"/>
+          <line x1="216" y1="56" x2="216" y2="56"/>
+          <line x1="40" y1="140" x2="80" y2="140"/>
+          <line x1="280" y1="140" x2="232" y2="140"/>
+          <line x1="96" y1="176" x2="96" y2="230"/>
+          <line x1="216" y1="176" x2="216" y2="230"/>
+          <line x1="96" y1="230" x2="216" y2="230"/>
+          <use href="#dot" x="156" y="230"/>
+          <line x1="156" y1="230" x2="156" y2="250"/>
+          <circle cx="156" cy="266" r="12"/>
+          <circle cx="156" cy="266" r="7"/>
+          <line x1="156" y1="258" x2="156" y2="276"/>
+          <polygon points="153,272 159,272 156,278" fill="#1F1E1D" stroke="none"/>
+          <line x1="156" y1="278" x2="156" y2="312"/>
+          <use href="#pnp" x="360" y="90"/>
+          <line x1="376" y1="54" x2="376" y2="28"/>
+          <line x1="216" y1="104" x2="216" y2="90"/>
+          <line x1="216" y1="90" x2="360" y2="90"/>
+          <line x1="376" y1="126" x2="376" y2="170"/>
+          <use href="#resv" x="376" y="190"/>
+          <line x1="376" y1="210" x2="376" y2="312"/>
+          <use href="#dot" x="376" y="170"/>
+          <line x1="376" y1="170" x2="376" y2="186"/>
+          <line x1="376" y1="186" x2="460" y2="186"/>
+          <use href="#oa" x="460" y="170"/>
+          <line x1="534" y1="170" x2="620" y2="170"/>
+          <use href="#dot" x="560" y="170"/>
+          <line x1="560" y1="170" x2="560" y2="120"/>
+          <line x1="560" y1="120" x2="444" y2="120"/>
+          <line x1="444" y1="120" x2="444" y2="154"/>
+          <line x1="444" y1="154" x2="460" y2="154"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="688" y="32" font-size="13">+V1</text>
+          <text x="688" y="316" font-size="13">−V2</text>
+          <text x="56" y="132" font-size="12">Q1</text>
+          <text x="228" y="132" font-size="12">Q2</text>
+          <text x="228" y="80" font-size="12">R1</text>
+          <text x="388" y="80" font-size="12">Q3</text>
+          <text x="388" y="194" font-size="12">R2</text>
+          <text x="168" y="268" font-size="12">I</text>
+          <text x="16" y="136" font-size="11" fill="#BD5D3A">− in</text>
+          <text x="284" y="136" font-size="11" fill="#BD5D3A">+ in</text>
+          <text x="472" y="162" font-size="15">−</text>
+          <text x="472" y="194" font-size="15">+</text>
+          <text x="490" y="174" font-size="11">+1</text>
+          <text x="628" y="174" font-size="13">Vo</text>
+          <text x="628" y="190" font-size="11" fill="#BD5D3A">INT1 out</text>
+          <text x="16" y="20" font-size="12" fill="#BD5D3A">Q1 base is the inverting input of the whole amplifier</text>
+        </g>
+      </svg>
+    </article>
+    <article class="card">
+      <h3>Replace R1 with a current-source load</h3>
+      <p class="tag">Figure 8.13 · §8.3.2</p>
+      <svg class="sch" viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 8.13 current source load">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="40" y1="28" x2="400" y2="28"/>
+          <use href="#pnp" x="180" y="80"/>
+          <line x1="196" y1="44" x2="196" y2="28"/>
+          <line x1="196" y1="116" x2="196" y2="150"/>
+          <use href="#npn" x="180" y="186"/>
+          <line x1="196" y1="222" x2="196" y2="240"/>
+          <line x1="40" y1="240" x2="400" y2="240"/>
+          <line x1="196" y1="150" x2="360" y2="150"/>
+          <line x1="180" y1="80" x2="140" y2="80"/>
+          <line x1="140" y1="80" x2="140" y2="50"/>
+          <line x1="140" y1="50" x2="196" y2="50"/>
+          <use href="#dot" x="196" y="50"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="408" y="32" font-size="13">+V1</text>
+          <text x="408" y="244" font-size="13">−V2</text>
+          <text x="210" y="76" font-size="12">PNP current source</text>
+          <text x="210" y="180" font-size="12">Q2 (was resistive R1)</text>
+          <text x="368" y="154" font-size="12">to Q3 base / buffer</text>
+        </g>
+      </svg>
+    </article>
+    <article class="card">
+      <h3>Complementary output, junction-biased</h3>
+      <p class="tag">Figure 8.27 · §8.4 · replaces the +1 triangle in Figure 8.8</p>
+      <svg class="sch" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 8.27 complementary output">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="40" y1="24" x2="500" y2="24"/>
+          <line x1="40" y1="276" x2="500" y2="276"/>
+          <use href="#npn" x="240" y="90"/>
+          <line x1="256" y1="54" x2="256" y2="24"/>
+          <line x1="256" y1="126" x2="256" y2="150"/>
+          <use href="#pnp" x="240" y="210"/>
+          <line x1="256" y1="174" x2="256" y2="150"/>
+          <line x1="256" y1="246" x2="256" y2="276"/>
+          <use href="#dot" x="256" y="150"/>
+          <line x1="256" y1="150" x2="420" y2="150"/>
+          <line x1="40" y1="150" x2="160" y2="150"/>
+          <line x1="160" y1="90" x2="240" y2="90"/>
+          <line x1="160" y1="210" x2="240" y2="210"/>
+          <line x1="160" y1="90" x2="160" y2="104"/>
+          <g transform="translate(160,104) rotate(90)"><use href="#diode"/></g>
+          <line x1="160" y1="118" x2="160" y2="150"/>
+          <line x1="160" y1="150" x2="160" y2="168"/>
+          <g transform="translate(160,168) rotate(90)"><use href="#diode"/></g>
+          <line x1="160" y1="182" x2="160" y2="210"/>
+          <use href="#dot" x="160" y="90"/>
+          <use href="#dot" x="160" y="210"/>
+          <use href="#dot" x="160" y="150"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="508" y="28" font-size="13">+V</text>
+          <text x="508" y="280" font-size="13">−V</text>
+          <text x="272" y="84" font-size="12">NPN</text>
+          <text x="272" y="216" font-size="12">PNP</text>
+          <text x="16" y="146" font-size="12">from Q3 collector</text>
+          <text x="428" y="154" font-size="13">INT1 output</text>
+          <text x="176" y="124" font-size="11">D</text>
+          <text x="176" y="180" font-size="11">D</text>
+          <text x="16" y="20" font-size="12" fill="#BD5D3A">Bias with matched diodes / VBE multiplier as in Figure 8.26–8.27</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- ═══════════════ WEEK 10 ═══════════════ -->
+    <h2 id="w10">Week 10 — IC tricks on the same channel</h2>
+    <article class="card">
+      <h3>Current repeater</h3>
+      <p class="tag">Figure 10.9 · §10.3.1 · first-stage load on INT1</p>
+      <svg class="sch" viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 10.9 current repeater">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="40" y1="28" x2="400" y2="28"/>
+          <use href="#pnp" x="120" y="90"/>
+          <use href="#pnp" x="280" y="90"/>
+          <line x1="136" y1="54" x2="136" y2="28"/>
+          <line x1="296" y1="54" x2="296" y2="28"/>
+          <line x1="120" y1="90" x2="280" y2="90"/>
+          <line x1="136" y1="126" x2="120" y2="126"/>
+          <line x1="120" y1="126" x2="120" y2="90"/>
+          <use href="#dot" x="120" y="90"/>
+          <use href="#dot" x="136" y="126"/>
+          <line x1="136" y1="126" x2="136" y2="180"/>
+          <line x1="296" y1="126" x2="296" y2="180"/>
+          <line x1="40" y1="180" x2="80" y2="180"/>
+          <line x1="80" y1="180" x2="136" y2="180"/>
+          <line x1="296" y1="180" x2="400" y2="180"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="408" y="32" font-size="13">+V</text>
+          <text x="40" y="80" font-size="12">Qref</text>
+          <text x="308" y="80" font-size="12">Qout</text>
+          <text x="16" y="176" font-size="12">Iin</text>
+          <text x="16" y="192" font-size="11" fill="#BD5D3A">from Q2 collector</text>
+          <text x="408" y="184" font-size="13">Iout ≈ Iin</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- ═══════════════ WEEK 11 ═══════════════ -->
+    <h2 id="w11">Week 11 — three-mode integrators</h2>
+    <article class="card">
+      <h3>Reset / operate / hold</h3>
+      <p class="tag">Figure 12.17 · §12.3.3 · put this around INT1 and INT2</p>
+      <svg class="sch" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 12.17 three-mode integrator">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="360" y="130"/>
+          <line x1="40" y1="114" x2="80" y2="114"/>
+          <use href="#res" x="100" y="114"/>
+          <line x1="120" y1="114" x2="150" y2="114"/>
+          <use href="#sw" x="168" y="114"/>
+          <line x1="182" y1="114" x2="360" y2="114"/>
+          <use href="#dot" x="260" y="114"/>
+          <line x1="260" y1="114" x2="260" y2="48"/>
+          <line x1="260" y1="48" x2="325" y2="48"/>
+          <use href="#cap" x="335" y="48"/>
+          <line x1="345" y1="48" x2="460" y2="48"/>
+          <line x1="460" y1="48" x2="460" y2="130"/>
+          <use href="#dot" x="460" y="130"/>
+          <line x1="434" y1="130" x2="560" y2="130"/>
+          <line x1="344" y1="146" x2="360" y2="146"/>
+          <use href="#gnd" x="344" y="146"/>
+
+          <line x1="40" y1="230" x2="80" y2="230"/>
+          <use href="#res" x="100" y="230"/>
+          <line x1="120" y1="230" x2="150" y2="230"/>
+          <use href="#sw" x="168" y="230"/>
+          <line x1="182" y1="230" x2="260" y2="230"/>
+          <use href="#dot" x="260" y="230"/>
+          <line x1="260" y1="230" x2="260" y2="114"/>
+          <line x1="260" y1="230" x2="300" y2="230"/>
+          <use href="#res" x="320" y="230"/>
+          <line x1="340" y1="230" x2="460" y2="230"/>
+          <line x1="460" y1="230" x2="460" y2="130"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="32" y="114"/>
+          <text x="8" y="110" font-size="13">vB</text>
+          <text x="90" y="100" font-size="12">R1</text>
+          <text x="150" y="100" font-size="11" fill="#BD5D3A">① operate</text>
+          <use href="#varr" x="32" y="230"/>
+          <text x="8" y="226" font-size="13">vA</text>
+          <text x="90" y="216" font-size="12">R2</text>
+          <text x="150" y="216" font-size="11" fill="#BD5D3A">② reset</text>
+          <text x="308" y="216" font-size="12">R2</text>
+          <text x="328" y="34" font-size="13">C</text>
+          <text x="372" y="122" font-size="16">−</text>
+          <text x="372" y="154" font-size="16">+</text>
+          <use href="#varr" x="578" y="130"/>
+          <text x="588" y="134" font-size="13">Vo</text>
+        </g>
+      </svg>
+      <p class="note">Operate: ① closed, ② open. Reset (initial condition): ① open, ② closed — Vo → −vA. Hold: both open. Figure 12.18 replaces the hand switches with FETs and logic; build that when the modes work with slide switches.</p>
+    </article>
+    <article class="card">
+      <h3>Precision rectifier — keep on the chassis</h3>
+      <p class="tag">Figure 11.18 · §11.5.1</p>
+      <svg class="sch" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 11.18 precision rectifier">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="260" y="120"/>
+          <line x1="40" y1="104" x2="80" y2="104"/>
+          <use href="#res" x="100" y="104"/>
+          <line x1="120" y1="104" x2="260" y2="104"/>
+          <use href="#dot" x="180" y="104"/>
+          <line x1="334" y1="120" x2="380" y2="120"/>
+          <use href="#diode" x="380" y="120"/>
+          <line x1="394" y1="120" x2="500" y2="120"/>
+          <use href="#dot" x="450" y="120"/>
+          <line x1="450" y1="120" x2="450" y2="48"/>
+          <line x1="450" y1="48" x2="200" y2="48"/>
+          <use href="#res" x="180" y="48"/>
+          <line x1="160" y1="48" x2="180" y2="48"/>
+          <line x1="180" y1="48" x2="180" y2="104"/>
+          <line x1="244" y1="136" x2="260" y2="136"/>
+          <use href="#gnd" x="244" y="136"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="32" y="104"/>
+          <text x="8" y="100" font-size="13">Vin</text>
+          <text x="90" y="90" font-size="12">R</text>
+          <text x="168" y="34" font-size="12">R</text>
+          <text x="384" y="104" font-size="12">D</text>
+          <text x="272" y="112" font-size="16">−</text>
+          <text x="272" y="144" font-size="16">+</text>
+          <use href="#varr" x="518" y="120"/>
+          <text x="528" y="124" font-size="13">Vo ≥ 0</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- ═══════════════ WEEK 12 ═══════════════ -->
+    <h2 id="w12">Week 12 — the two problems</h2>
+    <article class="card">
+      <h3>Problem 1a — fourth-order Butterworth</h3>
+      <p class="tag">Figure 12.13 · §12.3.1 · four integrators + one inverter</p>
+      <svg class="sch" viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 12.13 Butterworth analog computer">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="40" y="110"/>
+          <use href="#oa" x="180" y="110"/>
+          <use href="#oa" x="320" y="110"/>
+          <use href="#oa" x="460" y="110"/>
+          <use href="#oa" x="600" y="110"/>
+          <line x1="114" y1="110" x2="180" y2="110"/>
+          <line x1="254" y1="110" x2="320" y2="110"/>
+          <line x1="394" y1="110" x2="460" y2="110"/>
+          <line x1="534" y1="110" x2="600" y2="110"/>
+          <line x1="674" y1="110" x2="730" y2="110"/>
+          <line x1="730" y1="110" x2="730" y2="28"/>
+          <line x1="730" y1="28" x2="24" y2="28"/>
+          <line x1="24" y1="28" x2="24" y2="94"/>
+          <line x1="24" y1="94" x2="40" y2="94"/>
+          <line x1="24" y1="126" x2="40" y2="126"/>
+          <use href="#gnd" x="24" y="126"/>
+          <line x1="164" y1="126" x2="180" y2="126"/>
+          <use href="#gnd" x="164" y="126"/>
+          <line x1="304" y1="126" x2="320" y2="126"/>
+          <use href="#gnd" x="304" y="126"/>
+          <line x1="444" y1="126" x2="460" y2="126"/>
+          <use href="#gnd" x="444" y="126"/>
+          <line x1="584" y1="126" x2="600" y2="126"/>
+          <use href="#gnd" x="584" y="126"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="36" y="72" font-size="11" fill="#BD5D3A">SUM+INT</text>
+          <text x="196" y="72" font-size="11" fill="#BD5D3A">INT</text>
+          <text x="336" y="72" font-size="11" fill="#BD5D3A">INT</text>
+          <text x="476" y="72" font-size="11" fill="#BD5D3A">INT</text>
+          <text x="616" y="72" font-size="11" fill="#BD5D3A">INV</text>
+          <text x="52" y="102" font-size="13">−</text>
+          <text x="52" y="134" font-size="13">+</text>
+          <text x="192" y="102" font-size="13">−</text>
+          <text x="192" y="134" font-size="13">+</text>
+          <text x="332" y="102" font-size="13">−</text>
+          <text x="332" y="134" font-size="13">+</text>
+          <text x="472" y="102" font-size="13">−</text>
+          <text x="472" y="134" font-size="13">+</text>
+          <text x="612" y="102" font-size="13">−</text>
+          <text x="612" y="134" font-size="13">+</text>
+          <text x="160" y="20" font-size="12" fill="#BD5D3A">scale factors from §12.3.2 · signs alternate because every integrator inverts</text>
+        </g>
+      </svg>
+    </article>
+    <article class="card">
+      <h3>Problem 1b — Van der Pol</h3>
+      <p class="tag">Figure 12.14 / 12.16 · §12.3.1 · needs two multipliers</p>
+      <svg class="sch" viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" aria-label="Van der Pol analog computer">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="80" y="130"/>
+          <use href="#oa" x="260" y="130"/>
+          <line x1="24" y1="114" x2="80" y2="114"/>
+          <line x1="64" y1="146" x2="80" y2="146"/>
+          <use href="#gnd" x="64" y="146"/>
+          <line x1="154" y1="130" x2="260" y2="130"/>
+          <line x1="244" y1="146" x2="260" y2="146"/>
+          <use href="#gnd" x="244" y="146"/>
+          <line x1="334" y1="130" x2="400" y2="130"/>
+          <rect x="400" y="40" width="80" height="36" rx="2" fill="#fff"/>
+          <rect x="400" y="160" width="80" height="36" rx="2" fill="#fff"/>
+          <line x1="400" y1="130" x2="400" y2="58"/>
+          <line x1="400" y1="130" x2="400" y2="178"/>
+          <line x1="480" y1="58" x2="540" y2="58"/>
+          <line x1="540" y1="58" x2="540" y2="24"/>
+          <line x1="540" y1="24" x2="24" y2="24"/>
+          <line x1="24" y1="24" x2="24" y2="114"/>
+          <use href="#dot" x="24" y="114"/>
+          <line x1="480" y1="178" x2="560" y2="178"/>
+          <line x1="560" y1="178" x2="560" y2="210"/>
+          <line x1="560" y1="210" x2="24" y2="210"/>
+          <line x1="24" y1="210" x2="24" y2="114"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="78" y="88" font-size="12" fill="#BD5D3A">INT  ẋ</text>
+          <text x="258" y="88" font-size="12" fill="#BD5D3A">INT  x</text>
+          <text x="418" y="62" font-size="12">×  x²</text>
+          <text x="410" y="182" font-size="12">×  x²ẋ</text>
+          <text x="92" y="122" font-size="15">−</text>
+          <text x="92" y="154" font-size="15">+</text>
+          <text x="272" y="122" font-size="15">−</text>
+          <text x="272" y="154" font-size="15">+</text>
+        </g>
+      </svg>
+      <p class="note">Multipliers: Figure 11.28 (transconductance) or Figure 12.9 (time-division, uses the week-6 oscillator). Output = product/10 V.</p>
+    </article>
+    <article class="card">
+      <h3>Problem 2 — analog twin of the regulator</h3>
+      <p class="tag">Figure 5.3b + §12.3.1 · one integrator is the load pole</p>
+      <svg class="sch" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" aria-label="Analog model of regulator">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="80" y="110"/>
+          <use href="#oa" x="280" y="110"/>
+          <use href="#oa" x="500" y="110"/>
+          <line x1="24" y1="94" x2="80" y2="94"/>
+          <line x1="64" y1="126" x2="80" y2="126"/>
+          <use href="#gnd" x="64" y="126"/>
+          <line x1="154" y1="110" x2="200" y2="110"/>
+          <line x1="200" y1="110" x2="200" y2="94"/>
+          <line x1="200" y1="94" x2="230" y2="94"/>
+          <use href="#res" x="250" y="94"/>
+          <line x1="270" y1="94" x2="280" y2="94"/>
+          <line x1="264" y1="126" x2="280" y2="126"/>
+          <use href="#gnd" x="264" y="126"/>
+          <line x1="354" y1="110" x2="420" y2="110"/>
+          <line x1="420" y1="110" x2="420" y2="94"/>
+          <line x1="420" y1="94" x2="450" y2="94"/>
+          <use href="#res" x="470" y="94"/>
+          <line x1="490" y1="94" x2="500" y2="94"/>
+          <line x1="484" y1="126" x2="500" y2="126"/>
+          <use href="#gnd" x="484" y="126"/>
+          <line x1="574" y1="110" x2="640" y2="110"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="70" y="68" font-size="12" fill="#BD5D3A">error ao</text>
+          <text x="250" y="68" font-size="12" fill="#BD5D3A">1/R → Ie</text>
+          <text x="480" y="68" font-size="12" fill="#BD5D3A">load RL, CL  INT</text>
+          <text x="92" y="102" font-size="15">−</text>
+          <text x="92" y="134" font-size="15">+</text>
+          <text x="292" y="102" font-size="15">−</text>
+          <text x="292" y="134" font-size="15">+</text>
+          <text x="512" y="102" font-size="15">−</text>
+          <text x="512" y="134" font-size="15">+</text>
+          <text x="16" y="200" font-size="12">Patch beside the real Figure 5.3. Overlay the two Vl steps on the scope.</text>
+        </g>
+      </svg>
+    </article>
+    <article class="card">
+      <h3>Optional extra source — Wien bridge</h3>
+      <p class="tag">Figure 12.1 · §12.1.1 · limiter Figure 12.3</p>
+      <svg class="sch" viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 12.1 Wien bridge">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="280" y="140"/>
+          <line x1="354" y1="140" x2="480" y2="140"/>
+          <use href="#dot" x="420" y="140"/>
+          <line x1="420" y1="140" x2="420" y2="40"/>
+          <line x1="420" y1="40" x2="200" y2="40"/>
+          <use href="#res" x="180" y="40"/>
+          <line x1="160" y1="40" x2="155" y2="40"/>
+          <use href="#cap" x="145" y="40"/>
+          <line x1="135" y1="40" x2="120" y2="40"/>
+          <line x1="120" y1="40" x2="120" y2="156"/>
+          <line x1="120" y1="156" x2="280" y2="156"/>
+          <use href="#dot" x="120" y="156"/>
+          <line x1="120" y1="156" x2="120" y2="180"/>
+          <use href="#resv" x="120" y="200"/>
+          <line x1="120" y1="220" x2="120" y2="236"/>
+          <use href="#capv" x="120" y="246"/>
+          <line x1="120" y1="256" x2="120" y2="268"/>
+          <use href="#gnd" x="120" y="268"/>
+          <line x1="264" y1="124" x2="280" y2="124"/>
+          <use href="#dot" x="264" y="124"/>
+          <line x1="264" y1="124" x2="264" y2="200"/>
+          <use href="#resv" x="264" y="180"/>
+          <line x1="264" y1="200" x2="264" y2="220"/>
+          <use href="#gnd" x="264" y="220"/>
+          <use href="#dot" x="420" y="80"/>
+          <line x1="420" y1="80" x2="360" y2="80"/>
+          <use href="#res" x="340" y="80"/>
+          <line x1="320" y1="80" x2="264" y2="80"/>
+          <line x1="264" y1="80" x2="264" y2="124"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="292" y="132" font-size="16">−</text>
+          <text x="292" y="164" font-size="16">+</text>
+          <text x="168" y="26" font-size="12">R</text>
+          <text x="138" y="26" font-size="12">C</text>
+          <text x="132" y="204" font-size="12">R</text>
+          <text x="132" y="250" font-size="12">C</text>
+          <text x="328" y="70" font-size="12">2R</text>
+          <text x="232" y="184" font-size="12">R</text>
+          <text x="488" y="144" font-size="13">Vo</text>
+          <text x="360" y="28" font-size="12" fill="#BD5D3A">gain = 3 · series RC to + · parallel RC to ground</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- ═══════════════ WEEK 13 ═══════════════ -->
+    <h2 id="w13">Week 13 — compensate the assembled box</h2>
+    <article class="card">
+      <h3>Campaign 1 — lag on a fixed-a(s) inverter</h3>
+      <p class="tag">Figure 13.1 · §13.2.1 · summers that still use stock ICs</p>
+      <svg class="sch" viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" aria-label="Figure 13.1 input lag">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <use href="#oa" x="300" y="110"/>
+          <line x1="40" y1="94" x2="80" y2="94"/>
+          <use href="#res" x="100" y="94"/>
+          <line x1="120" y1="94" x2="300" y2="94"/>
+          <use href="#dot" x="200" y="94"/>
+          <line x1="200" y1="94" x2="200" y2="48"/>
+          <line x1="200" y1="48" x2="240" y2="48"/>
+          <use href="#res" x="260" y="48"/>
+          <line x1="280" y1="48" x2="400" y2="48"/>
+          <line x1="400" y1="48" x2="400" y2="110"/>
+          <use href="#dot" x="400" y="110"/>
+          <line x1="374" y1="110" x2="500" y2="110"/>
+          <line x1="200" y1="94" x2="200" y2="170"/>
+          <use href="#resv" x="200" y="190"/>
+          <line x1="200" y1="210" x2="200" y2="220"/>
+          <use href="#capv" x="200" y="230"/>
+          <line x1="200" y1="240" x2="200" y2="248"/>
+          <use href="#gnd" x="200" y="248"/>
+          <line x1="284" y1="126" x2="300" y2="126"/>
+          <use href="#gnd" x="284" y="126"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <use href="#varr" x="32" y="94"/>
+          <text x="8" y="90" font-size="13">Vi</text>
+          <text x="90" y="80" font-size="12">Z1</text>
+          <text x="248" y="34" font-size="12">Z2</text>
+          <text x="212" y="194" font-size="12">Rlag</text>
+          <text x="212" y="234" font-size="12">Clag</text>
+          <text x="312" y="102" font-size="16">−</text>
+          <text x="312" y="134" font-size="16">+</text>
+          <use href="#varr" x="518" y="110"/>
+          <text x="528" y="114" font-size="13">Vo</text>
+        </g>
+      </svg>
+      <p class="note">Shunt from the inverting node to ground. Does not change the ideal closed-loop gain. Use on SUM / INV ICs whose a(s) you cannot open.</p>
+    </article>
+    <article class="card">
+      <h3>Campaign 2 — change a(s) at the compensation pins</h3>
+      <p class="tag">§13.3.2 one-pole Cc · Figure 13.19 two-pole · INT1 and LM301A</p>
+      <svg class="sch" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" aria-label="Compensation networks">
+        <g fill="none" stroke="#1F1E1D" stroke-width="1.8" stroke-linejoin="miter" stroke-linecap="butt">
+          <line x1="40" y1="80" x2="90" y2="80"/>
+          <use href="#cap" x="100" y="80"/>
+          <line x1="110" y1="80" x2="180" y2="80"/>
+          <line x1="280" y1="80" x2="320" y2="80"/>
+          <use href="#cap" x="330" y="80"/>
+          <line x1="340" y1="80" x2="370" y2="80"/>
+          <use href="#res" x="390" y="80"/>
+          <line x1="410" y1="80" x2="440" y2="80"/>
+          <use href="#cap" x="450" y="80"/>
+          <line x1="460" y1="80" x2="520" y2="80"/>
+        </g>
+        <g font-family="DM Sans, sans-serif" fill="#1F1E1D">
+          <text x="40" y="50" font-size="12">Cc between comp pins</text>
+          <text x="88" y="66" font-size="12">Cc</text>
+          <text x="280" y="50" font-size="12">Figure 13.19 two-pole</text>
+          <text x="378" y="66" font-size="12">R</text>
+          <text x="40" y="140" font-size="12">INT1 / summers: pick Cc so Cc/|f0| stays roughly constant (§13.3.2).</text>
+          <text x="40" y="160" font-size="12">Regulator error amp: two-pole only after you have measured L as Figure 5.4.</text>
+        </g>
+      </svg>
+    </article>
+
+    <p class="back"><a href="capstone.html">Back to the build log</a></p>
+  </div>
+</body>
+</html>

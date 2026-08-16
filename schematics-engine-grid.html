@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engine SVG contact sheet</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--book); color: var(--slate); }
+
+    .top {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 20px 8px;
+    }
+    .top img { width: 20px; height: 20px; }
+    h1 { margin: 0 20px 6px; font-size: 28px; }
+    .lede {
+      margin: 0 20px 16px; color: var(--fg-muted);
+      font-size: 14px; max-width: 48rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 0 16px 32px;
+    }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 1600px) {
+      .grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .cell {
+      background: var(--bg-elev);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+    .cell figcaption {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--hairline);
+      background: var(--ivory);
+      color: var(--crail-deep);
+    }
+    .cell img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top">
+      <img src="design-system/anthropic-mark.svg" alt="">
+      <p class="eyebrow">figures/engine · 20 SVGs</p>
+    </div>
+    <h1 class="display">Contact sheet</h1>
+    <p class="lede">One cell per file. Screenshot this page.</p>
+  </header>
+
+  <div class="grid">
+    <figure class="cell">
+      <figcaption>sum.svg</figcaption>
+      <img src="figures/engine/sum.svg" alt="sum.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>inv.svg</figcaption>
+      <img src="figures/engine/inv.svg" alt="inv.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>int.svg</figcaption>
+      <img src="figures/engine/int.svg" alt="int.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>loop1.svg</figcaption>
+      <img src="figures/engine/loop1.svg" alt="loop1.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>loop1-cc.svg</figcaption>
+      <img src="figures/engine/loop1-cc.svg" alt="loop1-cc.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>loop2.svg</figcaption>
+      <img src="figures/engine/loop2.svg" alt="loop2.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>plant.svg</figcaption>
+      <img src="figures/engine/plant.svg" alt="plant.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>osc.svg</figcaption>
+      <img src="figures/engine/osc.svg" alt="osc.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>diffpair.svg</figcaption>
+      <img src="figures/engine/diffpair.svg" alt="diffpair.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>bal710.svg</figcaption>
+      <img src="figures/engine/bal710.svg" alt="bal710.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>disc8.svg</figcaption>
+      <img src="figures/engine/disc8.svg" alt="disc8.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>disc9.svg</figcaption>
+      <img src="figures/engine/disc9.svg" alt="disc9.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>disc98.svg</figcaption>
+      <img src="figures/engine/disc98.svg" alt="disc98.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>disc10.svg</figcaption>
+      <img src="figures/engine/disc10.svg" alt="disc10.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>threemode.svg</figcaption>
+      <img src="figures/engine/threemode.svg" alt="threemode.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>rectifier.svg</figcaption>
+      <img src="figures/engine/rectifier.svg" alt="rectifier.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>butter.svg</figcaption>
+      <img src="figures/engine/butter.svg" alt="butter.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>twin.svg</figcaption>
+      <img src="figures/engine/twin.svg" alt="twin.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>lag.svg</figcaption>
+      <img src="figures/engine/lag.svg" alt="lag.svg">
+    </figure>
+    <figure class="cell">
+      <figcaption>twopole.svg</figcaption>
+      <img src="figures/engine/twopole.svg" alt="twopole.svg">
+    </figure>
+  </div>
+</body>
+</html>

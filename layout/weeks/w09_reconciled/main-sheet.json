@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w09_reconciled/graph.json",
+  "sheet_id": "W09.RECONCILED.MAIN",
+  "title": "Week 9 cumulative chassis — completed Figure 9.1 amplifier",
+  "status": "presentation overlay only; graph.json is electrical authority",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "MOD.INV1",
+    "MOD.SUM1",
+    "MOD.INT2",
+    "MOD.SOCKETS",
+    "REG1",
+    "OSC1",
+    "AMP1"
+  ],
+  "module_positions": {
+    "INF.PWR_ENTRY": {
+      "x": 50,
+      "y": 70,
+      "width": 330,
+      "height": 170
+    },
+    "W09.FIXTURE": {
+      "x": 60,
+      "y": 285,
+      "width": 590,
+      "height": 380
+    },
+    "AMP1": {
+      "x": 735,
+      "y": 265,
+      "width": 350,
+      "height": 380,
+      "title": "AMP1",
+      "subtitle": "complete Q1-Q13 Figure 9.1 amplifier",
+      "detail_ref": "W09.AMP1_DETAIL",
+      "ports": {
+        "INV_IN": {
+          "x": 735,
+          "y": 355
+        },
+        "NONINV_IN": {
+          "x": 735,
+          "y": 515
+        },
+        "OUT": {
+          "x": 1085,
+          "y": 355
+        },
+        "VP15": {
+          "x": 860,
+          "y": 265
+        },
+        "VN15": {
+          "x": 930,
+          "y": 645
+        },
+        "AGND": {
+          "x": 820,
+          "y": 645
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        }
+      }
+    },
+    "MOD.INT1": {
+      "x": 1120,
+      "y": 300,
+      "width": 400,
+      "height": 300
+    },
+    "MOD.SUM1": {
+      "x": 55,
+      "y": 810,
+      "width": 210,
+      "height": 90,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INV1": {
+      "x": 280,
+      "y": 810,
+      "width": 210,
+      "height": 90,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INT2": {
+      "x": 505,
+      "y": 810,
+      "width": 210,
+      "height": 90,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "REG1": {
+      "x": 730,
+      "y": 810,
+      "width": 210,
+      "height": 90,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "OSC1": {
+      "x": 955,
+      "y": 810,
+      "width": 210,
+      "height": 90,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SOCKETS": {
+      "x": 1180,
+      "y": 810,
+      "width": 330,
+      "height": 90,
+      "style": "inactive",
+      "connect_ports": false
+    }
+  },
+  "components": {
+    "INF.VP15": {
+      "x": 150,
+      "y": 150,
+      "rotation": 0,
+      "label": "+15 V",
+      "show_value": false
+    },
+    "INF.VN15": {
+      "x": 290,
+      "y": 150,
+      "rotation": 180,
+      "label": "−15 V",
+      "show_value": false
+    },
+    "W09.VSRC": {
+      "x": 125,
+      "y": 470,
+      "rotation": 0,
+      "label": "VSRC"
+    },
+    "W09.RSOURCE": {
+      "x": 240,
+      "y": 390,
+      "rotation": 0,
+      "label": "RS"
+    },
+    "W09.RIN": {
+      "x": 390,
+      "y": 390,
+      "rotation": 0,
+      "label": "RIN"
+    },
+    "W09.RFB": {
+      "x": 500,
+      "y": 525,
+      "rotation": 0,
+      "label": "RFB"
+    },
+    "W09.RALPHA": {
+      "x": 390,
+      "y": 590,
+      "rotation": 90,
+      "label": "Rα"
+    },
+    "W09.LOAD": {
+      "x": 600,
+      "y": 500,
+      "rotation": 90,
+      "label": "RL"
+    },
+    "W09.NONINV_GROUND": {
+      "x": 650,
+      "y": 590,
+      "rotation": 90,
+      "label": "NONINV→GND",
+      "show_value": false
+    },
+    "INT1.RIN": {
+      "x": 1210,
+      "y": 415,
+      "rotation": 0
+    },
+    "INT1.CFB": {
+      "x": 1390,
+      "y": 485,
+      "rotation": 0
+    },
+    "INT1.ROUT": {
+      "x": 1430,
+      "y": 390,
+      "rotation": 0
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 35
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 740
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 775
+    }
+  },
+  "notes": [
+    "Only the selected Week 9 experiment path is rendered at full weight.",
+    "Q12 and Q13 are the only permanent additions after the accepted Week 8 build.",
+    "Physical patch-cord routing remains deferred; electrical nets are explicit.",
+    "Electrical Gate 2 remains failed/blocked; these sheets prove topology and SVG/SPICE equivalence only."
+  ]
+}

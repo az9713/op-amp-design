@@ -1,0 +1,102 @@
+{
+  "best": {
+    "connectivity_sha256": "133a6d9d239166eeb94ae93677f9ee072c31099ea98f73a21dcf25a826aebb35",
+    "dc_output_v": 5.22185024,
+    "deck_sha256": "34a981239c8b28770dd2f2a88889b3ad2166f86dd5a1660fbb791971f32b0b56",
+    "left_segment_kohm": 0.5,
+    "right_segment_kohm": 49.5,
+    "wiper_fraction_left": 0.01
+  },
+  "criterion": "physical 50 k balance sweep can reduce zero-input output magnitude to <=0.1 V",
+  "points": [
+    {
+      "connectivity_sha256": "133a6d9d239166eeb94ae93677f9ee072c31099ea98f73a21dcf25a826aebb35",
+      "dc_output_v": 5.22185024,
+      "deck_sha256": "34a981239c8b28770dd2f2a88889b3ad2166f86dd5a1660fbb791971f32b0b56",
+      "left_segment_kohm": 0.5,
+      "right_segment_kohm": 49.5,
+      "wiper_fraction_left": 0.01
+    },
+    {
+      "connectivity_sha256": "658166d3696a330f26a7625ff78808fe898c63c7c879e40b318dbb8375204d90",
+      "dc_output_v": 5.22233892,
+      "deck_sha256": "60a413c5c6ffcbc18b78633ae8b07f469af0a75100b3196ec668fafdb76467bd",
+      "left_segment_kohm": 5.0,
+      "right_segment_kohm": 45.0,
+      "wiper_fraction_left": 0.1
+    },
+    {
+      "connectivity_sha256": "ab9ae72b0478166a16d7446ebcee756b9ffe8ccee460a298270abfa9fe45c3e2",
+      "dc_output_v": 5.22236576,
+      "deck_sha256": "b343542089fea6cd84cd82eb346ac0d57480dc68dd6b6055d448c73a242e4881",
+      "left_segment_kohm": 10.0,
+      "right_segment_kohm": 40.0,
+      "wiper_fraction_left": 0.2
+    },
+    {
+      "connectivity_sha256": "eadfc4f8aa94f51429a92202a75ae8eb210456ad4109741bfb87cdf023be3a97",
+      "dc_output_v": 5.22214234,
+      "deck_sha256": "48071208121061a657bfaeb735434277725cbd2d3115aa42f235c9cdde020607",
+      "left_segment_kohm": 15.0,
+      "right_segment_kohm": 35.0,
+      "wiper_fraction_left": 0.3
+    },
+    {
+      "connectivity_sha256": "2797493789844fabb68d5a20b52a4996438ac73e477e2b553125a0ca0b6bd5e3",
+      "dc_output_v": 5.22190321,
+      "deck_sha256": "8448aa5412b2d3efcde8c12777336acd9c13f87c9da9b5884c7c2e10b4cded1b",
+      "left_segment_kohm": 20.0,
+      "right_segment_kohm": 30.0,
+      "wiper_fraction_left": 0.4
+    },
+    {
+      "connectivity_sha256": "d0becce85dbe9a06bc985d290c7c1651432c4e8ca7bd07ffa94da1beb1e5b0eb",
+      "dc_output_v": 5.22234912,
+      "deck_sha256": "20ab55272e9f65a802d3d652a7fbaed575262f657479a80de22b367eec325559",
+      "left_segment_kohm": 25.0,
+      "right_segment_kohm": 25.0,
+      "wiper_fraction_left": 0.5
+    },
+    {
+      "connectivity_sha256": "426aeefe64a306ec34612a091f2d6d9b954011119bc520b1e87ad3f288ab6814",
+      "dc_output_v": 5.22234357,
+      "deck_sha256": "3b2049ad2b43de3eae935c26f07cdfe0087367c5e489382d0595ba7c701a6536",
+      "left_segment_kohm": 30.0,
+      "right_segment_kohm": 20.0,
+      "wiper_fraction_left": 0.6
+    },
+    {
+      "connectivity_sha256": "4c81f4d45c436d4fd1c27b95d8c3bbb4e7877b2a050b2e28a4c5daa5f4cb15f3",
+      "dc_output_v": 5.22233801,
+      "deck_sha256": "cbba19ace7849b02e4c6a918dc179c2d07b61eb3a1243d5690fc881bd46946ed",
+      "left_segment_kohm": 35.0,
+      "right_segment_kohm": 15.000000000000002,
+      "wiper_fraction_left": 0.7
+    },
+    {
+      "connectivity_sha256": "f5556d9923f61cdd39d4909da9eeca65958c9ca16f7dfa65fa51229918bec5b9",
+      "dc_output_v": 5.22233246,
+      "deck_sha256": "6a716ee66af9374e870feb2b48bcc463dabc4ad527bf2a7f40db66f16d8cc354",
+      "left_segment_kohm": 40.0,
+      "right_segment_kohm": 9.999999999999998,
+      "wiper_fraction_left": 0.8
+    },
+    {
+      "connectivity_sha256": "b6d715867794f42322ea4f08c3256854a17e93c061076b4c97b9cab06aeb38bb",
+      "dc_output_v": 5.22208671,
+      "deck_sha256": "e7166996dae3b728df8189f34a6f6e7c5f44496e9f60afedc5698109b7693141",
+      "left_segment_kohm": 45.0,
+      "right_segment_kohm": 4.999999999999999,
+      "wiper_fraction_left": 0.9
+    },
+    {
+      "connectivity_sha256": "fc88a20c82bf69e73769e761b0c623c7a95bb908ceddfcba425202b4b8711130",
+      "dc_output_v": 5.22232193,
+      "deck_sha256": "c56537526e8bedb04eb46d96a01bf12904c967d6ea50166de1c5fc024207b1f2",
+      "left_segment_kohm": 49.5,
+      "right_segment_kohm": 0.5000000000000004,
+      "wiper_fraction_left": 0.99
+    }
+  ],
+  "status": "FAIL"
+}

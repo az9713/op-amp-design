@@ -1,0 +1,35 @@
+{
+  "claim_boundary": "Canonical topology and SVG/SPICE connectivity only. Symbolic regulator-twin calibration values require measurements; AD633 structural interface is not a performance model.",
+  "configurations": {
+    "W12.BW": {
+      "equation": "x4 + 2.61*x3 + 3.42*x2 + 2.61*x1 + x = f(t)",
+      "impedance_scale": "book resistors /10 and capacitors x10",
+      "time_scale": "RC=1s"
+    },
+    "W12.REG_TWIN": {
+      "calibration": {
+        "K_DROOP": "measured |delta V|/delta I",
+        "R_DRIVE": "R_LEAK/(K_DROOP*I_SCALE)",
+        "R_LEAK": "TAU_MEAS/C_TWIN",
+        "TAU_MEAS": "measured first-order time constant"
+      },
+      "source_equation": "Vl/Id=(R/a0)/(R*CL*s/a0 + 1 + R/(a0*RL))"
+    },
+    "W12.VDP": {
+      "equation": "x2dot = -mu*x^2*xdot + mu*xdot - x",
+      "initial_condition": "use accepted Week 11 reset hardware before RUN",
+      "mu": 1,
+      "multiplier": "AD633 W=(X1-X2)(Y1-Y2)/10V+Z"
+    }
+  },
+  "deferred": [
+    "Roberge Figure 12.9 historical time-division multiplier implementation",
+    "realistic AD633 macro-model and error budget",
+    "automatic break-before-make/reset sequencing",
+    "separate low-voltage redesign"
+  ],
+  "graph": "graph.json",
+  "manifest_id": "W12.CASE_MANIFEST",
+  "schema_version": 1,
+  "status": "topology review; electrical performance not approved"
+}

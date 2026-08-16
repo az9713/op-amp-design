@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w11/graph.json",
+  "sheet_id": "W11.MODE_MAIN",
+  "title": "Week 11 dual three-mode integrators",
+  "status": "graph.json is electrical authority",
+  "viewport": {
+    "width": 1700,
+    "height": 1000
+  },
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "MOD.INV1",
+    "MOD.SUM1",
+    "MOD.SOCKETS",
+    "REG1",
+    "OSC1",
+    "AMP1",
+    "DEV.INT2",
+    "W11.MODE.I1",
+    "W11.MODE.I2",
+    "RECT1"
+  ],
+  "module_positions": {
+    "INF.PWR_ENTRY": {
+      "x": 40,
+      "y": 50,
+      "width": 280,
+      "height": 130
+    },
+    "MOD.INT1": {
+      "x": 300,
+      "y": 160,
+      "width": 470,
+      "height": 300,
+      "title": "INT1 CORE",
+      "ports": {
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    },
+    "AMP1": {
+      "x": 350,
+      "y": 200,
+      "width": 280,
+      "height": 210,
+      "title": "AMP1",
+      "subtitle": "discrete + mirror",
+      "ports": {
+        "INV_IN": {
+          "x": 350,
+          "y": 280
+        },
+        "NONINV_IN": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 630,
+          "y": 280
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        }
+      }
+    },
+    "MOD.INT2": {
+      "x": 300,
+      "y": 500,
+      "width": 470,
+      "height": 270,
+      "title": "INT2 CORE",
+      "ports": {
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "JACK": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    },
+    "DEV.INT2": {
+      "x": 350,
+      "y": 540,
+      "width": 280,
+      "height": 180,
+      "title": "LM301A INT2",
+      "subtitle": "30 pF compensation",
+      "ports": {
+        "INP": {
+          "visible": false
+        },
+        "INM": {
+          "x": 350,
+          "y": 610
+        },
+        "OUT": {
+          "x": 630,
+          "y": 610
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    },
+    "W11.MODE.I1": {
+      "x": 850,
+      "y": 180,
+      "width": 600,
+      "height": 280,
+      "title": "MODE-I1",
+      "subtitle": "Figure 12.18 practical channel",
+      "detail_ref": "W11.MODE.I1_DETAIL",
+      "ports": {
+        "SIGNAL_IN": {
+          "x": 850,
+          "y": 250
+        },
+        "IC_IN": {
+          "x": 850,
+          "y": 330
+        },
+        "SUM": {
+          "x": 850,
+          "y": 400
+        },
+        "OUT": {
+          "x": 1450,
+          "y": 250
+        },
+        "NONINV": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "x": 1040,
+          "y": 180
+        },
+        "MODE_RST": {
+          "x": 1240,
+          "y": 180
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      }
+    },
+    "W11.MODE.I2": {
+      "x": 850,
+      "y": 510,
+      "width": 600,
+      "height": 280,
+      "title": "MODE-I2",
+      "subtitle": "duplicated independent channel",
+      "ports": {
+        "SIGNAL_IN": {
+          "x": 850,
+          "y": 580
+        },
+        "IC_IN": {
+          "x": 850,
+          "y": 660
+        },
+        "SUM": {
+          "x": 850,
+          "y": 730
+        },
+        "OUT": {
+          "x": 1450,
+          "y": 580
+        },
+        "MODE_OP": {
+          "x": 1040,
+          "y": 510
+        },
+        "MODE_RST": {
+          "x": 1240,
+          "y": 510
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      }
+    },
+    "MOD.INV1": {
+      "x": 40,
+      "y": 850,
+      "width": 190,
+      "height": 80,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SUM1": {
+      "x": 245,
+      "y": 850,
+      "width": 190,
+      "height": 80,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "REG1": {
+      "x": 450,
+      "y": 850,
+      "width": 190,
+      "height": 80,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "OSC1": {
+      "x": 655,
+      "y": 850,
+      "width": 190,
+      "height": 80,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SOCKETS": {
+      "x": 860,
+      "y": 850,
+      "width": 270,
+      "height": 80,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "RECT1": {
+      "x": 1150,
+      "y": 850,
+      "width": 300,
+      "height": 80,
+      "style": "inactive",
+      "connect_ports": false
+    }
+  },
+  "components": {
+    "INT1.RIN": {
+      "x": 330,
+      "y": 430,
+      "rotation": 0
+    },
+    "INT1.CFB": {
+      "x": 690,
+      "y": 350,
+      "rotation": 90
+    },
+    "INT1.ROUT": {
+      "x": 720,
+      "y": 260,
+      "rotation": 0
+    },
+    "INT2.RIN": {
+      "x": 330,
+      "y": 740,
+      "rotation": 0
+    },
+    "INT2.CFB": {
+      "x": 690,
+      "y": 670,
+      "rotation": 90
+    },
+    "INT2.ROUT": {
+      "x": 720,
+      "y": 590,
+      "rotation": 0
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 25
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 815
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 835
+    }
+  },
+  "notes": [
+    "Control state is written in the review caption; the forbidden both-high state is never generated.",
+    "Both controls low is the pull-down-defined HOLD default.",
+    "Each reset follower and driver is duplicated; no hidden shared-channel coupling."
+  ]
+}

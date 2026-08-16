@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "sheet_id": "W05.REG1.ERROR_DETAIL",
+  "title": "Week 5 LM301A regulator error-amplifier detail",
+  "viewport": {"width": 1000, "height": 720},
+  "strict_components": true,
+  "module_positions": {
+    "DEV.REG1.ERR": {"x":70,"y":65,"width":860,"height":570,"title":"REG1 ERROR AMPLIFIER","ports":{"INP":{"x":70,"y":290},"INM":{"x":70,"y":370},"OUT":{"x":930,"y":330},"P15":{"visible":false},"N15":{"visible":false},"SGND":{"visible":false}}}
+  },
+  "components": {
+    "REG1.U_ERR":{"x":500,"y":330,"label":"UERR LM301A","label_dx":-45,"label_dy":-82},
+    "REG1.CC":{"x":575,"y":510,"label":"Cc"},
+    "REG1.CP":{"x":255,"y":225,"rotation":90,"label":"local + bypass"},
+    "REG1.CN":{"x":745,"y":435,"rotation":90,"label":"local − bypass"}
+  },
+  "net_routes":{"P15":{"rail":"top","coordinate":115},"SGND":{"rail":"middle","coordinate":600},"N15":{"rail":"bottom","coordinate":655}}
+}

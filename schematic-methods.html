@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How other projects make schematics</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--book); color: var(--slate); padding-bottom: 72px; }
+
+    .deck {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    @media (min-width: 800px) {
+      .deck { padding: 0 48px 64px; }
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0 8px;
+    }
+    .top img { width: 22px; height: 22px; }
+    .top .eyebrow { margin: 0; }
+
+    h1.display {
+      margin: 8px 0 12px;
+      font-size: clamp(32px, 6vw, 52px);
+    }
+    .lede { margin: 0 0 20px; max-width: 42rem; }
+
+    .sticky-next {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 0 -24px 28px;
+      padding: 12px 24px;
+      background: rgba(240, 238, 230, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 800px) {
+      .sticky-next { margin: 0 -48px 28px; padding: 12px 48px; }
+    }
+    .sticky-next b {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .sticky-next span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--fg-muted);
+    }
+
+    nav.jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 32px;
+    }
+    nav.jump a {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      padding: 6px 10px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
+      background: var(--bg-elev);
+      text-decoration: none;
+      color: var(--fg);
+    }
+    nav.jump a:hover { color: var(--crail-deep); }
+
+    h2 { margin: 48px 0 12px; scroll-margin-top: 64px; }
+    h3 { margin: 22px 0 8px; }
+
+    .verdict {
+      background: var(--slate-900);
+      color: var(--fg-onDark);
+      border-radius: var(--r-lg);
+      padding: 22px 22px 20px;
+      margin: 0 0 28px;
+    }
+    .verdict .eye {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+      margin: 0 0 8px;
+    }
+    .verdict h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(24px, 4vw, 32px);
+      color: var(--fg-onDark);
+      margin: 0 0 10px;
+    }
+    .verdict p { color: var(--slate-200); margin: 0 0 10px; }
+    .verdict p:last-child { margin: 0; }
+    .verdict strong { color: #fff; font-weight: 500; }
+
+    .path {
+      background: var(--bg-elev);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      padding: 16px 18px 14px;
+      margin: 0 0 12px;
+    }
+    .path.pick { border-color: var(--crail); }
+    .path.skip { opacity: 0.72; }
+    .path-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 8px;
+    }
+    .path h3 { margin: 0; font-size: 18px; }
+    .rank {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--crail-deep);
+    }
+    .path p { margin: 0 0 8px; font-size: 15px; }
+    .path p:last-child { margin: 0; }
+    .meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--fg-muted);
+    }
+
+    .chip {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--hairline);
+      background: var(--ivory);
+      color: var(--fg-muted);
+    }
+    .chip.ok { background: #E8EFE0; color: var(--ok); border-color: transparent; }
+    .chip.maybe { background: var(--accent-bg); color: var(--crail-deep); border-color: transparent; }
+    .chip.no { background: #F3E4E0; color: var(--err); border-color: transparent; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 12px 0 8px;
+      background: var(--bg-elev);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--hairline);
+      vertical-align: top;
+    }
+    th {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--fg-muted);
+      background: var(--ivory);
+    }
+    tr:last-child td { border-bottom: 0; }
+
+    pre {
+      background: var(--slate-900);
+      color: var(--fg-onDark);
+      border-radius: var(--r-md);
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.45;
+      margin: 8px 0 16px;
+    }
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 760px) {
+      .pair { grid-template-columns: 1fr 1fr; }
+    }
+    .pair .lbl {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--crail-deep);
+      margin: 0 0 6px;
+    }
+    .pair pre { margin: 0; min-height: 100%; }
+
+    ul.tight { margin: 8px 0 0; padding-left: 1.15em; }
+    ul.tight li { margin: 0 0 6px; }
+    .muted { color: var(--fg-muted); }
+    .back { font-size: 14px; margin: 0 0 8px; }
+
+    .refs a { display: inline; }
+    .refs li { margin: 0 0 8px; }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header>
+      <div class="top">
+        <img src="design-system/anthropic-mark.svg" alt="">
+        <p class="eyebrow">Research · 15 Aug 2026</p>
+      </div>
+      <h1 class="display">How other projects make schematics</h1>
+      <p class="lede">We have been drawing pictures of circuits. Projects that ship correct schematics declare nets, then render pins.</p>
+      <p class="back">
+        <a href="schematics-engine-grid.html">Contact sheet</a> ·
+        <a href="schematics-engine.html">Engine page</a> ·
+        <a href="capstone.html">Build log</a>
+      </p>
+    </header>
+
+    <div class="sticky-next">
+      <b>Do this next: one inverter in lcapy vs the book crop vs inv.svg.</b>
+      <span>Needs texlive + circuitikz. Do not patch schemdraw.</span>
+    </div>
+
+    <nav class="jump">
+      <a href="#paths">Ranked paths</a>
+      <a href="#netlists">Can we netlist these?</a>
+      <a href="#why">Why we stall</a>
+      <a href="#families">Four families</a>
+      <a href="#compare">Code</a>
+      <a href="#keep">Keep / drop</a>
+      <a href="#wrong">When this is wrong</a>
+      <a href="#refs">Sources</a>
+    </nav>
+
+    <section class="verdict" id="verdict">
+      <p class="eye">Verdict</p>
+      <h2>The gap is the representation, not the coordinates.</h2>
+      <p>Hand SVG, book crops, and schemdraw are one family: a wire is a line. A pin is a visual target. A junction is a dot you remember to add.</p>
+      <p>The connection checker is the same idea — geometry after the fact, not electrical rules. That is why week 8–10 and the plant never finish.</p>
+      <p><strong>Most likely to work here:</strong> lcapy netlists → CircuiTikZ. <strong>Second:</strong> draw once in KiCad and export. Stop patching schemdraw.</p>
+    </section>
+
+    <h2 id="paths">Ranked paths</h2>
+    <p class="muted">Ranked for this project: 20 analog teaching figures that must look like Roberge, stay incremental week to week, and stop having wires through triangles.</p>
+
+    <article class="path pick">
+      <div class="path-head">
+        <h3>1. lcapy netlist → CircuiTikZ SVG</h3>
+        <span class="rank">pick first</span>
+      </div>
+      <p>
+        <span class="chip ok">Likely</span>
+        <span class="chip maybe">Needs LaTeX</span>
+      </p>
+      <p>You write a SPICE-like netlist. Same node name = same net. Direction is a constraint (<code>right</code>, <code>down</code>), not a pen move. Junctions are automatic. Wires are <code>W n1 n2</code>. Op-amps, transistors, and feedback are first-class.</p>
+      <p>This is the academic analog path. Hayes 2022: textbook-quality schematics from netlists. Official docs include op-amp and transistor examples.</p>
+      <p class="meta">Fit: analog + book-like layout + Python generator. Cost: install texlive + circuitikz (not on this machine yet). Coverage: every electrical circuit in schematics.html; not the chassis maps. See <a href="#netlists">inventory</a>.</p>
+    </article>
+
+    <article class="path pick">
+      <div class="path-head">
+        <h3>2. Draw in KiCad, export SVG</h3>
+        <span class="rank">pick if no LaTeX</span>
+      </div>
+      <p>
+        <span class="chip ok">Likely</span>
+        <span class="chip">Manual</span>
+      </p>
+      <p>This is how Arrow-quality diagrams get made. Symbols have pins. Wires are nets. ERC exists. Export PDF/SVG. Twenty figures is a weekend of drawing, not months of turtle debug.</p>
+      <p>Incremental weeks = “save as week N+1” or a hierarchical sheet. Same electrical honesty as lcapy. Worse to version in git than a netlist.</p>
+      <p class="meta">Same family: Xschem, LTspice, QUCS. Use any real EDA editor.</p>
+    </article>
+
+    <article class="path">
+      <div class="path-head">
+        <h3>3. Stop generating. Use the book crops</h3>
+        <span class="rank">honest fallback</span>
+      </div>
+      <p>
+        <span class="chip maybe">Works now</span>
+        <span class="chip">Not generated</span>
+      </p>
+      <p>We already have <code>figures/book/*.png</code>. They are electrically correct because they came from the book. If the goal is “show the student the circuit,” this is already done.</p>
+      <p>Give up generated SVGs until a netlist renderer exists. Keep crops as the visual spec either way.</p>
+    </article>
+
+    <article class="path">
+      <div class="path-head">
+        <h3>4. SKiDL <code>generate_schematic()</code></h3>
+        <span class="rank">ERC only</span>
+      </div>
+      <p>
+        <span class="chip maybe">Correct nets</span>
+        <span class="chip no">Ugly layout</span>
+      </p>
+      <p>Python <code>Net</code> + pins. ERC. Auto place/route into KiCad. Connectivity is the source of truth. Auto-layout looks like a compiler dump, not Fig 5.3.</p>
+      <p>Use later if you want a second check: “is this electrically the book circuit?” Do not use as the teaching-figure renderer.</p>
+    </article>
+
+    <article class="path skip">
+      <div class="path-head">
+        <h3>5. tscircuit / atopile / netlistsvg</h3>
+        <span class="rank">wrong product</span>
+      </div>
+      <p>
+        <span class="chip no">Skip for figures</span>
+      </p>
+      <p>tscircuit and atopile are PCB-as-code. Schematic is a view of a board. netlistsvg + elkjs auto-routes from a Yosys JSON graph. Digital-first. Analog skin exists. Layout is Sugiyama, not left-to-right analog computer.</p>
+      <p>They prove the method (nets first). They will not look like Roberge.</p>
+    </article>
+
+    <article class="path skip">
+      <div class="path-head">
+        <h3>6. Keep patching schemdraw / hand SVG / more checkers</h3>
+        <span class="rank">will not close</span>
+      </div>
+      <p>
+        <span class="chip no">Do not do this</span>
+      </p>
+      <p>Same class of tool as the last three attempts. Pin anchors help. They do not create a net. Geometric checkers treat the symptom. Week 8–10 already hit the 3-attempt stop.</p>
+    </article>
+
+    <h2 id="why">Why we stall</h2>
+    <p><code>_gen_engine.py</code> is turtle graphics. A typical move:</p>
+    <pre>d += elm.Line().right().length(0.4)
+op = elm.Opamp().anchor("in1")
+d += elm.Line().at(op.out).right()</pre>
+    <p>Feedback is “go up, go across, hope you miss the triangle.” Junction dots are optional decorations. Incremental weeks copy the drawing script and add more pen moves.</p>
+    <p>The checker looks for segments inside the op-amp triangle and unmarked T-joins. That is a picture linter, not ERC.</p>
+
+    <h2 id="families">Four families other projects use</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Family</th>
+          <th>Source of truth</th>
+          <th>Examples</th>
+          <th>Transfers here?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Drawing language</td>
+          <td>Coordinates / turtle</td>
+          <td>Hand SVG, schemdraw, raw CircuiTikZ</td>
+          <td>No. This is what we have.</td>
+        </tr>
+        <tr>
+          <td>Netlist + placement hints</td>
+          <td>Named nodes. Hints only rotate/stretch.</td>
+          <td>lcapy → CircuiTikZ</td>
+          <td><strong>Yes.</strong> Analog + book-like control.</td>
+        </tr>
+        <tr>
+          <td>Code-as-circuit</td>
+          <td>Nets and pins. Schematic is a view.</td>
+          <td>SKiDL, atopile, tscircuit</td>
+          <td>Nets yes. Auto-layout no.</td>
+        </tr>
+        <tr>
+          <td>Graph layout</td>
+          <td>Netlist graph + elkjs</td>
+          <td>netlistsvg, d3-hwschematic</td>
+          <td>Nets yes. Looks digital.</td>
+        </tr>
+        <tr>
+          <td>Real EDA, export figure</td>
+          <td>Symbol + pin + wire graph</td>
+          <td>KiCad, Xschem, LTspice</td>
+          <td><strong>Yes</strong> if we accept manual draw.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>What actually transfers</h3>
+    <ul class="tight">
+      <li>Named nodes / nets as the file we edit.</li>
+      <li>A renderer that attaches to pins. You cannot miss the inverting input.</li>
+      <li>Automatic T-join dots.</li>
+      <li>Placement <em>hints</em>, not full auto-layout — figures must still look like the book.</li>
+      <li>Book crops as the visual spec. A drawing is done when it matches the book <em>and</em> the netlist.</li>
+    </ul>
+
+    <h2 id="compare">Same inverter, two models</h2>
+    <div class="pair">
+      <div>
+        <p class="lbl">What we write today (picture)</p>
+        <pre>d += elm.Resistor().right()
+d += elm.Line().right().length(0.4)
+d += elm.Opamp().anchor("in1")</pre>
+      </div>
+      <div>
+        <p class="lbl">What a working project writes (net)</p>
+        <pre>R1 vin vm; right
+E1 vo 0 opamp vm 0; right
+Rf vo vm; left</pre>
+      </div>
+    </div>
+    <p><code>vm</code> is one node. R1, the inverting pin, and Rf must meet there. That is the whole method change.</p>
+
+    <h2 id="netlists">Can we write an lcapy netlist for each circuit in schematics.html?</h2>
+    <p><strong>Yes — for every electrical circuit.</strong> Not for the week chassis maps. Those are board overviews, not one netlist.</p>
+    <p>lcapy already has the parts we need: op-amp (<code>E … opamp</code>), R/C, sources, wires, ground, diodes, BJTs, and switches (<code>SW no/nc/spdt</code>). A pot is either a pot symbol or two resistors plus a tap node.</p>
+
+    <h3>Write one netlist per book circuit</h3>
+    <p class="muted">Not one per chassis SVG. Incremental weeks are the previous netlist plus the new nets.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Circuit in schematics.html</th>
+          <th>Netlist?</th>
+          <th>Layout risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fig 1.4 summer</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Fig 1.2a inverter</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>§1.2.3 integrator</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Week 2 loop ẋ = −x</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low — same two ICs, one closing wire</td>
+        </tr>
+        <tr>
+          <td>Week 3 + Cc</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low — week 2 + one C</td>
+        </tr>
+        <tr>
+          <td>Week 4 second-order ring</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — three ICs, feedback over the top</td>
+        </tr>
+        <tr>
+          <td>Fig 5.3a plant</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — NPN + RL||CL + Id</td>
+        </tr>
+        <tr>
+          <td>Fig 12.7 + INT3 oscillator</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — two ICs, one loop</td>
+        </tr>
+        <tr>
+          <td>Fig 7.4 pair</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — two NPNs + tail current</td>
+        </tr>
+        <tr>
+          <td>Fig 7.10 collector pot</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — pot = two R + tap if no pot glyph</td>
+        </tr>
+        <tr>
+          <td>Week 8 discrete integrator</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td><strong>High</strong> — pair + CS + Q3 + complementary + C</td>
+        </tr>
+        <tr>
+          <td>Fig 9.1 (week 8 + Cc)</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td><strong>High</strong> — same netlist + Cc</td>
+        </tr>
+        <tr>
+          <td>Fig 9.8 measurement</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td><strong>High</strong> — C off, Z1/Z2 on</td>
+        </tr>
+        <tr>
+          <td>Fig 9.1 + Fig 10.9 repeater</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td><strong>High</strong> — CS replaced by Qref/Qout</td>
+        </tr>
+        <tr>
+          <td>Fig 12.17 three-mode</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — two switches around C</td>
+        </tr>
+        <tr>
+          <td>Fig 11.18 rectifier</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Fig 12.13 Butterworth</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Medium — five stages + one return</td>
+        </tr>
+        <tr>
+          <td>Analog twin of the plant</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Fig 13.1 input lag</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Fig 13.19 two-pole</td>
+          <td><span class="chip ok">Yes</span></td>
+          <td>Low</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted">Same set as the engine page. Files are not written yet.</p>
+
+    <h3>Do not write as one netlist</h3>
+    <p>The 13 <strong>“the box so far”</strong> chassis drawings in <a href="schematics.html">schematics.html</a>. They mix:</p>
+    <ul class="tight">
+      <li>several unconnected modules</li>
+      <li>empty sockets</li>
+      <li>a box labeled “INT1 Fig 9.1” instead of the transistors</li>
+    </ul>
+    <p>A netlist of that is either a pile of islands or a fake. Keep those as a separate board map, or drop them once the module netlists exist.</p>
+
+    <h3>Honest limit</h3>
+    <p>The <strong>connectivity</strong> can be written for every row above. The discrete channel (weeks 8–10) may still look crowded after CircuiTikZ places it. The netlist will still be electrically the book circuit. If that drawing is ugly, that one figure goes to KiCad. We do not go back to schemdraw.</p>
+
+    <h2 id="keep">Keep / drop</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Keep</th>
+          <th>Drop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>figures/book/*.png</code> as visual spec</td>
+          <td>More schemdraw coordinate passes</td>
+        </tr>
+        <tr>
+          <td>Week-by-week evolution (week N = week N−1 + new net)</td>
+          <td>Geometric connection checker as the quality gate</td>
+        </tr>
+        <tr>
+          <td>Existing HTML pages (do not overwrite)</td>
+          <td>SKiDL / tscircuit / netlistsvg as the figure renderer</td>
+        </tr>
+        <tr>
+          <td>IEEE look, coral = new this week</td>
+          <td>Inventing topologies not in the book</td>
+        </tr>
+        <tr>
+          <td>One netlist per book circuit</td>
+          <td>One giant netlist per chassis SVG</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="wrong">When the ranking is wrong</h2>
+    <ul class="tight">
+      <li>You only need a screenshot pack and will accept book crops — then stop generating. Path 3 wins.</li>
+      <li>You refuse LaTeX — then KiCad export, not another drawing library.</li>
+      <li>You want a PCB from the same source — then SKiDL or atopile, and live with auto-layout.</li>
+      <li>A one-circuit lcapy spike looks worse than the book and cannot be hinted into shape — then drop to path 2.</li>
+    </ul>
+
+    <h2>First useful spike</h2>
+    <ol>
+      <li>Install <code>texlive</code> + CircuiTikZ on this machine.</li>
+      <li>Write Fig 1.2a as an lcapy netlist. Render SVG.</li>
+      <li>Put it next to <code>figures/book/fig-1.2a.png</code> and <code>figures/engine/inv.svg</code>.</li>
+      <li>If pins and junctions are honest, migrate one week at a time. If not, draw that week in KiCad.</li>
+    </ol>
+    <p class="muted">Do not start a 20-circuit rewrite until the inverter spike is visually acceptable.</p>
+
+    <h2 id="refs">Sources</h2>
+    <ul class="refs tight">
+      <li><a href="https://lcapy.readthedocs.io/en/latest/schematics.html">lcapy schematics docs</a> — netlist + orientation hints + <code>draw_nodes=connections</code></li>
+      <li><a href="https://github.com/mph-/lcapy">mph-/lcapy</a> — CircuiTikZ from netlist; op-amp notebooks</li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9044395/">Hayes 2022, Lcapy</a> — textbook-quality schematics from netlists</li>
+      <li><a href="https://devbisme.github.io/skidl/">SKiDL</a> — nets first; <code>generate_schematic()</code> for KiCad 6–10</li>
+      <li><a href="https://github.com/nturley/netlistsvg">netlistsvg</a> — Yosys JSON → SVG via elkjs; analog skin exists</li>
+      <li><a href="https://docs.tscircuit.com/guides/running-tscircuit/programmatically-building-circuits">tscircuit</a> — Circuit JSON; schematic is a view of the board</li>
+      <li><a href="https://github.com/atopile/atopile">atopile</a> — <code>.ato</code> modules compile to KiCad</li>
+      <li><a href="https://github.com/Nic30/d3-hwschematic">d3-hwschematic</a> — ELK layered graph, digital/hardware view</li>
+      <li>Local: <code>_gen_engine.py</code>, <code>figures/engine/</code>, <code>figures/book/</code></li>
+    </ul>
+  </div>
+</body>
+</html>

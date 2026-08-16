@@ -1,0 +1,9 @@
+Error: incomplete or empty netlist
+       or no ".plot", ".print", or ".fourier" lines in batch mode;
+no simulations run!
+
+Note: No compatibility mode selected!
+
+
+Circuit: * generated from probe.circuit-graph.v1
+

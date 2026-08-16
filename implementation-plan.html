@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Implementation plan for cumulative Roberge one-box schematics and matched SPICE netlists.">
+  <title>Roberge one-box — implementation plan</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0 0 72px; }
+    .page { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .masthead { padding: 28px 0 38px; border-bottom: 1px solid var(--hairline); }
+    .topline { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 38px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand img { width: 24px; height: 24px; }
+    .brand .eyebrow { margin: 0; }
+    .status {
+      display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px;
+      border: 1px solid color-mix(in srgb, var(--info) 38%, transparent);
+      border-radius: var(--r-pill); background: color-mix(in srgb, var(--info) 9%, var(--paper));
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: .03em; text-transform: uppercase;
+    }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--info); }
+    h1.display { max-width: 900px; margin: 0 0 20px; font-size: clamp(44px, 7vw, 80px); }
+    .lede { max-width: 790px; margin: 0; }
+    .meta {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px;
+      margin-top: 34px; overflow: hidden; border: 1px solid var(--hairline);
+      border-radius: var(--r-md); background: var(--hairline);
+    }
+    .meta-item { min-height: 88px; padding: 15px 16px; background: var(--paper); }
+    .meta-label { display: block; margin-bottom: 7px; color: var(--fg-muted); font-family: var(--font-mono); font-size: 10px; letter-spacing: .05em; text-transform: uppercase; }
+    .meta-value { font-size: 14px; line-height: 1.45; }
+    .layout { display: grid; grid-template-columns: 235px minmax(0, 1fr); gap: 54px; align-items: start; padding-top: 42px; }
+    .toc { position: sticky; top: 24px; padding: 16px 0; border-top: 1px solid var(--slate-400); border-bottom: 1px solid var(--hairline); }
+    .toc p { margin: 0 0 10px; }
+    .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; }
+    .toc a { display: grid; grid-template-columns: 24px 1fr; gap: 6px; padding: 6px 0; color: var(--fg-muted); font-size: 13px; line-height: 1.35; text-decoration: none; }
+    .toc a::before { content: counter(toc, decimal-leading-zero); color: var(--crail-deep); font-family: var(--font-mono); font-size: 10px; padding-top: 2px; }
+    .toc a:hover { color: var(--fg); }
+    main { min-width: 0; }
+    section { margin: 0 0 62px; scroll-margin-top: 22px; }
+    h2 { margin: 0 0 18px; font-size: clamp(28px, 4vw, 40px); }
+    h3 { margin: 28px 0 10px; font-size: 20px; }
+    h4 { margin: 18px 0 7px; font-size: 16px; }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px; padding-left: 1.25rem; }
+    li { margin: 0 0 8px; line-height: 1.55; }
+    code { padding: 1px 5px; border: 1px solid var(--hairline); border-radius: 4px; background: var(--slate-100); }
+    pre { margin: 16px 0; padding: 18px; overflow-x: auto; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--slate-900); color: var(--fg-onDark); line-height: 1.6; }
+    .callout { margin: 22px 0; padding: 20px 22px; border: 1px solid color-mix(in srgb, var(--crail) 35%, var(--hairline)); border-left: 4px solid var(--crail); border-radius: var(--r-md); background: var(--accent-bg); }
+    .callout.info { border-color: color-mix(in srgb, var(--info) 34%, var(--hairline)); border-left-color: var(--info); background: color-mix(in srgb, var(--info) 7%, var(--paper)); }
+    .callout.hold { border-color: color-mix(in srgb, var(--err) 32%, var(--hairline)); border-left-color: var(--err); background: color-mix(in srgb, var(--err) 6%, var(--paper)); }
+    .label { display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+    .callout p:last-child { margin-bottom: 0; }
+    .phase { margin: 24px 0 34px; padding: 0 0 32px; border-bottom: 1px solid var(--hairline); }
+    .phase:last-child { border-bottom: 0; }
+    .phase-head { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: 16px; align-items: start; margin-bottom: 16px; }
+    .phase-id { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--slate); color: var(--fg-onDark); font-family: var(--font-mono); font-size: 12px; }
+    .phase-head h3 { margin: 0 0 4px; font-size: 23px; }
+    .phase-summary { margin: 0; color: var(--fg-muted); font-size: 14px; }
+    .gate-chip { padding: 6px 9px; border-radius: var(--r-pill); background: var(--slate-100); color: var(--fg-muted); font-family: var(--font-mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+    .phase-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+    .phase h4 { color: var(--crail-deep); font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+    .phase ul { margin-bottom: 0; }
+    .phase li { font-size: 14px; }
+    .deliverable { padding: 14px 16px; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--paper); }
+    .deliverable + .deliverable { margin-top: 10px; }
+    .deliverable strong { display: block; margin-bottom: 3px; font-size: 14px; }
+    .deliverable span { display: block; color: var(--fg-muted); font-size: 13px; line-height: 1.45; }
+    .week-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .week { min-height: 130px; padding: 16px; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--paper); }
+    .week .week-id { display: block; margin-bottom: 9px; color: var(--crail-deep); font-family: var(--font-mono); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
+    .week h3 { margin: 0 0 6px; font-size: 17px; }
+    .week p { margin: 0; color: var(--fg-muted); font-size: 13px; line-height: 1.48; }
+    .matrix { border-top: 1px solid var(--hairline); }
+    .matrix-row { display: grid; grid-template-columns: 92px minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--hairline); align-items: start; }
+    .matrix-id { color: var(--crail-deep); font-family: var(--font-mono); font-size: 11px; padding-top: 2px; }
+    .matrix strong { display: block; margin-bottom: 3px; font-size: 14px; }
+    .matrix span { display: block; color: var(--fg-muted); font-size: 13px; line-height: 1.48; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .test-card { min-height: 190px; padding: 17px; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--paper); }
+    .test-card .test-id { color: var(--crail-deep); font-family: var(--font-mono); font-size: 10px; }
+    .test-card h3 { margin: 12px 0 8px; font-size: 17px; }
+    .test-card ul { margin: 0; padding-left: 1rem; }
+    .test-card li { margin-bottom: 5px; color: var(--fg-muted); font-size: 12.5px; }
+    .risk { display: grid; grid-template-columns: 54px minmax(0, 1fr) 150px; gap: 16px; padding: 17px 0; border-top: 1px solid var(--hairline); }
+    .risk:last-child { border-bottom: 1px solid var(--hairline); }
+    .risk-id { color: var(--err); font-family: var(--font-mono); font-size: 11px; }
+    .risk h3 { margin: 0 0 5px; font-size: 16px; }
+    .risk p { margin: 0; color: var(--fg-muted); font-size: 13px; }
+    .risk-owner { color: var(--fg-muted); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; }
+    .checklist { padding: 0; list-style: none; }
+    .checklist li { position: relative; padding: 10px 0 10px 32px; border-bottom: 1px solid var(--hairline); }
+    .checklist li::before { content: "□"; position: absolute; left: 2px; top: 8px; color: var(--crail-deep); font-family: var(--font-mono); font-size: 17px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .links a { padding: 8px 11px; border: 1px solid var(--hairline); border-radius: var(--r-sm); background: var(--paper); font-size: 13px; text-decoration: none; }
+    footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--hairline); color: var(--fg-muted); font-size: 13px; }
+    @media (max-width: 900px) {
+      .meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { position: static; }
+      .toc ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; }
+      .test-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .page { width: min(100% - 24px, 1160px); }
+      .topline { align-items: flex-start; flex-direction: column; margin-bottom: 28px; }
+      .meta, .week-grid, .phase-grid { grid-template-columns: 1fr; }
+      .toc ol { grid-template-columns: 1fr; }
+      .phase-head { grid-template-columns: 48px 1fr; }
+      .phase-head .gate-chip { grid-column: 2; justify-self: start; }
+      .matrix-row { grid-template-columns: 76px 1fr; }
+      .matrix-row > :last-child { grid-column: 2; }
+      .risk { grid-template-columns: 42px 1fr; }
+      .risk-owner { grid-column: 2; }
+    }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .page { width: 100%; }
+      .masthead { padding-top: 0; }
+      .layout { display: block; }
+      .toc { position: static; margin-bottom: 36px; break-after: page; }
+      .phase, .week, .test-card, .callout, .deliverable, .risk { break-inside: avoid; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="topline">
+        <div class="brand">
+          <img src="design-system/anthropic-mark.svg" alt="">
+          <p class="eyebrow">Roberge one-box · execution blueprint</p>
+        </div>
+        <span class="status">Plan only · no implementation</span>
+      </div>
+      <h1 class="display">Implementation plan</h1>
+      <p class="lede">A gated path from approved weekly circuit specifications to cumulative publication-quality SVG schematics and electrically identical SPICE netlists.</p>
+      <div class="meta" aria-label="Plan control">
+        <div class="meta-item"><span class="meta-label">Authority</span><span class="meta-value"><a href="preflight-decisions.html">Pre-flight decisions</a></span></div>
+        <div class="meta-item"><span class="meta-label">Status</span><span class="meta-value">Proposed sequence. No implementation authorized.</span></div>
+        <div class="meta-item"><span class="meta-label">Recorded</span><span class="meta-value">August 15, 2026</span></div>
+        <div class="meta-item"><span class="meta-label">Release target</span><span class="meta-value">Week 0 plus Weeks 1–13</span></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="Contents">
+        <p class="eyebrow">Contents</p>
+        <ol>
+          <li><a href="#objective">Objective and boundaries</a></li>
+          <li><a href="#architecture">Target architecture</a></li>
+          <li><a href="#phases">Phased execution</a></li>
+          <li><a href="#weeks">Weekly work map</a></li>
+          <li><a href="#structure">Proposed artifact structure</a></li>
+          <li><a href="#verification">Verification system</a></li>
+          <li><a href="#traceability">Decision traceability</a></li>
+          <li><a href="#risks">Risks and controls</a></li>
+          <li><a href="#deferred">Deferred-project controls</a></li>
+          <li><a href="#checkpoints">User checkpoints</a></li>
+          <li><a href="#completion">Completion criteria</a></li>
+        </ol>
+      </nav>
+
+      <main>
+        <section id="objective">
+          <p class="eyebrow">01 · Objective</p>
+          <h2>Build the pipeline before scaling the drawings</h2>
+          <p>The implementation will produce a cumulative electrical representation of the one-box capstone for fourteen project states: Week 0 infrastructure and Weeks 1–13. Each state must show the physical project honestly, emphasize that week’s active experiment, and identify additions, removals, replacements, and inactive retained circuitry.</p>
+          <div class="callout">
+            <span class="label">Primary release contract</span>
+            <p>For every released week, the SVG schematic and SPICE netlist must be derived from—or mechanically proven equivalent to—the same canonical circuit graph.</p>
+          </div>
+          <h3>In scope</h3>
+          <ul>
+            <li>A reviewed week-by-week electrical specification before circuit implementation.</li>
+            <li>A canonical representation for components, pins, nets, parameters, variants, and weekly state.</li>
+            <li>One cumulative main electrical sheet per week, plus pin-for-pin detail sheets where needed.</li>
+            <li>Recommended-values tables and implementation notes.</li>
+            <li>Ideal and realistic SPICE variants where the weekly circuit is expected to operate.</li>
+            <li>Automated equivalence, electrical, provenance, and regression checks.</li>
+            <li>Approved SVG integration into <code>capstone.html</code>.</li>
+          </ul>
+          <h3>Not in the first implementation</h3>
+          <ul>
+            <li>Physical front-panel patch-cord paths and routing diagrams. Electrical nets and ordinary schematic wires remain in scope.</li>
+            <li>A low-voltage redesign.</li>
+            <li>Full parallel modern schematics unless a substitute materially changes topology.</li>
+            <li>Physical board placement, harness routing, and front-panel mechanical design.</li>
+          </ul>
+          <div class="callout hold">
+            <span class="label">Current boundary</span>
+            <p>Creating this plan does not cross Gate 0. No circuit implementation begins until the weekly specification is written, reviewed, and explicitly approved.</p>
+          </div>
+        </section>
+
+        <section id="architecture">
+          <p class="eyebrow">02 · Architecture</p>
+          <h2>One model, controlled projections</h2>
+          <p>The implementation must separate electrical truth from presentation without allowing them to drift.</p>
+          <div class="matrix">
+            <div class="matrix-row">
+              <span class="matrix-id">LAYER 01</span>
+              <div><strong>Canonical circuit model</strong><span>Stable component IDs, pin definitions, named nets, values or symbols, model bindings, hierarchy, state, and provenance.</span></div>
+              <div><strong>Authority</strong><span>The only editable electrical source of truth.</span></div>
+            </div>
+            <div class="matrix-row">
+              <span class="matrix-id">LAYER 02</span>
+              <div><strong>Weekly composition</strong><span>Week N imports the prior physical state and applies an explicit delta: add, change, remove, replace, activate, or retain-inactive.</span></div>
+              <div><strong>Authority</strong><span>Cumulative state and presentation semantics.</span></div>
+            </div>
+            <div class="matrix-row">
+              <span class="matrix-id">LAYER 03</span>
+              <div><strong>Schematic projection</strong><span>Electrical symbols, pin-connected wires, named modules, visual layout hints, current-week highlighting, and detail-sheet boundaries.</span></div>
+              <div><strong>Output</strong><span>Publication SVG plus machine-readable connectivity receipt.</span></div>
+            </div>
+            <div class="matrix-row">
+              <span class="matrix-id">LAYER 04</span>
+              <div><strong>Simulation projection</strong><span>Ideal and realistic device bindings, supplies, stimuli, analyses, expected measurements, and known non-operational states.</span></div>
+              <div><strong>Output</strong><span>SPICE netlists, plots or scalar results, and test receipt.</span></div>
+            </div>
+            <div class="matrix-row">
+              <span class="matrix-id">LAYER 05</span>
+              <div><strong>Publication projection</strong><span>SVG embedding, recommended-values tables, source citations, historical notes, modern notes, and status explanations.</span></div>
+              <div><strong>Output</strong><span>Updated capstone presentation after release approval.</span></div>
+            </div>
+          </div>
+          <div class="callout info">
+            <span class="label">Tool choice remains gated</span>
+            <p>The plan does not preselect lcapy, KiCad, SKiDL, or another renderer. The selected stack must demonstrate deterministic connectivity, analog layout control, SVG output, SPICE compatibility, Windows reproducibility, and programmatic equivalence checking on the Week 9 proof.</p>
+          </div>
+        </section>
+
+        <section id="phases">
+          <p class="eyebrow">03 · Work breakdown</p>
+          <h2>Eight gated phases</h2>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">00</span>
+              <div><h3>Project controls and baselines</h3><p class="phase-summary">Make inputs, decisions, generated outputs, and verification receipts distinguishable.</p></div>
+              <span class="gate-chip">Preparation</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Declare <code>preflight-decisions.html</code> as the binding requirements record.</li>
+                  <li>Inventory current source files, experiments, generated artifacts, and known checker waivers.</li>
+                  <li>Define naming, versioning, provenance, and generated-file rules.</li>
+                  <li>Propose Git initialization separately; do not initialize without user approval.</li>
+                  <li>Record the active Python/runtime environment and dependency gaps without installing anything yet.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Project control note</strong><span>Authority hierarchy, file ownership, generation boundaries, and reproducibility policy.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>No ambiguity about which inputs are authoritative and which files are experiments.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">01</span>
+              <div><h3>Weekly electrical specification</h3><p class="phase-summary">Resolve the circuit before selecting the drawing machinery.</p></div>
+              <span class="gate-chip">Gate 0 · user approval</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Read the relevant Roberge pages and figures for every week.</li>
+                  <li>Describe the end-of-week physical state, active experiment, inherited circuitry, and exact delta.</li>
+                  <li>List components, pins, named nets, hierarchy, module boundaries, symbolic parameters, and recommended values.</li>
+                  <li>Identify practical additions not explicit in Roberge and explain why each is necessary.</li>
+                  <li>Record power assumptions, test points, loading, matching, tolerances, ratings, and expected measurements.</li>
+                  <li>Mark incomplete/nonfunctional weeks and define what can and cannot be simulated.</li>
+                  <li>Carry D-01 through D-04 into the specification.</li>
+                  <li>Specify separate Week 12 Butterworth and Van der Pol configurations and separate Week 13 compensation-campaign configurations.</li>
+                  <li>Use LM301A as the primary historical stock op-amp and record 741-class alternatives explicitly.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Weekly specification</strong><span>Fourteen reviewed state definitions with traceable source evidence.</span></div>
+                <div class="deliverable"><strong>Issue ledger</strong><span>Contradictions, missing values, ambiguous adaptations, and decisions requested from the user.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>User approves the specification and explicitly authorizes implementation.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">02</span>
+              <div><h3>Canonical-model and toolchain selection</h3><p class="phase-summary">Select on electrical guarantees and difficult-circuit performance.</p></div>
+              <span class="gate-chip">Gate 1 · architecture</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Define the minimum canonical schema for components, pins, nets, parameters, hierarchy, variants, and weekly states.</li>
+                  <li>Build throwaway evaluation cases for an op-amp feedback loop, transistor differential pair, switch state, and hierarchical detail sheet.</li>
+                  <li>Evaluate deterministic SVG generation, SPICE projection, analog layout control, junction handling, and graph introspection.</li>
+                  <li>Verify clean reproducibility on the native Windows workspace.</li>
+                  <li>Choose the toolchain and document the decision, fallback, limitations, and migration cost.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Architecture decision record</strong><span>Selected canonical model and renderer, rejected alternatives, evidence, and fallback.</span></div>
+                <div class="deliverable"><strong>Schema and validator</strong><span>Minimum representation plus checks for IDs, pins, nets, variants, and weekly deltas.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>The stack can expose and compare rendered and simulated connectivity.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">03</span>
+              <div><h3>Week 9 vertical proof</h3><p class="phase-summary">Prove the hardest shared mechanisms before chronological production.</p></div>
+              <span class="gate-chip">Gate 2 · proof</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Encode the approved Week 9 cumulative state and its inherited modules.</li>
+                  <li>Render one complete main sheet and a pin-for-pin discrete-amplifier detail sheet.</li>
+                  <li>Generate ideal and realistic SPICE projections from the same circuit graph.</li>
+                  <li>Test component/pin/net equivalence, expected DC operating points, compensation-sensitive AC behavior, and relevant transient behavior.</li>
+                  <li>Compare the topology and presentation with the cited Roberge figures.</li>
+                  <li>Run responsive and print visual checks on the SVG presentation.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Week 9 proof package</strong><span>Canonical source, main SVG, detail SVG, two netlists, values table, source map, and receipts.</span></div>
+                <div class="deliverable"><strong>Pipeline corrections</strong><span>Schema, renderer, and checks revised before any batch production.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>All three gates pass; user approves the visual and technical standard.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">04</span>
+              <div><h3>Common infrastructure and reusable modules</h3><p class="phase-summary">Build shared primitives once, with explicit interfaces.</p></div>
+              <span class="gate-chip">Gate 3A · foundation</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Implement the Week 0 ±15 V infrastructure sheet and its referenced hidden-power-pin contract.</li>
+                  <li>Implement reusable modules for stock op-amp stages, summers, integrators, switches, oscillator, regulator plant, and discrete amplifier stages.</li>
+                  <li>Give every module a pin contract, parameter contract, provenance, and isolated test fixture.</li>
+                  <li>Create reusable recommended-values and historical/modern note structures.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Week 0 package</strong><span>Infrastructure SVG, connectivity, values, limits, and references.</span></div>
+                <div class="deliverable"><strong>Validated module library</strong><span>Reusable definitions with unit-level electrical and rendering tests.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>Shared modules no longer require copy-and-edit drawings.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">05</span>
+              <div><h3>Chronological weekly production</h3><p class="phase-summary">Generate cumulative states in dependency order, not as independent pictures.</p></div>
+              <span class="gate-chip">Gate 3B · weekly batches</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Implement Weeks 1–4: computing core and first/second-order loops.</li>
+                  <li>Implement Weeks 5–6: regulator plant and test oscillator.</li>
+                  <li>Implement Weeks 7–10: honest discrete-channel evolution, including incomplete states and the already-proved Week 9.</li>
+                  <li>Implement Weeks 11–13: three-mode integration, final problems, and compensation.</li>
+                  <li>At every transition, verify prior state plus explicit delta and record all removals or replacements.</li>
+                  <li>Apply the one-large-sheet preference, adding detail sheets only under the approved readability rule.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Four weekly batches</strong><span>Each contains canonical state, SVGs, netlists, values, notes, provenance, and test receipts.</span></div>
+                <div class="deliverable"><strong>Cumulative-delta report</strong><span>Machine-readable and human-readable change from each week to the next.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>All fourteen states pass connectivity and their applicable electrical tests.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">06</span>
+              <div><h3>Capstone integration and publication QA</h3><p class="phase-summary">Integrate only approved outputs; preserve the cumulative story.</p></div>
+              <span class="gate-chip">Gate 4 · release candidate</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Embed approved SVGs and values tables into the corresponding capstone weeks.</li>
+                  <li>Add source links, practical-addition notes, historical/modern notes, and infrastructure references.</li>
+                  <li>Keep existing progress-state behavior intact unless separately authorized.</li>
+                  <li>Verify desktop, narrow-screen, print, local-file, and accessibility behavior.</li>
+                  <li>Prevent stale generated artifacts through manifest and regeneration checks.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Integrated release candidate</strong><span>Capstone with fourteen approved schematic states and linked SPICE artifacts.</span></div>
+                <div class="deliverable"><strong>Visual QA receipt</strong><span>Browser and print review with defects resolved.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>No broken links, clipped drawings, stale outputs, or traceability gaps.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="phase">
+            <div class="phase-head">
+              <span class="phase-id">07</span>
+              <div><h3>Final audit and handoff</h3><p class="phase-summary">Make the work reproducible, inspectable, and safe to extend.</p></div>
+              <span class="gate-chip">Gate 5 · user acceptance</span>
+            </div>
+            <div class="phase-grid">
+              <div>
+                <h4>Tasks</h4>
+                <ul>
+                  <li>Run a clean regeneration and full test suite from documented prerequisites.</li>
+                  <li>Audit every pre-flight decision and deferred item for traceability.</li>
+                  <li>Publish a known-limitations and unresolved-engineering ledger.</li>
+                  <li>Provide an implementation receipt listing sources, outputs, tests, deviations, and future work.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Deliverables and exit</h4>
+                <div class="deliverable"><strong>Release receipt</strong><span>Exact evidence for what was implemented and verified.</span></div>
+                <div class="deliverable"><strong>Deferred-project handoff</strong><span>D-01 through D-04 preserved with triggers and prerequisites.</span></div>
+                <div class="deliverable"><strong>Exit criterion</strong><span>User accepts the release; no required work remains hidden.</span></div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="weeks">
+          <p class="eyebrow">04 · Weekly map</p>
+          <h2>Fourteen states to specify and release</h2>
+          <div class="week-grid">
+            <article class="week"><span class="week-id">Week 0 · infrastructure</span><h3>Permanent electrical foundation</h3><p>Dual ±15 V interface, ground architecture, local decoupling, protection, connector conventions, and hidden power-pin contract.</p></article>
+            <article class="week"><span class="week-id">Week 1 · Chapter 1</span><h3>Computing core</h3><p>Installed inverter, weighted summer, and first integrator; complete cumulative chassis state with each active test configuration identified.</p></article>
+            <article class="week"><span class="week-id">Week 2 · Chapter 2</span><h3>First closed loop</h3><p>Prior core plus the active first-order computer configuration; patch-cord depiction remains deferred but electrical connectivity cannot be ambiguous.</p></article>
+            <article class="week"><span class="week-id">Week 3 · Chapter 3</span><h3>Characterized existing machine</h3><p>Week 2 state plus compensation configuration and measurement setup required for the experiment.</p></article>
+            <article class="week"><span class="week-id">Week 4 · Chapter 4</span><h3>Second integrator and loop</h3><p>Cumulative core with the second integrator and active second-order loop, including stability measurement points.</p></article>
+            <article class="week"><span class="week-id">Week 5 · Chapter 5</span><h3>Physical regulator plant</h3><p>Existing computer retained; regulator plant installed and emphasized as the active experiment, with inactive modules subdued.</p></article>
+            <article class="week"><span class="week-id">Week 6 · Chapters 6/12</span><h3>Test oscillator</h3><p>Cumulative chassis plus Schmitt–integrator oscillator configured as the active source.</p></article>
+            <article class="week"><span class="week-id">Week 7 · Chapter 7</span><h3>Discrete input stage</h3><p>INT1 IC physically removed; socket retained; incomplete differential input stage shown honestly and not anticipated as a finished amplifier.</p></article>
+            <article class="week"><span class="week-id">Week 8 · Chapter 8</span><h3>Completed discrete channel</h3><p>Week 7 pair plus high-gain stage, current-source load, complementary output, and feedback element needed to restore the channel’s role.</p></article>
+            <article class="week"><span class="week-id">Week 9 · Chapter 9</span><h3>Illustrative amplifier and proof slice</h3><p>Figure 9.1-era channel with compensation and measurement configuration; selected as the end-to-end pipeline proof.</p></article>
+            <article class="week"><span class="week-id">Week 10 · Chapter 10</span><h3>IC-practice improvement</h3><p>Same discrete channel with current-repeater load and explicit comparison points against a stock integrated amplifier.</p></article>
+            <article class="week"><span class="week-id">Week 11 · Chapters 11/12</span><h3>Reset, operate, hold</h3><p>Cumulative machine with switching modes around the integrators and retained precision-rectifier capability.</p></article>
+            <article class="week"><span class="week-id">Week 12 · Chapter 12</span><h3>Capstone problems</h3><p>One cumulative physical state with separate complete configuration sheets and matched netlists for the Butterworth and Van der Pol experiments; the regulator analog twin is documented without conflating configurations.</p></article>
+            <article class="week"><span class="week-id">Week 13 · Chapter 13</span><h3>Compensated finished machine</h3><p>Final cumulative state with separate configuration sheets and matched netlists for the fixed-transfer and amplifier-transfer compensation campaigns.</p></article>
+          </div>
+        </section>
+
+        <section id="structure">
+          <p class="eyebrow">05 · Proposed structure</p>
+          <h2>Artifacts and ownership</h2>
+          <p>This is a proposed layout, not directories created by this planning step.</p>
+          <pre aria-label="Proposed project tree">spec/
+  weekly/                 # approved Week 0–13 electrical specifications
+  decisions/              # architecture and circuit adaptation records
+  deferred/               # D-01 through D-04, with durable triggers
+circuits/
+  modules/                # reusable canonical circuit definitions
+  weeks/                  # cumulative state + explicit weekly delta
+  models/                 # ideal and realistic device/model bindings
+  stimuli/                # AC, transient, DC, and measurement definitions
+layout/
+  modules/                # reusable placement and hierarchy hints
+  weeks/                  # main-sheet and detail-sheet composition
+generated/
+  svg/                    # generated publication schematics
+  spice/                  # generated ideal and realistic netlists
+  values/                 # recommended-values tables
+  reports/                # equivalence, simulation, source, and delta receipts
+tests/
+  schema/                 # model and weekly-state invariants
+  connectivity/           # component/pin/net equivalence
+  electrical/             # operating-point, AC, and transient expectations
+  visual/                 # render, overlap, link, responsive, and print checks
+docs/
+  implementation-receipt.html
+  known-limitations.html</pre>
+          <p>Generated SVG and SPICE files are outputs, not separately editable sources. Hand edits to generated artifacts are prohibited.</p>
+        </section>
+
+        <section id="verification">
+          <p class="eyebrow">06 · Verification</p>
+          <h2>Tests that correspond to the actual failure modes</h2>
+          <div class="test-grid">
+            <article class="test-card"><span class="test-id">V-01</span><h3>Schema and identity</h3><ul><li>Unique stable component IDs</li><li>Valid pin names and model bindings</li><li>No undeclared nets</li><li>No illegal weekly state transition</li><li>All removals explicitly recorded</li></ul></article>
+            <article class="test-card"><span class="test-id">V-02</span><h3>Connectivity equivalence</h3><ul><li>Normalized component-set equality</li><li>Pin-to-net equality</li><li>Hierarchy boundary equality</li><li>No SVG-only or SPICE-only elements</li><li>Intentional model substitutions declared</li></ul></article>
+            <article class="test-card"><span class="test-id">V-03</span><h3>Electrical checks</h3><ul><li>DC operating point</li><li>Expected gain and polarity</li><li>AC response and stability where relevant</li><li>Transient response and saturation</li><li>Explicit expected failure for incomplete states</li></ul></article>
+            <article class="test-card"><span class="test-id">V-04</span><h3>Cumulative progression</h3><ul><li>Week N equals Week N−1 plus declared delta</li><li>Retained inactive circuitry preserved</li><li>Removal/replacement annotations present</li><li>Coral highlight matches delta</li><li>Active experiment receives normal emphasis</li></ul></article>
+            <article class="test-card"><span class="test-id">V-05</span><h3>Visual and publication</h3><ul><li>No overlap, clipping, or ambiguous crossing</li><li>Explicit junctions and readable labels</li><li>Main/detail interfaces match pin-for-pin</li><li>Desktop, narrow-screen, and print review</li><li>All local links and SVG references resolve</li></ul></article>
+            <article class="test-card"><span class="test-id">V-06</span><h3>Source and engineering review</h3><ul><li>Roberge figure/section cited</li><li>Practical additions identified</li><li>Values and ratings reviewed</li><li>Historical and modern notes separated</li><li>Known deviations and uncertainty visible</li></ul></article>
+          </div>
+          <div class="callout info">
+            <span class="label">Important exception</span>
+            <p>A temporarily incomplete Week 7 channel should not be forced to pass a functional simulation. Its acceptance criteria are faithful topology, expected non-operation, safe state assumptions, and correct cumulative representation.</p>
+          </div>
+        </section>
+
+        <section id="traceability">
+          <p class="eyebrow">07 · Traceability</p>
+          <h2>Pre-flight decisions mapped to implementation</h2>
+          <div class="matrix">
+            <div class="matrix-row"><span class="matrix-id">DEC-001–003</span><div><strong>Weekly scope, cumulative state, and sheet strategy</strong><span>Implemented through weekly composition, explicit deltas, active/inactive styling, and main/detail sheet contracts.</span></div><div><strong>Evidence</strong><span>Weekly spec, delta report, V-04 and V-05.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-004–005</span><div><strong>Build-ready symbolism and practical additions</strong><span>Implemented through recommended-values tables, ratings, source provenance, and marked implementation additions.</span></div><div><strong>Evidence</strong><span>Values output, source report, V-06.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-006</span><div><strong>Honest intermediate states</strong><span>Implemented through explicit incomplete/nonfunctional states and week-specific acceptance criteria.</span></div><div><strong>Evidence</strong><span>Week 7 spec, V-03 and V-04.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-007–008</span><div><strong>Historical ±15 V path and release outputs</strong><span>Implemented through primary historical circuits, modern notes, SVG outputs, and ideal/realistic SPICE projections.</span></div><div><strong>Evidence</strong><span>Model bindings, note blocks, generated artifacts.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-009</span><div><strong>Canonical connectivity</strong><span>Implemented through one canonical graph and automated component/pin/net equivalence.</span></div><div><strong>Evidence</strong><span>V-01 and V-02; build failure on mismatch.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-010–012</span><div><strong>Notation, hidden power pins, and Week 0</strong><span>Implemented through layout rules, visual state palette, infrastructure references, and a permanent Week 0 sheet.</span></div><div><strong>Evidence</strong><span>Week 0 package, V-05, publication review.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-013–014</span><div><strong>Separate Week 12 and Week 13 configurations</strong><span>Implemented through a shared cumulative physical state with distinct electrically complete configuration sheets and matched netlists for each alternative experiment or campaign.</span></div><div><strong>Evidence</strong><span>Configuration manifests, V-02, V-03 and V-04.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">DEC-015–016</span><div><strong>Patch-cord boundary and LM301A baseline</strong><span>Keep electrical nets explicit while deferring physical cable routing; bind the historical stock-op-amp path to LM301A and document 741-class alternatives.</span></div><div><strong>Evidence</strong><span>Weekly specifications, model bindings, D-01 handoff.</span></div></div>
+          </div>
+        </section>
+
+        <section id="risks">
+          <p class="eyebrow">08 · Risk register</p>
+          <h2>Likely ways this project can fail</h2>
+          <div class="risk"><span class="risk-id">R-01</span><div><h3>Visually plausible but electrically false drawings</h3><p>Control: canonical graph, pin-level equivalence, no hand edits to generated SVGs, and failure on mismatch.</p></div><span class="risk-owner">Block release</span></div>
+          <div class="risk"><span class="risk-id">R-02</span><div><h3>Tool works on an inverter but collapses on Week 9</h3><p>Control: select and approve the toolchain only through a difficult Week 9 proof with hierarchy, transistors, compensation, and SPICE.</p></div><span class="risk-owner">Gate 2</span></div>
+          <div class="risk"><span class="risk-id">R-03</span><div><h3>Cumulative sheets become unreadable</h3><p>Control: inactive-state de-emphasis, named hierarchy, one complete main sheet, and pin-for-pin detail sheets.</p></div><span class="risk-owner">Visual gate</span></div>
+          <div class="risk"><span class="risk-id">R-04</span><div><h3>Patch-cord deferral creates electrical ambiguity</h3><p>Control: omit physical cord routing but retain explicit canonical nets and a note that a future patch-cord layer must realize them.</p></div><span class="risk-owner">Spec review</span></div>
+          <div class="risk"><span class="risk-id">R-05</span><div><h3>Roberge figures omit build details</h3><p>Control: identify every practical addition, document rationale, and keep source topology distinct from implementation completion.</p></div><span class="risk-owner">Engineering review</span></div>
+          <div class="risk"><span class="risk-id">R-06</span><div><h3>Realistic SPICE models are unavailable or misleading</h3><p>Control: preserve ideal topology tests, document model provenance and limits, and compare simulated expectations with analytical checks.</p></div><span class="risk-owner">Electrical gate</span></div>
+          <div class="risk"><span class="risk-id">R-07</span><div><h3>Generated files drift from their source</h3><p>Control: generation manifest, content hashes, clean-regeneration test, and prohibition on output edits.</p></div><span class="risk-owner">Release audit</span></div>
+          <div class="risk"><span class="risk-id">R-08</span><div><h3>Deferred work quietly disappears</h3><p>Control: durable deferred ledger, mandatory carry-forward checklist, explicit trigger and prerequisite for every deferred project.</p></div><span class="risk-owner">Every handoff</span></div>
+        </section>
+
+        <section id="deferred">
+          <p class="eyebrow">09 · Deferred controls</p>
+          <h2>Future projects remain first-class records</h2>
+          <div class="matrix">
+            <div class="matrix-row"><span class="matrix-id">D-01</span><div><strong>Physical patch-cord drawings</strong><span>Defer front-panel cable paths and routing only. Trigger after canonical weekly nets and connection points stabilize; electrical nets remain explicit from the first release.</span></div><div><strong>Prerequisite</strong><span>Released cumulative schematics and connector naming.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">D-02</span><div><strong>Low-voltage redesign</strong><span>Separate second project; never silently modify the primary ±15 V curriculum.</span></div><div><strong>Prerequisite</strong><span>Stable historical reference implementation and explicit new design goals.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">D-03</span><div><strong>Full modern alternatives</strong><span>Trigger when a modern substitute materially changes topology, operating range, compensation, or teaching outcome.</span></div><div><strong>Prerequisite</strong><span>Historical implementation verified first.</span></div></div>
+            <div class="matrix-row"><span class="matrix-id">D-04</span><div><strong>Physical construction documentation</strong><span>Board layout, harnesses, panel, thermal, and photographs form a later mechanical/construction workstream.</span></div><div><strong>Prerequisite</strong><span>Stable circuit, connector, grounding, and parts definitions.</span></div></div>
+          </div>
+        </section>
+
+        <section id="checkpoints">
+          <p class="eyebrow">10 · Governance</p>
+          <h2>User decisions occur at five checkpoints</h2>
+          <ol>
+            <li><strong>Gate 0 — specification approval:</strong> approve fourteen weekly end states, source adaptations, recommended-value strategy, and unresolved issues.</li>
+            <li><strong>Gate 1 — architecture approval:</strong> approve the canonical model, renderer/simulator stack, fallback, and reproducibility policy.</li>
+            <li><strong>Gate 2 — Week 9 proof approval:</strong> approve the electrical fidelity, presentation language, values table, notes, and test receipts.</li>
+            <li><strong>Gate 3 — batch reviews:</strong> approve each chronological group before the next group is scaled.</li>
+            <li><strong>Gate 5 — final acceptance:</strong> accept the integrated capstone, known limitations, reproducibility evidence, and deferred-project handoff.</li>
+          </ol>
+          <p>Questions should be raised at the earliest gate that can resolve them. A later polished drawing must not conceal an earlier unresolved circuit decision.</p>
+        </section>
+
+        <section id="completion">
+          <p class="eyebrow">11 · Completion</p>
+          <h2>Definition of done</h2>
+          <ul class="checklist">
+            <li>Week 0 and Weeks 1–13 each have an approved cumulative state and explicit delta.</li>
+            <li>Every released schematic and SPICE netlist has matching components, pins, and nets.</li>
+            <li>Every main/detail sheet boundary matches pin-for-pin.</li>
+            <li>Every applicable ideal and realistic simulation passes documented expectations—or has an explicit, technically justified exception.</li>
+            <li>Every circuit cites its Roberge source and identifies practical additions.</li>
+            <li>Every weekly output includes recommended values, ratings or constraints, historical notes, and modern notes where relevant.</li>
+            <li>Week-to-week highlighting matches the actual cumulative delta.</li>
+            <li>Week 7 and other incomplete states are represented honestly.</li>
+            <li>The integrated capstone passes local-link, responsive, print, accessibility, and visual checks.</li>
+            <li>A clean documented regeneration reproduces the published outputs and receipts.</li>
+            <li>D-01 through D-04 remain visible with triggers and prerequisites.</li>
+            <li>The final receipt distinguishes verified evidence, implementation decisions, known limitations, and future work.</li>
+          </ul>
+          <div class="links" aria-label="Related files">
+            <a href="preflight-decisions.html">Binding pre-flight decisions</a>
+            <a href="capstone.html">Current capstone</a>
+            <a href="schematic-methods.html">Existing method analysis</a>
+            <a href="op_amps_roberge.pdf">Roberge source text</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      Implementation plan · Roberge one-box · Planning artifact only; no circuit implementation performed.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gate 0 identity, physical-state, configuration, and transition register for the Roberge one-box project.">
+  <title>Roberge one-box — Gate 0 integration register</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0 0 72px; }
+    .page { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 30px 0 40px; border-bottom: 1px solid var(--hairline); }
+    .top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    .eyebrow { margin: 0; }
+    .status { padding: 6px 10px; border: 1px solid var(--hairline); border-radius: var(--r-pill); background: var(--paper); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; }
+    h1.display { margin: 34px 0 16px; max-width: 900px; font-size: clamp(42px, 7vw, 74px); }
+    .lede { max-width: 780px; margin: 0; }
+    main { padding-top: 42px; }
+    section { margin-bottom: 58px; }
+    h2 { margin: 0 0 16px; }
+    h3 { margin: 24px 0 8px; font-size: 19px; }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px; padding-left: 1.25rem; }
+    li { margin-bottom: 8px; line-height: 1.55; }
+    code { padding: 1px 5px; border: 1px solid var(--hairline); border-radius: 4px; background: var(--slate-100); }
+    .callout { margin: 20px 0; padding: 18px 20px; border: 1px solid color-mix(in srgb, var(--crail) 34%, var(--hairline)); border-left: 4px solid var(--crail); border-radius: var(--r-md); background: var(--accent-bg); }
+    .callout p:last-child { margin-bottom: 0; }
+    .label { display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+    .table { overflow-x: auto; border-top: 1px solid var(--hairline); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { padding: 10px 12px; border-bottom: 1px solid var(--slate-400); color: var(--fg-muted); font-family: var(--font-mono); font-size: 9px; text-align: left; text-transform: uppercase; }
+    td { padding: 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; line-height: 1.45; }
+    td:first-child { color: var(--crail-deep); font-family: var(--font-mono); font-size: 11px; white-space: nowrap; }
+    .open { color: var(--err); }
+    .fixed { color: var(--ok); }
+    .links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .links a { padding: 7px 10px; border: 1px solid var(--hairline); border-radius: var(--r-sm); background: var(--paper); font-size: 12px; text-decoration: none; }
+    footer { margin-top: 68px; padding-top: 22px; border-top: 1px solid var(--hairline); color: var(--fg-muted); font-size: 13px; }
+    @media (max-width: 620px) { .page { width: min(100% - 24px, 1120px); } .top { align-items: flex-start; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top"><p class="eyebrow">Roberge one-box · integration authority</p><span class="status">Approved 2026-08-15</span></div>
+      <h1 class="display">Gate 0 integration register</h1>
+      <p class="lede">One naming system, one physical inventory, and one configuration vocabulary across Week 0 through Week 13.</p>
+    </header>
+
+    <main>
+      <section>
+        <p class="eyebrow">01 · Authority</p>
+        <h2>Range-local names are retired at integration</h2>
+        <p>This register resolves the cross-range naming conflict found by independent review. Names such as <code>CORE.*</code>, <code>CMP-*</code>, <code>PLANT-*</code>, <code>SRC-*</code>, <code>INFRA.*</code>, <code>AGND</code>, and <code>VCC_15</code> remain quotations from draft annexes only. They do not become aliases or additional electrical nets.</p>
+        <div class="callout"><span class="label">Canonical syntax</span><p>Dots express hierarchy. Uppercase names identify physical objects and named nets. A socket, its occupant, and its passive network are distinct identities. Configuration roles never rename physical objects.</p></div>
+      </section>
+
+      <section>
+        <p class="eyebrow">02 · Global module-level identity registry</p>
+        <h2>Stable physical objects</h2>
+        <p>This Gate 0 table freezes module, socket, occupant, and global-net identities. It is not yet the complete encoding registry: stable per-component IDs, device pins, and ordinary local-net IDs are assigned in Phase 2 only after the corresponding topology decision is approved.</p>
+        <div class="table"><table>
+          <thead><tr><th>Canonical ID</th><th>Physical meaning</th><th>First state</th><th>Draft names retired</th></tr></thead>
+          <tbody>
+            <tr><td>INF.PWR_ENTRY</td><td>External protected ±15 V supply interface</td><td>W00</td><td>INFRA power entry, VCC/VEE source blocks</td></tr>
+            <tr><td>INF.GND_STAR</td><td>Single intentional <code>SGND</code>–<code>PGND</code> tie</td><td>W00</td><td>AGND-only models</td></tr>
+            <tr><td>INF.DECOUP</td><td>Board bulk and module-local bypass infrastructure</td><td>W00</td><td>Range-local bypass aliases</td></tr>
+            <tr><td>SLOT.INV1</td><td>Permanent stock inverter socket/interface</td><td>W01</td><td>AC.INV1 / CORE.INV1 / CMP-INV1 container</td></tr>
+            <tr><td>SLOT.SUM1</td><td>Permanent summer/patchable computing socket/interface</td><td>W01</td><td>AC.SUM1 / CORE.SUM1 / CMP-SUM1 container</td></tr>
+            <tr><td>SLOT.INT1</td><td>Permanent integrator-1 socket/interface</td><td>W01</td><td>AC.INT1 / CORE.INT1 / CMP-INT1 container</td></tr>
+            <tr><td>SLOT.INT2</td><td>Permanent integrator-2 socket/interface; empty until W04</td><td>W01</td><td>AC.INT2.SOCKET and later module rename</td></tr>
+            <tr><td>SLOT.INT3</td><td>Permanent reserved socket; populated as persistent oscillator integrator under G0-06</td><td>W01</td><td>AC.INT3.SOCKET / CMP-INT3</td></tr>
+            <tr><td>DEV.U_INV1</td><td>LM301A occupant of SLOT.INV1</td><td>W01</td><td>AC.INV1.U1 and aliases</td></tr>
+            <tr><td>DEV.U_SUM1</td><td>LM301A occupant of SLOT.SUM1</td><td>W01</td><td>AC.SUM1.U2 and aliases</td></tr>
+            <tr><td>DEV.U_INT1_STOCK</td><td>Original LM301A occupant of SLOT.INT1; removed off-circuit in W07</td><td>W01</td><td>AC.INT1.U3 / CORE.INT1.U_OP</td></tr>
+            <tr><td>DEV.U_INT2</td><td>LM301A occupant of SLOT.INT2</td><td>W04</td><td>AC.INT2.U4 and aliases</td></tr>
+            <tr><td>DEV.U_INT3_OSC</td><td>Dedicated LM301A oscillator integrator occupant of SLOT.INT3</td><td>W06 proposed</td><td>OSC1.U_INT / SRC oscillator integrator</td></tr>
+            <tr><td>MOD.INV1.NET</td><td>Persistent inverter passive network and jacks; receives a selectable Butterworth coefficient branch in W12</td><td>W01</td><td>Range-local inverter resistor IDs</td></tr>
+            <tr><td>MOD.SUM1.NET</td><td>Persistent summer passive network; receives selectable integrating/Butterworth additions in W12</td><td>W01</td><td>Range-local summer passives</td></tr>
+            <tr><td>MOD.INT1.NET</td><td>Persistent INT1 feedback/input network and jacks, independent of occupant</td><td>W01</td><td>CFB3 / CORE.INT1.C_INT</td></tr>
+            <tr><td>MOD.INT2.NET</td><td>Persistent INT2 feedback/input network and jacks</td><td>W04</td><td>Range-local INT2 passive IDs</td></tr>
+            <tr><td>MOD.INT3.OSC_NET</td><td>Persistent oscillator timing/input network and Schmitt connections around DEV.U_INT3_OSC</td><td>W06 proposed</td><td>OSC1 integrator passives</td></tr>
+            <tr><td>MOD.INT3.BW_NET</td><td>Selectable W12 Butterworth input/feedback branch for the same SLOT.INT3 occupant</td><td>W12 proposed</td><td>Unidentified fourth-integrator passives</td></tr>
+            <tr><td>OSC1</td><td>Persistent oscillator assembly: Schmitt stage, DEV.U_INT3_OSC, limiter, and MOD.INT3.OSC_NET</td><td>W06 proposed</td><td>SRC-OSC1</td></tr>
+            <tr><td>REG1</td><td>Physical Figure 5.3-derived regulator plant</td><td>W05</td><td>PLANT-REG1</td></tr>
+            <tr><td>AMP1</td><td>Discrete amplifier that occupies SLOT.INT1 from W07 onward</td><td>W07</td><td>CMP-INT1 occupant ambiguity</td></tr>
+            <tr><td>RECT1</td><td>Exact Figure 11.18 floating-load bridge rectifier module</td><td>W11 proposed</td><td>Simplified prior rectifier diagrams</td></tr>
+            <tr><td>MULT1 / MULT2</td><td>Two physical four-quadrant multiplier modules for W12 Van der Pol</td><td>W12 proposed</td><td>Abstract multiplier blocks</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Canonical global nets</h3>
+        <div class="table"><table>
+          <thead><tr><th>Net</th><th>Meaning</th><th>Rule</th></tr></thead>
+          <tbody>
+            <tr><td>P15</td><td>Protected +15 V distribution</td><td>Local isolated rails receive module-qualified names only when a real series element separates them.</td></tr>
+            <tr><td>N15</td><td>Protected −15 V distribution</td><td>Never rename to VEE/VN15 in canonical data.</td></tr>
+            <tr><td>SGND</td><td>Low-current signal reference and SPICE node 0</td><td>Op-amp references and feedback returns only.</td></tr>
+            <tr><td>PGND</td><td>High-current/noncritical return</td><td>Regulator load, drivers, and other high-current returns; tied to SGND only at INF.GND_STAR.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section>
+        <p class="eyebrow">03 · Configuration registry</p>
+        <h2>Electrical configurations never rename hardware</h2>
+        <div class="table"><table>
+          <thead><tr><th>Week</th><th>Canonical configurations</th><th>Persistent-state note</th></tr></thead>
+          <tbody>
+            <tr><td>W01</td><td>W01.INV_TEST; W01.SUM_TEST; W01.INT_TEST</td><td>Same installed core; one test active at a time.</td></tr>
+            <tr><td>W02</td><td>W02.FIRST_ORDER</td><td>Exact endpoints await G0-02.</td></tr>
+            <tr><td>W03</td><td>W03.FIG3_1_REF; W03.LOOP_CC_TEST; W03.LOOP_RESTORED</td><td>Reference test is temporary; restored state inherits W02 graph.</td></tr>
+            <tr><td>W04</td><td>W04.SECOND_ORDER_RUN; W04.LOOP_MEASURE</td><td>Measurement fixture is configuration-only.</td></tr>
+            <tr><td>W05</td><td>W05.REG_SWEEP; W05.CORE_LEAD; W05.CORE_LAG</td><td>Lead/lag variants are temporary/configuration-only unless later approved as retained hardware.</td></tr>
+            <tr><td>W06</td><td>W06.OSCILLATOR</td><td>Persistent OSC1 proposed under G0-06.</td></tr>
+            <tr><td>W07</td><td>W07.PAIR_BALANCE; W07.PAIR_OFFSET; W07.PAIR_DRIFT</td><td>SLOT.INT1 has no functional amplifier output.</td></tr>
+            <tr><td>W08</td><td>W08.OPEN_LOOP; W08.OUTPUT_BIAS; W08.INT1_BRINGUP</td><td>Exact graph awaits AMP1 transition table.</td></tr>
+            <tr><td>W09</td><td>W09.CC_SWEEP; W09.INVERTER_TEST; W09.INT1_RESTORED</td><td>Restored configuration explicitly reinstates the approved W02 endpoints.</td></tr>
+            <tr><td>W10</td><td>W10.REPEATER; W10.INT1_HOLD; W10.COMPARE; W10.FET_OPTIONAL</td><td>Each measurement wiring is a separate graph; FET option is excluded from baseline under recommended G0-09.</td></tr>
+            <tr><td>W11</td><td>W11.THREEMODE; W11.AMP_EO; W11.AMP_I_MINUS; W11.AMP_I_PLUS; W11.RECTIFIER</td><td>Offset and the two input-bias measurements have mutually exclusive DUT wiring. “Computing integrators” means SLOT.INT1 and SLOT.INT2; OSC1 remains distinct.</td></tr>
+            <tr><td>W12</td><td>W12.BUTTERWORTH; W12.VANDERPOL; W12.REG_TWIN</td><td>Separate complete electrical configurations sharing one physical inventory.</td></tr>
+            <tr><td>W13</td><td>W13.FIXED_LAG_SUM; W13.FIXED_LAG_INV; W13.CLOAD_BASELINE; W13.CLOAD_COMP; W13.ONEPOLE_AMP1; W13.ONEPOLE_INT2; W13.TWOPOLE_REG</td><td>Campaign labels group results only; every listed ID is one complete electrical graph. FIXED_CLOAD is nonapplicable unless G0-15 accepts a regulator/load case that needs it.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section>
+        <p class="eyebrow">04 · Physical manifest</p>
+        <h2>Installed hardware and state changes</h2>
+        <div class="table"><table>
+          <thead><tr><th>State</th><th>Physical delta</th><th>Removed/off-circuit</th><th>Rail-load contributors added</th></tr></thead>
+          <tbody>
+            <tr><td>W00</td><td>INF.PWR_ENTRY, INF.GND_STAR, INF.DECOUP, test points, all future local-bypass footprints</td><td>None</td><td>Bleeders/indicators and dummy load TBD</td></tr>
+            <tr><td>W01</td><td>SLOT.INV1/SUM1/INT1/INT2/INT3; DEV.U_INV1/U_SUM1/U_INT1_STOCK; three passive networks</td><td>None</td><td>Three LM301A channels</td></tr>
+            <tr><td>W02</td><td>No permanent hardware; configuration-only electrical connections</td><td>None</td><td>None</td></tr>
+            <tr><td>W03</td><td>Power-off compensation socket/selection position for DEV.U_INT1_STOCK</td><td>Rejected capacitor values remain spares, not connected chassis parts</td><td>None</td></tr>
+            <tr><td>W04</td><td>DEV.U_INT2 and MOD.INT2.NET populate SLOT.INT2; persistent test points</td><td>External injection equipment is configuration-only</td><td>One LM301A channel</td></tr>
+            <tr><td>W05</td><td>REG1 error amplifier, pass stage, load, protection, disturbance and loop test interfaces</td><td>Conditional lead/lag fixtures not baseline-retained</td><td>One LM301A, pass device/load, injector</td></tr>
+            <tr><td>W06</td><td>DEV.U_INT3_OSC in SLOT.INT3, Schmitt amplifier, MOD.INT3.OSC_NET, and limiter</td><td>None</td><td>Two amplifier channels plus limiter</td></tr>
+            <tr><td>W07</td><td>AMP1 input pair/tail and temporary balance loads in SLOT.INT1</td><td>DEV.U_INT1_STOCK removed and retained as off-circuit artifact; W03 selector electrically open unless deliberately remapped later</td><td>Discrete pair/tail</td></tr>
+            <tr><td>W08</td><td>AMP1 high-gain/load/output stages and safe provisional compensation</td><td>Temporary W07 loads removed per future transition map</td><td>Discrete stages/output quiescent current</td></tr>
+            <tr><td>W09</td><td>AMP1 completed to exact Figure 9.1; final/provisional Cc installed</td><td>All transitional parts not in exact graph are off-circuit</td><td>Exact Figure 9.1 rail currents</td></tr>
+            <tr><td>W10</td><td>Current-repeater replacement inside AMP1</td><td>Replaced Week 9 load path explicitly removed after map approval</td><td>Repeater reference/output currents</td></tr>
+            <tr><td>W11</td><td>Three-mode hardware around MOD.INT1.NET and MOD.INT2.NET; RECT1; permanent mode test points</td><td>Measurement fixtures configuration-only</td><td>Switch drivers, RECT1 amplifier/load</td></tr>
+            <tr><td>W12</td><td>Selectable integrating/coefficient branches on MOD.SUM1.NET and MOD.INV1.NET; MOD.INT3.BW_NET; MULT1/MULT2; any required multiplier support; no new integrator if SLOT.INT3 already populated</td><td>Unused passive branches explicitly open per configuration; MOD.INT3.OSC_NET remains installed but opens in Butterworth mode</td><td>Two multiplier modules/support; configuration-dependent loads</td></tr>
+            <tr><td>W13</td><td>Selected/patchable compensation passives and test interfaces</td><td>Mutually exclusive networks open or off-circuit</td><td>Negligible passive load; no value freeze before loop model</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>Protection dependency:</strong> W00 connector, fuse/current-limit, and isolation ratings remain symbolic until this manifest receives sourced maximum rail-current and transient values. The topology must reserve bypass/protection capacity for every accepted persistent channel now.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">05 · Critical transitions</p>
+        <h2>Changes that cannot be inferred from appearance</h2>
+        <div class="table"><table>
+          <thead><tr><th>Transition</th><th>Retained</th><th>Added/changed</th><th>Removed/open</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>W02 → W03</td><td>Approved W02 loop endpoints</td><td>Temporary Fig. 3.1 reference and loop-compensation test states</td><td>Only one Cc active at a time</td><td class="open">G0-03</td></tr>
+            <tr><td>W06 → W07</td><td>OSC1, REG1, SLOT.INT1, MOD.INT1.NET</td><td>AMP1 input pair and diagnostic fixture</td><td>DEV.U_INT1_STOCK off-circuit; integrator feedback path cannot claim functional output</td><td class="fixed">Structurally resolved</td></tr>
+            <tr><td>W07 → W10</td><td>Only exact pin-mapped AMP1 components</td><td>Successive exact Figure 9.1 stages, Cc, then repeater</td><td>Temporary loads and replaced load path</td><td class="open">Exact transition table required</td></tr>
+            <tr><td>W11 → W12.BUTTERWORTH</td><td>All chassis hardware; DEV.U_SUM1/U_INT2/U_INT3_OSC, AMP1, DEV.U_INV1</td><td>Integrating feedback/coefficient branches on MOD.SUM1.NET; Butterworth coefficient branch on MOD.INV1.NET; MOD.INT3.BW_NET active; multiplier hardware inactive</td><td>MOD.INT3.OSC_NET timing and Schmitt connections open; ordinary SUM/INV branches open where incompatible; every mutually exclusive branch explicit</td><td class="open">G0-12/G0-13 plus passive design</td></tr>
+            <tr><td>W11 → W12.VANDERPOL</td><td>AMP1 and DEV.U_INT2 as computing integrators; all other hardware retained inactive</td><td>MULT1/MULT2 and coefficient/initial-condition connections</td><td>Butterworth branches open</td><td class="open">G0-11</td></tr>
+            <tr><td>W11 → W12.REG_TWIN</td><td>REG1 and OSC1 active; SUM1 and INT2 proposed as twin roles</td><td>Derived coefficient passives and disturbance/overlay measurement nets</td><td>Other computing configurations open</td><td class="open">Plant equation/ownership approval</td></tr>
+            <tr><td>W12 → W13</td><td>Complete physical inventory</td><td>Campaign-specific compensation networks</td><td>Every competing compensation branch explicitly open</td><td class="open">Measured-loop dependency</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section>
+        <p class="eyebrow">06 · Uniform state classes</p>
+        <h2>Objects cannot disappear between documents</h2>
+        <ul>
+          <li><strong>Persistent-installed:</strong> physically on the chassis and part of the rail/load manifest.</li>
+          <li><strong>Persistent-inactive:</strong> still installed and safely powered/terminated; grey is only a rendering attribute.</li>
+          <li><strong>Configuration-only fixture:</strong> appears in both matched schematic and netlist for that measurement, but is not inherited as chassis hardware.</li>
+          <li><strong>Removed-off-circuit:</strong> retained in physical inventory or parts tray but absent from the electrical graph.</li>
+          <li><strong>Reserved-unpopulated:</strong> permanent socket/interface exists; no device instance or hidden signal connection exists.</li>
+          <li><strong>Deferred:</strong> excluded under D-01 through D-04 and never used to excuse missing present electrical connectivity or safety requirements.</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="eyebrow">07 · Dependency order</p>
+        <h2>Gate 0 closes in this order</h2>
+        <ol>
+          <li>Approve W02 sign/topology and W03 reference/adaptation structure.</li>
+          <li>Approve the dedicated W06 oscillator integrator and the stable socket/occupant model.</li>
+          <li>Bind the W05 regulator topology and operating envelope sufficiently to own its later twin/compensation dependencies.</li>
+          <li>Approve W07–W10 as incremental states of one exact Figure 9.1 transition map.</li>
+          <li>Approve W12 passive reconfiguration, multiplier direction, and retained-module ownership of the regulator twin.</li>
+          <li>Approve W13 exact DUT/loop selection; defer numeric compensation until the loop exists.</li>
+          <li>Complete the sourced rail-load budget before freezing W00 protection values.</li>
+        </ol>
+        <div class="links">
+          <a href="weekly-electrical-specification.html">Integrated weekly specification</a>
+          <a href="drafts/cross-range-review.md">Cross-range review</a>
+          <a href="drafts/requirements-audit.md">Requirements audit</a>
+          <a href="project-controls.html">Project controls</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>Gate 0 integration register · Proposed identity and state authority · No circuit implementation performed.</footer>
+  </div>
+</body>
+</html>

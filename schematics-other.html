@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roberge one-box — book figures and schemdraw</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--book); color: var(--slate); padding-bottom: 48px; }
+    .deck { max-width: 880px; margin: 0 auto; padding: 0 24px 48px; }
+    @media (min-width: 900px) { .deck { padding: 0 48px 64px; } }
+    .top { display: flex; align-items: center; gap: 10px; padding: 20px 0 8px; }
+    .top img { width: 22px; height: 22px; }
+    h1.display { margin: 8px 0 12px; font-size: clamp(32px, 6vw, 48px); }
+    .lede { margin: 0 0 16px; max-width: 42rem; }
+    nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+    nav.jump a {
+      font-family: var(--font-sans); font-size: 13px; padding: 6px 10px;
+      border: 1px solid var(--hairline); border-radius: var(--r-sm);
+      background: var(--bg-elev); text-decoration: none; color: var(--fg);
+    }
+    h2 { margin: 40px 0 8px; }
+    .card {
+      background: var(--bg-elev); border: 1px solid var(--hairline);
+      border-radius: var(--r-md); padding: 16px; margin: 0 0 16px;
+    }
+    .card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 20px; margin: 0 0 4px; }
+    .tag { font-family: var(--font-mono); font-size: 11px; color: var(--crail-deep); margin: 0 0 12px; }
+    img.fig { width: 100%; height: auto; display: block; background: #fff; border: 1px solid var(--hairline); border-radius: var(--r-xs); }
+    img.svg { padding: 12px; }
+    .back { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header>
+      <div class="top">
+        <img src="design-system/anthropic-mark.svg" alt="">
+        <p class="eyebrow">Visual guide · two other methods</p>
+      </div>
+      <h1 class="display">Book pages, then a real engine</h1>
+      <p class="lede">Method 1 (hand SVG) is still in <a href="schematics.html">schematics.html</a>. This page is method 2 (the Roberge pages) and method 3 (schemdraw, IEEE symbols, auto-routed wires).</p>
+      <nav class="jump">
+        <a href="#book">2 · book figures</a>
+        <a href="#engine">3 · schemdraw</a>
+        <a href="schematics.html">1 · hand SVG</a>
+        <a href="capstone.html">Build log</a>
+      </nav>
+    </header>
+
+    <h2 id="book">Method 2 — the textbook pages</h2>
+    <p class="lede">These are the LibreTexts pages that contain the cited figures. Use them as the electrical source of truth.</p>
+    <article class="card">
+      <h3>Figure 1.2a — inverting connection</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-1.2a.png" alt="Figure 1.2a inverting amplifier">
+    </article>
+    <article class="card">
+      <h3>Figure 1.2b — noninverting connection</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-1.2b.png" alt="Figure 1.2b noninverting amplifier">
+    </article>
+    <article class="card">
+      <h3>Figure 1.4 — weighted summer</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-1.4.png" alt="Figure 1.4 — weighted summer">
+    </article>
+    <article class="card">
+      <h3>Figure 5.3 — voltage regulator plant</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-5.3.png" alt="Figure 5.3 — voltage regulator plant">
+    </article>
+    <article class="card">
+      <h3>Figure 7.4 — differential pair</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-7.4.png" alt="Figure 7.4 — differential pair">
+    </article>
+    <article class="card">
+      <h3>Figure 7.10 — equal-VBE collector pot</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-7.10.png" alt="Figure 7.10 — equal-VBE collector pot">
+    </article>
+    <article class="card">
+      <h3>Figure 8.8 — two-stage core</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-8.8.png" alt="Figure 8.8 — two-stage core">
+    </article>
+    <article class="card">
+      <h3>Figure 8.13 — current-source load</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-8.13.png" alt="Figure 8.13 — current-source load">
+    </article>
+    <article class="card">
+      <h3>Figure 8.27 — complementary output</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-8.27.png" alt="Figure 8.27 — complementary output">
+    </article>
+    <article class="card">
+      <h3>Figure 10.9 — current repeater</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-10.9.png" alt="Figure 10.9 — current repeater">
+    </article>
+    <article class="card">
+      <h3>Figure 11.18 — precision rectifier</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-11.18.png" alt="Figure 11.18 — precision rectifier">
+    </article>
+    <article class="card">
+      <h3>Figure 12.1 — Wien bridge</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-12.1.png" alt="Figure 12.1 — Wien bridge">
+    </article>
+    <article class="card">
+      <h3>Figure 12.7 — Schmitt trigger</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-12.7.png" alt="Figure 12.7 — Schmitt trigger">
+    </article>
+    <article class="card">
+      <h3>Figure 12.8 — function-generator waveforms</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-12.8.png" alt="Figure 12.8 — function-generator waveforms">
+    </article>
+    <article class="card">
+      <h3>Figure 12.13 — Butterworth analog computer</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-12.13.png" alt="Figure 12.13 — Butterworth analog computer">
+    </article>
+    <article class="card">
+      <h3>Figure 12.17 — three-mode integrator</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-12.17.png" alt="Figure 12.17 — three-mode integrator">
+    </article>
+    <article class="card">
+      <h3>Figure 13.1 — input lag</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-13.1.png" alt="Figure 13.1 — input lag">
+    </article>
+    <article class="card">
+      <h3>Figure 13.19 — two-pole compensation</h3>
+      <p class="tag">from op_amps_roberge.pdf · CC BY-NC-SA 4.0</p>
+      <img class="fig" src="figures/book/fig-13.19.png" alt="Figure 13.19 — two-pole compensation">
+    </article>
+
+    <h2 id="engine">Method 3 — schemdraw IEEE</h2>
+    <p class="lede">Same topologies, drawn by a schematic library. Wires attach to pins because the library owns the symbols.</p>
+    <article class="card">
+      <h3>Inverting amplifier — socket INV</h3>
+      <p class="tag">Figure 1.2a · §1.2.1 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/inv.svg" alt="Inverting amplifier — socket INV">
+    </article>
+    <article class="card">
+      <h3>Noninverting amplifier</h3>
+      <p class="tag">Figure 1.2b · §1.2.2 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/noninv.svg" alt="Noninverting amplifier">
+    </article>
+    <article class="card">
+      <h3>Weighted summer — socket SUM</h3>
+      <p class="tag">Figure 1.4 · §1.2.3 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/sum.svg" alt="Weighted summer — socket SUM">
+    </article>
+    <article class="card">
+      <h3>Inverting integrator — socket INT</h3>
+      <p class="tag">§1.2.3 · Z2 = C · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/int.svg" alt="Inverting integrator — socket INT">
+    </article>
+    <article class="card">
+      <h3>Schmitt trigger</h3>
+      <p class="tag">Figure 12.7a · §12.2.1 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/schmitt.svg" alt="Schmitt trigger">
+    </article>
+    <article class="card">
+      <h3>Differential pair</h3>
+      <p class="tag">Figure 7.4 · §7.3.1 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/diffpair.svg" alt="Differential pair">
+    </article>
+    <article class="card">
+      <h3>Voltage regulator plant</h3>
+      <p class="tag">Figure 5.3a · §5.2.2 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/plant.svg" alt="Voltage regulator plant">
+    </article>
+    <article class="card">
+      <h3>Three-mode integrator (operate path)</h3>
+      <p class="tag">Figure 12.17 · §12.3.3 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/threemode.svg" alt="Three-mode integrator (operate path)">
+    </article>
+    <article class="card">
+      <h3>Input lag on a stock inverter</h3>
+      <p class="tag">Figure 13.1 · §13.2.1 · schemdraw IEEE</p>
+      <img class="fig svg" src="figures/schemdraw/lag.svg" alt="Input lag on a stock inverter">
+    </article>
+
+    <p class="back"><a href="capstone.html">Back to the build log</a></p>
+  </div>
+</body>
+</html>

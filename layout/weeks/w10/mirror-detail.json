@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w10/graph.json",
+  "sheet_id": "W10.CR1_DETAIL",
+  "title": "Week 10 Figure 10.9 PNP current-mirror insertion detail",
+  "status": "presentation overlay only; graph.json is electrical authority",
+  "strict_components": true,
+  "viewport": {
+    "width": 900,
+    "height": 520
+  },
+  "module_positions": {
+    "AMP1.CR1": {
+      "x": 80,
+      "y": 60,
+      "width": 720,
+      "height": 380,
+      "ports": {
+        "VP15": {
+          "x": 440,
+          "y": 60
+        },
+        "REF": {
+          "x": 80,
+          "y": 330
+        },
+        "OUT": {
+          "x": 800,
+          "y": 330
+        }
+      }
+    }
+  },
+  "components": {
+    "AMP1.Q_CR_REF": {
+      "x": 330,
+      "y": 240,
+      "rotation": 180,
+      "label": "QCR-REF",
+      "label_dx": -50,
+      "label_dy": -55
+    },
+    "AMP1.Q_CR_OUT": {
+      "x": 560,
+      "y": 240,
+      "rotation": 180,
+      "label": "QCR-OUT",
+      "label_dx": -50,
+      "label_dy": -55
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 45
+    },
+    "AMP1.N.Q1C_Q4B": {
+      "label": "Q1 collector / mirror reference"
+    },
+    "AMP1.COMP_A": {
+      "label": "Q2 collector / COMP_A"
+    }
+  },
+  "annotations": [
+    "QCR-REF has base and collector tied at the Q1 collector node.",
+    "QCR-OUT copies the reference current into Q2 collector/COMP_A.",
+    "2N4250 matched pair is proposed; verify package pins and thermal coupling before build."
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "acceptance": [
+    {
+      "criterion": "physical 50 k balance sweep can reduce zero-input output magnitude to <=0.1 V",
+      "id": "W09-EL-01",
+      "observed": 5.22185024,
+      "passed": false
+    },
+    {
+      "criterion": "1 Hz closed-loop inverter gain magnitude within 0.9 to 1.1",
+      "id": "W09-EL-02",
+      "observed": 0.034907590667848216,
+      "passed": false
+    },
+    {
+      "criterion": "10 ms ideal-scale integrator changes -0.2 V +/-10% during +100 mV for 20 ms",
+      "id": "W09-EL-03",
+      "observed": 0.08338961999999928,
+      "passed": false
+    }
+  ],
+  "balance_scan": "balance-trim-scan.json",
+  "blocker": "The generic default semiconductor cards execute but do not bias or amplify the Figure 9.1 circuit plausibly. Quantitative acceptance requires lawful, characterized device models or measurements; topology defaults cannot be tuned and promoted as historical evidence.",
+  "cases": [
+    {
+      "case": "INV20",
+      "connectivity_passed": true,
+      "connectivity_sha256": "d0becce85dbe9a06bc985d290c7c1651432c4e8ca7bd07ffa94da1beb1e5b0eb",
+      "deck_sha256": "cd83b8cf88ddddb2f5f60e96b79d54f86aff96b65f7bead721376c0ea96a0dd6",
+      "metrics": {
+        "dc_output_v": 5.22234912,
+        "low_frequency_gain_magnitude": 0.034907590667848216
+      },
+      "result_tables": [
+        "ac",
+        "op"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.INVERTER_TEST"
+    },
+    {
+      "case": "A47",
+      "connectivity_passed": true,
+      "connectivity_sha256": "8744ce9805f111ac69e9477e13a09abaaf9efe03da8f3997841e5a4f88643dfb",
+      "deck_sha256": "813f8678cf025dc6c4e1de3179d36be2467ddd998a6282789e731c0a8c69965d",
+      "metrics": {
+        "output_final_v": 5.22228276,
+        "output_max_v": 5.22234912,
+        "output_min_v": 5.22187051,
+        "output_peak_to_peak_v": 0.00047861000000004594
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.CC_SWEEP"
+    },
+    {
+      "case": "A33",
+      "connectivity_passed": true,
+      "connectivity_sha256": "fbf9a5fba516080fcd461879e8f08fed2569349c94418702f4b4824685d40357",
+      "deck_sha256": "779099df0ead606496dd969d32efa18e904f4d8f2789622bf707dc193ab582b8",
+      "metrics": {
+        "output_final_v": 5.2223047,
+        "output_max_v": 5.22234912,
+        "output_min_v": 5.22180731,
+        "output_peak_to_peak_v": 0.0005418099999996429
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.CC_SWEEP"
+    },
+    {
+      "case": "A10",
+      "connectivity_passed": true,
+      "connectivity_sha256": "35b4e62bee4028be2b3ccc16ccb3f9caf0ce6521002e08f96cf172706a75951f",
+      "deck_sha256": "033671d5100ec009d608f414d140fb3f4b5e98bcfd0dbeee6e3e831ce3f036b9",
+      "metrics": {
+        "output_final_v": 5.22234852,
+        "output_max_v": 5.22234912,
+        "output_min_v": 5.22167965,
+        "output_peak_to_peak_v": 0.0006694700000000608
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.CC_SWEEP"
+    },
+    {
+      "case": "A05",
+      "connectivity_passed": true,
+      "connectivity_sha256": "e977161d29da432ff6d2db64a1fa4281d94539fc0929d5c3dd665cbe9231d674",
+      "deck_sha256": "73fa31e2e250cb7b32db744242f7d6cf5fc11a52193cc3594eb21ec150840ff9",
+      "metrics": {
+        "output_final_v": 5.22234913,
+        "output_max_v": 5.22234913,
+        "output_min_v": 5.22167065,
+        "output_peak_to_peak_v": 0.0006784799999994817
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.CC_SWEEP"
+    },
+    {
+      "case": "B20",
+      "connectivity_passed": true,
+      "connectivity_sha256": "66734f54860655fd6615796ecf3ba6fbb2e89ef1d15ff185d30fcd5dad460f16",
+      "deck_sha256": "fe0593e09d30fa65883b9369cc7012be6fc3f00ba74de6e06529dc3e992afd22",
+      "metrics": {
+        "output_final_v": 6.84664452,
+        "output_max_v": 9.99053246,
+        "output_min_v": 4.99359016,
+        "output_peak_to_peak_v": 4.996942300000001
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.CC_SWEEP"
+    },
+    {
+      "case": "B10",
+      "connectivity_passed": true,
+      "connectivity_sha256": "845e4f37759b3ab98691850d3a306987b6b2623afaf4ec37c4a7a30fd2b60129",
+      "deck_sha256": "c9a0442bc0a8a4b3de63308d96ed685f0020203ab1829e8256fbd862c3b48c71",
+      "metrics": {
+        "output_final_v": 5.04374128,
+        "output_max_v": 5.32801277,
+        "output_min_v": 5.03983205,
+        "output_peak_to_peak_v": 0.2881807199999997
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.CC_SWEEP"
+    },
+    {
+      "case": "INT1",
+      "connectivity_passed": true,
+      "connectivity_sha256": "4260d00d717d8bf3ba578559f43174902982096f8f5f37b78091736a69412851",
+      "deck_sha256": "d3d81ace1c241249adc464860a0a3404575b4dc09de73566a9b7c2884802df6f",
+      "metrics": {
+        "integrator_20ms_delta_v": 0.08338961999999928,
+        "output_final_v": 5.69949905,
+        "output_max_v": 5.80230656,
+        "output_min_v": 5.6991559,
+        "output_peak_to_peak_v": 0.10315065999999984
+      },
+      "result_tables": [
+        "tran"
+      ],
+      "simulation_passed": true,
+      "variant": "W09.INT1_RESTORED"
+    }
+  ],
+  "claim_boundary": "topology-tier execution only; generic ngspice device defaults are not historical or realistic models",
+  "electrical_acceptance": "FAIL",
+  "pipeline_execution": "PASS",
+  "status": "BLOCKED"
+}

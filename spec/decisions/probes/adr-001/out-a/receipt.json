@@ -1,0 +1,38 @@
+{
+  "graph_equals_spice": true,
+  "graph_equals_svg": true,
+  "pinmap": {
+    "DEV.U_INV1": {
+      "inv": "SUM",
+      "noninv": "SGND",
+      "out": "OUT",
+      "vn": "N15",
+      "vp": "P15"
+    },
+    "INF.VN": {
+      "n": "SGND",
+      "p": "N15"
+    },
+    "INF.VP": {
+      "n": "SGND",
+      "p": "P15"
+    },
+    "MOD.INV1.RFB": {
+      "1": "OUT",
+      "2": "SUM"
+    },
+    "MOD.INV1.RIN": {
+      "1": "VIN",
+      "2": "SUM"
+    },
+    "SRC.VIN": {
+      "n": "SGND",
+      "p": "VIN"
+    }
+  },
+  "sha256": {
+    "graph.json": "491bd5b2f6cc14e1de95aea7072f7685bf03db544e2a2973fa8b257b95bda705",
+    "inverter.cir": "4bee7d5d94c6e1a58221db709754928c3c771c63da1b4c54176f89a34603ffb8",
+    "inverter.svg": "604b7424dbf9d6f62cbb8d3840806b8559f81374947fbef050d2bacd71265995"
+  }
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gate 0 integrated weekly electrical specification for the Roberge one-box capstone.">
+  <title>Roberge one-box — weekly electrical specification</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0 0 72px; }
+    .page { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 30px 0 40px; border-bottom: 1px solid var(--hairline); }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .eyebrow { margin: 0; }
+    .status { padding: 7px 11px; border: 1px solid color-mix(in srgb, var(--warn) 40%, transparent); border-radius: var(--r-pill); background: color-mix(in srgb, var(--warn) 10%, var(--paper)); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; }
+    h1.display { max-width: 940px; margin: 36px 0 18px; font-size: clamp(42px, 7vw, 76px); }
+    .lede { max-width: 790px; margin: 0; }
+    .meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-top: 30px; overflow: hidden; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--hairline); }
+    .meta > div { min-height: 82px; padding: 14px; background: var(--paper); }
+    .meta-label { display: block; margin-bottom: 6px; color: var(--fg-muted); font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; }
+    .meta-value { font-size: 13px; line-height: 1.45; }
+    .layout { display: grid; grid-template-columns: 235px minmax(0, 1fr); gap: 52px; align-items: start; padding-top: 42px; }
+    nav { position: sticky; top: 24px; padding: 16px 0; border-top: 1px solid var(--slate-400); border-bottom: 1px solid var(--hairline); }
+    nav p { margin: 0 0 9px; }
+    nav a { display: block; padding: 5px 0; color: var(--fg-muted); font-size: 13px; text-decoration: none; }
+    nav a:hover { color: var(--fg); }
+    main { min-width: 0; }
+    section { margin-bottom: 60px; scroll-margin-top: 20px; }
+    h2 { margin: 0 0 17px; }
+    h3 { margin: 25px 0 8px; font-size: 19px; }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px; padding-left: 1.25rem; }
+    li { margin-bottom: 8px; line-height: 1.55; }
+    code { padding: 1px 5px; border: 1px solid var(--hairline); border-radius: 4px; background: var(--slate-100); }
+    .callout { margin: 20px 0; padding: 18px 20px; border: 1px solid color-mix(in srgb, var(--crail) 34%, var(--hairline)); border-left: 4px solid var(--crail); border-radius: var(--r-md); background: var(--accent-bg); }
+    .callout.warn { border-color: color-mix(in srgb, var(--warn) 36%, var(--hairline)); border-left-color: var(--warn); background: color-mix(in srgb, var(--warn) 8%, var(--paper)); }
+    .callout p:last-child { margin-bottom: 0; }
+    .label { display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+    .week { margin: 0 0 20px; overflow: hidden; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--paper); }
+    .week-head { display: grid; grid-template-columns: 68px minmax(0, 1fr) auto; gap: 14px; align-items: start; padding: 17px 18px; border-bottom: 1px solid var(--hairline); }
+    .week-id { color: var(--crail-deep); font-family: var(--font-mono); font-size: 11px; }
+    .week h3 { margin: 0 0 4px; font-size: 18px; }
+    .week-sub { margin: 0; color: var(--fg-muted); font-size: 13px; }
+    .chip { padding: 5px 8px; border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; white-space: nowrap; }
+    .chip.blocked { color: var(--err); background: color-mix(in srgb, var(--err) 10%, var(--paper)); }
+    .chip.review { color: #785615; background: color-mix(in srgb, var(--warn) 13%, var(--paper)); }
+    .learning { margin: 0; padding: 11px 18px; border-bottom: 1px solid var(--hairline); color: #263b52; background: #f8fafc; }
+    .week-body { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 17px 18px; }
+    .week-body h4 { margin: 0 0 6px; color: var(--crail-deep); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; }
+    .week-body p, .week-body li { color: var(--fg-muted); font-size: 13px; }
+    .week-body ul { margin: 0; padding-left: 1rem; }
+    .issue { display: grid; grid-template-columns: 84px minmax(0, 1.45fr) minmax(0, 1fr); gap: 16px; padding: 16px 0; border-top: 1px solid var(--hairline); }
+    .issue:last-child { border-bottom: 1px solid var(--hairline); }
+    .issue-id { color: var(--err); font-family: var(--font-mono); font-size: 10px; }
+    .issue strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .issue span { display: block; color: var(--fg-muted); font-size: 13px; line-height: 1.5; }
+    .recommendation { padding-left: 14px; border-left: 2px solid var(--crail); }
+    .sources { display: flex; flex-wrap: wrap; gap: 9px; }
+    .sources a { padding: 7px 10px; border: 1px solid var(--hairline); border-radius: var(--r-sm); background: var(--paper); font-size: 12px; text-decoration: none; }
+    .checklist { padding: 0; list-style: none; }
+    .checklist li { position: relative; padding: 9px 0 9px 30px; border-bottom: 1px solid var(--hairline); }
+    .checklist li::before { content: "□"; position: absolute; left: 2px; top: 7px; color: var(--crail-deep); font-family: var(--font-mono); font-size: 17px; }
+    footer { margin-top: 68px; padding-top: 22px; border-top: 1px solid var(--hairline); color: var(--fg-muted); font-size: 13px; }
+    @media (max-width: 860px) { .meta { grid-template-columns: repeat(2, 1fr); } .layout { grid-template-columns: 1fr; } nav { position: static; columns: 2; } }
+    @media (max-width: 620px) { .page { width: min(100% - 24px, 1160px); } .top { align-items: flex-start; flex-direction: column; } .meta, .week-body { grid-template-columns: 1fr; } .week-head { grid-template-columns: 58px 1fr; } .week-head .chip { grid-column: 2; justify-self: start; } .issue { grid-template-columns: 66px 1fr; } .recommendation { grid-column: 2; } nav { columns: 1; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top"><p class="eyebrow">Roberge one-box · Phase 1 integration</p><span class="status">Gate 0 approved · Phase 2 active</span></div>
+      <h1 class="display">Weekly electrical specification</h1>
+      <p class="lede">Fourteen cumulative project states, their active configurations, source basis, verification intent, and the decisions that must be made before circuit implementation.</p>
+      <div class="meta">
+          <div><span class="meta-label">Status</span><span class="meta-value">Integrated specification approved 2026-08-15. Phase 2 architecture work authorized.</span></div>
+        <div><span class="meta-label">Authority</span><span class="meta-value"><a href="preflight-decisions.html">16 locked decisions</a></span></div>
+        <div><span class="meta-label">Primary source</span><span class="meta-value"><a href="op_amps_roberge.pdf">Roberge PDF</a></span></div>
+          <div><span class="meta-label">Execution gate</span><span class="meta-value">Gate 0 closed; Gate 1 architecture review is next.</span></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="Contents">
+        <p class="eyebrow">Contents</p>
+        <a href="#contract">Specification contract</a>
+        <a href="gate-0-integration-register.html">Identity/state register</a>
+        <a href="#weeks-0-4">Week 0–4</a>
+        <a href="#weeks-5-9">Week 5–9</a>
+        <a href="#weeks-10-13">Week 10–13</a>
+        <a href="#blockers">Gate 0 decisions</a>
+        <a href="#engineering">Delegated engineering TBDs</a>
+        <a href="#deferred">Deferred ledger</a>
+        <a href="#approval">Approval boundary</a>
+      </nav>
+
+      <main>
+        <section id="contract">
+          <p class="eyebrow">01 · Contract</p>
+          <h2>What every weekly release must mean</h2>
+          <ul>
+            <li>The physical project state is cumulative: Week N inherits Week N−1 and applies an explicit delta.</li>
+            <li>The active configuration is electrically complete and explicit. Physical cable routing is deferred; electrical nets are not.</li>
+            <li>Installed but inactive hardware remains present and is visually subdued.</li>
+            <li>The main weekly view is one large publication-quality electrical sheet when legible; dense pin-level regions move to linked detail sheets with matching boundary pins.</li>
+            <li>Rendering semantics are fixed: retained active circuitry black, new weekly additions coral, and retained inactive circuitry grey. Color never changes electrical meaning.</li>
+            <li>Removal, replacement, temporary fixtures, and nonfunctional states are shown honestly.</li>
+            <li>LM301A is the primary historical stock op-amp. A 741-class device is a declared alternative, never a silent substitute.</li>
+            <li>Symbolic schematics receive recommended-value tables whose claims are labeled verified, derived, proposed, or TBD.</li>
+            <li>SVG and SPICE are later projections of the same canonical graph and must match component/pin/net connectivity.</li>
+          </ul>
+          <div class="callout"><span class="label">Integration rule</span><p>The detailed range drafts are evidence-bearing annexes. This page is the cross-week decision surface. When this summary and an annex conflict, the issue remains open until resolved; the summary does not silently override source evidence.</p></div>
+          <p>The authoritative cross-range identity dictionary, physical manifest, configuration registry, and transition rules are in <a href="gate-0-integration-register.html">gate-0-integration-register.html</a>. Provisional IDs in the draft annexes are not canonical aliases.</p>
+        </section>
+
+        <section id="weeks-0-4">
+          <p class="eyebrow">02 · Foundation</p>
+          <h2>Week 0 through Week 4</h2>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W00</span><div><h3>Permanent ±15 V infrastructure</h3><p class="week-sub">External isolated supply interface, split grounds, bypassing, protection placeholders, and test points.</p></div><span class="chip review">Review</span></div>
+            <p class="learning"><strong>Learning objective:</strong> establish a safe, measurable dual-rail and grounding foundation whose limits carry into every later circuit.</p>
+            <div class="week-body"><div><h4>Active configuration and delta</h4><p>Commission unloaded rails and a symmetric dummy load. Establish hidden-power-pin endpoints. No signal-processing amplifier is installed.</p></div><div><h4>Source and verification</h4><p>Roberge Fig. 11.7 and §§11.3.1–11.3.3; TI LM301A ±15 V conditions. Verify polarity, single ground tie, local droop, startup, and dummy-load current.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W01</span><div><h3>Computing core installed</h3><p class="week-sub">INV1, SUM1, and INT1 retained; INT2 and INT3 positions reserved.</p></div><span class="chip review">Review</span></div>
+            <p class="learning"><strong>Learning objective:</strong> build and independently verify inversion, weighted summation, and integration.</p>
+            <div class="week-body"><div><h4>Configurations</h4><ul><li>Inverter test</li><li>Weighted-summer test</li><li>Integrator test</li></ul></div><div><h4>Source and candidate baseline</h4><p>Figs. 1.2a and 1.4, §1.2.3; 30 pF LM301A compensation. Proposed unity resistor pairs and 10 ms integrator remain Gate 0 candidates.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W02</span><div><h3>First-order closed loop</h3><p class="week-sub">No new installed hardware; Week 1 blocks receive an explicit stable-loop configuration.</p></div><span class="chip blocked">Blocked: sign</span></div>
+            <p class="learning"><strong>Learning objective:</strong> realize a correctly signed first-order differential equation and relate its time constant to waveform decay.</p>
+            <div class="week-body"><div><h4>Provisional configuration</h4><p><code>INT1.OUT → SUM1 → INV1 → INT1.IN</code> gives the correct sign for <code>dx/dt = −x/τ</code>. A SUM+INT two-block loop has the wrong sign.</p></div><div><h4>Source limitation</h4><p>Figs. 2.2, 2.3, and 2.9 explain feedback and modeling but are not construction schematics. Open-loop and loading tests require explicit safe fixtures.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W03</span><div><h3>Transient and compensation characterization</h3><p class="week-sub">Measure mutually exclusive 12 pF, 30 pF, and 220 pF LM301A compensation states.</p></div><span class="chip blocked">Blocked: fidelity</span></div>
+            <p class="learning"><strong>Learning objective:</strong> observe how compensation changes stability and transient response while distinguishing the reference fixture from the cumulative loop.</p>
+            <div class="week-body"><div><h4>Configuration conflict</h4><p>An unchanged Week 2 loop can study compensation but cannot be called an exact repeat of Fig. 3.1, which is a 4.7 kΩ unity inverter driven by a −50 mV step.</p></div><div><h4>End state</h4><p>One selected compensation capacitor remains installed under a declared stability/settling criterion; alternatives are not drawn in parallel.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W04</span><div><h3>Second integrator and second-order loop</h3><p class="week-sub">Populate INT2; retain INV1 and the empty INT3 position.</p></div><span class="chip blocked">Blocked: equation</span></div>
+            <p class="learning"><strong>Learning objective:</strong> realize a specified second-order equation and distinguish natural frequency, damping, and marginal stability.</p>
+            <div class="week-body"><div><h4>Provisional configuration</h4><p>A SUM1–INT1–INT2 loop forms a harmonic oscillator with <code>ω0=√(K/(τ1τ2))</code>. In the ideal model it is already on the imaginary axis for every positive K.</p></div><div><h4>Missing definition</h4><p>The capstone supplies no damping term, concrete ODE, sign convention, or loop-injection fixture, so “find the gain that puts it on jω” is not yet well-defined.</p></div></div>
+          </article>
+
+          <div class="sources"><a href="drafts/spec-weeks-00-04.md">Detailed Week 0–4 annex</a></div>
+        </section>
+
+        <section id="weeks-5-9">
+          <p class="eyebrow">03 · Plant and discrete amplifier</p>
+          <h2>Week 5 through Week 9</h2>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W05</span><div><h3>Physical regulator plant</h3><p class="week-sub">Computer retained; symbolic Figure 5.3 regulator installed as a separately active system.</p></div><span class="chip blocked">Blocked: build design</span></div>
+            <p class="learning"><strong>Learning objective:</strong> connect loop shaping to a safe regulator whose load, dominant pole, and operating limits are measurable.</p>
+            <div class="week-body"><div><h4>Configurations</h4><ul><li>Regulator load/capacitance sweep</li><li>Conditional computer-loop lead</li><li>Conditional computer-loop lag</li></ul></div><div><h4>Missing engineering</h4><p>Output/current targets, pass device, unregulated source, SOA, thermal protection, load-discharge path, disturbance injector, and safe loop injection are not specified by Fig. 5.3.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W06</span><div><h3>Persistent Schmitt–integrator oscillator</h3><p class="week-sub">Computer and regulator retained; oscillator becomes a persistent test-source module.</p></div><span class="chip blocked">Blocked: persistence</span></div>
+            <p class="learning"><strong>Learning objective:</strong> derive and verify relaxation-oscillator amplitude and frequency from thresholds, limiting, and integration parameters.</p>
+            <div class="week-body"><div><h4>Recommended delta</h4><p>Populate the reserved INT3 channel as the oscillator integrator and add a Schmitt stage. Reusing INT1 or INT2 conflicts with later persistence and comparison requirements.</p></div><div><h4>Source and values</h4><p>Figs. 6.14, 12.7, and 12.8. Limiter choice, target amplitude, exposed modulation port, and reconciliation of the examples remain open.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W07</span><div><h3>Intentionally incomplete discrete input stage</h3><p class="week-sub">Remove the INT1 LM301A; retain the socket; install only the Figure 9.1-compatible input pair and temporary balance network.</p></div><span class="chip blocked">Blocked: experiment</span></div>
+            <p class="learning"><strong>Learning objective:</strong> characterize differential-pair offset, balance, and drift without attributing full-amplifier behavior to an incomplete channel.</p>
+            <div class="week-body"><div><h4>Honest state</h4><p>The pair has no complete amplifier output and cannot close the integrator feedback-capacitor loop. INT1 is explicitly nonfunctional.</p></div><div><h4>Valid measurements</h4><p>Pair offset, balance, drift, and collector behavior may be measured with a declared high-impedance fixture. The claimed hold-capacitor wander cannot be attributed to the unfinished amplifier.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W08</span><div><h3>Transitional discrete channel</h3><p class="week-sub">Extend the Week 7 pair with high-gain, load, and output stages.</p></div><span class="chip blocked">Blocked: topology</span></div>
+            <p class="learning"><strong>Learning objective:</strong> bring up successive amplifier stages while tracking bias, gain, loading, and temporary versus final connections.</p>
+            <div class="week-body"><div><h4>Source limitation</h4><p>Figs. 8.8, 8.13, and 8.27 are separate instructional circuits. Their collage is not automatically Figure 9.1.</p></div><div><h4>Recommended rule</h4><p>Define Week 8 as an exact component/pin/net subset of the accepted Figure 9.1 graph, with temporary parts explicitly identified and a safe provisional compensation strategy.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W09</span><div><h3>Figure 9.1 amplifier and vertical proof</h3><p class="week-sub">Complete the exact illustrative amplifier and restore it as INT1 after measurement configurations.</p></div><span class="chip blocked">Blocked: transcription</span></div>
+            <p class="learning"><strong>Learning objective:</strong> validate a complete discrete operational amplifier from transistor graph through compensated closed-loop integrator behavior.</p>
+            <div class="week-body"><div><h4>Configurations</h4><ul><li>Compensation-response tests</li><li>Figure 9.8 inverter/slew fixture</li><li>Restored cumulative integrator</li></ul></div><div><h4>Gate</h4><p>Double-transcribe the full Figure 9.1 component/pin/net graph, select lawful device models, define fixtures and parasitics, and select a provisional end-state Cc before the Week 9 proof.</p></div></div>
+          </article>
+
+          <div class="sources"><a href="drafts/spec-weeks-05-09.md">Detailed Week 5–9 annex</a></div>
+        </section>
+
+        <section id="weeks-10-13">
+          <p class="eyebrow">04 · Applications and compensation</p>
+          <h2>Week 10 through Week 13</h2>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W10</span><div><h3>Current-repeater improvement</h3><p class="week-sub">Modify the accepted Week 9 discrete amplifier without changing unrelated chassis modules.</p></div><span class="chip blocked">Blocked: mapping</span></div>
+            <p class="learning"><strong>Learning objective:</strong> quantify how a current-repeater change alters gain, headroom, bias, and large-signal behavior.</p>
+            <div class="week-body"><div><h4>Primary delta</h4><p>Map Figure 10.9’s PNP current repeater into the exact Week 9 first-stage-load interface and derive its reference current/headroom.</p></div><div><h4>Optional branch</h4><p>Figure 10.25 FET followers should remain a separate optional INT2 configuration unless explicitly promoted into the cumulative baseline.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W11</span><div><h3>Three-mode integrators and amplifier measurements</h3><p class="week-sub">Add reset/operate/hold hardware, characterize the discrete amplifier, and retain the precision rectifier.</p></div><span class="chip blocked">Blocked: interface</span></div>
+            <p class="learning"><strong>Learning objective:</strong> operate explicit reset/compute/hold states and measure offset and bias currents with topology-faithful fixtures.</p>
+            <div class="week-body"><div><h4>Modes and measurements</h4><p>Use Figs. 12.17/12.18 for switch states and Fig. 11.2 for offset/bias tests. Mode nets and control states must be explicit.</p></div><div><h4>Rectifier correction</h4><p>Source reinspection established that Figure 11.18 is the grounded half-wave precision rectifier. The floating-load full-wave bridge is Figure 11.19; the older local image named for 11.18 is mislabeled and is not electrical authority.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W12</span><div><h3>Three separate complete problem configurations</h3><p class="week-sub">One cumulative chassis; Butterworth, Van der Pol, and regulator-twin configurations remain electrically distinct.</p></div><span class="chip blocked">Blocked: multiplier/twin</span></div>
+            <p class="learning"><strong>Learning objective:</strong> reconfigure one machine into linear filtering, nonlinear dynamics, and plant-model experiments without conflating their graphs.</p>
+            <div class="week-body"><div><h4>Configuration set</h4><ul><li>Butterworth: SUM becomes integrating summer; populate/reuse INT3; retain INV.</li><li>Van der Pol: two integrators plus a buildable four-quadrant multiplier path.</li><li>Regulator twin: derive signs/scales from the actual built plant.</li></ul></div><div><h4>Corrections</h4><p>Figure 11.28 alone is two-quadrant and unsuitable for bipolar Van der Pol states. The capstone’s “11.28 or 12.9” options are not electrically interchangeable.</p></div></div>
+          </article>
+
+          <article class="week">
+            <div class="week-head"><span class="week-id">W13</span><div><h3>Two separate compensation campaigns</h3><p class="week-sub">Final cumulative state; never overlay mutually exclusive compensation networks.</p></div><span class="chip review">Derived after measurement</span></div>
+            <p class="learning"><strong>Learning objective:</strong> synthesize and verify compensation from measured loop dynamics on explicitly named DUTs.</p>
+            <div class="week-body"><div><h4>Campaigns and graph split</h4><ul><li>Fixed dynamics: separate SUM1 lag, INV1 lag, regulator load-capacitance baseline, and compensated regulator graphs.</li><li>Changed dynamics: separate AMP1 and LM301A INT2 one-pole tests, plus a REG1 error-amplifier two-pole graph.</li></ul></div><div><h4>Constraint</h4><p>No Figure 13.21 values may be copied into the regulator. Values must be derived from the built plant, measured loop, tolerances, and target crossover. Load-capacitance work is nonapplicable unless G0-15 accepts that DUT case.</p></div></div>
+          </article>
+
+          <div class="sources"><a href="drafts/spec-weeks-10-13.md">Detailed Week 10–13 annex</a></div>
+        </section>
+
+        <section id="blockers">
+          <p class="eyebrow">05 · Gate 0 decisions</p>
+          <h2>Choices required before circuit encoding</h2>
+          <div class="issue"><span class="issue-id">G0-01</span><div><strong>Week 0 supply boundary</strong><span>Choose external supply class, connector, protection philosophy, and grounding/earth assumption.</span></div><div class="recommendation"><strong>Recommendation</strong><span>External isolated regulated current-limited ±15 V bench supply; keyed low-voltage connector; no internal mains wiring.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-02</span><div><strong>Week 2 correct sign</strong><span>The stated two-block SUM+INT loop cannot realize stable <code>dx/dt=−x</code> when both blocks invert.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Approve the three-block SUM→INV→INT loop and revise the wording/source claims.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-03</span><div><strong>Week 3 experiment fidelity</strong><span>Exact Fig. 3.1 and “leave the loop unchanged” are incompatible.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Use a separately labeled Fig. 3.1 reference configuration, then restore and characterize the cumulative loop.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-04</span><div><strong>Week 4 mathematical objective</strong><span>A pure ideal two-integrator oscillator is already on jω; varying positive gain changes frequency, not damping.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Specify a damped second-order equation with an adjustable damping coefficient, then define the marginal-stability experiment.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-05</span><div><strong>Week 5 regulator target</strong><span>A build-ready pass stage cannot be selected without output voltage/current and source limits.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Approve a low-power teaching target—provisionally 10 V nominal and tens of milliamps—with final values derived under SOA/thermal review.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-06</span><div><strong>Week 6 oscillator persistence</strong><span>Reusing INT1 or INT2 conflicts with later cumulative use.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Populate the reserved INT3 channel as the dedicated oscillator integrator; allow active repurposing in separate Week 12 configurations.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-07</span><div><strong>Week 7 invalid hold claim</strong><span>An input pair alone cannot drive the hold capacitor as an integrator output.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Declare INT1 nonfunctional; measure pair offset/drift with a high-impedance temporary fixture; remove the hold-wander acceptance claim.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-08</span><div><strong>Weeks 7–9 topology continuity</strong><span>Chapter 8 concept figures do not automatically compose into Figure 9.1.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Make Weeks 7 and 8 explicit incremental subsets of a double-transcribed exact Figure 9.1 graph.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-09</span><div><strong>Week 10 FET option</strong><span>Figure 10.25 would create a second branch on INT2 and complicate the cumulative baseline.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Keep it as an optional separate configuration; do not add it to the primary baseline.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-10</span><div><strong>Week 11 rectifier role</strong><span>Figure 11.18 has a floating load and may not directly serve a grounded Wien-control interface.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Build/specify the exact bridge as a retained module; defer any ground-referenced control interface until the Wien project is activated.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-11</span><div><strong>Week 12 four-quadrant multiplication</strong><span>Van der Pol states are bipolar; Figure 11.28 alone is insufficient.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Evaluate a historical four-quadrant method and a modern ±15 V multiplier as explicit alternatives; choose one after complexity/model review.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-12</span><div><strong>Week 12 integrator use</strong><span>Butterworth needs four integrators plus an inverter and changes SUM into an integrating summer.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Use SUM+INT1+INT2+INT3 as four integrators and retain INV; treat this as a separate active configuration rather than permanent simultaneous wiring.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-13</span><div><strong>Week 12 SUM/INV/INT3 passive reconfiguration</strong><span>The fixed Week 1 networks and Week 6 oscillator wiring cannot acquire Butterworth functions through wires alone.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Add selectable integrating/coefficient branches to SUM1, a Butterworth coefficient branch to INV1, and a distinct INT3 Butterworth network; open incompatible ordinary and oscillator branches in that configuration.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-14</span><div><strong>Week 12 regulator-twin ownership</strong><span>Abstract twin blocks would hide extra amplifiers and corrupt the physical/load manifest.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Use retained SUM1 and INT2 as configuration roles, with OSC1 as source and REG1 active beside them; add only derived coefficient passives unless the plant equation proves more hardware is required.</span></div></div>
+          <div class="issue"><span class="issue-id">G0-15</span><div><strong>Week 13 exact DUT and loop ownership</strong><span>Campaign names alone can hide different electrical graphs and make load compensation appear mandatory.</span></div><div class="recommendation"><strong>Recommendation</strong><span>Use separate SUM1 and INV1 fixed-lag graphs; separate AMP1 and DEV.U_INT2 one-pole graphs; use REG1.U_ERR for the regulator two-pole graph; create regulator CLOAD baseline/compensated graphs only if the accepted REG1 loop requires that experiment.</span></div></div>
+        </section>
+
+        <section id="engineering">
+          <p class="eyebrow">06 · Delegated TBDs</p>
+          <h2>Engineering work that need not block conceptual approval</h2>
+          <p>If Gate 0 approves the recommended direction, the following remain controlled design tasks rather than unresolved project goals:</p>
+          <ul>
+            <li>Exact resistor/capacitor values, tolerances, voltage ratings, device types, thermal design, and protection sizing.</li>
+            <li>Safe loop-gain injection and open-loop measurement fixtures.</li>
+            <li>LM301A macro-model provenance, historical transistor-model availability, and named generic substitutes where necessary.</li>
+            <li>Week 5 regulator pass-stage design and regulator-twin coefficient derivation.</li>
+            <li>Week 8/9 pin-by-pin topology transcription and provisional compensation selection.</li>
+            <li>Week 10 current-repeater operating point and insertion map.</li>
+            <li>Week 11 switch types, drive circuits, and available modern equivalents.</li>
+            <li>Week 13 compensation values derived only after the accepted plant/loop models exist.</li>
+          </ul>
+          <p>Each task remains subject to the three gates: connectivity, electrical behavior, and visual fidelity.</p>
+        </section>
+
+        <section id="deferred">
+          <p class="eyebrow">07 · Deferred ledger</p>
+          <h2>Preserved future work</h2>
+          <ul>
+            <li><strong>D-01 — trigger:</strong> begin physical patch-cord paths, labels, and routing drawings after canonical weekly nets, connection points, and released cumulative schematics stabilize. Electrical nets remain explicit now.</li>
+            <li><strong>D-02 — trigger:</strong> begin the separate low-voltage/rail-to-rail redesign after the ±15 V historical reference passes its three gates and the new operating goals are written.</li>
+            <li><strong>D-03 — trigger:</strong> create full parallel modern schematics after the historical implementation is verified and a substitute is shown to materially change topology, range, compensation, or teaching outcome.</li>
+            <li><strong>D-04 — trigger:</strong> begin board placement, harness routing, panel mechanics, grounding geometry, and construction photography after circuit, connector, grounding, thermal-loss, and parts definitions stabilize. Electrical safety, ratings, heat dissipation, and grounding constraints remain in scope now; only their physical realization is deferred.</li>
+          </ul>
+        </section>
+
+        <section id="approval">
+          <p class="eyebrow">08 · Gate boundary</p>
+          <h2>What approval would authorize</h2>
+          <p>Gate 0 was approved on 2026-08-15 and authorizes Phase 2 toolchain evaluation and canonical-model prototyping. It does not approve unreviewed recommended values, waive safety analysis, or permit a schematic/netlist mismatch.</p>
+          <ul class="checklist">
+            <li>Approve or amend G0-01 through G0-15.</li>
+            <li>Accept the fourteen cumulative state descriptions and configuration splits.</li>
+            <li>Accept the detailed annexes as source evidence subject to cross-range ID normalization.</li>
+            <li>Authorize engineering TBDs to proceed under documented tests rather than silent inference.</li>
+            <li>Authorize Phase 2 only after the issue ledger records the final choices.</li>
+          </ul>
+          <div class="sources">
+            <a href="project-controls.html">Project controls</a>
+            <a href="gate-0-integration-register.html">Identity and state register</a>
+            <a href="preflight-decisions.html">Pre-flight decisions</a>
+            <a href="implementation-plan.html">Implementation plan</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>Integrated weekly electrical specification · Gate 0 draft · No circuit, SVG, SPICE, or toolchain implementation performed.</footer>
+  </div>
+</body>
+</html>

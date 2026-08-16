@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w07_08/graph.json",
+  "viewport": {
+    "width": 1800,
+    "height": 1050
+  },
+  "collapsed_modules": [
+    "MOD.SUM1",
+    "MOD.INV1",
+    "MOD.INT2",
+    "REG1",
+    "OSC1",
+    "AMP1",
+    "MOD.SOCKETS",
+    "INF.PWR_ENTRY",
+    "MOD.INT1"
+  ],
+  "module_positions": {
+    "INF.PWR_ENTRY": {
+      "x": 1390,
+      "y": 50,
+      "width": 330,
+      "height": 150,
+      "title": "\u00b115 V INFRA",
+      "subtitle": "permanent sheet",
+      "connect_ports": false
+    },
+    "MOD.SUM1": {
+      "x": 50,
+      "y": 850,
+      "width": 250,
+      "height": 120,
+      "title": "SUM1",
+      "subtitle": "retained inactive",
+      "connect_ports": false
+    },
+    "MOD.INV1": {
+      "x": 330,
+      "y": 850,
+      "width": 250,
+      "height": 120,
+      "title": "INV1",
+      "subtitle": "retained inactive",
+      "connect_ports": false
+    },
+    "MOD.INT2": {
+      "x": 610,
+      "y": 850,
+      "width": 250,
+      "height": 120,
+      "title": "INT2",
+      "subtitle": "retained inactive",
+      "connect_ports": false
+    },
+    "REG1": {
+      "x": 890,
+      "y": 850,
+      "width": 250,
+      "height": 120,
+      "title": "REG1",
+      "subtitle": "retained inactive",
+      "connect_ports": false
+    },
+    "OSC1": {
+      "x": 1170,
+      "y": 850,
+      "width": 250,
+      "height": 120,
+      "title": "OSC1",
+      "subtitle": "retained inactive",
+      "connect_ports": false
+    },
+    "MOD.SOCKETS": {
+      "x": 1450,
+      "y": 850,
+      "width": 270,
+      "height": 120,
+      "title": "SLOT STATUS",
+      "subtitle": "INT1 stock IC removed",
+      "connect_ports": false
+    },
+    "W07_08.FIXTURE": {
+      "x": 70,
+      "y": 130,
+      "width": 470,
+      "height": 580
+    },
+    "AMP1": {
+      "x": 650,
+      "y": 170,
+      "width": 500,
+      "height": 440,
+      "title": "AMP1",
+      "subtitle": "Q1-Q11 TRANSITIONAL \u2014 NO CURRENT LIMIT",
+      "ports": {
+        "INV_IN": {
+          "x": 650,
+          "y": 300,
+          "label_dx": 10
+        },
+        "NONINV_IN": {
+          "x": 650,
+          "y": 430,
+          "label_dx": 10
+        },
+        "OUT": {
+          "x": 1150,
+          "y": 360,
+          "label_dx": -40
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        },
+        "VP15": {
+          "x": 810,
+          "y": 170
+        },
+        "VN15": {
+          "x": 900,
+          "y": 610
+        },
+        "AGND": {
+          "x": 740,
+          "y": 610
+        }
+      }
+    },
+    "MOD.INT1": {
+      "x": 1250,
+      "y": 280,
+      "width": 420,
+      "height": 350,
+      "title": "INT1 PASSIVE NETWORK",
+      "subtitle": "stock LM301A removed",
+      "ports": {
+        "IN": {
+          "x": 1250,
+          "y": 370
+        },
+        "OUT": {
+          "x": 1670,
+          "y": 370
+        },
+        "JACK": {
+          "x": 1670,
+          "y": 500
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 35
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 760
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 800
+    }
+  },
+  "notes": [
+    "Only the active experiment is full weight.",
+    "Patch-cord routing remains deferred; canonical electrical nets are explicit."
+  ],
+  "sheet_id": "W08-OPEN-MAIN-SHEET",
+  "title": "Week 8 open-loop characterization",
+  "components": {
+    "W08.V_DIFF": {
+      "x": 160,
+      "y": 430
+    },
+    "W08.R_LOAD": {
+      "x": 450,
+      "y": 420,
+      "rotation": 90
+    },
+    "W08.V_INV_GND": {
+      "x": 160,
+      "y": 270
+    }
+  }
+}

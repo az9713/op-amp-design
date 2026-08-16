@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "graph": "graph.json",
+  "variant_id": "W05.REGULATOR_SWEEP",
+  "nominal_output": "10V",
+  "plant_input": {
+    "voltage": "18V",
+    "current_limit": "35mA",
+    "boundary": "external isolated bench channel"
+  },
+  "load_resistance_cases": [
+    {
+      "id": "RL470",
+      "value": "470",
+      "power_at_10V": "0.213W"
+    },
+    {
+      "id": "RL1K",
+      "value": "1k",
+      "power_at_10V": "0.100W"
+    },
+    {
+      "id": "RL2K2",
+      "value": "2.2k",
+      "power_at_10V": "0.045W"
+    }
+  ],
+  "load_capacitance_cases": [
+    {
+      "id": "CL10",
+      "value": "10u"
+    },
+    {
+      "id": "CL47",
+      "value": "47u"
+    },
+    {
+      "id": "CL100",
+      "value": "100u"
+    }
+  ],
+  "declared_esr": "0.30ohm seed; replace with measured capacitor ESR",
+  "load_step": "0 to 10mA",
+  "claim_boundary": "Values are approved teaching design choices; Figure 5.3 itself is symbolic."
+}

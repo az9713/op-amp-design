@@ -1,0 +1,24 @@
+0  Week 1 chassis
+1  Week 2 chassis
+1  Week 3 chassis
+1  Week 4 chassis
+1  Week 5 chassis
+1  Figure 5.3 close-up
+1  Week 6 chassis
+0  Schmitt close-up
+1  Week 7 chassis
+1  Week 7 INT1 interior
+1  Figure 7.10
+1  Week 8 chassis
+3  Week 8 INT1 interior stop
+1  Week 9 chassis
+3  Week 9 INT1 as integrator stop
+3  Figure 9.8 inverter test stop
+1  Week 10 chassis
+3  Week 10 INT1 interior stop
+1  Week 11 chassis
+0  Figure 12.17 on an existing integrator
+0  Precision rectifier
+1  Week 12 chassis
+1  Butterworth patch
+1  Week 13 chassis

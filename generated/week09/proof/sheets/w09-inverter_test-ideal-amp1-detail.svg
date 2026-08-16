@@ -1,0 +1,792 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1050" role="img" data-project-id="ROBERGE.ONEBOX.W09" data-variant-id="W09.INVERTER_TEST" data-fidelity="ideal" data-view="detail" data-detail-module-id="AMP1" data-layout-id="W09.AMP1_DETAIL">
+  <title>Detail circuit projection: ROBERGE.ONEBOX.W09</title>
+  <style>.symbol-line,.port-line,.wire,.port-wire,.net-trunk,.control-line{fill:none;stroke:#171717;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.symbol-fill{fill:#171717;stroke:#171717;stroke-width:1}.symbol-paper{fill:#fff}.component.inactive{opacity:.34}.component.changed .symbol-line,.component.changed .symbol-fill{stroke:#d85c41}.component.changed .symbol-fill{fill:#d85c41}.designator.inactive,.value.inactive{opacity:.34}.module-boundary{fill:none;stroke:#8b9299;stroke-width:1;stroke-dasharray:6 4}.junction{fill:#171717}.crossing{fill:#fff;stroke:#171717;stroke-width:1}.designator{font:600 11px system-ui;fill:#171717}.value{font:10px system-ui;fill:#555}.pin-label,.port-label{font:9px ui-monospace;fill:#555}.module-label{font:600 12px system-ui;fill:#555}.collapsed-title{font:700 22px system-ui;fill:#171717}.collapsed-subtitle,.net-label{font:11px system-ui;fill:#555}.polarity{font:16px system-ui;fill:#171717}.collapsed-module.inactive{opacity:.38}.zone{fill:#f8fafb;stroke:#c5cbd1;stroke-width:1}.zone-label{font:600 11px system-ui;fill:#737b83}.semantic-ledger{display:none}</style>
+  <g class="zone-layer">
+    <rect x="80" y="80" width="420" height="360" rx="8" class="zone" data-zone-id="INPUT_BALANCE" />
+    <text x="90.0" y="98.0" class="zone-label">INPUT BALANCE</text>
+    <rect x="520" y="80" width="410" height="520" rx="8" class="zone" data-zone-id="HIGH_GAIN" />
+    <text x="530.0" y="98.0" class="zone-label">HIGH GAIN</text>
+    <rect x="950" y="80" width="410" height="520" rx="8" class="zone" data-zone-id="OUTPUT" />
+    <text x="960.0" y="98.0" class="zone-label">OUTPUT</text>
+    <rect x="80" y="620" width="1280" height="310" rx="8" class="zone" data-zone-id="BIAS_DECOUPLING" />
+    <text x="90.0" y="638.0" class="zone-label">BIAS DECOUPLING</text>
+  </g>
+  <g class="boundary-layer">
+    <g id="module-Z414D5031" class="module" data-module-id="AMP1" data-parent-id="">
+      <rect x="24.0" y="24.0" width="1420.0" height="970.0" rx="8" class="module-boundary" />
+      <text x="34.0" y="42.0" class="module-label">AMP1</text>
+      <circle class="module-port" cx="24.0" cy="330.0" r="3" data-port-id="INV_IN" data-net-id="AMP1.INV_IN" />
+      <text x="32.0" y="324.0" class="port-label">INV_IN</text>
+      <circle class="module-port" cx="24.0" cy="390.0" r="3" data-port-id="NONINV_IN" data-net-id="AMP1.NONINV_IN" />
+      <text x="32.0" y="384.0" class="port-label">NONINV_IN</text>
+      <circle class="module-port" cx="1444.0" cy="410.0" r="3" data-port-id="OUT" data-net-id="AMP1.OUT" />
+      <text x="1416.0" y="404.0" class="port-label">OUT</text>
+      <circle class="module-port" cx="500.0" cy="24.0" r="3" data-port-id="COMP_A" data-net-id="AMP1.COMP_A" />
+      <text x="508.0" y="40.0" class="port-label">COMP_A</text>
+      <circle class="module-port" cx="850.0" cy="24.0" r="3" data-port-id="COMP_B" data-net-id="AMP1.COMP_B" />
+      <text x="858.0" y="40.0" class="port-label">COMP_B</text>
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VP15" data-net-id="P15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="VN15" data-net-id="N15" />
+      <circle class="module-port semantic-ledger" cx="0" cy="0" r="0" data-port-id="AGND" data-net-id="SGND" />
+    </g>
+  </g>
+  <g class="wire-layer">
+    <g class="net" data-net-id="AMP1.COMP_A">
+      <line class="net-trunk" x1="390.0" y1="245.0" x2="655.0" y2="245.0" data-net-id="AMP1.COMP_A" />
+      <polyline class="wire" points="655.0,120.0 669.0,120.0 669.0,245.0 655.0,245.0" data-terminal-ref="AMP1.CC::P" data-net-id="AMP1.COMP_A" fill="none" />
+      <circle cx="655.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.COMP_A" />
+      <polyline class="wire" points="420.0,245.0 420.0,245.0" data-terminal-ref="AMP1.Q2::C" data-net-id="AMP1.COMP_A" fill="none" />
+      <circle cx="420.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.COMP_A" />
+      <polyline class="wire" points="565.0,250.0 565.0,245.0" data-terminal-ref="AMP1.Q5::B" data-net-id="AMP1.COMP_A" fill="none" />
+      <circle cx="565.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.COMP_A" />
+      <polyline class="wire" points="390.0,255.0 390.0,245.0" data-terminal-ref="AMP1.R_COL_R::N" data-net-id="AMP1.COMP_A" fill="none" />
+      <circle cx="390.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.COMP_A" />
+      <polyline class="port-wire" points="500.0,24.0 514.0,24.0 514.0,245.0 500.0,245.0" data-port-ref="AMP1::COMP_A" data-net-id="AMP1.COMP_A" fill="none" />
+      <circle cx="500.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.COMP_A" />
+      <text x="470.0" y="230.0" class="net-label">COMP A</text>
+    </g>
+    <g class="net" data-net-id="AMP1.COMP_B">
+      <line class="net-trunk" x1="745.0" y1="303.0" x2="1300.0" y2="303.0" data-net-id="AMP1.COMP_B" />
+      <polyline class="wire" points="745.0,120.0 745.0,303.0" data-terminal-ref="AMP1.CC::N" data-net-id="AMP1.COMP_B" fill="none" />
+      <circle cx="745.0" cy="303.0" r="3.5" class="junction" data-net-id="AMP1.COMP_B" />
+      <polyline class="wire" points="1040.0,295.0 1040.0,303.0" data-terminal-ref="AMP1.D_DRV_1::A" data-net-id="AMP1.COMP_B" fill="none" />
+      <circle cx="1040.0" cy="303.0" r="3.5" class="junction" data-net-id="AMP1.COMP_B" />
+      <polyline class="wire" points="1075.0,260.0 1075.0,303.0" data-terminal-ref="AMP1.Q10::B" data-net-id="AMP1.COMP_B" fill="none" />
+      <circle cx="1075.0" cy="303.0" r="3.5" class="junction" data-net-id="AMP1.COMP_B" />
+      <polyline class="wire" points="1300.0,285.0 1300.0,303.0" data-terminal-ref="AMP1.Q12::C" data-net-id="AMP1.COMP_B" fill="none" />
+      <circle cx="1300.0" cy="303.0" r="3.5" class="junction" data-net-id="AMP1.COMP_B" />
+      <polyline class="wire" points="868.0,316.0 868.0,303.0" data-terminal-ref="AMP1.Q8::S" data-net-id="AMP1.COMP_B" fill="none" />
+      <circle cx="868.0" cy="303.0" r="3.5" class="junction" data-net-id="AMP1.COMP_B" />
+      <polyline class="port-wire" points="850.0,24.0 850.0,303.0" data-port-ref="AMP1::COMP_B" data-net-id="AMP1.COMP_B" fill="none" />
+      <circle cx="850.0" cy="303.0" r="3.5" class="junction" data-net-id="AMP1.COMP_B" />
+      <text x="845.0" y="245.0" class="net-label">COMP B</text>
+    </g>
+    <g class="net" data-net-id="AMP1.INV_IN">
+      <line class="net-trunk" x1="24.0" y1="330.0" x2="175.0" y2="330.0" data-net-id="AMP1.INV_IN" />
+      <polyline class="wire" points="175.0,280.0 175.0,330.0" data-terminal-ref="AMP1.Q1::B" data-net-id="AMP1.INV_IN" fill="none" />
+      <polyline class="port-wire" points="24.0,330.0 24.0,330.0" data-port-ref="AMP1::INV_IN" data-net-id="AMP1.INV_IN" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.BAL_L">
+      <line class="net-trunk" x1="220.0" y1="100.0" x2="220.0" y2="165.0" data-net-id="AMP1.N.BAL_L" />
+      <polyline class="wire" points="205.0,100.0 220.0,100.0" data-terminal-ref="AMP1.R_BAL_L::P" data-net-id="AMP1.N.BAL_L" fill="none" />
+      <polyline class="wire" points="220.0,165.0 220.0,165.0" data-terminal-ref="AMP1.R_COL_L::P" data-net-id="AMP1.N.BAL_L" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.BAL_R">
+      <line class="net-trunk" x1="405.0" y1="100.0" x2="405.0" y2="165.0" data-net-id="AMP1.N.BAL_R" />
+      <polyline class="wire" points="405.0,100.0 405.0,100.0" data-terminal-ref="AMP1.R_BAL_R::N" data-net-id="AMP1.N.BAL_R" fill="none" />
+      <polyline class="wire" points="390.0,165.0 405.0,165.0" data-terminal-ref="AMP1.R_COL_R::P" data-net-id="AMP1.N.BAL_R" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.BAL_W">
+      <line class="net-trunk" x1="295.0" y1="100.0" x2="315.0" y2="100.0" data-net-id="AMP1.N.BAL_W" />
+      <polyline class="wire" points="305.0,90.0 305.0,100.0" data-terminal-ref="AMP1.D_BAL::K" data-net-id="AMP1.N.BAL_W" fill="none" />
+      <circle cx="305.0" cy="100.0" r="3.5" class="junction" data-net-id="AMP1.N.BAL_W" />
+      <polyline class="wire" points="295.0,100.0 295.0,100.0" data-terminal-ref="AMP1.R_BAL_L::N" data-net-id="AMP1.N.BAL_W" fill="none" />
+      <circle cx="295.0" cy="100.0" r="3.5" class="junction" data-net-id="AMP1.N.BAL_W" />
+      <polyline class="wire" points="315.0,100.0 315.0,100.0" data-terminal-ref="AMP1.R_BAL_R::P" data-net-id="AMP1.N.BAL_W" fill="none" />
+      <circle cx="315.0" cy="100.0" r="3.5" class="junction" data-net-id="AMP1.N.BAL_W" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.BIAS_DIODE_A">
+      <line class="net-trunk" x1="520.0" y1="725.0" x2="520.0" y2="745.0" data-net-id="AMP1.N.BIAS_DIODE_A" />
+      <polyline class="wire" points="520.0,745.0 520.0,745.0" data-terminal-ref="AMP1.D_BIAS::A" data-net-id="AMP1.N.BIAS_DIODE_A" fill="none" />
+      <polyline class="wire" points="520.0,725.0 520.0,725.0" data-terminal-ref="AMP1.R_BIAS_TC::N" data-net-id="AMP1.N.BIAS_DIODE_A" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.BIAS_NEG">
+      <line class="net-trunk" x1="260.0" y1="635.0" x2="945.0" y2="635.0" data-net-id="AMP1.N.BIAS_NEG" />
+      <polyline class="wire" points="420.0,690.0 420.0,635.0" data-terminal-ref="AMP1.C_BIAS_G::P" data-net-id="AMP1.N.BIAS_NEG" fill="none" />
+      <circle cx="420.0" cy="635.0" r="3.5" class="junction" data-net-id="AMP1.N.BIAS_NEG" />
+      <polyline class="wire" points="620.0,690.0 620.0,635.0" data-terminal-ref="AMP1.C_BIAS_N::P" data-net-id="AMP1.N.BIAS_NEG" fill="none" />
+      <circle cx="620.0" cy="635.0" r="3.5" class="junction" data-net-id="AMP1.N.BIAS_NEG" />
+      <polyline class="wire" points="260.0,500.0 260.0,635.0" data-terminal-ref="AMP1.Q3::B" data-net-id="AMP1.N.BIAS_NEG" fill="none" />
+      <circle cx="260.0" cy="635.0" r="3.5" class="junction" data-net-id="AMP1.N.BIAS_NEG" />
+      <polyline class="wire" points="635.0,540.0 635.0,635.0" data-terminal-ref="AMP1.Q7::B" data-net-id="AMP1.N.BIAS_NEG" fill="none" />
+      <circle cx="635.0" cy="635.0" r="3.5" class="junction" data-net-id="AMP1.N.BIAS_NEG" />
+      <polyline class="wire" points="945.0,540.0 945.0,635.0" data-terminal-ref="AMP1.Q9::B" data-net-id="AMP1.N.BIAS_NEG" fill="none" />
+      <circle cx="945.0" cy="635.0" r="3.5" class="junction" data-net-id="AMP1.N.BIAS_NEG" />
+      <polyline class="wire" points="520.0,635.0 520.0,635.0" data-terminal-ref="AMP1.R_BIAS_TC::P" data-net-id="AMP1.N.BIAS_NEG" fill="none" />
+      <circle cx="520.0" cy="635.0" r="3.5" class="junction" data-net-id="AMP1.N.BIAS_NEG" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.DRV_DIODE_MID">
+      <polyline class="wire" points="1040.0,385.0 1040.0,385.0" data-terminal-ref="AMP1.D_DRV_1::K" data-net-id="AMP1.N.DRV_DIODE_MID" fill="none" />
+      <polyline class="wire" points="1040.0,385.0 1040.0,385.0" data-terminal-ref="AMP1.D_DRV_2::A" data-net-id="AMP1.N.DRV_DIODE_MID" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.DRV_N_Q9C">
+      <line class="net-trunk" x1="1020.0" y1="500.0" x2="1240.0" y2="500.0" data-net-id="AMP1.N.DRV_N_Q9C" />
+      <polyline class="wire" points="1040.0,475.0 1040.0,500.0" data-terminal-ref="AMP1.D_DRV_2::K" data-net-id="AMP1.N.DRV_N_Q9C" fill="none" />
+      <circle cx="1040.0" cy="500.0" r="3.5" class="junction" data-net-id="AMP1.N.DRV_N_Q9C" />
+      <polyline class="wire" points="1165.0,500.0 1165.0,500.0" data-terminal-ref="AMP1.Q11::B" data-net-id="AMP1.N.DRV_N_Q9C" fill="none" />
+      <circle cx="1165.0" cy="500.0" r="3.5" class="junction" data-net-id="AMP1.N.DRV_N_Q9C" />
+      <polyline class="wire" points="1240.0,485.0 1240.0,500.0" data-terminal-ref="AMP1.Q13::C" data-net-id="AMP1.N.DRV_N_Q9C" fill="none" />
+      <circle cx="1240.0" cy="500.0" r="3.5" class="junction" data-net-id="AMP1.N.DRV_N_Q9C" />
+      <polyline class="wire" points="1020.0,505.0 1020.0,500.0" data-terminal-ref="AMP1.Q9::C" data-net-id="AMP1.N.DRV_N_Q9C" fill="none" />
+      <circle cx="1020.0" cy="500.0" r="3.5" class="junction" data-net-id="AMP1.N.DRV_N_Q9C" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.HIGH_Z">
+      <line class="net-trunk" x1="710.0" y1="280.0" x2="710.0" y2="505.0" data-net-id="AMP1.N.HIGH_Z" />
+      <polyline class="wire" points="650.0,375.0 710.0,375.0" data-terminal-ref="AMP1.Q6::C" data-net-id="AMP1.N.HIGH_Z" fill="none" />
+      <circle cx="710.0" cy="375.0" r="3.5" class="junction" data-net-id="AMP1.N.HIGH_Z" />
+      <polyline class="wire" points="710.0,505.0 710.0,505.0" data-terminal-ref="AMP1.Q7::C" data-net-id="AMP1.N.HIGH_Z" fill="none" />
+      <circle cx="710.0" cy="505.0" r="3.5" class="junction" data-net-id="AMP1.N.HIGH_Z" />
+      <polyline class="wire" points="795.0,280.0 710.0,280.0" data-terminal-ref="AMP1.Q8::G" data-net-id="AMP1.N.HIGH_Z" fill="none" />
+      <circle cx="710.0" cy="280.0" r="3.5" class="junction" data-net-id="AMP1.N.HIGH_Z" />
+      <text x="760.0" y="245.0" class="net-label">HIGH-Z</text>
+    </g>
+    <g class="net" data-net-id="AMP1.N.OUT_N_SENSE">
+      <line class="net-trunk" x1="1090.0" y1="465.0" x2="1360.0" y2="465.0" data-net-id="AMP1.N.OUT_N_SENSE" />
+      <polyline class="wire" points="1090.0,465.0 1090.0,465.0" data-terminal-ref="AMP1.Q11::E" data-net-id="AMP1.N.OUT_N_SENSE" fill="none" />
+      <circle cx="1090.0" cy="465.0" r="3.5" class="junction" data-net-id="AMP1.N.OUT_N_SENSE" />
+      <polyline class="wire" points="1315.0,450.0 1315.0,465.0" data-terminal-ref="AMP1.Q13::B" data-net-id="AMP1.N.OUT_N_SENSE" fill="none" />
+      <circle cx="1315.0" cy="465.0" r="3.5" class="junction" data-net-id="AMP1.N.OUT_N_SENSE" />
+      <polyline class="wire" points="1360.0,495.0 1360.0,465.0" data-terminal-ref="AMP1.R_OUT_N::N" data-net-id="AMP1.N.OUT_N_SENSE" fill="none" />
+      <circle cx="1360.0" cy="465.0" r="3.5" class="junction" data-net-id="AMP1.N.OUT_N_SENSE" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.OUT_P_SENSE">
+      <line class="net-trunk" x1="1150.0" y1="295.0" x2="1360.0" y2="295.0" data-net-id="AMP1.N.OUT_P_SENSE" />
+      <polyline class="wire" points="1150.0,295.0 1150.0,295.0" data-terminal-ref="AMP1.Q10::E" data-net-id="AMP1.N.OUT_P_SENSE" fill="none" />
+      <circle cx="1150.0" cy="295.0" r="3.5" class="junction" data-net-id="AMP1.N.OUT_P_SENSE" />
+      <polyline class="wire" points="1225.0,320.0 1225.0,295.0" data-terminal-ref="AMP1.Q12::B" data-net-id="AMP1.N.OUT_P_SENSE" fill="none" />
+      <circle cx="1225.0" cy="295.0" r="3.5" class="junction" data-net-id="AMP1.N.OUT_P_SENSE" />
+      <polyline class="wire" points="1360.0,275.0 1360.0,295.0" data-terminal-ref="AMP1.R_OUT_P::P" data-net-id="AMP1.N.OUT_P_SENSE" fill="none" />
+      <circle cx="1360.0" cy="295.0" r="3.5" class="junction" data-net-id="AMP1.N.OUT_P_SENSE" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q1C_Q4B">
+      <line class="net-trunk" x1="110.0" y1="245.0" x2="255.0" y2="245.0" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="110.0,225.0 110.0,245.0" data-terminal-ref="AMP1.C_Q4B_BYP::N" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="110.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="250.0,245.0 250.0,245.0" data-terminal-ref="AMP1.Q1::C" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="250.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="255.0,180.0 255.0,245.0" data-terminal-ref="AMP1.Q4::B" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="255.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+      <polyline class="wire" points="220.0,255.0 220.0,245.0" data-terminal-ref="AMP1.R_COL_L::N" data-net-id="AMP1.N.Q1C_Q4B" fill="none" />
+      <circle cx="220.0" cy="245.0" r="3.5" class="junction" data-net-id="AMP1.N.Q1C_Q4B" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q3E_MID">
+      <line class="net-trunk" x1="270.0" y1="655.0" x2="270.0" y2="690.0" data-net-id="AMP1.N.Q3E_MID" />
+      <polyline class="wire" points="270.0,690.0 270.0,690.0" data-terminal-ref="AMP1.R_Q3_180K::P" data-net-id="AMP1.N.Q3E_MID" fill="none" />
+      <polyline class="wire" points="270.0,655.0 270.0,655.0" data-terminal-ref="AMP1.R_Q3_5K6::N" data-net-id="AMP1.N.Q3E_MID" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q3E_SERIES">
+      <line class="net-trunk" x1="270.0" y1="565.0" x2="335.0" y2="565.0" data-net-id="AMP1.N.Q3E_SERIES" />
+      <polyline class="wire" points="335.0,535.0 335.0,565.0" data-terminal-ref="AMP1.Q3::E" data-net-id="AMP1.N.Q3E_SERIES" fill="none" />
+      <polyline class="wire" points="270.0,565.0 270.0,565.0" data-terminal-ref="AMP1.R_Q3_5K6::P" data-net-id="AMP1.N.Q3E_SERIES" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q45E">
+      <line class="net-trunk" x1="180.0" y1="203.0" x2="570.0" y2="203.0" data-net-id="AMP1.N.Q45E" />
+      <polyline class="wire" points="570.0,185.0 570.0,203.0" data-terminal-ref="AMP1.C_Q45_E::N" data-net-id="AMP1.N.Q45E" fill="none" />
+      <circle cx="570.0" cy="203.0" r="3.5" class="junction" data-net-id="AMP1.N.Q45E" />
+      <polyline class="wire" points="180.0,145.0 180.0,203.0" data-terminal-ref="AMP1.Q4::E" data-net-id="AMP1.N.Q45E" fill="none" />
+      <circle cx="180.0" cy="203.0" r="3.5" class="junction" data-net-id="AMP1.N.Q45E" />
+      <polyline class="wire" points="490.0,215.0 490.0,203.0" data-terminal-ref="AMP1.Q5::E" data-net-id="AMP1.N.Q45E" fill="none" />
+      <circle cx="490.0" cy="203.0" r="3.5" class="junction" data-net-id="AMP1.N.Q45E" />
+      <polyline class="wire" points="500.0,185.0 500.0,203.0" data-terminal-ref="AMP1.R_Q45_E::N" data-net-id="AMP1.N.Q45E" fill="none" />
+      <circle cx="500.0" cy="203.0" r="3.5" class="junction" data-net-id="AMP1.N.Q45E" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q5C_Q6E">
+      <line class="net-trunk" x1="490.0" y1="305.0" x2="650.0" y2="305.0" data-net-id="AMP1.N.Q5C_Q6E" />
+      <polyline class="wire" points="490.0,285.0 490.0,305.0" data-terminal-ref="AMP1.Q5::C" data-net-id="AMP1.N.Q5C_Q6E" fill="none" />
+      <polyline class="wire" points="650.0,305.0 650.0,305.0" data-terminal-ref="AMP1.Q6::E" data-net-id="AMP1.N.Q5C_Q6E" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q6B">
+      <line class="net-trunk" x1="725.0" y1="195.0" x2="725.0" y2="455.0" data-net-id="AMP1.N.Q6B" />
+      <polyline class="wire" points="735.0,455.0 725.0,455.0" data-terminal-ref="AMP1.C_Q6_BYP::P" data-net-id="AMP1.N.Q6B" fill="none" />
+      <circle cx="725.0" cy="455.0" r="3.5" class="junction" data-net-id="AMP1.N.Q6B" />
+      <polyline class="wire" points="725.0,340.0 725.0,340.0" data-terminal-ref="AMP1.Q6::B" data-net-id="AMP1.N.Q6B" fill="none" />
+      <circle cx="725.0" cy="340.0" r="3.5" class="junction" data-net-id="AMP1.N.Q6B" />
+      <polyline class="wire" points="650.0,455.0 725.0,455.0" data-terminal-ref="AMP1.R_Q6_BG::P" data-net-id="AMP1.N.Q6B" fill="none" />
+      <circle cx="725.0" cy="455.0" r="3.5" class="junction" data-net-id="AMP1.N.Q6B" />
+      <polyline class="wire" points="650.0,195.0 725.0,195.0" data-terminal-ref="AMP1.R_Q6_BP::N" data-net-id="AMP1.N.Q6B" fill="none" />
+      <circle cx="725.0" cy="195.0" r="3.5" class="junction" data-net-id="AMP1.N.Q6B" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q7E">
+      <line class="net-trunk" x1="710.0" y1="575.0" x2="710.0" y2="690.0" data-net-id="AMP1.N.Q7E" />
+      <polyline class="wire" points="710.0,575.0 710.0,575.0" data-terminal-ref="AMP1.Q7::E" data-net-id="AMP1.N.Q7E" fill="none" />
+      <polyline class="wire" points="700.0,690.0 710.0,690.0" data-terminal-ref="AMP1.R_Q7_E::P" data-net-id="AMP1.N.Q7E" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.Q9E">
+      <line class="net-trunk" x1="1020.0" y1="575.0" x2="1020.0" y2="690.0" data-net-id="AMP1.N.Q9E" />
+      <polyline class="wire" points="1020.0,575.0 1020.0,575.0" data-terminal-ref="AMP1.Q9::E" data-net-id="AMP1.N.Q9E" fill="none" />
+      <polyline class="wire" points="990.0,690.0 1020.0,690.0" data-terminal-ref="AMP1.R_Q9_E::P" data-net-id="AMP1.N.Q9E" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.N.TAIL">
+      <line class="net-trunk" x1="250.0" y1="315.0" x2="420.0" y2="315.0" data-net-id="AMP1.N.TAIL" />
+      <polyline class="wire" points="250.0,315.0 250.0,315.0" data-terminal-ref="AMP1.Q1::E" data-net-id="AMP1.N.TAIL" fill="none" />
+      <circle cx="250.0" cy="315.0" r="3.5" class="junction" data-net-id="AMP1.N.TAIL" />
+      <polyline class="wire" points="420.0,315.0 420.0,315.0" data-terminal-ref="AMP1.Q2::E" data-net-id="AMP1.N.TAIL" fill="none" />
+      <circle cx="420.0" cy="315.0" r="3.5" class="junction" data-net-id="AMP1.N.TAIL" />
+      <polyline class="wire" points="335.0,465.0 335.0,315.0" data-terminal-ref="AMP1.Q3::C" data-net-id="AMP1.N.TAIL" fill="none" />
+      <circle cx="335.0" cy="315.0" r="3.5" class="junction" data-net-id="AMP1.N.TAIL" />
+    </g>
+    <g class="net" data-net-id="AMP1.NONINV_IN">
+      <line class="net-trunk" x1="24.0" y1="390.0" x2="345.0" y2="390.0" data-net-id="AMP1.NONINV_IN" />
+      <polyline class="wire" points="345.0,280.0 345.0,390.0" data-terminal-ref="AMP1.Q2::B" data-net-id="AMP1.NONINV_IN" fill="none" />
+      <polyline class="port-wire" points="24.0,390.0 24.0,390.0" data-port-ref="AMP1::NONINV_IN" data-net-id="AMP1.NONINV_IN" fill="none" />
+    </g>
+    <g class="net" data-net-id="AMP1.OUT">
+      <line class="net-trunk" x1="1240.0" y1="405.0" x2="1444.0" y2="405.0" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="1300.0,355.0 1300.0,405.0" data-terminal-ref="AMP1.Q12::E" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1300.0" cy="405.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="1240.0,415.0 1240.0,405.0" data-terminal-ref="AMP1.Q13::E" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1240.0" cy="405.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="1360.0,405.0 1360.0,405.0" data-terminal-ref="AMP1.R_OUT_N::P" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1360.0" cy="405.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="wire" points="1360.0,365.0 1360.0,405.0" data-terminal-ref="AMP1.R_OUT_P::N" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1360.0" cy="405.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+      <polyline class="port-wire" points="1444.0,410.0 1444.0,405.0" data-port-ref="AMP1::OUT" data-net-id="AMP1.OUT" fill="none" />
+      <circle cx="1444.0" cy="405.0" r="3.5" class="junction" data-net-id="AMP1.OUT" />
+    </g>
+    <g class="net" data-net-id="N15">
+      <line class="net-trunk" x1="270.0" y1="1008.0" x2="1340.0" y2="1008.0" data-net-id="N15" />
+      <polyline class="wire" points="620.0,780.0 620.0,1008.0" data-terminal-ref="AMP1.C_BIAS_N::N" data-net-id="N15" fill="none" />
+      <circle cx="620.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="1340.0,770.0 1340.0,1008.0" data-terminal-ref="AMP1.C_VN_BULK::N" data-net-id="N15" fill="none" />
+      <circle cx="1340.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="1270.0,770.0 1270.0,1008.0" data-terminal-ref="AMP1.C_VN_FAST::N" data-net-id="N15" fill="none" />
+      <circle cx="1270.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="520.0,835.0 520.0,1008.0" data-terminal-ref="AMP1.D_BIAS::K" data-net-id="N15" fill="none" />
+      <circle cx="520.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="1090.0,535.0 1090.0,1008.0" data-terminal-ref="AMP1.Q11::C" data-net-id="N15" fill="none" />
+      <circle cx="1090.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="270.0,780.0 270.0,1008.0" data-terminal-ref="AMP1.R_Q3_180K::N" data-net-id="N15" fill="none" />
+      <circle cx="270.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="700.0,780.0 700.0,1008.0" data-terminal-ref="AMP1.R_Q7_E::N" data-net-id="N15" fill="none" />
+      <circle cx="700.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <polyline class="wire" points="990.0,780.0 990.0,1008.0" data-terminal-ref="AMP1.R_Q9_E::N" data-net-id="N15" fill="none" />
+      <circle cx="990.0" cy="1008.0" r="3.5" class="junction" data-net-id="N15" />
+      <text x="274.0" y="1002.0" class="net-label">N15</text>
+    </g>
+    <g class="net" data-net-id="P15">
+      <line class="net-trunk" x1="110.0" y1="42.0" x2="1190.0" y2="42.0" data-net-id="P15" />
+      <polyline class="wire" points="570.0,95.0 570.0,42.0" data-terminal-ref="AMP1.C_Q45_E::P" data-net-id="P15" fill="none" />
+      <circle cx="570.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="110.0,135.0 110.0,42.0" data-terminal-ref="AMP1.C_Q4B_BYP::P" data-net-id="P15" fill="none" />
+      <circle cx="110.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="1190.0,680.0 1190.0,42.0" data-terminal-ref="AMP1.C_VP_BULK::P" data-net-id="P15" fill="none" />
+      <circle cx="1190.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="1120.0,680.0 1120.0,42.0" data-terminal-ref="AMP1.C_VP_FAST::P" data-net-id="P15" fill="none" />
+      <circle cx="1120.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="305.0,0.0 305.0,42.0" data-terminal-ref="AMP1.D_BAL::A" data-net-id="P15" fill="none" />
+      <circle cx="305.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="1150.0,225.0 1150.0,42.0" data-terminal-ref="AMP1.Q10::C" data-net-id="P15" fill="none" />
+      <circle cx="1150.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="868.0,244.0 868.0,42.0" data-terminal-ref="AMP1.Q8::D" data-net-id="P15" fill="none" />
+      <circle cx="868.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="500.0,95.0 500.0,42.0" data-terminal-ref="AMP1.R_Q45_E::P" data-net-id="P15" fill="none" />
+      <circle cx="500.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <polyline class="wire" points="650.0,105.0 650.0,42.0" data-terminal-ref="AMP1.R_Q6_BP::P" data-net-id="P15" fill="none" />
+      <circle cx="650.0" cy="42.0" r="3.5" class="junction" data-net-id="P15" />
+      <text x="114.0" y="36.0" class="net-label">P15</text>
+    </g>
+    <g class="net" data-net-id="SGND">
+      <line class="net-trunk" x1="180.0" y1="610.0" x2="1340.0" y2="610.0" data-net-id="SGND" />
+      <polyline class="wire" points="420.0,780.0 434.0,780.0 434.0,610.0 420.0,610.0" data-terminal-ref="AMP1.C_BIAS_G::N" data-net-id="SGND" fill="none" />
+      <circle cx="420.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="735.0,545.0 735.0,610.0" data-terminal-ref="AMP1.C_Q6_BYP::N" data-net-id="SGND" fill="none" />
+      <circle cx="735.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="1340.0,680.0 1340.0,610.0" data-terminal-ref="AMP1.C_VN_BULK::P" data-net-id="SGND" fill="none" />
+      <circle cx="1340.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="1270.0,680.0 1270.0,610.0" data-terminal-ref="AMP1.C_VN_FAST::P" data-net-id="SGND" fill="none" />
+      <circle cx="1270.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="1190.0,770.0 1204.0,770.0 1204.0,610.0 1190.0,610.0" data-terminal-ref="AMP1.C_VP_BULK::N" data-net-id="SGND" fill="none" />
+      <circle cx="1190.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="1120.0,770.0 1134.0,770.0 1134.0,610.0 1120.0,610.0" data-terminal-ref="AMP1.C_VP_FAST::N" data-net-id="SGND" fill="none" />
+      <circle cx="1120.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="180.0,215.0 194.0,215.0 194.0,610.0 180.0,610.0" data-terminal-ref="AMP1.Q4::C" data-net-id="SGND" fill="none" />
+      <circle cx="180.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <polyline class="wire" points="650.0,545.0 650.0,610.0" data-terminal-ref="AMP1.R_Q6_BG::N" data-net-id="SGND" fill="none" />
+      <circle cx="650.0" cy="610.0" r="3.5" class="junction" data-net-id="SGND" />
+      <text x="184.0" y="604.0" class="net-label">SGND</text>
+    </g>
+  </g>
+  <g class="symbol-layer">
+    <g id="component-Z414D50312E4343" class="component active" transform="translate(700.0 120.0) rotate(0)" data-component-id="AMP1.CC" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="0" data-mirror="false">
+      <title>AMP1.CC</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.COMP_A" data-open="false" data-global-x="655.0" data-global-y="120.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.COMP_B" data-open="false" data-global-x="745.0" data-global-y="120.0" />
+    </g>
+    <g id="component-Z414D50312E435F424941535F47" class="component active" transform="translate(420.0 735.0) rotate(90)" data-component-id="AMP1.C_BIAS_G" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_BIAS_G</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BIAS_NEG" data-open="false" data-global-x="420.0" data-global-y="690.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="420.0" data-global-y="780.0" />
+    </g>
+    <g id="component-Z414D50312E435F424941535F4E" class="component active" transform="translate(620.0 735.0) rotate(90)" data-component-id="AMP1.C_BIAS_N" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_BIAS_N</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BIAS_NEG" data-open="false" data-global-x="620.0" data-global-y="690.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="620.0" data-global-y="780.0" />
+    </g>
+    <g id="component-Z414D50312E435F5134355F45" class="component active" transform="translate(570.0 140.0) rotate(90)" data-component-id="AMP1.C_Q45_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_Q45_E</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="570.0" data-global-y="95.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.Q45E" data-open="false" data-global-x="570.0" data-global-y="185.0" />
+    </g>
+    <g id="component-Z414D50312E435F5134425F425950" class="component active" transform="translate(110.0 180.0) rotate(90)" data-component-id="AMP1.C_Q4B_BYP" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_Q4B_BYP</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="110.0" data-global-y="135.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="110.0" data-global-y="225.0" />
+    </g>
+    <g id="component-Z414D50312E435F51365F425950" class="component active" transform="translate(735.0 500.0) rotate(90)" data-component-id="AMP1.C_Q6_BYP" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_Q6_BYP</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.Q6B" data-open="false" data-global-x="735.0" data-global-y="455.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="735.0" data-global-y="545.0" />
+    </g>
+    <g id="component-Z414D50312E435F564E5F42554C4B" class="component active" transform="translate(1340.0 725.0) rotate(90)" data-component-id="AMP1.C_VN_BULK" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_VN_BULK</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SGND" data-open="false" data-global-x="1340.0" data-global-y="680.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="1340.0" data-global-y="770.0" />
+    </g>
+    <g id="component-Z414D50312E435F564E5F46415354" class="component active" transform="translate(1270.0 725.0) rotate(90)" data-component-id="AMP1.C_VN_FAST" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_VN_FAST</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="SGND" data-open="false" data-global-x="1270.0" data-global-y="680.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="1270.0" data-global-y="770.0" />
+    </g>
+    <g id="component-Z414D50312E435F56505F42554C4B" class="component active" transform="translate(1190.0 725.0) rotate(90)" data-component-id="AMP1.C_VP_BULK" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_VP_BULK</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="1190.0" data-global-y="680.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="1190.0" data-global-y="770.0" />
+    </g>
+    <g id="component-Z414D50312E435F56505F46415354" class="component active" transform="translate(1120.0 725.0) rotate(90)" data-component-id="AMP1.C_VP_FAST" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="capacitor" data-model-id="MODEL.W09.C.I" data-model-reference="C" data-rotation="90" data-mirror="false">
+      <title>AMP1.C_VP_FAST</title>
+      <line x1="-45" y1="0" x2="-7" y2="0" class="symbol-line" />
+      <line x1="-7" y1="-22" x2="-7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="-22" x2="7" y2="22" class="symbol-line capacitor-plate" />
+      <line x1="7" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="1120.0" data-global-y="680.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="1120.0" data-global-y="770.0" />
+    </g>
+    <g id="component-Z414D50312E445F42414C" class="component active" transform="translate(305.0 45.0) rotate(90)" data-component-id="AMP1.D_BAL" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE" data-rotation="90" data-mirror="false">
+      <title>AMP1.D_BAL</title>
+      <line x1="-45" y1="0" x2="-16" y2="0" class="symbol-line" />
+      <polygon points="-16,-18 -16,18 13,0" class="symbol-fill diode-body" />
+      <line x1="15" y1="-21" x2="15" y2="21" class="symbol-line diode-bar" />
+      <line x1="15" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="A" data-net-id="P15" data-open="false" data-global-x="305.0" data-global-y="0.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="K" data-net-id="AMP1.N.BAL_W" data-open="false" data-global-x="305.0" data-global-y="90.0" />
+    </g>
+    <g id="component-Z414D50312E445F42494153" class="component active" transform="translate(520.0 790.0) rotate(90)" data-component-id="AMP1.D_BIAS" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE" data-rotation="90" data-mirror="false">
+      <title>AMP1.D_BIAS</title>
+      <line x1="-45" y1="0" x2="-16" y2="0" class="symbol-line" />
+      <polygon points="-16,-18 -16,18 13,0" class="symbol-fill diode-body" />
+      <line x1="15" y1="-21" x2="15" y2="21" class="symbol-line diode-bar" />
+      <line x1="15" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="A" data-net-id="AMP1.N.BIAS_DIODE_A" data-open="false" data-global-x="520.0" data-global-y="745.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="K" data-net-id="N15" data-open="false" data-global-x="520.0" data-global-y="835.0" />
+    </g>
+    <g id="component-Z414D50312E445F4452565F31" class="component active" transform="translate(1040.0 340.0) rotate(90)" data-component-id="AMP1.D_DRV_1" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE" data-rotation="90" data-mirror="false">
+      <title>AMP1.D_DRV_1</title>
+      <line x1="-45" y1="0" x2="-16" y2="0" class="symbol-line" />
+      <polygon points="-16,-18 -16,18 13,0" class="symbol-fill diode-body" />
+      <line x1="15" y1="-21" x2="15" y2="21" class="symbol-line diode-bar" />
+      <line x1="15" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="A" data-net-id="AMP1.COMP_B" data-open="false" data-global-x="1040.0" data-global-y="295.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="K" data-net-id="AMP1.N.DRV_DIODE_MID" data-open="false" data-global-x="1040.0" data-global-y="385.0" />
+    </g>
+    <g id="component-Z414D50312E445F4452565F32" class="component active" transform="translate(1040.0 430.0) rotate(90)" data-component-id="AMP1.D_DRV_2" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="diode" data-model-id="MODEL.W09.D.I" data-model-reference="W09_D_BASE" data-rotation="90" data-mirror="false">
+      <title>AMP1.D_DRV_2</title>
+      <line x1="-45" y1="0" x2="-16" y2="0" class="symbol-line" />
+      <polygon points="-16,-18 -16,18 13,0" class="symbol-fill diode-body" />
+      <line x1="15" y1="-21" x2="15" y2="21" class="symbol-line diode-bar" />
+      <line x1="15" y1="0" x2="45" y2="0" class="symbol-line" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="A" data-net-id="AMP1.N.DRV_DIODE_MID" data-open="false" data-global-x="1040.0" data-global-y="385.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="K" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" data-global-x="1040.0" data-global-y="475.0" />
+    </g>
+    <g id="component-Z414D50312E5131" class="component active" transform="translate(220.0 280.0) rotate(0)" data-component-id="AMP1.Q1" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q1</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="250.0" data-global-y="245.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.INV_IN" data-open="false" data-global-x="175.0" data-global-y="280.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.TAIL" data-open="false" data-global-x="250.0" data-global-y="315.0" />
+    </g>
+    <g id="component-Z414D50312E513130" class="component active" transform="translate(1120.0 260.0) rotate(0)" data-component-id="AMP1.Q10" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q10</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="P15" data-open="false" data-global-x="1150.0" data-global-y="225.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.COMP_B" data-open="false" data-global-x="1075.0" data-global-y="260.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.OUT_P_SENSE" data-open="false" data-global-x="1150.0" data-global-y="295.0" />
+    </g>
+    <g id="component-Z414D50312E513131" class="component active" transform="translate(1120.0 500.0) rotate(180)" data-component-id="AMP1.Q11" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q11</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="N15" data-open="false" data-global-x="1090.0" data-global-y="535.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" data-global-x="1165.0" data-global-y="500.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.OUT_N_SENSE" data-open="false" data-global-x="1090.0" data-global-y="465.0" />
+    </g>
+    <g id="component-Z414D50312E513132" class="component active" transform="translate(1270.0 320.0) rotate(0)" data-component-id="AMP1.Q12" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q12</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.COMP_B" data-open="false" data-global-x="1300.0" data-global-y="285.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.OUT_P_SENSE" data-open="false" data-global-x="1225.0" data-global-y="320.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.OUT" data-open="false" data-global-x="1300.0" data-global-y="355.0" />
+    </g>
+    <g id="component-Z414D50312E513133" class="component active" transform="translate(1270.0 450.0) rotate(180)" data-component-id="AMP1.Q13" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q13</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" data-global-x="1240.0" data-global-y="485.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.OUT_N_SENSE" data-open="false" data-global-x="1315.0" data-global-y="450.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.OUT" data-open="false" data-global-x="1240.0" data-global-y="415.0" />
+    </g>
+    <g id="component-Z414D50312E5132" class="component active" transform="translate(390.0 280.0) rotate(0)" data-component-id="AMP1.Q2" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q2</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.COMP_A" data-open="false" data-global-x="420.0" data-global-y="245.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.NONINV_IN" data-open="false" data-global-x="345.0" data-global-y="280.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.TAIL" data-open="false" data-global-x="420.0" data-global-y="315.0" />
+    </g>
+    <g id="component-Z414D50312E5133" class="component active" transform="translate(305.0 500.0) rotate(0)" data-component-id="AMP1.Q3" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q3</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.TAIL" data-open="false" data-global-x="335.0" data-global-y="465.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.BIAS_NEG" data-open="false" data-global-x="260.0" data-global-y="500.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.Q3E_SERIES" data-open="false" data-global-x="335.0" data-global-y="535.0" />
+    </g>
+    <g id="component-Z414D50312E5134" class="component active" transform="translate(210.0 180.0) rotate(180)" data-component-id="AMP1.Q4" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q4</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="SGND" data-open="false" data-global-x="180.0" data-global-y="215.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="255.0" data-global-y="180.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.Q45E" data-open="false" data-global-x="180.0" data-global-y="145.0" />
+    </g>
+    <g id="component-Z414D50312E5135" class="component active" transform="translate(520.0 250.0) rotate(180)" data-component-id="AMP1.Q5" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q5</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.Q5C_Q6E" data-open="false" data-global-x="490.0" data-global-y="285.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.COMP_A" data-open="false" data-global-x="565.0" data-global-y="250.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.Q45E" data-open="false" data-global-x="490.0" data-global-y="215.0" />
+    </g>
+    <g id="component-Z414D50312E5136" class="component active" transform="translate(680.0 340.0) rotate(180)" data-component-id="AMP1.Q6" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.PNP.I" data-model-reference="W09_PNP_BASE" data-rotation="180" data-mirror="false">
+      <title>AMP1.Q6</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.HIGH_Z" data-open="false" data-global-x="650.0" data-global-y="375.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.Q6B" data-open="false" data-global-x="725.0" data-global-y="340.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.Q5C_Q6E" data-open="false" data-global-x="650.0" data-global-y="305.0" />
+    </g>
+    <g id="component-Z414D50312E5137" class="component active" transform="translate(680.0 540.0) rotate(0)" data-component-id="AMP1.Q7" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q7</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.HIGH_Z" data-open="false" data-global-x="710.0" data-global-y="505.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.BIAS_NEG" data-open="false" data-global-x="635.0" data-global-y="540.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.Q7E" data-open="false" data-global-x="710.0" data-global-y="575.0" />
+    </g>
+    <g id="component-Z414D50312E5138" class="component active" transform="translate(840.0 280.0) rotate(0)" data-component-id="AMP1.Q8" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="jfet" data-model-id="MODEL.W09.NJF.I" data-model-reference="W09_NJF_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q8</title>
+      <line x1="12" y1="-25" x2="12" y2="25" class="symbol-line" />
+      <line x1="12" y1="-25" x2="28" y2="-36" class="symbol-line" />
+      <line x1="12" y1="25" x2="28" y2="36" class="symbol-line" />
+      <line x1="-45" y1="0" x2="4" y2="0" class="symbol-line" />
+      <polygon points="2,-5 12,0 2,5" class="symbol-fill jfet-arrow" />
+      <circle class="terminal" cx="28" cy="-36" r="3" data-pin-id="D" data-net-id="P15" data-open="false" data-global-x="868.0" data-global-y="244.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="G" data-net-id="AMP1.N.HIGH_Z" data-open="false" data-global-x="795.0" data-global-y="280.0" />
+      <circle class="terminal" cx="28" cy="36" r="3" data-pin-id="S" data-net-id="AMP1.COMP_B" data-open="false" data-global-x="868.0" data-global-y="316.0" />
+    </g>
+    <g id="component-Z414D50312E5139" class="component active" transform="translate(990.0 540.0) rotate(0)" data-component-id="AMP1.Q9" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="bjt" data-model-id="MODEL.W09.NPN.I" data-model-reference="W09_NPN_BASE" data-rotation="0" data-mirror="false">
+      <title>AMP1.Q9</title>
+      <line x1="-45" y1="0" x2="-12" y2="0" class="symbol-line" />
+      <line x1="-12" y1="-25" x2="-12" y2="25" class="symbol-line" />
+      <line x1="-12" y1="-12" x2="30" y2="-35" class="symbol-line" />
+      <line x1="-12" y1="12" x2="30" y2="35" class="symbol-line" />
+      <polygon points="27,33 14,31 21,21" class="symbol-fill transistor-arrow" data-polarity="npn" />
+      <circle class="terminal" cx="30" cy="-35" r="3" data-pin-id="C" data-net-id="AMP1.N.DRV_N_Q9C" data-open="false" data-global-x="1020.0" data-global-y="505.0" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="B" data-net-id="AMP1.N.BIAS_NEG" data-open="false" data-global-x="945.0" data-global-y="540.0" />
+      <circle class="terminal" cx="30" cy="35" r="3" data-pin-id="E" data-net-id="AMP1.N.Q9E" data-open="false" data-global-x="1020.0" data-global-y="575.0" />
+    </g>
+    <g id="component-Z414D50312E525F42414C5F4C" class="component active" transform="translate(250.0 100.0) rotate(0)" data-component-id="AMP1.R_BAL_L" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>AMP1.R_BAL_L</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BAL_L" data-open="false" data-global-x="205.0" data-global-y="100.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.BAL_W" data-open="false" data-global-x="295.0" data-global-y="100.0" />
+    </g>
+    <g id="component-Z414D50312E525F42414C5F52" class="component active" transform="translate(360.0 100.0) rotate(0)" data-component-id="AMP1.R_BAL_R" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="0" data-mirror="false">
+      <title>AMP1.R_BAL_R</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BAL_W" data-open="false" data-global-x="315.0" data-global-y="100.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.BAL_R" data-open="false" data-global-x="405.0" data-global-y="100.0" />
+    </g>
+    <g id="component-Z414D50312E525F424941535F5443" class="component active" transform="translate(520.0 680.0) rotate(90)" data-component-id="AMP1.R_BIAS_TC" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_BIAS_TC</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BIAS_NEG" data-open="false" data-global-x="520.0" data-global-y="635.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.BIAS_DIODE_A" data-open="false" data-global-x="520.0" data-global-y="725.0" />
+    </g>
+    <g id="component-Z414D50312E525F434F4C5F4C" class="component active" transform="translate(220.0 210.0) rotate(90)" data-component-id="AMP1.R_COL_L" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_COL_L</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BAL_L" data-open="false" data-global-x="220.0" data-global-y="165.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.Q1C_Q4B" data-open="false" data-global-x="220.0" data-global-y="255.0" />
+    </g>
+    <g id="component-Z414D50312E525F434F4C5F52" class="component active" transform="translate(390.0 210.0) rotate(90)" data-component-id="AMP1.R_COL_R" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_COL_R</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.BAL_R" data-open="false" data-global-x="390.0" data-global-y="165.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.COMP_A" data-open="false" data-global-x="390.0" data-global-y="255.0" />
+    </g>
+    <g id="component-Z414D50312E525F4F55545F4E" class="component active" transform="translate(1360.0 450.0) rotate(90)" data-component-id="AMP1.R_OUT_N" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_OUT_N</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.OUT" data-open="false" data-global-x="1360.0" data-global-y="405.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.OUT_N_SENSE" data-open="false" data-global-x="1360.0" data-global-y="495.0" />
+    </g>
+    <g id="component-Z414D50312E525F4F55545F50" class="component active" transform="translate(1360.0 320.0) rotate(90)" data-component-id="AMP1.R_OUT_P" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_OUT_P</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.OUT_P_SENSE" data-open="false" data-global-x="1360.0" data-global-y="275.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.OUT" data-open="false" data-global-x="1360.0" data-global-y="365.0" />
+    </g>
+    <g id="component-Z414D50312E525F51335F3138304B" class="component active" transform="translate(270.0 735.0) rotate(90)" data-component-id="AMP1.R_Q3_180K" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q3_180K</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.Q3E_MID" data-open="false" data-global-x="270.0" data-global-y="690.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="270.0" data-global-y="780.0" />
+    </g>
+    <g id="component-Z414D50312E525F51335F354B36" class="component active" transform="translate(270.0 610.0) rotate(90)" data-component-id="AMP1.R_Q3_5K6" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q3_5K6</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.Q3E_SERIES" data-open="false" data-global-x="270.0" data-global-y="565.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.Q3E_MID" data-open="false" data-global-x="270.0" data-global-y="655.0" />
+    </g>
+    <g id="component-Z414D50312E525F5134355F45" class="component active" transform="translate(500.0 140.0) rotate(90)" data-component-id="AMP1.R_Q45_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q45_E</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="500.0" data-global-y="95.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.Q45E" data-open="false" data-global-x="500.0" data-global-y="185.0" />
+    </g>
+    <g id="component-Z414D50312E525F51365F4247" class="component active" transform="translate(650.0 500.0) rotate(90)" data-component-id="AMP1.R_Q6_BG" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q6_BG</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.Q6B" data-open="false" data-global-x="650.0" data-global-y="455.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="SGND" data-open="false" data-global-x="650.0" data-global-y="545.0" />
+    </g>
+    <g id="component-Z414D50312E525F51365F4250" class="component active" transform="translate(650.0 150.0) rotate(90)" data-component-id="AMP1.R_Q6_BP" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q6_BP</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="P15" data-open="false" data-global-x="650.0" data-global-y="105.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="AMP1.N.Q6B" data-open="false" data-global-x="650.0" data-global-y="195.0" />
+    </g>
+    <g id="component-Z414D50312E525F51375F45" class="component active" transform="translate(700.0 735.0) rotate(90)" data-component-id="AMP1.R_Q7_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q7_E</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.Q7E" data-open="false" data-global-x="700.0" data-global-y="690.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="700.0" data-global-y="780.0" />
+    </g>
+    <g id="component-Z414D50312E525F51395F45" class="component active" transform="translate(990.0 735.0) rotate(90)" data-component-id="AMP1.R_Q9_E" data-module-id="AMP1" data-state-class="persistent-installed" data-kind="resistor" data-model-id="MODEL.W09.R.I" data-model-reference="R" data-rotation="90" data-mirror="false">
+      <title>AMP1.R_Q9_E</title>
+      <polyline points="-45,0 -30,0 -24,-10 -12,10 0,-10 12,10 24,-10 30,0 45,0" class="symbol-line resistor-body" />
+      <circle class="terminal" cx="-45" cy="0" r="3" data-pin-id="P" data-net-id="AMP1.N.Q9E" data-open="false" data-global-x="990.0" data-global-y="690.0" />
+      <circle class="terminal" cx="45" cy="0" r="3" data-pin-id="N" data-net-id="N15" data-open="false" data-global-x="990.0" data-global-y="780.0" />
+    </g>
+  </g>
+  <g class="annotation-layer">
+    <circle cx="194.0" cy="245.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="194.0" cy="390.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="255.0" cy="203.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="260.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="335.0" cy="390.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="345.0" cy="315.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="434.0" cy="635.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="514.0" cy="42.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="514.0" cy="203.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="635.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="669.0" cy="195.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="710.0" cy="455.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="710.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="710.0" cy="635.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="725.0" cy="280.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="745.0" cy="280.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="850.0" cy="42.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="945.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1020.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1090.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1120.0" cy="303.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1120.0" cy="465.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1120.0" cy="500.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1120.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1190.0" cy="295.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1190.0" cy="303.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1190.0" cy="465.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1190.0" cy="500.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1190.0" cy="610.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1225.0" cy="303.0" r="4" class="crossing" data-connected="false" />
+    <circle cx="1300.0" cy="295.0" r="4" class="crossing" data-connected="false" />
+    <text x="690.0" y="84.0" class="designator active">Cc</text>
+    <text x="690.0" y="168.0" class="value active">20p</text>
+    <text x="388.0" y="687.0" class="designator active">C_BIAS_G</text>
+    <text x="395.0" y="793.0" class="value active">0.1u</text>
+    <text x="588.0" y="687.0" class="designator active">C_BIAS_N</text>
+    <text x="595.0" y="793.0" class="value active">33u</text>
+    <text x="538.0" y="92.0" class="designator active">C_Q45_E</text>
+    <text x="545.0" y="198.0" class="value active">3.3u</text>
+    <text x="90.0" y="132.0" class="designator active">Cq4</text>
+    <text x="92.0" y="232.0" class="value active">0.01u</text>
+    <text x="747.0" y="490.0" class="designator active">Cq6</text>
+    <text x="710.0" y="558.0" class="value active">1u</text>
+    <text x="1308.0" y="677.0" class="designator active">C_VN_BULK</text>
+    <text x="1315.0" y="783.0" class="value active">15u</text>
+    <text x="1238.0" y="677.0" class="designator active">C_VN_FAST</text>
+    <text x="1245.0" y="783.0" class="value active">0.1u</text>
+    <text x="1158.0" y="677.0" class="designator active">C_VP_BULK</text>
+    <text x="1165.0" y="783.0" class="value active">15u</text>
+    <text x="1088.0" y="677.0" class="designator active">C_VP_FAST</text>
+    <text x="1095.0" y="783.0" class="value active">0.1u</text>
+    <text x="321.0" y="49.0" class="designator active">D-BAL</text>
+    <text x="488.0" y="742.0" class="designator active">D_BIAS</text>
+    <text x="1006.0" y="314.0" class="designator active">D1</text>
+    <text x="1006.0" y="404.0" class="designator active">D2</text>
+    <text x="254.0" y="240.0" class="pin-label">C</text>
+    <text x="179.0" y="275.0" class="pin-label">B</text>
+    <text x="254.0" y="310.0" class="pin-label">E</text>
+    <text x="192.0" y="238.0" class="designator active">Q1</text>
+    <text x="1154.0" y="220.0" class="pin-label">C</text>
+    <text x="1079.0" y="255.0" class="pin-label">B</text>
+    <text x="1154.0" y="290.0" class="pin-label">E</text>
+    <text x="1090.0" y="205.0" class="designator active">Q10</text>
+    <text x="1094.0" y="530.0" class="pin-label">C</text>
+    <text x="1169.0" y="495.0" class="pin-label">B</text>
+    <text x="1094.0" y="460.0" class="pin-label">E</text>
+    <text x="1086.0" y="445.0" class="designator active">Q11</text>
+    <text x="1304.0" y="280.0" class="pin-label">C</text>
+    <text x="1229.0" y="315.0" class="pin-label">B</text>
+    <text x="1304.0" y="350.0" class="pin-label">E</text>
+    <text x="1260.0" y="265.0" class="designator active">Q12</text>
+    <text x="1244.0" y="480.0" class="pin-label">C</text>
+    <text x="1319.0" y="445.0" class="pin-label">B</text>
+    <text x="1244.0" y="410.0" class="pin-label">E</text>
+    <text x="1258.0" y="395.0" class="designator active">Q13</text>
+    <text x="424.0" y="240.0" class="pin-label">C</text>
+    <text x="349.0" y="275.0" class="pin-label">B</text>
+    <text x="424.0" y="310.0" class="pin-label">E</text>
+    <text x="362.0" y="238.0" class="designator active">Q2</text>
+    <text x="339.0" y="460.0" class="pin-label">C</text>
+    <text x="264.0" y="495.0" class="pin-label">B</text>
+    <text x="339.0" y="530.0" class="pin-label">E</text>
+    <text x="277.0" y="455.0" class="designator active">Q3</text>
+    <text x="184.0" y="210.0" class="pin-label">C</text>
+    <text x="259.0" y="175.0" class="pin-label">B</text>
+    <text x="184.0" y="140.0" class="pin-label">E</text>
+    <text x="165.0" y="144.0" class="designator active">Q4</text>
+    <text x="494.0" y="280.0" class="pin-label">C</text>
+    <text x="569.0" y="245.0" class="pin-label">B</text>
+    <text x="494.0" y="210.0" class="pin-label">E</text>
+    <text x="478.0" y="210.0" class="designator active">Q5</text>
+    <text x="654.0" y="370.0" class="pin-label">C</text>
+    <text x="729.0" y="335.0" class="pin-label">B</text>
+    <text x="654.0" y="300.0" class="pin-label">E</text>
+    <text x="668.0" y="290.0" class="designator active">Q6</text>
+    <text x="714.0" y="500.0" class="pin-label">C</text>
+    <text x="639.0" y="535.0" class="pin-label">B</text>
+    <text x="714.0" y="570.0" class="pin-label">E</text>
+    <text x="652.0" y="494.0" class="designator active">Q7</text>
+    <text x="872.0" y="239.0" class="pin-label">D</text>
+    <text x="799.0" y="275.0" class="pin-label">G</text>
+    <text x="872.0" y="311.0" class="pin-label">S</text>
+    <text x="785.0" y="235.0" class="designator active">Q8</text>
+    <text x="1024.0" y="500.0" class="pin-label">C</text>
+    <text x="949.0" y="535.0" class="pin-label">B</text>
+    <text x="1024.0" y="570.0" class="pin-label">E</text>
+    <text x="962.0" y="495.0" class="designator active">Q9</text>
+    <text x="224.0" y="76.0" class="designator active">BAL-L</text>
+    <text x="235.0" y="142.0" class="value active">25k</text>
+    <text x="334.0" y="76.0" class="designator active">BAL-R</text>
+    <text x="345.0" y="142.0" class="value active">25k</text>
+    <text x="488.0" y="632.0" class="designator active">R_BIAS_TC</text>
+    <text x="495.0" y="738.0" class="value active">1.5k</text>
+    <text x="188.0" y="162.0" class="designator active">R_COL_L</text>
+    <text x="195.0" y="268.0" class="value active">300k</text>
+    <text x="358.0" y="162.0" class="designator active">R_COL_R</text>
+    <text x="365.0" y="268.0" class="value active">300k</text>
+    <text x="1378.0" y="445.0" class="designator active">Rout−</text>
+    <text x="1378.0" y="464.0" class="value active">22</text>
+    <text x="1378.0" y="315.0" class="designator active">Rout+</text>
+    <text x="1378.0" y="334.0" class="value active">22</text>
+    <text x="238.0" y="687.0" class="designator active">R_Q3_180K</text>
+    <text x="245.0" y="793.0" class="value active">180k</text>
+    <text x="238.0" y="562.0" class="designator active">R_Q3_5K6</text>
+    <text x="245.0" y="668.0" class="value active">5.6k</text>
+    <text x="468.0" y="92.0" class="designator active">R_Q45_E</text>
+    <text x="475.0" y="198.0" class="value active">33k</text>
+    <text x="602.0" y="490.0" class="designator active">Rq6g</text>
+    <text x="625.0" y="558.0" class="value active">10k</text>
+    <text x="608.0" y="128.0" class="designator active">Rq6+</text>
+    <text x="625.0" y="208.0" class="value active">4.7k</text>
+    <text x="668.0" y="687.0" class="designator active">R_Q7_E</text>
+    <text x="675.0" y="793.0" class="value active">68k</text>
+    <text x="958.0" y="687.0" class="designator active">R_Q9_E</text>
+    <text x="965.0" y="793.0" class="value active">1.5k</text>
+  </g>
+  <g class="semantic-ledger" />
+</svg>

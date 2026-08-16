@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "scope": "Week 9 Figure 9.1 model provenance and candidate bindings",
+  "as_of": "2026-08-15",
+  "baseline_validation": {
+    "simulator": "ngspice 47",
+    "deck": "../../tests/electrical/smoke/w09-model-load.cir",
+    "receipt": "../../tests/electrical/smoke/w09-model-load.receipt.json",
+    "result": "syntax loaded and finite DC operating point completed; not a realistic-model validation"
+  },
+  "policy": {
+    "vendor_files_committed": false,
+    "rule": "Do not commit a third-party model unless an explicit redistribution license or written permission covers that exact file.",
+    "pin_order": {
+      "bjt": ["collector", "base", "emitter"],
+      "jfet": ["drain", "gate", "source"]
+    }
+  },
+  "entries": [
+    {
+      "binding_id": "MODEL.W09.NPN_BASE",
+      "kind": "ideal_topology_baseline",
+      "device_class": "NPN",
+      "model_name": "W09_NPN_BASE",
+      "path": "w09-topology-baseline.lib",
+      "provenance": "project-authored wrapper around ngspice built-in defaults",
+      "redistribution_status": "project-local; repository license not declared",
+      "predictive_status": "not predictive"
+    },
+    {
+      "binding_id": "MODEL.W09.PNP_BASE",
+      "kind": "ideal_topology_baseline",
+      "device_class": "PNP",
+      "model_name": "W09_PNP_BASE",
+      "path": "w09-topology-baseline.lib",
+      "provenance": "project-authored wrapper around ngspice built-in defaults",
+      "redistribution_status": "project-local; repository license not declared",
+      "predictive_status": "not predictive"
+    },
+    {
+      "binding_id": "MODEL.W09.NJF_BASE",
+      "kind": "ideal_topology_baseline",
+      "device_class": "N-channel JFET",
+      "model_name": "W09_NJF_BASE",
+      "path": "w09-topology-baseline.lib",
+      "provenance": "project-authored wrapper around ngspice built-in defaults",
+      "redistribution_status": "project-local; repository license not declared",
+      "predictive_status": "not predictive"
+    },
+    {
+      "binding_id": "MODEL.W09.D_BASE",
+      "kind": "ideal_topology_baseline",
+      "device_class": "diode",
+      "model_name": "W09_D_BASE",
+      "path": "w09-topology-baseline.lib",
+      "provenance": "project-authored wrapper around ngspice built-in defaults",
+      "redistribution_status": "project-local; repository license not declared",
+      "predictive_status": "not predictive"
+    },
+    {
+      "binding_id": "MODEL.VENDOR.CENTRAL.2N5963",
+      "kind": "vendor_exact_name_candidate",
+      "historical_type": "2N5963",
+      "model_url": "https://central.aeminc.com/docs/ENGINEERING/CSM/2N5963.LIB",
+      "product_url": "https://my.centralsemi.com/product/partpage2.php?part=2N5963",
+      "status": "external_not_vendored",
+      "redistribution_status": "blocked pending written permission",
+      "predictive_status": "modern Central implementation; historical equivalence unverified"
+    },
+    {
+      "binding_id": "MODEL.VENDOR.CENTRAL.2N3707",
+      "kind": "vendor_exact_name_candidate",
+      "historical_type": "2N3707",
+      "model_url": "https://central.aeminc.com/docs/ENGINEERING/CSM/2N3707.LIB",
+      "product_url": "https://my.centralsemi.com/product/partpage2.php?part=2N3707",
+      "status": "external_not_vendored",
+      "redistribution_status": "blocked pending written permission",
+      "predictive_status": "modern Central implementation; historical equivalence unverified"
+    },
+    {
+      "binding_id": "MODEL.VENDOR.CENTRAL.2N2219",
+      "kind": "vendor_exact_name_candidate",
+      "historical_type": "2N2219",
+      "model_url": "https://central.aeminc.com/docs/ENGINEERING/CSM/2N2219.LIB",
+      "product_url": "https://my.centralsemi.com/product/partpage2.php?part=2N2219",
+      "status": "external_not_vendored",
+      "redistribution_status": "blocked pending written permission",
+      "predictive_status": "modern Central implementation; historical equivalence unverified"
+    },
+    {
+      "binding_id": "MODEL.HISTORICAL.2N4250",
+      "kind": "historical_identity_only",
+      "historical_type": "2N4250",
+      "primary_status_url": "https://www.centralsemi.com/docs/ENGINEERING/pdn/PDN01064.PDF",
+      "status": "no_lawfully_redistributable_exact_model_verified",
+      "note": "Central lists the device in an end-of-life notice; a model license/source was not verified."
+    },
+    {
+      "binding_id": "MODEL.HISTORICAL.TIS58",
+      "kind": "historical_identity_only",
+      "historical_type": "TIS58",
+      "primary_catalog_scan_url": "https://www.bitsavers.org/components/ti/_dataBooks/1969_CC202_Preferred_Semiconductors_and_Components_from_Texas_Instruments.pdf",
+      "status": "no_lawfully_redistributable_exact_model_verified",
+      "note": "The TI catalog scan establishes identity, not a SPICE model or model redistribution right."
+    },
+    {
+      "binding_id": "MODEL.HISTORICAL.2N2905",
+      "kind": "historical_identity_only",
+      "historical_type": "2N2905",
+      "related_current_datasheet_url": "https://www.onsemi.com/download/data-sheet/pdf/2n2905a-d.pdf",
+      "status": "no_lawfully_redistributable_exact_model_verified",
+      "note": "The accessible onsemi primary datasheet is 2N2905A, not the exact 2N2905 named by Figure 9.1."
+    }
+  ]
+}

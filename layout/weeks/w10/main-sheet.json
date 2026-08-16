@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w10/graph.json",
+  "sheet_id": "W10.MAIN",
+  "title": "Week 10 cumulative chassis — current-mirror load and hold comparison",
+  "status": "presentation overlay only; graph.json is electrical authority",
+  "viewport": {
+    "width": 1700,
+    "height": 1050
+  },
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "MOD.INV1",
+    "MOD.SUM1",
+    "MOD.INT1",
+    "MOD.INT2",
+    "MOD.SOCKETS",
+    "REG1",
+    "OSC1",
+    "AMP1"
+  ],
+  "module_positions": {
+    "INF.PWR_ENTRY": {
+      "x": 45,
+      "y": 55,
+      "width": 300,
+      "height": 150
+    },
+    "W09.FIXTURE": {
+      "x": 45,
+      "y": 245,
+      "width": 560,
+      "height": 330
+    },
+    "AMP1": {
+      "x": 690,
+      "y": 230,
+      "width": 360,
+      "height": 380,
+      "title": "AMP1",
+      "subtitle": "Q1-Q13 + QCR mirror active load",
+      "detail_ref": "W10.AMP1_DETAIL",
+      "ports": {
+        "INV_IN": {
+          "x": 690,
+          "y": 330
+        },
+        "NONINV_IN": {
+          "x": 690,
+          "y": 490
+        },
+        "OUT": {
+          "x": 1050,
+          "y": 330
+        },
+        "VP15": {
+          "x": 820,
+          "y": 230
+        },
+        "VN15": {
+          "x": 900,
+          "y": 610
+        },
+        "AGND": {
+          "x": 780,
+          "y": 610
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        }
+      }
+    },
+    "MOD.INT1": {
+      "x": 1090,
+      "y": 285,
+      "width": 260,
+      "height": 150,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INT2": {
+      "x": 1380,
+      "y": 285,
+      "width": 260,
+      "height": 150,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "W10.FIXTURE": {
+      "x": 1090,
+      "y": 650,
+      "width": 570,
+      "height": 100,
+      "title": "Hold-comparison fixture",
+      "subtitle": "inactive during mirror characterization",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SUM1": {
+      "x": 45,
+      "y": 900,
+      "width": 205,
+      "height": 85,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INV1": {
+      "x": 265,
+      "y": 900,
+      "width": 205,
+      "height": 85,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "REG1": {
+      "x": 485,
+      "y": 900,
+      "width": 205,
+      "height": 85,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "OSC1": {
+      "x": 705,
+      "y": 900,
+      "width": 205,
+      "height": 85,
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SOCKETS": {
+      "x": 925,
+      "y": 900,
+      "width": 300,
+      "height": 85,
+      "style": "inactive",
+      "connect_ports": false
+    }
+  },
+  "components": {
+    "W09.VSRC": {
+      "x": 110,
+      "y": 420,
+      "rotation": 0
+    },
+    "W09.RSOURCE": {
+      "x": 220,
+      "y": 345,
+      "rotation": 0
+    },
+    "W09.RIN": {
+      "x": 360,
+      "y": 345,
+      "rotation": 0
+    },
+    "W09.RFB": {
+      "x": 485,
+      "y": 485,
+      "rotation": 0
+    },
+    "W09.LOAD": {
+      "x": 565,
+      "y": 485,
+      "rotation": 90,
+      "label": "LOAD"
+    },
+    "W09.NONINV_GROUND": {
+      "x": 610,
+      "y": 530,
+      "rotation": 90,
+      "label": "NONINV→GND",
+      "show_value": false
+    },
+    "INT1.CFB": {
+      "x": 1250,
+      "y": 430,
+      "rotation": 0
+    },
+    "INT1.ROUT": {
+      "x": 1290,
+      "y": 340,
+      "rotation": 0
+    },
+    "INT2.CFB": {
+      "x": 1510,
+      "y": 430,
+      "rotation": 0
+    },
+    "INT2.ROUT": {
+      "x": 1560,
+      "y": 340,
+      "rotation": 0
+    },
+    "DEV.U_INT2": {
+      "x": 1450,
+      "y": 330,
+      "rotation": 0,
+      "label": "LM301A"
+    },
+    "W10.R_SCOPE_INT1": {
+      "x": 1230,
+      "y": 690,
+      "rotation": 90,
+      "label": "10M INT1"
+    },
+    "W10.R_SCOPE_INT2": {
+      "x": 1500,
+      "y": 690,
+      "rotation": 90,
+      "label": "10M INT2"
+    },
+    "W10.NONINV_GROUND": {
+      "x": 650,
+      "y": 690,
+      "rotation": 90,
+      "label": "NONINV→GND",
+      "show_value": false
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 30
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 820
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 850
+    }
+  },
+  "notes": [
+    "The old 300 kohm/balance load remains installed but electrically inactive.",
+    "Hold configuration starts after the temporary precharge fixture is removed; it is intentionally absent here.",
+    "Physical patch-cord routing remains deferred; all active electrical nets are explicit.",
+    "Figure 10.25 FET followers are excluded from the cumulative baseline and remain a separate optional branch."
+  ]
+}

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roberge capstone — one box</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--book);
+      color: var(--slate);
+      padding-bottom: 88px;
+    }
+
+    .deck {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    @media (min-width: 800px) {
+      .deck { padding: 0 48px 64px; }
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0 8px;
+    }
+    .top img { width: 22px; height: 22px; }
+    .top .eyebrow { margin: 0; }
+
+    h1.display {
+      margin: 8px 0 12px;
+      font-size: clamp(36px, 7vw, 56px);
+      overflow-wrap: anywhere;
+    }
+    .lede {
+      margin: 0 0 28px;
+      max-width: 40rem;
+    }
+
+    .sticky-next {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 0 -24px 32px;
+      padding: 12px 24px;
+      background: rgba(240, 238, 230, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 800px) {
+      .sticky-next { margin: 0 -48px 32px; padding: 12px 48px; }
+    }
+    .sticky-next b {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.005em;
+    }
+    .sticky-next span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--fg-muted);
+    }
+
+    h2 { margin: 40px 0 16px; }
+
+    .object, .rules, .group {
+      background: var(--bg-elev);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      padding: 16px 18px 18px;
+      margin: 0 0 12px;
+    }
+    .object h3, .group-head h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .object p { margin: 0; color: var(--fg-muted); font-size: 15px; }
+
+    .rules ol {
+      margin: 8px 0 0;
+      padding-left: 1.2rem;
+    }
+    .rules li + li { margin-top: 8px; }
+    .rules li { line-height: 1.5; }
+
+    .group-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .group-head h3 { margin: 0; }
+    .count {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--fg-muted);
+    }
+
+    .group ol { margin: 0; padding: 0; }
+    .step { list-style: none; }
+    .step + .step {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--hairline);
+    }
+    .step label {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 12px;
+      align-items: start;
+      cursor: pointer;
+      max-width: 800px;
+    }
+    .jack {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      border-radius: var(--r-xs);
+      border: 1px solid var(--border-strong);
+      background: var(--paper);
+      flex-shrink: 0;
+    }
+    .jack:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .jack:checked {
+      background: var(--ok);
+      border-color: var(--ok);
+      box-shadow: inset 0 0 0 3px var(--paper);
+    }
+    .ch {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--crail-deep);
+    }
+    .done .ch { color: var(--ok); }
+    .done .do { text-decoration: line-through; color: var(--fg-muted); }
+    .do { margin: 2px 0 0; font-size: 15px; line-height: 1.45; }
+    .box {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--fg);
+    }
+    .teach {
+      margin: 4px 0 0;
+      color: var(--fg-muted);
+      font-size: 13px;
+    }
+    .cite {
+      margin: 6px 0 0;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--crail-deep);
+      line-height: 1.4;
+    }
+
+    .schematic-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: start;
+    }
+    .schematic-intro p { max-width: 52rem; }
+    .proof-badge {
+      border: 1px solid var(--ok);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--ok);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .schematics {
+      margin: 14px 0 2px 32px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-sm);
+      background: var(--paper);
+      overflow: hidden;
+    }
+    .schematics summary {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 13px;
+      cursor: pointer;
+      color: var(--crail-deep);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .schematics summary::marker { color: var(--crail); }
+    .sheet-count {
+      color: var(--fg-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+    }
+    .schematic-body {
+      padding: 0 12px 12px;
+      border-top: 1px solid var(--hairline);
+    }
+    .review-link {
+      display: inline-block;
+      margin: 10px 0 2px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .schematic-card {
+      padding: 14px 0 4px;
+    }
+    .schematic-card + .schematic-card {
+      border-top: 1px solid var(--hairline);
+      margin-top: 10px;
+    }
+    .schematic-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .schematic-head h4 {
+      margin: 0;
+      color: var(--fg);
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+    .schematic-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .schematic-frame {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--hairline);
+      background: #f8fafc;
+    }
+    .schematic-frame img {
+      display: block;
+      width: 100%;
+      min-width: 900px;
+      height: auto;
+    }
+    .schematic-caption {
+      margin: 7px 0 0;
+      color: var(--fg-muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .integration-note {
+      border-left: 3px solid var(--crail);
+      padding-left: 12px;
+    }
+    .deferred { margin-top: 12px; }
+
+    .hint {
+      margin: -8px 0 16px;
+      font-size: 14px;
+      color: var(--fg-muted);
+    }
+
+    .final {
+      background: var(--slate-900);
+      color: var(--fg-onDark);
+      border-radius: var(--r-md);
+      padding: 16px 18px;
+      margin: 8px 0 0;
+    }
+    .final .ch { color: var(--slate-400); }
+    .final p {
+      margin: 6px 0 0;
+      color: var(--fg-onDark);
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .foot-next {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--slate-900);
+      color: var(--fg-onDark);
+      padding: 14px 24px calc(14px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--slate-800);
+      font-family: var(--font-sans);
+      font-size: 14px;
+    }
+    .foot-next b { color: var(--crail); font-weight: 500; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+    @media (max-width: 680px) {
+      .schematic-intro { grid-template-columns: 1fr; }
+      .schematics { margin-left: 0; }
+      .schematic-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .schematic-frame img { min-width: 760px; }
+    }
+    @media print {
+      body { padding-bottom: 0; }
+      .deck { max-width: none; padding: 0; }
+      .sticky-next, .foot-next, .jack { display: none !important; }
+      .schematics { break-inside: avoid; margin-left: 0; }
+      .schematic-frame { overflow: visible; }
+      .schematic-frame img { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header>
+      <div class="top">
+        <img src="design-system/anthropic-mark.svg" alt="">
+        <p class="eyebrow">One chassis · 13 additions · Roberge</p>
+      </div>
+      <h1 class="display">Build the computer. Then put your amp inside it.</h1>
+      <p class="lede">Same box every week. A new module or a socket swap. Nothing is a one-off lab. The finished machine solves an ODE, runs a model of a real regulator, and uses an operational amplifier you designed. The approved weekly SVG schematics and their matched SPICE decks now live directly beside each build step below.</p>
+    </header>
+
+    <div class="sticky-next" id="sticky">
+      <b id="nextLabel">Next: bolt the first three computing blocks onto the chassis.</b>
+      <span>14 weeks · 6 h / week</span>
+    </div>
+
+    <h2>Finished machine</h2>
+    <div class="object">
+      <h3>Analog computer + plant + discrete op-amp</h3>
+      <p>Patchbay of summers, inverters, and three-mode integrators. A Figure 5.3 regulator lives on the same chassis as a physical plant. A Schmitt–integrator oscillator is the test source. Mid-build, one integrator IC is pulled and replaced by the two-stage amplifier of Figure 9.1. End state: Figure 12.13 or Figure 12.14 on the patch, a live analog model of the regulator beside the hardware, and two compensation recipes from Chapter 13.</p>
+    </div>
+
+    <h2>Rules</h2>
+    <div class="rules">
+      <ol>
+        <li>Do not start a new box. Add a module or swap a socket.</li>
+        <li>Each week ends with a measurement on the assembled machine, not on a scrap circuit.</li>
+        <li>ICs first. Discrete amp later. It must drop into a socket the computer already uses.</li>
+        <li>Use only the compensation capacitor declared for that week and configuration; socketed alternatives are mutually exclusive, never silently paralleled.</li>
+        <li>Week 0: dual ±15 V, LM301A as the primary stock amplifier, breadboard or vectorboard that will still exist in week 14, scope, and Figure 11.7-style local decoupling. A 741-class implementation remains a documented alternative.</li>
+      </ol>
+    </div>
+
+    <h2>Week 0 · permanent infrastructure</h2>
+    <div class="object schematic-intro">
+      <div>
+        <h3>Power, grounds, decoupling, and reserved sockets</h3>
+        <p>The infrastructure is shown separately, as approved. Ordinary patch-cord drawings remain deferred; every later sheet shows only the electrical configuration active for that experiment.</p>
+      </div>
+      <span class="proof-badge">SVG ↔ SPICE MATCHED</span>
+    </div>
+    <div id="week-zero"></div>
+
+    <h2 id="log-title">Build log</h2>
+    <p class="hint integration-note">Open a week’s schematic set beneath its build step. Each embedded SVG links to the SPICE deck generated from the same canonical graph and to its connectivity receipt. Review approval covers topology and presentation; it does not silently convert unresolved electrical-performance tests into passes.</p>
+    <div id="log"></div>
+
+    <div class="final" id="final"></div>
+    <div class="object deferred">
+      <h3>Deferred companion projects</h3>
+      <p>Physical patch-cord drawings, construction/layout sheets, a parallel modern-component implementation, and the separate low-voltage redesign remain explicitly outside this integration. The canonical ±15 V teaching build is preserved.</p>
+    </div>
+  </div>
+
+  <div class="foot-next" id="foot">Next: Figure 1.2a, Figure 1.4, and the §1.2.3 integrator on one board.</div>
+
+  <script>
+    const FINAL = "A single chassis: analog computer (summers, inverters, three-mode integrators), Figure 5.3 regulator as plant, Schmitt–integrator test oscillator, one channel replaced by your Figure 9.1 amplifier, running Figure 12.13 or 12.14 and a live model of the regulator, compensated two ways from Chapter 13.";
+
+    const GROUPS = [
+      {
+        title: "Part 1 · The computer exists, then a plant appears",
+        eta: "Weeks 1–5 · 3–5 h each",
+        steps: [
+          {
+            ch: "Ch 1 · add the computing core · 4 h",
+            do: "On the chassis, wire three IC blocks and leave them there: Figure 1.2a inverting gain, Figure 1.4 weighted summer, and the inverting integrator of §1.2.3 (Zf = 1/sC, Zi = R). Measure each Vo/Vi. Do not patch a differential equation yet.",
+            box: "Box now: inverter + summer + one integrator. Empty sockets reserved for two more integrators.",
+            teach: "These three blocks are what §1.2.3 says you need to solve any linear ODE. They are the computer, not a demo.",
+            cite: "§1.2.1 Closed-Loop Gain Calculation · §1.2.2 Ideal Closed-Loop Gain · §1.2.3 Examples · Figs 1.2a, 1.4"
+          },
+          {
+            ch: "Ch 2 · close the first loop on those blocks · 3 h",
+            do: "Patch the stable ẋ = −x loop with the approved SUM1 → INV1 → INT1 sign chain. Figures 2.2 and 2.9 motivate the feedback structure but are not treated as literal wiring authorities. Measure closed-loop gain and loading with the matched schematic below.",
+            box: "Box now: first-order analog computer, live. Same three ICs.",
+            teach: "Time constant must be RC once |L| is large. If it tracks a, the loop is not the computer yet.",
+            cite: "§2.3.1 Effect of Feedback on Changes in Open-Loop Gain · §2.4.1 Forming the Block Diagram · Figs 2.2, 2.3, 2.9"
+          },
+          {
+            ch: "Ch 3 · characterize the machine you already have · 4 h",
+            do: "First reproduce the Figure 3.1 reference inverter with 12 pF and 220 pF compensation cases. Then restore the approved ẋ = −x loop and repeat the transient test. Retain the conservative 220 pF loop end-state until a later campaign explicitly changes it.",
+            box: "Box now: first-order computer with a known step/ramp error and a recorded default Cc.",
+            teach: "The computer’s error is the closed-loop transient of these ICs. §3.1 shows an LM301A inverter looking first- or second-order.",
+            cite: "§3.1 Objectives · §3.3.1 Selection of Test Inputs · §3.3.2 Approximating Transient Responses · Figs 3.1, 3.2"
+          },
+          {
+            ch: "Ch 4 · add the second integrator to the same patchbay · 4 h",
+            do: "Install integrator 2 in the reserved socket. Patch a second-order loop (the first two states of any later ODE). Measure L(jω) of that patched loop. Read phase margin, gain margin, crossover as Figure 4.21. Find the gain that puts the computer on the jω axis.",
+            box: "Box now: two-integrator computer. It can ring. That ringing is the machine, not a side lab.",
+            teach: "The analog computer can be unstable while the ODE you meant is stable. Measure the computer’s L, not the textbook plant’s L.",
+            cite: "§4.4.2 Interpretation of Bode Plots · §4.4.3 Closed-Loop Performance · Fig 4.21"
+          },
+          {
+            ch: "Ch 5 · bolt the physical plant onto the same chassis · 5 h",
+            do: "Build Figure 5.3 on the unused end of the board: reference, error amp (another IC), series transistor, load R||C. Leave its output jack next to the analog-computer jacks. Measure the Bode of −L as Figure 5.4 vs RL and CL. If the two-integrator computer still rings from week 4, add Figure 5.11 lead or Figure 5.13 lag on that computer loop only.",
+            box: "Box now: analog computer + Figure 5.3 regulator. Two systems, one chassis. Not yet connected to each other.",
+            teach: "Figure 5.3 is the book’s plant. Dominant pole is the load. Lead/lag stay on the computer if the computer is the thing that rings.",
+            cite: "§5.2.2 Creating a Dominant Pole · §5.2.3 Lead and Lag · §5.2.4 Example · Figs 5.3, 5.4, 5.11, 5.13"
+          }
+        ]
+      },
+      {
+        title: "Part 2 · Test source, then replace one IC with your amp",
+        eta: "Weeks 6–10 · 3–8 h each",
+        steps: [
+          {
+            ch: "Ch 6 · add the test oscillator to the patchbay · 4 h",
+            do: "Build the persistent Figure 6.14 / Figure 12.8 source in reserved socket INT3: a dedicated triangle-wave integrator plus the Figure 12.7 Schmitt trigger and explicit amplitude limiter. Predict amplitude and period with §6.3.3, then measure them.",
+            box: "Box now: computer + regulator + square/triangle test source. The oscillator is not a throwaway.",
+            teach: "Figure 6.14 is the book’s function generator. Same topology returns as Figure 12.8. One build.",
+            cite: "§6.3.2 Stability Analysis · §6.3.3 Examples · §12.2.1 Square- and Triangle-Wave Generator · Figs 6.14, 12.7, 12.8 · Table 6.1"
+          },
+          {
+            ch: "Ch 7 · start the discrete amp in the integrator-1 socket · 6 h",
+            do: "Pull the IC from integrator 1 and build only the Figure 7.4 differential pair with its transistor current source in that channel. Characterize pair balance, current, and input-referred offset as a deliberately incomplete open-loop subassembly. Do not claim an integrator output or hold-capacitor drift yet.",
+            box: "Box now: integrator 1 is intentionally nonfunctional while its discrete front end is characterized. The stock IC remains an off-circuit artifact; the rest of the computer still runs on ICs.",
+            teach: "Drift referred to the input is the vi that returns vo to zero. On an integrator it integrates. That is why this pair belongs here, not on a separate bench.",
+            cite: "§7.2 Drift Referred to the Input · §7.3.1 Topology · §7.3.4 Drift Attributable to Bipolar Transistors · Figs 7.1, 7.4, 7.10"
+          },
+          {
+            ch: "Ch 8 · finish that same channel · 6 h",
+            do: "Extend the Week 7 pair into the approved Q1–Q11 open-loop amplifier subset, then perform the separate INT1 bring-up configuration. The cited Chapter 8 figures inform the stages, but the matched sheets below are the wiring authority. Measure the open-loop operating point before closing the channel.",
+            box: "Box now: integrator 1 is a complete discrete two-stage op-amp. Still uncompensated beyond whatever keeps it from oscillating open-loop.",
+            teach: "Figure 8.8 is the topology of almost every later IC. You are building the part that will become Figure 9.1.",
+            cite: "§8.2 Amplifier Topologies · §8.3.2 Current-Source Load · §8.4 Output Amplifiers · Figs 8.8, 8.13, 8.27"
+          },
+          {
+            ch: "Ch 9 · that channel is now Figure 9.1 · 8 h",
+            do: "Your integrator-1 amplifier is the illustrative design. Close it as the inverter of Figure 9.8 only long enough to take the Chapter 9 data (Figure 9.10 steps vs Cc, Figure 9.12 slew). Then put the integrating capacitor back. The computer’s integrator 1 is now your amp. Repeat the ẋ = −x step from week 2 and compare hold time to the IC you pulled.",
+            box: "Box now: analog computer whose first integrator is the Figure 9.1 amplifier. Measured datasheet fragment taped to the lid.",
+            teach: "Slew rate ≈ 2IE1/Cc. The point of doing 9.4 on this socket is so later analog-computer speed limits are numbers you own.",
+            cite: "§9.1 Circuit Description · §9.3.2 Large-Signal Performance · §9.4 Experimental Results · Figs 9.1, 9.8, 9.10, 9.12"
+          },
+          {
+            ch: "Ch 10 · bring the discrete channel up to IC practice · 3 h",
+            do: "On the same discrete amp, insert the Figure 10.9-derived matched PNP current mirror as a replacement for the first-stage passive collector load, not in parallel with it. Compare equal-condition hold drift against the LM301A in integrator 2. Figure 10.25 FET followers remain a separate deferred branch.",
+            box: "Box now: integrator 1 = discrete + current repeater. Integrator 2 = IC, maybe FET-fronted. You can see IB as hold-time ratio.",
+            teach: "Current repeaters replace the large resistors the IC process cannot afford. FET followers buy picoamps and spend drift — visible on a hold capacitor.",
+            cite: "§10.3.1 Current Repeaters · §10.4.1 (LM101A) · §10.5 Additions to Improve Performance · Figs 10.9, 10.25"
+          }
+        ]
+      },
+      {
+        title: "Part 3 · Modes, the two problems, then compensate the machine",
+        eta: "Weeks 11–13 · 5–8 h each",
+        steps: [
+          {
+            ch: "Ch 11 · give the integrators reset / operate / hold · 6 h",
+            do: "Convert both integrators to Figure 12.17 (practical drive: Figure 12.18) using the FET switches of §11.6. Measure Vos, IB of your discrete amp with Figure 11.2 and write its datasheet in §11.2.1 language. Keep Figure 11.18 (precision rectifier) on the chassis — you need it if you later add Wien amplitude control.",
+            box: "Box now: three-mode analog computer + regulator + oscillator + discrete integrator 1 with a written datasheet.",
+            teach: "Reset / operate / hold is how an analog computer is a computer. Figure 12.17 with operate omitted is the sample-and-hold of Figure 11.34.",
+            cite: "§11.2.1–11.2.2 · §11.5.1 Precision Rectifiers · §11.6 Analog-Signal Switching · §12.3.3 · Figs 11.2, 11.18, 11.34, 12.17, 12.18"
+          },
+          {
+            ch: "Ch 12 · run the two problems the box was built for · 8 h",
+            do: "Run all three approved configurations: Figure 12.13 Butterworth using the reconfigured integrating summer and INT3; Figure 12.14 Van der Pol using four-quadrant AD633 multiplier blocks; and the separate first-order analog regulator twin beside the real plant. Apply §12.3.2 scaling and use the persistent Week 6 oscillator as the test source.",
+            box: "Box now: does analog computation and has a live twin of its own regulator. This is the finished function. Week 13 only makes it faster and quieter.",
+            teach: "n-th order linear ODE → n integrators + one inverter. Van der Pol needs the multipliers. Time scale α is a knob on every integrator R or C.",
+            cite: "§12.1.1 Wien-Bridge · §12.3.1 Approach · §12.3.2 Scaling · §11.5.5 Analog Multiplication · Figs 12.1, 12.3, 12.9, 12.13, 12.14, 11.28, 5.3"
+          },
+          {
+            ch: "Ch 13 · compensate the machine, not a scrap inverter · 6 h",
+            do: "Run the seven approved compensation graphs on the assembled box: input lag on SUM1 and INV1; fixed capacitive-load baseline and compensated regulator cases; one-pole compensation on AMP1 and INT2; and a two-pole network on REG1. Keep each campaign electrically distinct and measure the stability boundary before claiming a maximum time scale.",
+            box: "Box done: same computer, same plant, same discrete amp, with topology-approved compensation campaigns ready for quantitative validation.",
+            teach: "Keep Cc / |f0| roughly constant to hold bandwidth when closed-loop gain changes. Two-pole compensation is not general-purpose — it is for a plant whose L you already measured.",
+            cite: "§13.2.1 Input Compensation · §13.2.2 Other Methods · §13.3.2 One-Pole Compensation · §13.3.3 Two-Pole Compensation · Figs 13.1, 13.7, 13.8, 13.13–13.17, 13.19, 13.21"
+          }
+        ]
+      }
+    ];
+
+    function sheet(title, stem, caption) {
+      return {
+        title,
+        svg: stem + ".svg",
+        spice: stem + ".cir",
+        receipt: stem + ".connectivity.json",
+        caption
+      };
+    }
+
+    const SCHEMATICS = {
+      0: {
+        review: "week00-04-review.html#w00",
+        sheets: [
+          sheet("W00.INFRA_TEST · permanent infrastructure", "generated/weeks00_04/w00-infra_test-ideal", "Separate ±15 V infrastructure, signal/power grounds, decoupling, and reserved sockets.")
+        ]
+      },
+      1: {
+        review: "week00-04-review.html#w01",
+        sheets: [
+          sheet("W01.INV_TEST · inverting amplifier", "generated/weeks00_04/w01-inv_test-ideal", "INV1 characterization with its installed unity-gain passive network."),
+          sheet("W01.SUM_TEST · weighted summer", "generated/weeks00_04/w01-sum_test-ideal", "SUM1 characterization with three explicit input branches."),
+          sheet("W01.INT_TEST · inverting integrator", "generated/weeks00_04/w01-int_test-ideal", "INT1 characterization with its 10 kΩ / 1 µF integrating network.")
+        ]
+      },
+      2: {
+        review: "week00-04-review.html#w02",
+        sheets: [
+          sheet("W02.FIRST_ORDER · stable first-order loop", "generated/weeks00_04/w02-first_order-ideal", "Approved SUM1 → INV1 → INT1 sign chain for ẋ = −x.")
+        ]
+      },
+      3: {
+        review: "week00-04-review.html#w03",
+        sheets: [
+          sheet("W03.FIG3_1_REF_12P · reference inverter", "generated/weeks00_04/w03-fig3_1_ref_12p-ideal", "Figure 3.1 reference fixture with 12 pF compensation."),
+          sheet("W03.FIG3_1_REF_220P · reference inverter", "generated/weeks00_04/w03-fig3_1_ref_220p-ideal", "Figure 3.1 reference fixture with 220 pF compensation."),
+          sheet("W03.LOOP_CC_12P · restored loop trial", "generated/weeks00_04/w03-loop_cc_12p-ideal", "First-order computer with the 12 pF compensation case."),
+          sheet("W03.LOOP_RESTORED · retained end-state", "generated/weeks00_04/w03-loop_restored-ideal", "First-order computer restored with the conservative 220 pF end-state.")
+        ]
+      },
+      4: {
+        review: "week00-04-review.html#w04",
+        sheets: [
+          sheet("W04.SECOND_ORDER_RUN · damped system", "generated/weeks00_04/w04-second_order_run-ideal", "Two-integrator run configuration with explicit damping branch and initial-condition fixture."),
+          sheet("W04.LOOP_MEASURE · return-ratio fixture", "generated/weeks00_04/w04-loop_measure-ideal", "Mutually exclusive AC injection configuration used to measure the loop.")
+        ]
+      },
+      5: {
+        review: "week05-06-review.html",
+        sheets: [
+          sheet("W05.REGULATOR_SWEEP · physical plant", "generated/weeks05_06/w05-regulator_sweep-ideal", "Build-ready ±15 V regulator plant with explicit pass device, load sweep, and measurement fixture.")
+        ]
+      },
+      6: {
+        review: "week05-06-review.html",
+        sheets: [
+          sheet("W06.OSCILLATOR · persistent test source", "generated/weeks05_06/w06-oscillator-ideal", "Dedicated INT3 triangle integrator, Schmitt trigger, and amplitude limiter.")
+        ]
+      },
+      7: {
+        review: "week07-08-review.html",
+        sheets: [
+          sheet("W07.PAIR_CHARACTERIZE · chassis state", "generated/weeks07_08/w07-pair_characterize-ideal", "The active chassis configuration while INT1 is intentionally incomplete and nonfunctional."),
+          sheet("W07.PAIR_CHARACTERIZE · AMP1 detail", "generated/weeks07_08/w07-pair_characterize-ideal-amp1-detail", "Pin-level differential-pair and current-source characterization detail.")
+        ]
+      },
+      8: {
+        review: "week07-08-review.html",
+        sheets: [
+          sheet("W08.OPEN_LOOP · chassis state", "generated/weeks07_08/w08-open_loop-ideal", "Approved open-loop amplifier characterization configuration."),
+          sheet("W08.OPEN_LOOP · AMP1 detail", "generated/weeks07_08/w08-open_loop-ideal-amp1-detail", "Q1–Q11 internal amplifier topology at the end of open-loop assembly."),
+          sheet("W08.INT1_BRINGUP · closed-channel trial", "generated/weeks07_08/w08-int1_bringup-ideal", "Separate configuration used to return the developing amplifier to INT1 feedback.")
+        ]
+      },
+      9: {
+        review: "week09-review.html",
+        sheets: [
+          sheet("W09.CC_SWEEP · complete amplifier", "generated/week09_reconciled/w09-cc_sweep-ideal", "Reconciled complete Q1–Q13 amplifier in the compensation-capacitor sweep fixture."),
+          sheet("W09.CC_SWEEP · AMP1 detail", "generated/week09_reconciled/w09-cc_sweep-ideal-amp1-detail", "Pin-level Figure 9.1-derived amplifier sheet."),
+          sheet("W09.INVERTER_TEST · Chapter 9 fixture", "generated/week09_reconciled/w09-inverter_test-ideal", "Closed-loop inverter used for step, gain, and slew campaigns."),
+          sheet("W09.INT1_RESTORED · cumulative end-state", "generated/week09_reconciled/w09-int1_restored-ideal", "The discrete amplifier restored as the computer’s first integrator.")
+        ]
+      },
+      10: {
+        review: "week10-review.html",
+        sheets: [
+          sheet("W10.CR_CHARACTERIZE · complete amplifier", "generated/week10/w10-cr_characterize-ideal", "Current-mirror characterization with the former passive load electrically inactive."),
+          sheet("W10.CR_CHARACTERIZE · mirror detail", "generated/week10/w10-cr_characterize-ideal-amp1-cr1-detail", "Figure 10.9-derived PNP mirror insertion detail."),
+          sheet("W10.INT1_HOLD · discrete channel", "generated/week10/w10-int1_hold-ideal", "Discrete INT1 hold configuration after external precharge is removed."),
+          sheet("W10.COMPARE · discrete versus LM301A", "generated/week10/w10-compare-ideal", "Equal-capacitor, equal-load hold-drift comparison.")
+        ]
+      },
+      11: {
+        review: "week11-review.html",
+        sheets: [
+          sheet("W11.INT_OPERATE · computing mode", "generated/week11/w11-int_operate-ideal", "Both computing integrators in OPERATE."),
+          sheet("W11.INT_OPERATE · mode-switch detail", "generated/week11/w11-int_operate-ideal-w11-mode-i1-detail", "Pin-level reset/operate/hold network for the first channel."),
+          sheet("W11.INT_RESET · reset mode", "generated/week11/w11-int_reset-ideal", "Explicit reset configuration."),
+          sheet("W11.INT_HOLD · hold mode", "generated/week11/w11-int_hold-ideal", "Explicit hold configuration with no hidden bleed."),
+          sheet("W11.DUT_EO · output-error campaign", "generated/week11/w11-dut_eo-ideal", "Separate amplifier output-error measurement graph."),
+          sheet("W11.DUT_IMINUS · inverting-input current", "generated/week11/w11-dut_iminus-ideal", "Separate inverting-input current measurement graph."),
+          sheet("W11.DUT_IPLUS · noninverting-input current", "generated/week11/w11-dut_iplus-ideal", "Separate noninverting-input current measurement graph."),
+          sheet("W11.RECT · precision-rectifier detail", "generated/week11/w11-rect-ideal-rect1-detail", "The source-correct Figure 11.18 grounded half-wave rectifier; the Figure 11.19 floating bridge is not used.")
+        ]
+      },
+      12: {
+        review: "week12-review.html",
+        sheets: [
+          sheet("W12.BW · fourth-order Butterworth", "generated/week12/w12-bw-ideal", "SUM1 reconfigured as the integrating summer, with INT1, INT2, INT3, and INV1."),
+          sheet("W12.VDP · Van der Pol oscillator", "generated/week12/w12-vdp-ideal", "Two-integrator nonlinear system with two four-quadrant AD633 multiplier blocks."),
+          sheet("W12.REG_TWIN · analog regulator model", "generated/week12/w12-reg_twin-ideal", "Separate retained analog-computer twin of the Week 5 physical regulator.")
+        ]
+      },
+      13: {
+        review: "week13-review.html",
+        sheets: [
+          sheet("W13.LAG_SUM1 · input-lag campaign", "generated/week13/w13-lag_sum1-ideal", "Figure 13.1-derived input lag on SUM1."),
+          sheet("W13.LAG_INV1 · input-lag campaign", "generated/week13/w13-lag_inv1-ideal", "Distinct Figure 13.1-derived input lag graph on INV1."),
+          sheet("W13.CLOAD_BASE · fixed-load baseline", "generated/week13/w13-cload_base-ideal", "Regulator capacitive-load baseline before compensation."),
+          sheet("W13.CLOAD_COMP · fixed-load compensation", "generated/week13/w13-cload_comp-ideal", "Matched compensated regulator graph for the same load campaign."),
+          sheet("W13.ONEPOLE_AMP1 · discrete channel", "generated/week13/w13-onepole_amp1-ideal", "One-pole compensation campaign on AMP1."),
+          sheet("W13.ONEPOLE_INT2 · LM301A channel", "generated/week13/w13-onepole_int2-ideal", "Separate one-pole compensation campaign on INT2."),
+          sheet("W13.TWOPOLE_REG1 · regulator error amp", "generated/week13/w13-twopole_reg1-ideal", "Regulator-loop-specific two-pole compensation topology.")
+        ]
+      }
+    };
+
+    function schematicMarkup(week) {
+      const record = SCHEMATICS[week];
+      if (!record) return "";
+      const cards = record.sheets.map((s) =>
+        '<article class="schematic-card">' +
+          '<div class="schematic-head"><h4>' + s.title + '</h4>' +
+          '<nav class="schematic-links" aria-label="Files for ' + s.title + '">' +
+            '<a href="' + s.spice + '">SPICE</a>' +
+            '<a href="' + s.receipt + '">connectivity receipt</a>' +
+            '<a href="' + s.svg + '">open SVG</a>' +
+          '</nav></div>' +
+          '<div class="schematic-frame"><img loading="lazy" decoding="async" src="' + s.svg + '" alt="' + s.title + ' schematic"></div>' +
+          '<p class="schematic-caption">' + s.caption + '</p>' +
+        '</article>'
+      ).join("");
+      return '<details class="schematics"><summary><span>Approved Week ' + week + ' schematics &amp; matched SPICE</span><span class="sheet-count">' + record.sheets.length + (record.sheets.length === 1 ? ' sheet' : ' sheets') + '</span></summary>' +
+        '<div class="schematic-body"><a class="review-link" href="' + record.review + '">Open the approved review page</a>' + cards + '</div></details>';
+    }
+
+    const logEl = document.getElementById("log");
+    const nextLabel = document.getElementById("nextLabel");
+    const foot = document.getElementById("foot");
+    const state = JSON.parse(localStorage.getItem("roberge-onebox") || '{"done":{}}');
+
+    function key(gi, si) { return gi + ":" + si; }
+
+    function firstOpen() {
+      for (let gi = 0; gi < GROUPS.length; gi++) {
+        for (let si = 0; si < GROUPS[gi].steps.length; si++) {
+          if (!state.done[key(gi, si)]) return GROUPS[gi].steps[si];
+        }
+      }
+      return null;
+    }
+
+    function setNext() {
+      const step = firstOpen();
+      nextLabel.textContent = step ? ("Next: " + step.do.split(".")[0] + ".") : "Done. The box is the project.";
+      foot.innerHTML = "<b>Next action</b> · " + (step ? step.do : FINAL);
+    }
+
+    function render() {
+      logEl.innerHTML = "";
+      let weekNumber = 1;
+      GROUPS.forEach((g, gi) => {
+        const done = g.steps.filter((_, si) => state.done[key(gi, si)]).length;
+        const box = document.createElement("section");
+        box.className = "group";
+        box.innerHTML = '<div class="group-head"><h3>' + g.title + '</h3><span class="count">' + done + "/" + g.steps.length + " · " + g.eta + "</span></div>";
+        const ol = document.createElement("ol");
+        g.steps.forEach((s, si) => {
+          const k = key(gi, si);
+          const li = document.createElement("li");
+          li.className = "step" + (state.done[k] ? " done" : "");
+          li.innerHTML =
+            '<label><input class="jack" type="checkbox" ' + (state.done[k] ? "checked" : "") + ' data-k="' + k + '">' +
+            '<span><span class="ch">' + s.ch + "</span>" +
+            '<p class="do">' + s.do + "</p>" +
+            '<p class="box">' + s.box + "</p>" +
+            '<p class="teach">' + s.teach + "</p>" +
+            '<p class="cite">' + s.cite + "</p></span></label>" +
+            schematicMarkup(weekNumber);
+          ol.appendChild(li);
+          weekNumber += 1;
+        });
+        box.appendChild(ol);
+        logEl.appendChild(box);
+      });
+      document.getElementById("final").innerHTML = '<span class="ch">Final object</span><p>' + FINAL + "</p>";
+      setNext();
+    }
+
+    logEl.addEventListener("change", (e) => {
+      const t = e.target;
+      if (!t.classList.contains("jack")) return;
+      state.done[t.dataset.k] = t.checked;
+      localStorage.setItem("roberge-onebox", JSON.stringify(state));
+      render();
+    });
+
+    document.getElementById("week-zero").innerHTML = schematicMarkup(0);
+    document.querySelector("#week-zero details").open = true;
+
+    let printOpenState = [];
+    window.addEventListener("beforeprint", () => {
+      const sets = [...document.querySelectorAll("details.schematics")];
+      printOpenState = sets.map((d) => d.open);
+      sets.forEach((d) => { d.open = true; });
+    });
+    window.addEventListener("afterprint", () => {
+      document.querySelectorAll("details.schematics").forEach((d, i) => {
+        d.open = Boolean(printOpenState[i]);
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+{
+  "annotations": [
+    "Figure 13.1 topology is exact; Rlag and Clag remain socketed measurement-derived values.",
+    "wp=1/[(Rlag + R1||R2)Clag], wz=1/(Rlag Clag)."
+  ],
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "DEV.SUM1"
+  ],
+  "components": {
+    "FIX.RLOAD": {
+      "label": "scope 10 Meg",
+      "rotation": 90,
+      "x": 1250,
+      "y": 580
+    },
+    "FIX.V_SUMA": {
+      "label": "Vi",
+      "x": 110,
+      "y": 330
+    },
+    "SUM1.RFB": {
+      "label": "R2",
+      "x": 700,
+      "y": 500
+    },
+    "SUM1.RIN_A": {
+      "label": "R1",
+      "x": 380,
+      "y": 320
+    },
+    "SUM1.ROUT": {
+      "label": "Rout",
+      "x": 900,
+      "y": 300
+    },
+    "W13.LAG_SUM.C": {
+      "label": "Clag",
+      "rotation": 90,
+      "x": 1120,
+      "y": 520
+    },
+    "W13.LAG_SUM.R": {
+      "label": "Rlag",
+      "rotation": 90,
+      "x": 1120,
+      "y": 390
+    }
+  },
+  "graph": "../../../circuits/weeks/w13/graph.json",
+  "module_positions": {
+    "DEV.SUM1": {
+      "height": 170,
+      "ports": {
+        "INM": {
+          "x": 560,
+          "y": 320
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 780,
+          "y": 300
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "LM301A",
+      "title": "SUM1 core",
+      "width": 220,
+      "x": 560,
+      "y": 150
+    },
+    "INF.PWR_ENTRY": {
+      "connect_ports": false,
+      "height": 60,
+      "style": "inactive",
+      "subtitle": "permanent +/-15 V sheet",
+      "width": 210,
+      "x": 1180,
+      "y": 30
+    },
+    "MEAS.FIXTURE": {
+      "height": 420,
+      "ports": {
+        "SGND": {
+          "visible": false
+        }
+      },
+      "subtitle": "declared source and scope load",
+      "title": "MEASUREMENT FIXTURE",
+      "width": 200,
+      "x": 30,
+      "y": 150
+    },
+    "MOD.SUM1": {
+      "height": 500,
+      "ports": {
+        "LAG_NODE": {
+          "x": 720,
+          "y": 430
+        },
+        "OUT": {
+          "x": 950,
+          "y": 310
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "fixed amplifier dynamics",
+      "title": "SUM1 unity inverting path",
+      "width": 760,
+      "x": 260,
+      "y": 120
+    },
+    "W13.LAG_SUM": {
+      "height": 280,
+      "ports": {
+        "GND": {
+          "visible": false
+        },
+        "SUM": {
+          "x": 1000,
+          "y": 430
+        }
+      },
+      "subtitle": "Figure 13.1; values derived after loop measurement",
+      "title": "series R-C lag shunt",
+      "width": 360,
+      "x": 1000,
+      "y": 250
+    }
+  },
+  "net_routes": {
+    "SGND": {
+      "coordinate": 665,
+      "rail": "bottom"
+    }
+  },
+  "schema_version": 1,
+  "sheet_id": "W13.LAG_SUM1",
+  "status": "graph.json is electrical authority",
+  "title": "Week 13 Figure 13.1 lag compensation on SUM1",
+  "viewport": {
+    "height": 820,
+    "width": 1420
+  }
+}

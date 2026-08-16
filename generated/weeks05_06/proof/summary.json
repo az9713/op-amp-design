@@ -1,0 +1,67 @@
+{
+  "claim_boundary": "Topology-tier only: generic behavioral op amps and generic semiconductor models; not LM301A/BD139 performance validation.",
+  "week05": {
+    "passed": true,
+    "operating_points": [
+      {
+        "case_id": "rl470_cl10",
+        "vout_v": 9.86251418,
+        "vref_v": 10.0160017
+      },
+      {
+        "case_id": "rl470_cl47",
+        "vout_v": 9.86251418,
+        "vref_v": 10.0160017
+      },
+      {
+        "case_id": "rl470_cl100",
+        "vout_v": 9.86251418,
+        "vref_v": 10.0160017
+      },
+      {
+        "case_id": "rl1k_cl10",
+        "vout_v": 10.0158389,
+        "vref_v": 10.0159966
+      },
+      {
+        "case_id": "rl1k_cl47",
+        "vout_v": 10.0158389,
+        "vref_v": 10.0159966
+      },
+      {
+        "case_id": "rl1k_cl100",
+        "vout_v": 10.0158389,
+        "vref_v": 10.0159966
+      },
+      {
+        "case_id": "rl2k2_cl10",
+        "vout_v": 10.0158629,
+        "vref_v": 10.0159966
+      },
+      {
+        "case_id": "rl2k2_cl47",
+        "vout_v": 10.0158629,
+        "vref_v": 10.0159966
+      },
+      {
+        "case_id": "rl2k2_cl100",
+        "vout_v": 10.0158629,
+        "vref_v": 10.0159966
+      }
+    ]
+  },
+  "week06": {
+    "passed": true,
+    "square_min_v": -5.99258852,
+    "square_max_v": 5.99258905,
+    "triangle_min_v": -5.98066199,
+    "triangle_max_v": 5.9902223,
+    "positive_crossing_times_s": [
+      6.39555533,
+      10.3933053
+    ],
+    "measured_periods_s": [
+      3.99774997
+    ]
+  }
+}

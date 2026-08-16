@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.roberge-onebox.invalid/schema/circuit-graph-1.0.0.json",
+  "title": "Roberge One-Box Canonical Circuit Graph",
+  "description": "Renderer-neutral canonical electrical graph. SVG and SPICE are projections; render hints never create connectivity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "sources",
+    "nets",
+    "modules",
+    "models",
+    "components",
+    "variants",
+    "weekly_states"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "project_id": { "$ref": "#/$defs/stableId" },
+    "title": { "type": "string", "minLength": 1 },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "nets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/net" }
+    },
+    "modules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/module" }
+    },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/model" }
+    },
+    "components": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/component" }
+    },
+    "variants": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/variant" }
+    },
+    "weekly_states": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/weeklyState" }
+    }
+  },
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]*(?:\\.[A-Z][A-Z0-9_]*)*$"
+    },
+    "stateClass": {
+      "enum": [
+        "persistent-installed",
+        "persistent-inactive",
+        "configuration-only-fixture",
+        "removed-off-circuit",
+        "reserved-unpopulated",
+        "deferred"
+      ]
+    },
+    "evidenceLabel": {
+      "enum": ["verified", "derived", "proposed", "tbd", "deferred"]
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "claim", "label"],
+      "properties": {
+        "source_id": { "$ref": "#/$defs/stableId" },
+        "claim": { "type": "string", "minLength": 1 },
+        "label": { "$ref": "#/$defs/evidenceLabel" },
+        "derivation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["formula", "inputs", "units"],
+          "properties": {
+            "formula": { "type": "string", "minLength": 1 },
+            "inputs": { "type": "object" },
+            "units": { "type": "string", "minLength": 1 },
+            "dependencies": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/stableId" },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "title", "locator"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "kind": { "enum": ["book", "datasheet", "project-decision", "analysis", "measurement"] },
+        "title": { "type": "string", "minLength": 1 },
+        "locator": { "type": "string", "minLength": 1 },
+        "uri": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" }
+      }
+    },
+    "net": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "class"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "class": { "enum": ["signal", "power", "ground", "control", "measurement"] },
+        "description": { "type": "string" },
+        "spice_node": { "type": ["string", "integer"] },
+        "source_evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceRef" }
+        }
+      }
+    },
+    "port": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "direction", "net"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "direction": { "enum": ["input", "output", "bidirectional", "power", "passive"] },
+        "net": { "$ref": "#/$defs/stableId" }
+      }
+    },
+    "module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "ports", "component_ids"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "parent_id": { "anyOf": [{ "$ref": "#/$defs/stableId" }, { "type": "null" }] },
+        "description": { "type": "string" },
+        "ports": { "type": "array", "items": { "$ref": "#/$defs/port" } },
+        "component_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stableId" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fidelity", "kind", "reference", "pin_names"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "fidelity": { "enum": ["ideal", "realistic"] },
+        "kind": { "enum": ["primitive", "subcircuit", "behavioral"] },
+        "reference": { "type": "string", "minLength": 1 },
+        "pin_names": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_+\\-]*$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "parameters": { "type": "object" },
+        "source_evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceRef" }
+        }
+      }
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "net"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_+\\-]*$" },
+        "net": { "anyOf": [{ "$ref": "#/$defs/stableId" }, { "type": "null" }] },
+        "description": { "type": "string" }
+      }
+    },
+    "renderHints": {
+      "type": "object",
+      "description": "Non-electrical layout metadata. It cannot add or remove connections.",
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "rotation": { "enum": [0, 90, 180, 270] },
+        "mirror": { "type": "boolean" },
+        "group": { "type": "string" },
+        "style": { "enum": ["active", "changed", "inactive", "annotation-only"] }
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "module_id", "state_class", "pins", "model_bindings", "source_evidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "kind": { "type": "string", "minLength": 1 },
+        "module_id": { "$ref": "#/$defs/stableId" },
+        "state_class": { "$ref": "#/$defs/stateClass" },
+        "value": { "type": ["string", "number"] },
+        "parameters": { "type": "object" },
+        "pins": { "type": "array", "items": { "$ref": "#/$defs/pin" }, "minItems": 1 },
+        "model_bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ideal": { "$ref": "#/$defs/stableId" },
+            "realistic": { "$ref": "#/$defs/stableId" }
+          }
+        },
+        "model_pin_map": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "source_evidence": { "type": "array", "items": { "$ref": "#/$defs/evidenceRef" } },
+        "render": { "$ref": "#/$defs/renderHints" }
+      }
+    },
+    "pinConnection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "pin_id", "net"],
+      "properties": {
+        "component_id": { "$ref": "#/$defs/stableId" },
+        "pin_id": { "type": "string", "minLength": 1 },
+        "net": { "anyOf": [{ "$ref": "#/$defs/stableId" }, { "type": "null" }] }
+      }
+    },
+    "variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "description", "connection_overrides", "state_overrides", "model_overrides"],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "description": { "type": "string", "minLength": 1 },
+        "connection_overrides": { "type": "array", "items": { "$ref": "#/$defs/pinConnection" } },
+        "state_overrides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["component_id", "state_class"],
+            "properties": {
+              "component_id": { "$ref": "#/$defs/stableId" },
+              "state_class": { "$ref": "#/$defs/stateClass" }
+            }
+          }
+        },
+        "model_overrides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["component_id", "fidelity", "model_id"],
+            "properties": {
+              "component_id": { "$ref": "#/$defs/stableId" },
+              "fidelity": { "enum": ["ideal", "realistic"] },
+              "model_id": { "$ref": "#/$defs/stableId" }
+            }
+          }
+        }
+      }
+    },
+    "delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["add", "remove", "replace", "state_changes", "connection_changes"],
+      "properties": {
+        "add": { "type": "array", "items": { "$ref": "#/$defs/stableId" }, "uniqueItems": true },
+        "remove": { "type": "array", "items": { "$ref": "#/$defs/stableId" }, "uniqueItems": true },
+        "replace": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["old_component_id", "new_component_id"],
+            "properties": {
+              "old_component_id": { "$ref": "#/$defs/stableId" },
+              "new_component_id": { "$ref": "#/$defs/stableId" }
+            }
+          }
+        },
+        "state_changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["component_id", "from", "to"],
+            "properties": {
+              "component_id": { "$ref": "#/$defs/stableId" },
+              "from": { "$ref": "#/$defs/stateClass" },
+              "to": { "$ref": "#/$defs/stateClass" }
+            }
+          }
+        },
+        "connection_changes": { "type": "array", "items": { "$ref": "#/$defs/pinConnection" } }
+      }
+    },
+    "weeklyState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "learning_objective", "inherits", "configuration_ids", "delta", "source_evidence"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^W(?:0[0-9]|1[0-3])$" },
+        "title": { "type": "string", "minLength": 1 },
+        "learning_objective": { "type": "string", "minLength": 1 },
+        "inherits": { "anyOf": [{ "type": "string", "pattern": "^W(?:0[0-9]|1[0-3])$" }, { "type": "null" }] },
+        "configuration_ids": { "type": "array", "items": { "$ref": "#/$defs/stableId" }, "uniqueItems": true },
+        "delta": { "$ref": "#/$defs/delta" },
+        "source_evidence": { "type": "array", "items": { "$ref": "#/$defs/evidenceRef" } }
+      }
+    }
+  }
+}

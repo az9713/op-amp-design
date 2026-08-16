@@ -1,0 +1,498 @@
+{
+  "annotations": [
+    "AD633 primary build: W=(X1-X2)(Y1-Y2)/10V+Z on +/-15 V rails.",
+    "Roberge Figure 12.9 remains the historical time-division alternative; Figure 11.28 alone is rejected because it is two-quadrant."
+  ],
+  "collapsed_modules": [
+    "AMP1",
+    "DEV.INT2",
+    "DEV.SUM1",
+    "W12.VDP.M1",
+    "W12.VDP.M2",
+    "INF.PWR_ENTRY",
+    "REG1",
+    "RECT1",
+    "MOD.SOCKETS"
+  ],
+  "components": {
+    "W12.VDP.CN1": {
+      "x": 1120,
+      "y": 740
+    },
+    "W12.VDP.CN2": {
+      "x": 1420,
+      "y": 740
+    },
+    "W12.VDP.CP1": {
+      "x": 1060,
+      "y": 650
+    },
+    "W12.VDP.CP2": {
+      "x": 1360,
+      "y": 650
+    },
+    "W12.VDP.C_ACCEL": {
+      "x": 390,
+      "y": 150
+    },
+    "W12.VDP.C_D1": {
+      "x": 820,
+      "y": 150
+    },
+    "W12.VDP.M_X2": {
+      "x": 1120,
+      "y": 325
+    },
+    "W12.VDP.M_X2D1": {
+      "x": 1420,
+      "y": 460
+    },
+    "W12.VDP.R_D1": {
+      "x": 605,
+      "y": 325
+    },
+    "W12.VDP.R_LINEAR": {
+      "x": 150,
+      "y": 520
+    },
+    "W12.VDP.R_NONINV_GND": {
+      "x": 300,
+      "y": 500
+    },
+    "W12.VDP.R_NONLIN": {
+      "x": 150,
+      "y": 400
+    },
+    "W12.VDP.R_SCOPE_X": {
+      "rotation": 90,
+      "x": 1000,
+      "y": 500
+    },
+    "W12.VDP.R_SUM_D1": {
+      "x": 610,
+      "y": 580
+    },
+    "W12.VDP.R_SUM_FB": {
+      "x": 390,
+      "y": 820
+    },
+    "W12.VDP.R_SUM_X": {
+      "x": 700,
+      "y": 680
+    }
+  },
+  "graph": "../../../circuits/weeks/w12/graph.json",
+  "module_positions": {
+    "AMP1": {
+      "height": 190,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "COMP_A": {
+          "visible": false
+        },
+        "COMP_B": {
+          "visible": false
+        },
+        "INV_IN": {
+          "x": 260,
+          "y": 325
+        },
+        "NONINV_IN": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 520,
+          "y": 325
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "output = -dx/dt",
+      "title": "INT1 \u00b7 acceleration",
+      "width": 260,
+      "x": 260,
+      "y": 240
+    },
+    "DEV.INT2": {
+      "height": 190,
+      "ports": {
+        "INM": {
+          "x": 690,
+          "y": 325
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 950,
+          "y": 325
+        },
+        "SGND": {
+          "visible": false
+        },
+        "TWIN_OUT": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "output = x",
+      "title": "INT2",
+      "width": 260,
+      "x": 690,
+      "y": 240
+    },
+    "DEV.SUM1": {
+      "height": 180,
+      "ports": {
+        "INM": {
+          "x": 260,
+          "y": 680
+        },
+        "INP": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 530,
+          "y": 680
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "-x + mu dx/dt",
+      "title": "SUM1",
+      "width": 270,
+      "x": 260,
+      "y": 600
+    },
+    "INF.PWR_ENTRY": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "PGND": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 180,
+      "x": 40,
+      "y": 920
+    },
+    "MOD.SOCKETS": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "SGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 210,
+      "x": 1210,
+      "y": 920
+    },
+    "OSC1": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "N15": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "SQUARE": {
+          "visible": false
+        },
+        "TRIANGLE": {
+          "visible": false
+        },
+        "VC": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 150,
+      "x": 410,
+      "y": 920
+    },
+    "RECT1": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "IN": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 150,
+      "x": 580,
+      "y": 920
+    },
+    "REG1": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "N15": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        },
+        "VOUT": {
+          "visible": false
+        },
+        "VUNREG": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 150,
+      "x": 240,
+      "y": 920
+    },
+    "W11.MODE.I1": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "IC_IN": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "visible": false
+        },
+        "MODE_RST": {
+          "visible": false
+        },
+        "NONINV": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SIGNAL_IN": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 210,
+      "x": 750,
+      "y": 920
+    },
+    "W11.MODE.I2": {
+      "connect_ports": false,
+      "height": 60,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "IC_IN": {
+          "visible": false
+        },
+        "MODE_OP": {
+          "visible": false
+        },
+        "MODE_RST": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SIGNAL_IN": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "style": "inactive",
+      "subtitle": "retained",
+      "width": 210,
+      "x": 980,
+      "y": 920
+    },
+    "W12.VDP.M1": {
+      "height": 230,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "W": {
+          "x": 1320,
+          "y": 310
+        },
+        "X_Y": {
+          "x": 1080,
+          "y": 310
+        }
+      },
+      "subtitle": "x squared / 10 V",
+      "title": "M1 \u00b7 AD633",
+      "width": 240,
+      "x": 1080,
+      "y": 200
+    },
+    "W12.VDP.M2": {
+      "height": 250,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "D1_NEG": {
+          "x": 1380,
+          "y": 560
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "W": {
+          "x": 1620,
+          "y": 510
+        },
+        "X2": {
+          "x": 1380,
+          "y": 470
+        }
+      },
+      "subtitle": "-x squared dx/dt / 100",
+      "title": "M2 \u00b7 AD633",
+      "width": 240,
+      "x": 1380,
+      "y": 390
+    },
+    "W12.VDP.NET": {
+      "height": 800,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "D1_NEG": {
+          "visible": false
+        },
+        "NONLIN": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        },
+        "X": {
+          "visible": false
+        },
+        "X2_DIV10": {
+          "visible": false
+        }
+      },
+      "width": 1640,
+      "x": 40,
+      "y": 70
+    }
+  },
+  "net_routes": {
+    "N15": {
+      "coordinate": 880,
+      "rail": "bottom"
+    },
+    "P15": {
+      "coordinate": 45,
+      "rail": "top"
+    },
+    "SGND": {
+      "coordinate": 850,
+      "rail": "bottom"
+    }
+  },
+  "schema_version": 1,
+  "sheet_id": "W12.VDP",
+  "status": "graph.json is electrical authority",
+  "title": "Week 12 Figure 12.14 Van der Pol",
+  "viewport": {
+    "height": 1050,
+    "width": 1750
+  }
+}

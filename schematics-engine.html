@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roberge one-box — complete schemdraw circuits</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--book); color: var(--slate); padding-bottom: 48px; }
+    .deck { max-width: 960px; margin: 0 auto; padding: 0 24px 48px; }
+    @media (min-width: 960px) { .deck { padding: 0 40px 64px; } }
+    .top { display: flex; align-items: center; gap: 10px; padding: 20px 0 8px; }
+    .top img { width: 22px; height: 22px; }
+    h1.display { margin: 8px 0 12px; font-size: clamp(32px, 6vw, 48px); }
+    .lede { margin: 0 0 16px; max-width: 42rem; }
+    nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+    nav.jump a {
+      font-family: var(--font-sans); font-size: 13px; padding: 6px 10px;
+      border: 1px solid var(--hairline); border-radius: var(--r-sm);
+      background: var(--bg-elev); text-decoration: none; color: var(--fg);
+    }
+    h2 { margin: 48px 0 6px; scroll-margin-top: 16px; }
+    .week-lead { margin: 0 0 14px; color: var(--fg-muted); max-width: 40rem; }
+    .card {
+      background: var(--bg-elev); border: 1px solid var(--hairline);
+      border-radius: var(--r-md); padding: 16px; margin: 0 0 16px;
+    }
+    .card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 20px; margin: 0 0 4px; }
+    .tag { font-family: var(--font-mono); font-size: 11px; color: var(--crail-deep); margin: 0 0 12px; }
+    .note { font-size: 14px; color: var(--fg-muted); margin: 10px 0 0; }
+    img.sch {
+      width: 100%; height: auto; display: block; background: #fff;
+      border: 1px solid var(--hairline); border-radius: var(--r-xs); padding: 16px;
+    }
+    .back { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <header>
+      <div class="top">
+        <img src="design-system/anthropic-mark.svg" alt="">
+        <p class="eyebrow">Complete circuits · schemdraw only</p>
+      </div>
+      <h1 class="display">Each drawing is one circuit</h1>
+      <p class="lede">Generated only from schemdraw. No book scans. No hand SVG. Coral is the net added that week.</p>
+      <p class="back">
+        <a href="schematics.html">Hand SVG</a> ·
+        <a href="schematics-other.html">Book figures</a> ·
+        <a href="capstone.html">Build log</a>
+      </p>
+    </header>
+    <nav class="jump">
+      <a href="#w1">1</a>
+      <a href="#w2">2</a>
+      <a href="#w3">3</a>
+      <a href="#w4">4</a>
+      <a href="#w5">5</a>
+      <a href="#w6">6</a>
+      <a href="#w7">7</a>
+      <a href="#w8">8</a>
+      <a href="#w9">9</a>
+      <a href="#w10">10</a>
+      <a href="#w11">11</a>
+      <a href="#w12">12</a>
+      <a href="#w13">13</a>
+    </nav>
+    <h2 id="w1">Week 1 — three complete ICs, not yet one loop</h2>
+    <p class="week-lead">These are three separate circuits that live on one board.</p>
+    <article class="card">
+      <h3>Figure 1.4 weighted summer</h3>
+      <p class="tag">sum.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/sum.svg" alt="Figure 1.4 weighted summer">
+      <p class="note">Socket SUM. Two inputs, Zf over the top, + grounded.</p>
+    </article>
+    <article class="card">
+      <h3>Figure 1.2a inverter</h3>
+      <p class="tag">inv.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/inv.svg" alt="Figure 1.2a inverter">
+      <p class="note">Socket INV. Stays for the rest of the project.</p>
+    </article>
+    <article class="card">
+      <h3>§1.2.3 integrator</h3>
+      <p class="tag">int.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/int.svg" alt="§1.2.3 integrator">
+      <p class="note">Socket INT1. This is the IC you pull in week 7.</p>
+    </article>
+    <h2 id="w2">Week 2 — first-order computer (one circuit)</h2>
+    <p class="week-lead">INT1 and SUM are now one loop. Coral is the patch that closes ẋ = −x.</p>
+    <article class="card">
+      <h3>ẋ = −x</h3>
+      <p class="tag">loop1.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/loop1.svg" alt="ẋ = −x">
+      <p class="note">INT1 output is ẋ. SUM returns x to the integrator input.</p>
+    </article>
+    <h2 id="w3">Week 3 — same loop + Cc</h2>
+    <p class="week-lead">The circuit is unchanged except the compensation capacitor on INT1.</p>
+    <article class="card">
+      <h3>Week 2 loop + Figure 3.1 Cc</h3>
+      <p class="tag">loop1-cc.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/loop1-cc.svg" alt="Week 2 loop + Figure 3.1 Cc">
+      <p class="note">Keep the better Cc until chapter 13.</p>
+    </article>
+    <h2 id="w4">Week 4 — second-order computer (one circuit)</h2>
+    <p class="week-lead">SUM, INT1, INT2 in one ring. Coral is INT2 and the new patch.</p>
+    <article class="card">
+      <h3>ẍ → ẋ → x → SUM</h3>
+      <p class="tag">loop2.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/loop2.svg" alt="ẍ → ẋ → x → SUM">
+      <p class="note">Find the gain that sits on jω.</p>
+    </article>
+    <h2 id="w5">Week 5 — the plant is its own complete circuit</h2>
+    <p class="week-lead">Not patched to the computer yet.</p>
+    <article class="card">
+      <h3>Figure 5.3a voltage regulator</h3>
+      <p class="tag">plant.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/plant.svg" alt="Figure 5.3a voltage regulator">
+      <p class="note">VR to +. Vl sensed to −. Series NPN, RL || CL, Id.</p>
+    </article>
+    <h2 id="w6">Week 6 — Schmitt + integrator (one circuit)</h2>
+    <p class="week-lead">Complete function generator. Coral closes vA back to the Schmitt.</p>
+    <article class="card">
+      <h3>Figure 12.7 + integrator</h3>
+      <p class="tag">osc.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/osc.svg" alt="Figure 12.7 + integrator">
+      <p class="note">Square vB drives INT3. Triangle vA drives the Schmitt +.</p>
+    </article>
+    <h2 id="w7">Week 7 — discrete front end (complete pair)</h2>
+    <p class="week-lead">This is the whole circuit in the INT1 socket this week.</p>
+    <article class="card">
+      <h3>Figure 7.4 differential pair</h3>
+      <p class="tag">diffpair.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/diffpair.svg" alt="Figure 7.4 differential pair">
+      <p class="note">Q1 base is the inverting pin of the channel.</p>
+    </article>
+    <article class="card">
+      <h3>Figure 7.10 collector pot</h3>
+      <p class="tag">bal710.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/bal710.svg" alt="Figure 7.10 collector pot">
+      <p class="note">Pot is in the collectors. Do not use the emitter pot.</p>
+    </article>
+    <h2 id="w8">Week 8 — complete discrete integrator</h2>
+    <p class="week-lead">One circuit: pair + current-source load + Q3 + complementary output + C.</p>
+    <article class="card">
+      <h3>Figures 8.8, 8.13, 8.27 closed with C</h3>
+      <p class="tag">disc8.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/disc8.svg" alt="Figures 8.8, 8.13, 8.27 closed with C">
+      <p class="note">The socket is an integrator again.</p>
+    </article>
+    <h2 id="w9">Week 9 — that circuit is Figure 9.1</h2>
+    <p class="week-lead">Same transistors. Cc is the only new part. Then C goes back.</p>
+    <article class="card">
+      <h3>Figure 9.1 as integrator</h3>
+      <p class="tag">disc9.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/disc9.svg" alt="Figure 9.1 as integrator">
+      <p class="note">Week 8 + Cc.</p>
+    </article>
+    <article class="card">
+      <h3>Figure 9.8 measurement hookup</h3>
+      <p class="tag">disc98.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/disc98.svg" alt="Figure 9.8 measurement hookup">
+      <p class="note">C off, Z1/Z2 on. Restore C after the data.</p>
+    </article>
+    <h2 id="w10">Week 10 — same circuit, repeater load</h2>
+    <p class="week-lead">Qref/Qout replace the single current source.</p>
+    <article class="card">
+      <h3>Figure 9.1 + Figure 10.9</h3>
+      <p class="tag">disc10.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/disc10.svg" alt="Figure 9.1 + Figure 10.9">
+      <p class="note">First-stage load is now a PNP repeater.</p>
+    </article>
+    <h2 id="w11">Week 11 — three-mode integrator (one circuit)</h2>
+    <p class="week-lead">The discrete amp does not change. The switches wrap C.</p>
+    <article class="card">
+      <h3>Figure 12.17</h3>
+      <p class="tag">threemode.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/threemode.svg" alt="Figure 12.17">
+      <p class="note">Operate ①. Reset ②. Hold both open.</p>
+    </article>
+    <article class="card">
+      <h3>Figure 11.18</h3>
+      <p class="tag">rectifier.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/rectifier.svg" alt="Figure 11.18">
+      <p class="note">Keep on the chassis for later Wien control.</p>
+    </article>
+    <h2 id="w12">Week 12 — the two problems (two complete circuits)</h2>
+    <p class="week-lead">Patches, not new amplifiers.</p>
+    <article class="card">
+      <h3>Figure 12.13 Butterworth</h3>
+      <p class="tag">butter.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/butter.svg" alt="Figure 12.13 Butterworth">
+      <p class="note">Four integrators + inverter. Coral is the closing patch.</p>
+    </article>
+    <article class="card">
+      <h3>Analog twin of Figure 5.3</h3>
+      <p class="tag">twin.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/twin.svg" alt="Analog twin of Figure 5.3">
+      <p class="note">Error amp, 1/R, load pole as an integrator.</p>
+    </article>
+    <h2 id="w13">Week 13 — two complete compensation circuits</h2>
+    <p class="week-lead">Same computer, same plant. These networks go on them.</p>
+    <article class="card">
+      <h3>Figure 13.1 input lag</h3>
+      <p class="tag">lag.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/lag.svg" alt="Figure 13.1 input lag">
+      <p class="note">Shunt on SUM / INV. Ideal gain unchanged.</p>
+    </article>
+    <article class="card">
+      <h3>Figure 13.19 two-pole</h3>
+      <p class="tag">twopole.svg · schemdraw IEEE · one connected circuit</p>
+      <img class="sch" src="figures/engine/twopole.svg" alt="Figure 13.19 two-pole">
+      <p class="note">On the regulator error-amp compensation pins.</p>
+    </article>
+
+    <p class="back"><a href="capstone.html">Back to the build log</a></p>
+  </div>
+</body>
+</html>

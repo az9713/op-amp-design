@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w11/graph.json",
+  "sheet_id": "W11.MODE.I1_DETAIL",
+  "title": "Week 11 Figure 12.18 practical channel detail",
+  "status": "graph.json is electrical authority",
+  "strict_components": true,
+  "viewport": {
+    "width": 1600,
+    "height": 1100
+  },
+  "module_positions": {
+    "W11.MODE.I1": {
+      "x": 30,
+      "y": 30,
+      "width": 1500,
+      "height": 1010,
+      "ports": {
+        "SIGNAL_IN": {
+          "x": 30,
+          "y": 650
+        },
+        "IC_IN": {
+          "x": 1480,
+          "y": 950
+        },
+        "SUM": {
+          "x": 1480,
+          "y": 650
+        },
+        "OUT": {
+          "x": 1480,
+          "y": 760
+        },
+        "NONINV": {
+          "x": 30,
+          "y": 900
+        },
+        "MODE_OP": {
+          "x": 300,
+          "y": 30
+        },
+        "MODE_RST": {
+          "x": 1000,
+          "y": 30
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      }
+    }
+  },
+  "components": {
+    "W11.I1.R_OP": {
+      "x": 210,
+      "y": 650,
+      "rotation": 0
+    },
+    "W11.I1.S_OP": {
+      "x": 460,
+      "y": 650,
+      "rotation": 0
+    },
+    "W11.I1.D_INPUT": {
+      "x": 330,
+      "y": 760,
+      "rotation": 90
+    },
+    "W11.I1.S_RST": {
+      "x": 1160,
+      "y": 650,
+      "rotation": 0
+    },
+    "W11.I1.R2_TOP": {
+      "x": 1380,
+      "y": 790,
+      "rotation": 90
+    },
+    "W11.I1.R2_BOTTOM": {
+      "x": 1380,
+      "y": 920,
+      "rotation": 90
+    },
+    "W11.I1.U_RESET": {
+      "x": 930,
+      "y": 850,
+      "rotation": 180
+    },
+    "W11.I1.D_CLAMP_P": {
+      "x": 1130,
+      "y": 850,
+      "rotation": 90
+    },
+    "W11.I1.D_CLAMP_N": {
+      "x": 1210,
+      "y": 850,
+      "rotation": 270
+    },
+    "W11.I1.C_COMP": {
+      "x": 920,
+      "y": 960,
+      "rotation": 0
+    },
+    "W11.I1.CP": {
+      "x": 1450,
+      "y": 220,
+      "rotation": 90
+    },
+    "W11.I1.CN": {
+      "x": 1500,
+      "y": 300,
+      "rotation": 90
+    },
+    "W11.I1.Q_OP_DRV": {
+      "x": 430,
+      "y": 300,
+      "rotation": 180
+    },
+    "W11.I1.Q_RST_DRV": {
+      "x": 1060,
+      "y": 300,
+      "rotation": 180
+    },
+    "W11.I1.R_OP_EMIT": {
+      "x": 350,
+      "y": 150,
+      "rotation": 90
+    },
+    "W11.I1.R_RST_EMIT": {
+      "x": 1120,
+      "y": 150,
+      "rotation": 90
+    },
+    "W11.I1.R_BIAS": {
+      "x": 700,
+      "y": 150,
+      "rotation": 90
+    },
+    "W11.I1.D_BIAS1": {
+      "x": 700,
+      "y": 330,
+      "rotation": 90
+    },
+    "W11.I1.D_BIAS2": {
+      "x": 700,
+      "y": 440,
+      "rotation": 90
+    },
+    "W11.I1.D_LOGIC_OP": {
+      "x": 260,
+      "y": 250,
+      "rotation": 90
+    },
+    "W11.I1.D_LOGIC_RST": {
+      "x": 1280,
+      "y": 250,
+      "rotation": 90
+    },
+    "W11.I1.D_OP_GATE": {
+      "x": 430,
+      "y": 450,
+      "rotation": 90
+    },
+    "W11.I1.D_OP_GND": {
+      "x": 520,
+      "y": 450,
+      "rotation": 90
+    },
+    "W11.I1.D_RST_GATE": {
+      "x": 1060,
+      "y": 450,
+      "rotation": 90
+    },
+    "W11.I1.D_RST_GND": {
+      "x": 1140,
+      "y": 450,
+      "rotation": 90
+    },
+    "W11.I1.R_OP_GATE": {
+      "x": 560,
+      "y": 560,
+      "rotation": 90
+    },
+    "W11.I1.R_RST_GATE": {
+      "x": 1250,
+      "y": 540,
+      "rotation": 90
+    },
+    "W11.I1.R_LOGIC_OP_PD": {
+      "x": 220,
+      "y": 430,
+      "rotation": 90
+    },
+    "W11.I1.R_LOGIC_RST_PD": {
+      "x": 1350,
+      "y": 430,
+      "rotation": 90
+    },
+    "W11.I1.V_OP": {
+      "x": 150,
+      "y": 200,
+      "rotation": 0
+    },
+    "W11.I1.V_RST": {
+      "x": 1430,
+      "y": 200,
+      "rotation": 0
+    },
+    "W11.I1.V_SIGNAL": {
+      "x": 100,
+      "y": 720,
+      "rotation": 0
+    },
+    "W11.I1.V_IC": {
+      "x": 1450,
+      "y": 970,
+      "rotation": 0
+    },
+    "W11.I1.NONINV_GROUND": {
+      "x": 160,
+      "y": 900,
+      "rotation": 0,
+      "show_value": false
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 55
+    },
+    "SGND": {
+      "rail": "middle",
+      "coordinate": 520
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 1010
+    }
+  },
+  "annotations": [
+    "Q1=2N4391 operate FET; Q2=2N4091 reset FET; driver transistors are 2N2907.",
+    "9.975 kohm is nominal: adjust so resistor plus measured Q1 rds_on equals 10.000 kohm.",
+    "Both logic inputs have project-added 100 kohm pull-downs, making HOLD the safe default."
+  ]
+}

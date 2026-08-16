@@ -1,0 +1,240 @@
+{
+  "annotations": [
+    "AMP1.CC is disconnected; the external selector installs exactly one capacitor between COMP_A and COMP_B.",
+    "Sweep 20 pF, 47 pF, and 100 pF; retain only a value that passes measured stability and transient criteria."
+  ],
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "AMP1"
+  ],
+  "components": {
+    "INF.PWR_ENTRY.VN15": {
+      "label": "\u221215 V",
+      "rotation": 180,
+      "show_value": false,
+      "x": 305,
+      "y": 165
+    },
+    "INF.PWR_ENTRY.VP15": {
+      "label": "+15 V",
+      "rotation": 0,
+      "show_value": false,
+      "x": 155,
+      "y": 165
+    },
+    "MOD.INT1.CFB": {
+      "rotation": 0,
+      "x": 1370,
+      "y": 475
+    },
+    "MOD.INT1.RIN": {
+      "rotation": 0,
+      "x": 1175,
+      "y": 420
+    },
+    "W09.LOAD": {
+      "label": "RL",
+      "label_dx": 16,
+      "label_dy": -4,
+      "rotation": 90,
+      "style": "changed",
+      "value_dx": 16,
+      "value_dy": 14,
+      "x": 570,
+      "y": 500
+    },
+    "W09.NONINV_GROUND": {
+      "label": "NONINV\u2192GND",
+      "label_dx": -85,
+      "label_dy": 62,
+      "rotation": 90,
+      "show_value": false,
+      "style": "changed",
+      "x": 650,
+      "y": 575
+    },
+    "W09.RALPHA": {
+      "label": "R\u03b1",
+      "label_dx": 18,
+      "label_dy": -4,
+      "rotation": 90,
+      "value_dx": 18,
+      "value_dy": 14,
+      "x": 360,
+      "y": 585
+    },
+    "W09.RFB": {
+      "label": "RFB",
+      "label_dx": -12,
+      "label_dy": -32,
+      "rotation": 0,
+      "value_dx": -18,
+      "value_dy": 42,
+      "x": 470,
+      "y": 520
+    },
+    "W09.RIN": {
+      "label": "RIN",
+      "label_dx": -12,
+      "label_dy": -32,
+      "rotation": 0,
+      "value_dx": -18,
+      "value_dy": 40,
+      "x": 350,
+      "y": 400
+    },
+    "W09.RSOURCE": {
+      "label": "RS",
+      "label_dx": -10,
+      "label_dy": -32,
+      "rotation": 0,
+      "value_dx": -20,
+      "value_dy": 40,
+      "x": 220,
+      "y": 400
+    },
+    "W09.VSRC": {
+      "label": "VSRC",
+      "label_dx": -22,
+      "rotation": 0,
+      "value_dx": -40,
+      "value_dy": 68,
+      "x": 120,
+      "y": 455
+    },
+    "W13.AMP1.CC_SELECT": {
+      "label": "Cc selected",
+      "x": 1180,
+      "y": 650
+    }
+  },
+  "graph": "../../../circuits/weeks/w13/graph.json",
+  "module_positions": {
+    "AMP1": {
+      "detail_ref": "W09.AMP1_DETAIL",
+      "height": 360,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "COMP_A": {
+          "x": 800,
+          "y": 540
+        },
+        "COMP_B": {
+          "x": 940,
+          "y": 540
+        },
+        "INV_IN": {
+          "label_dx": 10,
+          "x": 750,
+          "y": 350
+        },
+        "NONINV_IN": {
+          "label_dx": 10,
+          "x": 750,
+          "y": 500
+        },
+        "OUT": {
+          "label_dx": -32,
+          "x": 1080,
+          "y": 350
+        },
+        "VN15": {
+          "visible": false
+        },
+        "VP15": {
+          "visible": false
+        }
+      },
+      "subtitle": "Figure 9.1 discrete amplifier",
+      "title": "AMP1",
+      "width": 380,
+      "x": 700,
+      "y": 180
+    },
+    "INF.PWR_ENTRY": {
+      "height": 190,
+      "width": 360,
+      "x": 50,
+      "y": 70
+    },
+    "W09.FIXTURE": {
+      "height": 360,
+      "ports": {
+        "AGND": {
+          "visible": false
+        },
+        "OUT": {
+          "visible": false
+        },
+        "SUM": {
+          "visible": false
+        },
+        "VIN": {
+          "visible": false
+        }
+      },
+      "width": 600,
+      "x": 50,
+      "y": 310
+    },
+    "W13.AMP1.COMP": {
+      "height": 190,
+      "ports": {
+        "COMPA": {
+          "visible": false
+        },
+        "COMPB": {
+          "visible": false
+        }
+      },
+      "subtitle": "break-before-make",
+      "title": "ONE-POLE SELECTOR",
+      "width": 260,
+      "x": 1050,
+      "y": 570
+    }
+  },
+  "net_routes": {
+    "AMP1.INV_IN": {},
+    "AMP1.NONINV_IN": {},
+    "AMP1.OUT": {},
+    "N15": {
+      "coordinate": 780,
+      "rail": "bottom"
+    },
+    "P15": {
+      "coordinate": 35,
+      "rail": "top"
+    },
+    "SGND": {
+      "coordinate": 750,
+      "rail": "bottom"
+    }
+  },
+  "notes": [
+    "Only the selected variant's active experiment path receives full visual weight.",
+    "Installed inactive modules remain grey at module level and refer to separate permanent-infrastructure sheets.",
+    "Physical patch-cord routing is deferred under D-01; all electrical connections are explicit in the graph.",
+    "Do not combine Figure 9.8 resistive feedback and the restored integrating feedback in one configuration."
+  ],
+  "removed_off_circuit": [
+    "DEV.U_INT1_STOCK"
+  ],
+  "retained_inactive_order": [
+    "DEV.U_INV1",
+    "DEV.U_SUM1",
+    "DEV.U_INT2",
+    "OSC1",
+    "REG1"
+  ],
+  "schema_version": 1,
+  "sheet_id": "W13.ONEPOLE_AMP1",
+  "status": "graph.json is electrical authority; 47 pF is a starting selection",
+  "title": "Week 13 one-pole compensation on discrete AMP1",
+  "viewport": {
+    "height": 900,
+    "width": 1500
+  }
+}

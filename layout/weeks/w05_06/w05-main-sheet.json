@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "sheet_id": "W05.MAIN",
+  "title": "Week 5 regulator plant",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "strict_components": false,
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "MOD.SUM1",
+    "MOD.INV1",
+    "MOD.INT1",
+    "MOD.INT2",
+    "MOD.SOCKETS",
+    "DEV.REG1.ERR"
+  ],
+  "module_positions": {
+    "INF.PWR_ENTRY": {
+      "x": 1260,
+      "y": 35,
+      "width": 290,
+      "height": 90,
+      "title": "±15 V INFRA",
+      "subtitle": "permanent sheet",
+      "connect_ports": false
+    },
+    "MOD.SUM1": {
+      "x": 40,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "SUM1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INV1": {
+      "x": 280,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "INV1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INT1": {
+      "x": 520,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "INT1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INT2": {
+      "x": 760,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "INT2",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SOCKETS": {
+      "x": 1000,
+      "y": 850,
+      "width": 260,
+      "height": 100,
+      "title": "RESERVED SOCKETS",
+      "subtitle": "INT3 status shown by week",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "REG1": {
+      "x": 40,
+      "y": 55,
+      "width": 1480,
+      "height": 740,
+      "title": "REG1 — 10 V LOW-POWER REGULATOR",
+      "connect_ports": false,
+      "ports": {
+        "VUNREG": {
+          "visible": false
+        },
+        "VOUT": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    },
+    "DEV.REG1.ERR": {
+      "x": 420,
+      "y": 300,
+      "width": 230,
+      "height": 150,
+      "title": "ERROR AMP",
+      "subtitle": "LM301A · detail",
+      "ports": {
+        "INP": {
+          "x": 420,
+          "y": 340
+        },
+        "INM": {
+          "x": 420,
+          "y": 410
+        },
+        "OUT": {
+          "x": 650,
+          "y": 375
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    }
+  },
+  "components": {
+    "REG1.V_UNREG": {
+      "x": 800,
+      "y": 150,
+      "label": "18 V / 35 mA LIMIT"
+    },
+    "REG1.R_REF": {
+      "x": 190,
+      "y": 220,
+      "rotation": 90,
+      "label": "Rref"
+    },
+    "REG1.D_REF": {
+      "x": 190,
+      "y": 530,
+      "rotation": 90,
+      "label": "10 V ZENER"
+    },
+    "REG1.C_REF": {
+      "x": 310,
+      "y": 530,
+      "rotation": 90,
+      "label": "Cref"
+    },
+    "REG1.R_BASE": {
+      "x": 710,
+      "y": 375,
+      "label": "Rbase"
+    },
+    "REG1.Q_PASS": {
+      "x": 860,
+      "y": 375,
+      "label": "QPASS BD139"
+    },
+    "REG1.R_EMIT": {
+      "x": 1010,
+      "y": 410,
+      "label": "Remit"
+    },
+    "REG1.V_LOOP_INJ": {
+      "x": 1120,
+      "y": 410,
+      "label": "0 V / AC 1"
+    },
+    "REG1.R_LOAD": {
+      "x": 1260,
+      "y": 570,
+      "rotation": 90,
+      "label": "RL SELECT"
+    },
+    "REG1.R_ESR": {
+      "x": 1100,
+      "y": 570,
+      "rotation": 90,
+      "label": "ESR"
+    },
+    "REG1.C_LOAD": {
+      "x": 1100,
+      "y": 680,
+      "rotation": 90,
+      "label": "CL SELECT"
+    },
+    "REG1.R_BLEED": {
+      "x": 1380,
+      "y": 570,
+      "rotation": 90,
+      "label": "BLEED"
+    },
+    "REG1.D_DISCH": {
+      "x": 990,
+      "y": 230,
+      "label": "DISCHARGE"
+    },
+    "REG1.I_DIST": {
+      "x": 1440,
+      "y": 430,
+      "label": "10 mA STEP"
+    },
+    "REG1.R_SCOPE": {
+      "x": 1440,
+      "y": 650,
+      "rotation": 90,
+      "label": "SCOPE"
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 85,
+      "label": "+15 V ERROR-AMP / REFERENCE RAIL"
+    },
+    "REG1.VUNREG": {
+      "rail": "top",
+      "coordinate": 145,
+      "label": "VUNREG 18 V — EXTERNAL CURRENT LIMIT 35 mA"
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 760
+    },
+    "REG1.VOUT": {
+      "priority": "critical",
+      "label": "REGULATED OUTPUT 10 V NOMINAL"
+    },
+    "REG1.VREF": {
+      "priority": "critical",
+      "label": "10 V REFERENCE"
+    }
+  },
+  "notes": [
+    "Figure 5.3 is symbolic; component values here are the approved low-power teaching implementation.",
+    "No short-circuit test is permitted; the external plant source current limit is part of the safety boundary.",
+    "RL and CL cases are enumerated in the matched case manifest."
+  ]
+}

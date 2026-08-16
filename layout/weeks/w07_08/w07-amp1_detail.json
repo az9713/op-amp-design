@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w07_08/graph.json",
+  "sheet_id": "W07.AMP1_DETAIL",
+  "title": "Week 7 intentionally incomplete Q1-Q3 input stage",
+  "status": "consumed deterministic presentation overlay; electrical connectivity remains solely in graph.json",
+  "units": "schematic-grid",
+  "strict_components": true,
+  "viewport": {
+    "width": 1600,
+    "height": 1050
+  },
+  "module_positions": {
+    "AMP1": {
+      "x": 24,
+      "y": 24,
+      "width": 1420,
+      "height": 970,
+      "ports": {
+        "INV_IN": {
+          "x": 24,
+          "y": 330,
+          "label_dx": 8
+        },
+        "NONINV_IN": {
+          "x": 24,
+          "y": 390,
+          "label_dx": 8
+        },
+        "OUT": {
+          "x": 1444,
+          "y": 410,
+          "label_dx": -28
+        },
+        "COMP_A": {
+          "x": 500,
+          "y": 24,
+          "label_dx": 8,
+          "label_dy": 16
+        },
+        "COMP_B": {
+          "x": 850,
+          "y": 24,
+          "label_dx": 8,
+          "label_dy": 16
+        },
+        "VP15": {
+          "visible": false
+        },
+        "VN15": {
+          "visible": false
+        },
+        "AGND": {
+          "visible": false
+        }
+      }
+    }
+  },
+  "zones": [
+    {
+      "id": "INPUT_BALANCE",
+      "x": 80,
+      "y": 80,
+      "width": 420,
+      "height": 360
+    },
+    {
+      "id": "HIGH_GAIN",
+      "x": 520,
+      "y": 80,
+      "width": 410,
+      "height": 520
+    },
+    {
+      "id": "OUTPUT",
+      "x": 950,
+      "y": 80,
+      "width": 410,
+      "height": 520
+    },
+    {
+      "id": "BIAS_DECOUPLING",
+      "x": 80,
+      "y": 620,
+      "width": 1280,
+      "height": 310
+    }
+  ],
+  "components": {
+    "AMP1.Q1": {
+      "x": 220,
+      "y": 280,
+      "rotation": 0,
+      "label": "Q1",
+      "label_dx": -28,
+      "label_dy": -42
+    },
+    "AMP1.Q2": {
+      "x": 390,
+      "y": 280,
+      "rotation": 0,
+      "label": "Q2",
+      "label_dx": -28,
+      "label_dy": -42
+    },
+    "AMP1.Q3": {
+      "x": 305,
+      "y": 500,
+      "rotation": 0,
+      "label": "Q3",
+      "label_dx": -28,
+      "label_dy": -45
+    },
+    "AMP1.R_BAL_L": {
+      "x": 250,
+      "y": 100,
+      "rotation": 0,
+      "label": "BAL-L",
+      "label_dx": -26,
+      "label_dy": -24,
+      "value_dx": -15,
+      "value_dy": 42
+    },
+    "AMP1.R_BAL_R": {
+      "x": 360,
+      "y": 100,
+      "rotation": 0,
+      "label": "BAL-R",
+      "label_dx": -26,
+      "label_dy": -24,
+      "value_dx": -15,
+      "value_dy": 42
+    },
+    "AMP1.D_BAL": {
+      "x": 305,
+      "y": 45,
+      "rotation": 90,
+      "label": "D-BAL",
+      "label_dx": 16,
+      "label_dy": 4
+    },
+    "AMP1.R_COL_L": {
+      "x": 220,
+      "y": 210,
+      "rotation": 90
+    },
+    "AMP1.R_COL_R": {
+      "x": 390,
+      "y": 210,
+      "rotation": 90
+    },
+    "AMP1.R_Q3_5K6": {
+      "x": 270,
+      "y": 610,
+      "rotation": 90
+    },
+    "AMP1.R_Q3_180K": {
+      "x": 270,
+      "y": 735,
+      "rotation": 90
+    },
+    "AMP1.C_BIAS_G": {
+      "x": 420,
+      "y": 735,
+      "rotation": 90
+    },
+    "AMP1.R_BIAS_TC": {
+      "x": 520,
+      "y": 680,
+      "rotation": 90
+    },
+    "AMP1.D_BIAS": {
+      "x": 520,
+      "y": 790,
+      "rotation": 90
+    },
+    "AMP1.C_BIAS_N": {
+      "x": 620,
+      "y": 735,
+      "rotation": 90
+    }
+  },
+  "net_routes": {
+    "AMP1.N.HIGH_Z": {
+      "priority": "critical",
+      "avoid_junction_ambiguity": true,
+      "label": "HIGH-Z",
+      "label_x": 760,
+      "label_y": 245
+    },
+    "AMP1.COMP_A": {
+      "priority": "critical",
+      "label_at_every_boundary": true,
+      "label": "COMP A",
+      "label_x": 470,
+      "label_y": 230
+    },
+    "AMP1.COMP_B": {
+      "priority": "critical",
+      "label_at_every_boundary": true,
+      "label": "COMP B",
+      "label_x": 845,
+      "label_y": 245
+    },
+    "P15": {
+      "rail": "top",
+      "coordinate": 42
+    },
+    "SGND": {
+      "rail": "middle",
+      "coordinate": 610
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 1008
+    }
+  },
+  "annotations": [
+    "Logical transistor terminals are authoritative; historical package pin numbers remain TBD.",
+    "Only components installed by this week are shown."
+  ],
+  "projection_contract": {
+    "electrical_authority": "circuits/weeks/w09/graph.json only",
+    "overlay_consumption": "implemented by the shared deterministic SVG projector",
+    "required_future_action": "Keep presentation edits in this overlay without adding or inferring nets.",
+    "source_reading_order": [
+      "input differential pair",
+      "matched PNP/cascode gain stage",
+      "JFET/output buffer",
+      "current limiters",
+      "common bias and rail bypass"
+    ]
+  }
+}

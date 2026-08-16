@@ -1,0 +1,31 @@
+# Copyrighted and third-party source representations
+/op_amps_roberge.pdf
+/figures/book/
+/Top 10 fundamental operational amplifier circuits.html
+/Top 10 fundamental operational amplifier circuits_files/
+
+# Interpreter and editor artifacts
+**/__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.coverage
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Generated previews and visually inspected source rasters
+/generated/**/preview/
+/generated/**/source-preview/
+
+# Superseded Week 9 root projections; retain gate2/ and proof/
+/generated/week09/*
+!/generated/week09/gate2/
+!/generated/week09/gate2/**
+!/generated/week09/proof/
+!/generated/week09/proof/**
+
+# Local scratch output
+/generated/example/

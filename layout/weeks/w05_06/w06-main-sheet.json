@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "sheet_id": "W06.MAIN",
+  "title": "Week 6 persistent test oscillator",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "strict_components": false,
+  "collapsed_modules": [
+    "INF.PWR_ENTRY",
+    "MOD.SUM1",
+    "MOD.INV1",
+    "MOD.INT1",
+    "MOD.INT2",
+    "MOD.SOCKETS",
+    "REG1",
+    "DEV.OSC1.SCHMITT",
+    "DEV.INT3"
+  ],
+  "module_positions": {
+    "INF.PWR_ENTRY": {
+      "x": 1260,
+      "y": 35,
+      "width": 290,
+      "height": 90,
+      "title": "±15 V INFRA",
+      "subtitle": "permanent sheet",
+      "connect_ports": false
+    },
+    "MOD.SUM1": {
+      "x": 40,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "SUM1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INV1": {
+      "x": 280,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "INV1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INT1": {
+      "x": 520,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "INT1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.INT2": {
+      "x": 760,
+      "y": 850,
+      "width": 220,
+      "height": 100,
+      "title": "INT2",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "MOD.SOCKETS": {
+      "x": 1000,
+      "y": 850,
+      "width": 260,
+      "height": 100,
+      "title": "RESERVED SOCKETS",
+      "subtitle": "INT3 populated by oscillator",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "REG1": {
+      "x": 1240,
+      "y": 160,
+      "width": 300,
+      "height": 145,
+      "title": "REG1",
+      "subtitle": "retained inactive",
+      "style": "inactive",
+      "connect_ports": false
+    },
+    "OSC1": {
+      "x": 45,
+      "y": 55,
+      "width": 1140,
+      "height": 735,
+      "title": "OSC1 — PERSISTENT SQUARE / TRIANGLE SOURCE",
+      "connect_ports": false,
+      "ports": {
+        "SQUARE": {
+          "visible": false
+        },
+        "TRIANGLE": {
+          "visible": false
+        },
+        "VC": {
+          "visible": false
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    },
+    "DEV.OSC1.SCHMITT": {
+      "x": 350,
+      "y": 215,
+      "width": 230,
+      "height": 145,
+      "title": "SCHMITT",
+      "subtitle": "LM301A · detail",
+      "ports": {
+        "INP": {
+          "x": 350,
+          "y": 260
+        },
+        "INM": {
+          "visible": false
+        },
+        "OUT": {
+          "x": 580,
+          "y": 285
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    },
+    "DEV.INT3": {
+      "x": 690,
+      "y": 495,
+      "width": 230,
+      "height": 145,
+      "title": "INT3",
+      "subtitle": "dedicated LM301A integrator",
+      "ports": {
+        "INP": {
+          "visible": false
+        },
+        "INM": {
+          "x": 690,
+          "y": 550
+        },
+        "OUT": {
+          "x": 920,
+          "y": 550
+        },
+        "P15": {
+          "visible": false
+        },
+        "N15": {
+          "visible": false
+        },
+        "SGND": {
+          "visible": false
+        }
+      }
+    }
+  },
+  "components": {
+    "OSC1.R_TRI": {
+      "x": 205,
+      "y": 260,
+      "label": "R1 TRI"
+    },
+    "OSC1.R_HYS": {
+      "x": 205,
+      "y": 350,
+      "label": "R2 FEEDBACK"
+    },
+    "OSC1.R_LIMIT": {
+      "x": 650,
+      "y": 285,
+      "label": "CLAMP R"
+    },
+    "OSC1.D_ZP": {
+      "x": 770,
+      "y": 360,
+      "rotation": 270,
+      "label": "Z+"
+    },
+    "OSC1.D_ZN": {
+      "x": 770,
+      "y": 450,
+      "rotation": 90,
+      "label": "Z−"
+    },
+    "OSC1.R_INT": {
+      "x": 575,
+      "y": 550,
+      "label": "Rint"
+    },
+    "OSC1.C_INT": {
+      "x": 805,
+      "y": 710,
+      "label": "Cint"
+    },
+    "OSC1.R_VC": {
+      "x": 140,
+      "y": 510,
+      "rotation": 90,
+      "label": "VC RESERVED = 0"
+    },
+    "OSC1.R_SCOPE_SQ": {
+      "x": 1050,
+      "y": 330,
+      "rotation": 90,
+      "label": "SQUARE"
+    },
+    "OSC1.R_SCOPE_TRI": {
+      "x": 1050,
+      "y": 610,
+      "rotation": 90,
+      "label": "TRIANGLE"
+    }
+  },
+  "net_routes": {
+    "P15": {
+      "rail": "top",
+      "coordinate": 35
+    },
+    "SGND": {
+      "rail": "bottom",
+      "coordinate": 760
+    },
+    "N15": {
+      "rail": "bottom",
+      "coordinate": 790
+    },
+    "OSC1.SQUARE": {
+      "priority": "critical",
+      "label": "SQUARE — nominal ±(Vz+Vf)"
+    },
+    "OSC1.TRIANGLE": {
+      "priority": "critical",
+      "label": "TRIANGLE — nominal threshold amplitude"
+    }
+  },
+  "notes": [
+    "Dedicated INT3 preserves INT1/INT2 for later weeks.",
+    "Back-to-back Zeners define amplitude; actual clamp voltage must be measured at the operating current.",
+    "With R1=R2 and Rint·Cint=1 s, the source relation gives nominal T≈4 s."
+  ]
+}

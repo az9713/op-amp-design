@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "graph": "../../../circuits/weeks/w09/graph.json",
+  "sheet_id": "W09.MAIN",
+  "title": "Week 9 cumulative chassis",
+  "status": "consumed deterministic presentation overlay; electrical connectivity remains solely in graph.json",
+  "viewport": {"width": 1600, "height": 1000},
+  "variant_panels": [
+    {"variant_id":"W09.CC_SWEEP","x":50,"y":50,"width":1500,"height":250,"emphasis":"active"},
+    {"variant_id":"W09.INVERTER_TEST","x":50,"y":330,"width":1500,"height":250,"emphasis":"active"},
+    {"variant_id":"W09.INT1_RESTORED","x":50,"y":610,"width":1500,"height":250,"emphasis":"end-state"}
+  ],
+  "collapsed_modules": ["AMP1", "MOD.RETAINED"],
+  "module_positions": {
+    "INF.PWR_ENTRY":{"x":50,"y":70,"width":360,"height":190},
+    "W09.FIXTURE":{"x":50,"y":310,"width":600,"height":360},
+    "AMP1":{"x":750,"y":260,"width":330,"height":360,"title":"AMP1","subtitle":"Figure 9.1 discrete amplifier","detail_ref":"W09.AMP1_DETAIL","ports":{"INV_IN":{"x":750,"y":350,"label_dx":10},"NONINV_IN":{"x":750,"y":500,"label_dx":10},"OUT":{"x":1080,"y":350,"label_dx":-32},"VP15":{"x":880,"y":260,"label_dx":8},"VN15":{"x":930,"y":620,"label_dx":8},"AGND":{"x":840,"y":620,"label_dx":-42},"COMP_A":{"visible":false},"COMP_B":{"visible":false}}},
+    "MOD.INT1.NET":{"x":1080,"y":310,"width":410,"height":260},
+    "MOD.RETAINED":{"x":50,"y":820,"width":1440,"height":110,"title":"Retained chassis modules","subtitle":"installed, inactive this week","style":"inactive","connect_ports":false,"ports":{"VP15":{"visible":false},"VN15":{"visible":false},"AGND":{"visible":false}}}
+  },
+  "components": {
+    "INF.PWR_ENTRY.VP15":{"x":155,"y":165,"rotation":0,"label":"+15 V","show_value":false},
+    "INF.PWR_ENTRY.VN15":{"x":305,"y":165,"rotation":180,"label":"−15 V","show_value":false},
+    "W09.VSRC":{"x":120,"y":455,"rotation":0,"label":"VSRC","label_dx":-22,"value_dx":-40,"value_dy":68},
+    "W09.RSOURCE":{"x":220,"y":400,"rotation":0,"label":"RS","label_dx":-10,"label_dy":-32,"value_dx":-20,"value_dy":40},
+    "W09.RIN":{"x":350,"y":400,"rotation":0,"label":"RIN","label_dx":-12,"label_dy":-32,"value_dx":-18,"value_dy":40},
+    "W09.RFB":{"x":470,"y":520,"rotation":0,"label":"RFB","label_dx":-12,"label_dy":-32,"value_dx":-18,"value_dy":42},
+    "W09.RALPHA":{"x":360,"y":585,"rotation":90,"label":"Rα","label_dx":18,"label_dy":-4,"value_dx":18,"value_dy":14},
+    "W09.LOAD":{"x":570,"y":500,"rotation":90,"style":"changed","label":"RL","label_dx":16,"label_dy":-4,"value_dx":16,"value_dy":14},
+    "W09.NONINV_GROUND":{"x":650,"y":575,"rotation":90,"style":"changed","label":"NONINV→GND","label_dx":-85,"label_dy":62,"show_value":false},
+    "MOD.INT1.RIN":{"x":1175,"y":420,"rotation":0},
+    "MOD.INT1.CFB":{"x":1370,"y":475,"rotation":0}
+  },
+  "net_routes": {
+    "P15":{"rail":"top","coordinate":35},
+    "SGND":{"rail":"bottom","coordinate":750},
+    "N15":{"rail":"bottom","coordinate":780},
+    "AMP1.INV_IN":{},
+    "AMP1.NONINV_IN":{},
+    "AMP1.OUT":{}
+  },
+  "retained_inactive_order":["DEV.U_INV1","DEV.U_SUM1","DEV.U_INT2","OSC1","REG1"],
+  "removed_off_circuit":["DEV.U_INT1_STOCK"],
+  "notes":[
+    "Only the selected variant's active experiment path receives full visual weight.",
+    "Installed inactive modules remain grey at module level and refer to separate permanent-infrastructure sheets.",
+    "Physical patch-cord routing is deferred under D-01; all electrical connections are explicit in the graph.",
+    "Do not combine Figure 9.8 resistive feedback and the restored integrating feedback in one configuration."
+  ]
+}

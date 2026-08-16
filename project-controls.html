@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Phase 0 project controls for the Roberge one-box weekly schematic implementation.">
+  <title>Roberge one-box — project controls</title>
+  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0 0 72px; }
+    .page { width: min(980px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 32px 0 38px; border-bottom: 1px solid var(--hairline); }
+    .top { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .eyebrow { margin: 0; }
+    .status { padding: 6px 10px; border: 1px solid var(--hairline); border-radius: var(--r-pill); background: var(--paper); font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; }
+    h1.display { margin: 36px 0 16px; font-size: clamp(42px, 7vw, 72px); }
+    .lede { max-width: 720px; margin: 0; }
+    main { padding-top: 42px; }
+    section { margin-bottom: 54px; }
+    h2 { margin: 0 0 16px; }
+    h3 { margin: 24px 0 8px; font-size: 19px; }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px; padding-left: 1.25rem; }
+    li { margin-bottom: 8px; line-height: 1.55; }
+    code { padding: 1px 5px; border: 1px solid var(--hairline); border-radius: 4px; background: var(--slate-100); }
+    .callout { margin: 20px 0; padding: 18px 20px; border: 1px solid color-mix(in srgb, var(--crail) 34%, var(--hairline)); border-left: 4px solid var(--crail); border-radius: var(--r-md); background: var(--accent-bg); }
+    .callout p:last-child { margin-bottom: 0; }
+    .label { display: block; margin-bottom: 6px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+    .rows { border-top: 1px solid var(--hairline); }
+    .row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--hairline); }
+    .row-key { color: var(--crail-deep); font-family: var(--font-mono); font-size: 11px; }
+    .row-value { font-size: 14px; line-height: 1.5; }
+    .schema { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .schema-card { padding: 16px; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--paper); }
+    .schema-card h3 { margin: 0 0 7px; font-size: 17px; }
+    .schema-card p { margin: 0; color: var(--fg-muted); font-size: 13px; }
+    .hash { overflow-wrap: anywhere; color: var(--fg-muted); font-family: var(--font-mono); font-size: 10px; }
+    .chip { display: inline-block; margin-right: 6px; padding: 4px 7px; border-radius: var(--r-pill); background: var(--slate-100); color: var(--fg-muted); font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; }
+    footer { margin-top: 68px; padding-top: 22px; border-top: 1px solid var(--hairline); color: var(--fg-muted); font-size: 13px; }
+    @media (max-width: 640px) { .page { width: min(100% - 24px, 980px); } .top { align-items: flex-start; flex-direction: column; } .schema { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; gap: 5px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top"><p class="eyebrow">Roberge one-box · Phase 0</p><span class="status">Controls active · Gate 0 open</span></div>
+      <h1 class="display">Project controls</h1>
+      <p class="lede">Authority, ownership, evidence, naming, and change rules for producing the weekly electrical specification without prematurely implementing circuits.</p>
+    </header>
+
+    <main>
+      <section>
+        <p class="eyebrow">01 · Authority</p>
+        <h2>Inputs have an explicit order of precedence</h2>
+        <div class="rows">
+          <div class="row"><span class="row-key">1 · User decisions</span><span class="row-value">The current conversation and the sixteen locked decisions in <a href="preflight-decisions.html">preflight-decisions.html</a>.</span></div>
+          <div class="row"><span class="row-key">2 · Electrical source</span><span class="row-value"><a href="op_amps_roberge.pdf">Operational Amplifiers: Theory and Practice</a> by James K. Roberge. Exact figures, equations, and prose must be read before adaptation.</span></div>
+          <div class="row"><span class="row-key">3 · Project narrative</span><span class="row-value"><a href="capstone.html">capstone.html</a>, interpreted as the pedagogical sequence rather than independent proof of electrical correctness.</span></div>
+          <div class="row"><span class="row-key">4 · Execution contract</span><span class="row-value"><a href="implementation-plan.html">implementation-plan.html</a>, which controls phases, gates, outputs, and verification.</span></div>
+          <div class="row"><span class="row-key">5 · Prior experiments</span><span class="row-value">Existing <code>schematics*.html</code>, generators, figures, and checker results are evidence of attempted presentation methods, not authoritative connectivity.</span></div>
+        </div>
+        <div class="callout"><span class="label">Conflict rule</span><p>If two authorities conflict, the conflict is entered in the issue ledger and escalated. A drawing or netlist must not silently resolve it.</p></div>
+      </section>
+
+      <section>
+        <p class="eyebrow">02 · Current boundary</p>
+        <h2>Phase 0/1 only</h2>
+        <ul>
+          <li>Authorized: source reading, project inventory, specification drafting, issue discovery, and documentation.</li>
+          <li>Gate 0 was approved on 2026-08-15. Phase 2 canonical-model, validator, toolchain, renderer/SPICE evaluation, and throwaway evaluation circuits are authorized.</li>
+          <li>Still gated: chronological production, <code>capstone.html</code> integration, and release beyond the architecture and Week 9 proof gates.</li>
+          <li>Gate 0 closes only after the integrated fourteen-state specification is reviewed and approved by the user.</li>
+          <li>No Git repository exists. Git initialization requires separate user approval.</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="eyebrow">03 · Specification schema</p>
+        <h2>Every weekly state uses the same evidence structure</h2>
+        <div class="schema">
+          <article class="schema-card"><h3>Identity and purpose</h3><p>Week ID, end-state title, active experiment, learning objective, and configuration variants.</p></article>
+          <article class="schema-card"><h3>Cumulative state</h3><p>Inherited modules, active modules, retained-inactive modules, removals, replacements, and explicit delta.</p></article>
+          <article class="schema-card"><h3>Source evidence</h3><p>Roberge section, figure, PDF page, source statement, and confidence or ambiguity.</p></article>
+          <article class="schema-card"><h3>Electrical boundary</h3><p>Components or modules, stable proposed IDs, pins, named nets, hierarchy, and configuration-specific connections.</p></article>
+          <article class="schema-card"><h3>Parameters and values</h3><p>Symbolic quantities, recommended candidates, tolerance/rating constraints, and evidence label.</p></article>
+          <article class="schema-card"><h3>Practical additions</h3><p>Construction details added beyond the textbook, rationale, and effect on topology or behavior.</p></article>
+          <article class="schema-card"><h3>Verification</h3><p>Ideal and realistic SPICE targets, expected measurements, analytical checks, and valid non-operational outcomes.</p></article>
+          <article class="schema-card"><h3>Presentation</h3><p>Main/detail sheet recommendation, active/inactive styling, required annotations, and deferred physical patch routing.</p></article>
+          <article class="schema-card"><h3>Historical and modern</h3><p>LM301A primary baseline, 741-class alternative notes, and modern ±15 V substitutions where appropriate.</p></article>
+          <article class="schema-card"><h3>Issues and decisions</h3><p>Unresolved assumptions, source conflicts, missing data, safety questions, and Gate 0 decisions.</p></article>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">04 · Evidence vocabulary</p>
+        <h2>Claims cannot masquerade as verified values</h2>
+        <div class="rows">
+          <div class="row"><span class="row-key"><span class="chip">Verified</span></span><span class="row-value">Directly supported by a cited Roberge figure, equation, table, or explicit project decision.</span></div>
+          <div class="row"><span class="row-key"><span class="chip">Derived</span></span><span class="row-value">Calculated from verified assumptions. The formula, inputs, units, and dependency must be shown.</span></div>
+          <div class="row"><span class="row-key"><span class="chip">Proposed</span></span><span class="row-value">An engineering recommendation requiring review, simulation, or measurement before release.</span></div>
+          <div class="row"><span class="row-key"><span class="chip">TBD</span></span><span class="row-value">Missing or unresolved. A TBD is visible and blocks the relevant acceptance gate; it is never filled by aesthetic inference.</span></div>
+          <div class="row"><span class="row-key"><span class="chip">Deferred</span></span><span class="row-value">Explicitly excluded from the first implementation and tied to D-01, D-02, D-03, or D-04.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">05 · Stable naming</p>
+        <h2>Identifiers survive layout and week changes</h2>
+        <ul>
+          <li>Week states: <code>W00</code> through <code>W13</code>.</li>
+          <li>Configuration variants use the integration register. Campaigns such as Week 13 fixed-lag, load-capacitance, and one-pole work are split into one canonical ID per distinct electrical graph.</li>
+          <li>Physical module, socket, occupant, component, and net IDs are governed by <a href="gate-0-integration-register.html">gate-0-integration-register.html</a>. Range-draft aliases are retired at integration.</li>
+          <li>Physical component IDs remain stable once installed. A replacement receives a new ID; removal is an explicit state change.</li>
+          <li>Named nets express electrical function, not drawing coordinates. Physical patch-cord paths are deferred, but the nets they realize remain explicit.</li>
+          <li>Main/detail sheet boundaries expose named pins and must match pin-for-pin.</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="eyebrow">06 · Ownership and file rules</p>
+        <h2>Parallel research, single integration owner</h2>
+        <ul>
+          <li>Week 0–4, Week 5–9, and Week 10–13 researchers own separate draft files under <code>drafts/</code>.</li>
+          <li>The primary agent alone owns the integrated weekly specification, <a href="gate-0-integration-register.html">global identity/state register</a>, cross-week transitions, and Gate 0 issue ledger.</li>
+          <li>Existing source, HTML, generator, figure, and test files are read-only during Phase 0/1.</li>
+          <li>Later generated SVG, SPICE, values, and reports will be outputs; direct hand edits will be prohibited.</li>
+          <li>Every durable artifact must say whether it is authoritative, draft, generated, evidence, or deferred.</li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="eyebrow">07 · Baseline receipt</p>
+        <h2>Authoritative inputs at Phase 0 start</h2>
+        <div class="rows">
+          <div class="row"><span class="row-key">capstone.html</span><span class="hash">AEEA6610EEB683DAEBD387A828D1CBB48A3FB2A407D487E7D2AB921F8E4A771C</span></div>
+          <div class="row"><span class="row-key">op_amps_roberge.pdf</span><span class="hash">1B43826E2C9A32CA970D6ADA49DF769DC25B24B9215C538CE83DE6C9CDA37D52</span></div>
+          <div class="row"><span class="row-key">preflight-decisions.html</span><span class="hash">77068985EE2FFA206A4C0DF37C85757515EEAC134671B2D4A352356D768BED3B</span></div>
+          <div class="row"><span class="row-key">implementation-plan.html</span><span class="hash">6967D56DCCD5C1C57747CDD967468F0D68C16B7E8660651DDA2E82E6FB5C60ED</span></div>
+          <div class="row"><span class="row-key">schematics.html</span><span class="hash">951E36CFD19216A8D6F545910959F9CBFCD726CEDE87427EE613205893D00164</span></div>
+          <div class="row"><span class="row-key">schematic-methods.html</span><span class="hash">685675389214861A537C78899643D7E8BD27A4BC5E4B5A32E4E6F164977ED019</span></div>
+        </div>
+        <h3>Observed environment</h3>
+        <p>Python 3.13.5 and PyMuPDF are available. Schemdraw, lcapy, ngspice, KiCad CLI, and LaTeX were not available on the active command path at baseline. No installation is authorized before Gate 0.</p>
+      </section>
+    </main>
+
+    <footer>Project controls · Phase 0/1 · No circuit implementation performed.</footer>
+  </div>
+</body>
+</html>
