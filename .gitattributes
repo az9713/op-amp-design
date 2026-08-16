@@ -4,6 +4,7 @@
 *.py text eol=lf
 *.json text eol=lf
 *.cir text eol=lf
+*.cir.txt text eol=lf
 *.lib text eol=lf
 *.svg text eol=lf
 *.png binary
