@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPICE deck · Roberge capstone</title>
+  <link rel="stylesheet" href="../design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--book); color: var(--slate); }
+    main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 64px; }
+    nav { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; font-family: var(--font-mono); font-size: 12px; }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 5vw, 44px); }
+    .path { margin: 0 0 20px; color: var(--fg-muted); font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere; }
+    .status { padding: 16px; border: 1px solid var(--hairline); background: var(--paper); }
+    pre { margin: 0; padding: 20px; overflow: auto; border: 1px solid var(--hairline); background: #f8fafc; color: #111827; font: 13px/1.55 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; tab-size: 2; white-space: pre; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav><a href="../capstone.html">← Back to capstone</a><a id="raw" hidden>Download original .cir</a></nav>
+    <h1>SPICE deck</h1>
+    <p class="path" id="path">Loading…</p>
+    <p class="status" id="status">Loading matched netlist text…</p>
+    <pre id="deck" hidden></pre>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const deck = params.get("deck") || "";
+    const allowed = /^(?:generated|spec\/decisions\/probes|tests\/electrical)\/[A-Za-z0-9._\/-]+\.cir\.txt$/;
+    const pathEl = document.getElementById("path");
+    const statusEl = document.getElementById("status");
+    const deckEl = document.getElementById("deck");
+    const rawEl = document.getElementById("raw");
+
+    async function loadDeck() {
+      if (!allowed.test(deck) || deck.includes("..")) throw new Error("Invalid SPICE deck path.");
+      const response = await fetch("../" + deck, { credentials: "same-origin" });
+      if (!response.ok) throw new Error("SPICE deck could not be loaded (HTTP " + response.status + ").");
+      const text = await response.text();
+      pathEl.textContent = deck.replace(/\.txt$/, "");
+      document.title = deck.split("/").pop().replace(/\.txt$/, "") + " · SPICE deck";
+      deckEl.textContent = text;
+      deckEl.hidden = false;
+      statusEl.hidden = true;
+      rawEl.href = "../" + deck.replace(/\.txt$/, "");
+      rawEl.hidden = false;
+    }
+
+    loadDeck().catch((error) => {
+      pathEl.textContent = deck || "No deck selected";
+      statusEl.textContent = error.message;
+    });
+  </script>
+</body>
+</html>

@@ -112,7 +112,7 @@ The repository currently contains 98 tracked `.cir` decks. The main, human-revie
 
 Every schematic card in the [live capstone](https://az9713.github.io/op-amp-design/capstone.html) has a **SPICE** link to its matched deck and a **connectivity receipt** link showing the SVG/SPICE comparison. Files under `tests/electrical/` and `spec/decisions/probes/` are test fixtures, not weekly build sheets.
 
-The authoritative netlists retain their `.cir` filenames. GitHub Pages serves identical `.cir.txt` viewing copies so clicking **SPICE** opens readable text in the browser instead of forcing a download. `python tools/publish_spice_text.py --check` verifies byte-for-byte identity.
+The authoritative netlists retain their `.cir` filenames. GitHub Pages serves identical `.cir.txt` copies through `docs/spice-viewer.html`, so clicking **SPICE** opens a readable in-site text view instead of forcing a download. The viewer also offers the original `.cir` file separately. `python tools/publish_spice_text.py --check` verifies byte-for-byte identity.
 
 Validate one canonical graph:
 

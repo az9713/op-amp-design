@@ -204,7 +204,7 @@
         <h2>The Week 0 dummy-load resistor is connected correctly and drawn badly</h2>
         <div class="finding failure">
           <p>The current <a href="generated/weeks00_04/w00-infra_test-ideal.svg">Week 0 infrastructure SVG</a> draws a black PGND route over the red 3.3 kΩ dummy-load symbol. That is a publication-layout defect caused by placing the PGND trunk inside the resistor’s symbol span.</p>
-          <p>The electrical evidence nevertheless agrees: the canonical graph assigns the right-hand <code>INF.RDUMMY_N</code> upper pin to PGND and lower pin to N15; the SVG terminal metadata says the same; and the <a href="generated/weeks00_04/w00-infra_test-ideal.cir.txt">SPICE deck</a> connects the 3.3 kΩ resistor between PGND and N15. The <a href="generated/weeks00_04/w00-infra_test-ideal.connectivity.json">receipt</a> passes.</p>
+          <p>The electrical evidence nevertheless agrees: the canonical graph assigns the right-hand <code>INF.RDUMMY_N</code> upper pin to PGND and lower pin to N15; the SVG terminal metadata says the same; and the <a href="docs/spice-viewer.html?deck=generated/weeks00_04/w00-infra_test-ideal.cir.txt">SPICE deck</a> connects the 3.3 kΩ resistor between PGND and N15. The <a href="generated/weeks00_04/w00-infra_test-ideal.connectivity.json">receipt</a> passes.</p>
           <p><strong>Conclusion:</strong> topology is confirmed; presentation is not acceptable at that location. This is precisely why connectivity and visual gates must remain separate.</p>
         </div>
       </section>

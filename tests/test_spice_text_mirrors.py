@@ -5,10 +5,11 @@ from __future__ import annotations
 import re
 import unittest
 from pathlib import Path
+from urllib.parse import parse_qs, unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LINK_RE = re.compile(r'href=["\'](?P<url>[^"\']+\.cir(?:\.txt)?)["\']')
+LINK_RE = re.compile(r'href=["\'](?P<url>[^"\']*spice-viewer\.html\?deck=[^"\']+)["\']')
 
 
 class SpiceTextMirrorTests(unittest.TestCase):
@@ -35,9 +36,15 @@ class SpiceTextMirrorTests(unittest.TestCase):
 
         self.assertGreater(len(links), 0)
         for html, url in links:
-            self.assertTrue(url.endswith(".cir.txt"), (html, url))
-            target = (html.parent / url).resolve()
+            parsed = urlparse(url)
+            self.assertTrue(parsed.path.endswith("spice-viewer.html"), (html, url))
+            deck = unquote(parse_qs(parsed.query)["deck"][0])
+            self.assertTrue(deck.endswith(".cir.txt"), (html, url))
+            target = (ROOT / deck).resolve()
             self.assertTrue(target.is_file(), target)
+
+        capstone = (ROOT / "capstone.html").read_text(encoding="utf-8")
+        self.assertIn('"docs/spice-viewer.html?deck="', capstone)
 
 
 if __name__ == "__main__":
