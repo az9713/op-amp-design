@@ -204,6 +204,7 @@
     .schematics summary {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 12px;
       padding: 11px 13px;
       cursor: pointer;
@@ -212,7 +213,31 @@
       font-size: 13px;
       font-weight: 600;
     }
-    .schematics summary::marker { color: var(--crail); }
+    .schematics summary::marker { content: ""; }
+    .summary-title {
+      display: grid;
+      grid-template-columns: 14px minmax(0, 1fr);
+      column-gap: 7px;
+      align-items: center;
+    }
+    .disclosure {
+      color: var(--crail);
+      font-size: 15px;
+      transform-origin: center;
+      transition: transform 140ms ease;
+    }
+    details[open] > summary .disclosure { transform: rotate(90deg); }
+    .summary-copy { min-width: 0; }
+    .summary-hint {
+      display: block;
+      margin-top: 2px;
+      color: var(--fg-muted);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+    }
+    details[open] > summary .when-closed,
+    details:not([open]) > summary .when-open { display: none; }
     .sheet-count {
       color: var(--fg-muted);
       font-family: var(--font-mono);
@@ -512,7 +537,7 @@
       return {
         title,
         svg: stem + ".svg",
-        spice: stem + ".cir",
+        spice: stem + ".cir.txt",
         receipt: stem + ".connectivity.json",
         caption
       };
@@ -650,7 +675,7 @@
           '<p class="schematic-caption">' + s.caption + '</p>' +
         '</article>'
       ).join("");
-      return '<details class="schematics"><summary><span>Approved Week ' + week + ' schematics &amp; matched SPICE</span><span class="sheet-count">' + record.sheets.length + (record.sheets.length === 1 ? ' sheet' : ' sheets') + '</span></summary>' +
+      return '<details class="schematics"><summary><span class="summary-title"><span class="disclosure" aria-hidden="true">&#9656;</span><span class="summary-copy">Approved Week ' + week + ' schematics &amp; matched SPICE<span class="summary-hint when-closed">Click to view schematic and SPICE</span><span class="summary-hint when-open">Click to hide schematic and SPICE</span></span></span><span class="sheet-count">' + record.sheets.length + (record.sheets.length === 1 ? ' sheet' : ' sheets') + '</span></summary>' +
         '<div class="schematic-body"><a class="review-link" href="' + record.review + '">Open the approved review page</a>' + cards + '</div></details>';
     }
 

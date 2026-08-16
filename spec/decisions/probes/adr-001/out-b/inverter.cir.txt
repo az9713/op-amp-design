@@ -1,0 +1,18 @@
+* generated from probe.circuit-graph.v1
+* circuit W01.INV_TEST.PROBE
+* @pinmap SRC.VIN n=SGND p=VIN
+V_SRC_VIN VIN 0 AC 1
+* @pinmap MOD.INV1.RIN 1=VIN 2=SUM
+R_MOD_INV1_RIN VIN SUM 4.7k
+* @pinmap MOD.INV1.RFB 1=OUT 2=SUM
+R_MOD_INV1_RFB OUT SUM 4.7k
+* @pinmap DEV.U_INV1 inv=SUM noninv=SGND out=OUT vn=N15 vp=P15
+X_DEV_U_INV1 0 SUM P15 N15 OUT IDEAL_OPAMP
+* @pinmap INF.VP n=SGND p=P15
+V_INF_VP P15 0 DC 15
+* @pinmap INF.VN n=SGND p=N15
+V_INF_VN N15 0 DC -15
+.subckt IDEAL_OPAMP noninv inv vp vn out
+EGAIN out 0 noninv inv 1e6
+.ends IDEAL_OPAMP
+.end
