@@ -1,0 +1,95 @@
+* W13.FINAL_BUILD executable ideal-tier functional demonstration
+* Canonical connectivity authority: ../../generated/week13/w13-final_build-ideal.cir
+* This separate deck is intentionally readable and runnable. It demonstrates
+* system function; it does not predict the historical devices quantitatively.
+*
+* Demonstrated chain:
+*   OSC1 square/triangle source -> switched REG1 load
+*   OSC1 square -> SUM1 current-scale encoder -> INT2 calibrated leaky twin
+*
+* Explicit simulation assumptions
+.param VPOS=15 VNEG=-15 VUNREG=18
+.param RL_MAIN=1k RL_STEP=1k CL_OUT=47u ESR_OUT=0.30 R_ISO=100
+.param R_SUM_IN=100k R_SUM_FB=20k
+* S_VI=100 V/A: 1 V represents a 10 mA load step.
+.param S_VI=100
+* Calibrated from the ideal-tier REG1 load step documented below:
+*   Voff=9.60461031 V, Von=9.51050025 V, droop=94.11006 mV
+*   t63=496.549 us, encoded load command=1.000 V
+* Therefore Rleak=t63/Ctwin and Rdrive=Rleak/(droop/1 V).
+.param R_TWIN_LEAK=496.549 R_TWIN_DRIVE=5276.258 C_TWIN=1u
+
+* Project-owned ideal-tier models.
+.model QPASS NPN(BF=120 VAF=80 IS=1e-14 CJE=20p CJC=10p TF=0.3n)
+.model DZ10 D(IS=1e-14 N=1.2 BV=10 IBV=1m RS=2 CJO=30p)
+.model DGEN D(IS=1e-14 N=1.7 RS=1 CJO=2p)
+.model SW_LOAD SW(RON=0.1 ROFF=1e12 VT=2.5 VH=0.1)
+
+* Dominant-pole, rail-limited behavioral op amp.
+* A0 and FP are simulation parameters, not LM301A or AMP1 claims.
+.subckt OPAMP_LP INP INM OUT VP VN params: A0=300 FP=35
+EERR NRAW 0 INP INM {A0}
+RDOM NRAW NPOLE 1k
+CDOM NPOLE 0 {1/(6.283185307179586*FP*1k)}
+BOUT OUT 0 V={14.5*tanh(V(NPOLE)/14.5)}
+ROUT OUT 0 1G
+.ends OPAMP_LP
+
+* Permanent +/-15 V infrastructure.
+VP P15 0 {VPOS}
+VN N15 0 {VNEG}
+
+* OSC1 ideal-tier functional abstraction. The square wave is the actual
+* switch/control stimulus; the triangle proves the paired source function.
+VOSC_SQUARE OSC_SQUARE 0 PULSE(0 5 50m 1u 1u 50m 100m)
+BOSC_TRI OSC_TRIANGLE 0 V={3.18309886184*asin(sin(62.8318530718*time))}
+
+* REG1: accepted physical topology with behavioral error amplifier,
+* generic pass transistor, explicit isolation, ESR, capacitance, and loads.
+VREG_IN REG_UNREG 0 {VUNREG}
+RREF P15 REG_REF 330
+DREF 0 REG_REF DZ10
+XREG_ERR REG_REF REG_VOUT REG_ERR_OUT P15 N15 OPAMP_LP params: A0=30 FP=10k
+RBASE REG_ERR_OUT REG_QBASE 1k
+QPASS1 REG_UNREG REG_QBASE REG_QEMIT QPASS
+RISO REG_QEMIT REG_VOUT {R_ISO}
+RLOAD REG_VOUT 0 {RL_MAIN}
+RESR REG_VOUT REG_CL_NODE {ESR_OUT}
+CLOAD REG_CL_NODE 0 {CL_OUT}
+SLOAD REG_VOUT STEP_LOAD OSC_SQUARE 0 SW_LOAD
+RSTEP STEP_LOAD 0 {RL_STEP}
+
+* SUM1 current-scale encoder. Five control volts represent the switched
+* 10 mA load, so R_SUM_FB/R_SUM_IN=0.2 produces -1 V.
+XSUM 0 SUM_NODE SUM_OUT P15 N15 OPAMP_LP params: A0=1e5 FP=10k
+RSUM_IN OSC_SQUARE SUM_NODE {R_SUM_IN}
+RSUM_FB SUM_OUT SUM_NODE {R_SUM_FB}
+
+* INT2 calibrated leaky integrator. With S_VI in V/A, the required DC
+* magnitude is K_DROOP/S_VI and R_DRIVE=R_LEAK*S_VI/K_DROOP.
+XINT 0 INT_NODE TWIN_OUT P15 N15 OPAMP_LP params: A0=1e5 FP=10k
+RDRIVE SUM_OUT INT_NODE {R_TWIN_DRIVE}
+RLEAK TWIN_OUT INT_NODE {R_TWIN_LEAK}
+CTWIN TWIN_OUT INT_NODE {C_TWIN} IC=0
+
+* Declared transient campaign and retained output vectors.
+.option method=gear reltol=1e-5 abstol=1e-10 vntol=1e-7
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 50u 350m
+wrdata simulations/week13/w13-final_build-functional.csv time v(osc_square) v(osc_triangle) v(reg_vout) v(twin_out)
+
+* Functional measurements. Post-processing applies the numerical pass gates.
+meas tran OSC_LOW  min v(osc_square) from=0m to=350m
+meas tran OSC_HIGH max v(osc_square) from=0m to=350m
+meas tran TRI_LOW  min v(osc_triangle) from=0m to=350m
+meas tran TRI_HIGH max v(osc_triangle) from=0m to=350m
+meas tran REG_OFF  avg v(reg_vout) from=35m to=45m
+meas tran REG_ON   avg v(reg_vout) from=85m to=95m
+meas tran TWIN_OFF avg v(twin_out) from=35m to=45m
+meas tran TWIN_ON  avg v(twin_out) from=85m to=95m
+quit
+.endc
+.end

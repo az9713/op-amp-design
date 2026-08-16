@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-16T04:25:16.803688+00:00",
+  "claim_boundary": "Ideal-tier functional demonstration; not historical-device or constructed-hardware prediction.",
+  "canonical_source": "generated/week13/w13-final_build-ideal.cir",
+  "deck": "simulations/week13/w13-final_build-functional.cir",
+  "simulator": {
+    "path": "C:\\Users\\simon\\scoop\\apps\\ngspice\\47\\bin\\ngspice_con.exe",
+    "sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+    "version": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******"
+  },
+  "hashes": {
+    "deck_sha256": "ed4616fd6e3b40e800f776e32c97efd0b971da53c4fcfa3080292e125f73e754",
+    "csv_sha256": "6bd74cf79955e08da0741ddcba22f04e2917dd506ca1eb980ae12e3851d285b2",
+    "log_sha256": "37cf266cecef49a5053f1b81c1806536a31793d6b52d78aacc69325f5c840d43",
+    "plot_sha256": "5f42d42570838cb41faaad93359e45b3ef57799ad75f20f069f023ac9f6cc92a"
+  },
+  "assumptions": {
+    "model_tier": "project-owned behavioral/generic",
+    "S_VI_V_per_A": 100,
+    "RL_MAIN_ohm": 1000,
+    "RL_STEP_ohm": 1000,
+    "CL_OUT_F": 4.7e-05,
+    "C_TWIN_F": 1e-06
+  },
+  "calibration": {
+    "reg_off_V": 9.60461031,
+    "reg_on_V": 9.51050025,
+    "droop_V": 0.09411006000000022,
+    "reg_tau_s": 0.0005012090999999969,
+    "derived_R_TWIN_LEAK_ohm": 501.20909999999685,
+    "derived_R_TWIN_DRIVE_ohm": 5325.776011618691,
+    "configured_R_TWIN_LEAK_ohm": 496.549,
+    "configured_R_TWIN_DRIVE_ohm": 5276.258
+  },
+  "results": {
+    "twin_step_V": 0.0941079074,
+    "twin_tau_s": 0.0005012090999999969,
+    "steady_error_V": -2.1526000002214385e-06,
+    "rms_tracking_error_V": 0.0005421728178861699,
+    "peak_tracking_error_V": 0.0032451721000003667,
+    "oscillator_square_min_V": 0.0,
+    "oscillator_square_max_V": 5.0,
+    "oscillator_triangle_min_V": -4.99975819,
+    "oscillator_triangle_max_V": 4.99743651
+  },
+  "gates": {
+    "oscillator_square": true,
+    "oscillator_triangle": true,
+    "regulated_output": true,
+    "positive_load_droop_polarity": true,
+    "steady_twin_tracking": true,
+    "transient_twin_tracking": true,
+    "time_constant_tracking": true,
+    "calibration_resistors": true
+  },
+  "simulation_passed": true
+}

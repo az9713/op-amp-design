@@ -533,13 +533,14 @@
       }
     ];
 
-    function sheet(title, stem, caption) {
+    function sheet(title, stem, caption, extras = {}) {
       return {
         title,
         svg: stem + ".svg",
         spice: "docs/spice-viewer.html?deck=" + encodeURIComponent(stem + ".cir.txt"),
         receipt: stem + ".connectivity.json",
-        caption
+        caption,
+        ...extras
       };
     }
 
@@ -656,7 +657,11 @@
           sheet("W13.ONEPOLE_AMP1 · discrete channel", "generated/week13/w13-onepole_amp1-ideal", "One-pole compensation campaign on AMP1."),
           sheet("W13.ONEPOLE_INT2 · LM301A channel", "generated/week13/w13-onepole_int2-ideal", "Separate one-pole compensation campaign on INT2."),
           sheet("W13.TWOPOLE_REG1 · regulator error amp", "generated/week13/w13-twopole_reg1-ideal", "Regulator-loop-specific two-pole compensation topology."),
-          sheet("W13.FINAL_BUILD · concluding normal operation", "generated/week13/w13-final_build-ideal", "Finished regulator-and-analog-twin machine with AMP1 at 47 pF, REG1 at 30 pF, and temporary measurement fixtures disconnected.")
+          sheet("W13.FINAL_BUILD · concluding normal operation", "generated/week13/w13-final_build-ideal", "Finished regulator-and-analog-twin machine with AMP1 at 47 pF, REG1 at 30 pF, and temporary measurement fixtures disconnected. The separate ideal-tier functional campaign runs the oscillator, regulator load step, and calibrated analog twin under ngspice.", {
+            runnableSpice: "docs/spice-viewer.html?deck=" + encodeURIComponent("simulations/week13/w13-final_build-functional.cir.txt"),
+            simulationReceipt: "simulations/week13/w13-final_build-functional.receipt.json",
+            resultsPlot: "simulations/week13/w13-final_build-functional-results.svg"
+          })
         ]
       }
     };
@@ -671,6 +676,9 @@
             '<a href="' + s.spice + '">SPICE</a>' +
             '<a href="' + s.receipt + '">connectivity receipt</a>' +
             '<a href="' + s.svg + '">open SVG</a>' +
+            (s.runnableSpice ? '<a href="' + s.runnableSpice + '">run-ready SPICE</a>' : '') +
+            (s.simulationReceipt ? '<a href="' + s.simulationReceipt + '">simulation receipt</a>' : '') +
+            (s.resultsPlot ? '<a href="' + s.resultsPlot + '">results plot</a>' : '') +
           '</nav></div>' +
           '<div class="schematic-frame"><img loading="lazy" decoding="async" src="' + s.svg + '" alt="' + s.title + ' schematic"></div>' +
           '<p class="schematic-caption">' + s.caption + '</p>' +

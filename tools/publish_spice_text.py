@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create browser-viewable text mirrors of tracked SPICE ``.cir`` decks."""
+"""Create browser-viewable text mirrors of publishable SPICE ``.cir`` decks."""
 
 from __future__ import annotations
 
@@ -12,9 +12,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def tracked_decks() -> list[Path]:
+def publishable_decks() -> list[Path]:
     result = subprocess.run(
-        ["git", "ls-files", "*.cir"],
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "--", "*.cir"],
         cwd=ROOT,
         check=True,
         capture_output=True,
@@ -33,7 +33,7 @@ def main() -> int:
     args = parser.parse_args()
 
     failures: list[str] = []
-    decks = tracked_decks()
+    decks = publishable_decks()
     for deck in decks:
         mirror = Path(f"{deck}.txt")
         source = deck.read_bytes()

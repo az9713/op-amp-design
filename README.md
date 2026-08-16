@@ -40,6 +40,7 @@ layout/weeks/                    Non-electrical placement/routing overlays
 tools/circuit_pipeline/          SVG/SPICE projectors, parsers, simulator runner
 tests/                           Schema, connectivity, visual, weekly, and simulation tests
 generated/                       Reviewed SVG, SPICE, and connectivity artifacts
+simulations/week13/              Runnable final-machine demonstration and evidence
 spec/decisions/                  Gates, source maps, production decisions, acceptances
 docs/                            Review pages, plans, gates, and historical HTML
 drafts/                          Preserved specification and audit history
@@ -102,17 +103,26 @@ The validation and projection core uses the Python standard library. Python 3.13
 
 ### Where the SPICE files are
 
-The repository currently contains 99 tracked `.cir` decks. The main, human-reviewed weekly decks are beside their SVG counterparts:
+The repository currently contains 100 `.cir` decks. The main, human-reviewed weekly decks are beside their SVG counterparts:
 
 - `generated/weeks00_04/` — Weeks 0–4;
 - `generated/weeks05_06/` — Weeks 5–6;
 - `generated/weeks07_08/` — Weeks 7–8;
 - `generated/week09_reconciled/` and `generated/week09/proof/` — Week 9 publication and executable proof cases;
 - `generated/week10/` through `generated/week13/` — Weeks 10–13.
+- `simulations/week13/w13-final_build-functional.cir` — separate run-ready ideal-tier demonstration derived from the approved final netlist.
 
 Every schematic card in the [live capstone](https://az9713.github.io/op-amp-design/capstone.html) has a **SPICE** link to its matched deck and a **connectivity receipt** link showing the SVG/SPICE comparison. Files under `tests/electrical/` and `spec/decisions/probes/` are test fixtures, not weekly build sheets.
 
 The authoritative netlists retain their `.cir` filenames. GitHub Pages serves identical `.cir.txt` copies through `docs/spice-viewer.html`, so clicking **SPICE** opens a readable in-site text view instead of forcing a download. The viewer also offers the original `.cir` file separately. `python tools/publish_spice_text.py --check` verifies byte-for-byte identity.
+
+Run the final combined demonstration with the pinned ngspice 47 executable:
+
+```powershell
+python simulations/week13/run_final_demo.py
+```
+
+This executes OSC1, the REG1 load step, and the calibrated SUM1/INT2 analog twin; evaluates eight numerical gates; and regenerates a waveform plot plus hash-bearing receipt. See [the simulation README](simulations/week13/README.md) for its assumptions and claim boundary.
 
 Validate one canonical graph:
 
@@ -138,7 +148,7 @@ Run the complete test suite:
 python -m unittest discover -s tests -v
 ```
 
-Current repository snapshot: **116 tests pass**.
+Current repository snapshot: **118 tests pass**.
 
 ## Verification status
 
@@ -149,11 +159,12 @@ The project deliberately separates four gates:
 | Schema/state | Pass | Graphs validate; weekly deltas and references are checked |
 | SVG/SPICE connectivity | Pass for published pairs | Parsed SVG and SPICE terminal maps match the canonical graphs |
 | Weekly topology/presentation | User-approved W00–W13 | Review batches and the Week 9 publication style were accepted |
-| Quantitative electrical performance | Incomplete/blocked | Topology acceptance is not a performance claim |
+| Quantitative electrical performance | Final ideal-tier demo passes; hardware fidelity remains open | The separate final campaign passes all eight functional assertions, but generic/behavioral models are not historical-device validation |
 
 Important open evidence:
 
 - The Week 9 vertical proof executed under ngspice, but its balance, 1 Hz inverter-gain, and restored-integrator polarity assertions failed. Those failures remain open.
+- The final combined ideal-tier demonstration passes oscillator amplitude, regulator response, droop polarity, calibration, time-constant, and twin-tracking gates. Its receipt is `simulations/week13/w13-final_build-functional.receipt.json`.
 - Lawfully redistributable, characterized models and exact package mappings are unavailable for several historical semiconductor parts.
 - Week 12 regulator-twin values and Week 13 compensation values depend on measurements from assembled hardware.
 - A current Week 0 visual defect routes the PGND line over a dummy-load resistor. Its graph/SVG/SPICE connectivity agrees, but the sheet still needs publication rerouting.

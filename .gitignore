@@ -30,3 +30,7 @@ Thumbs.db
 
 # Local scratch output
 /generated/example/
+
+# Reproducible Week 13 simulation scratch data (deck, receipt, and plot are kept)
+/simulations/week13/*.csv
+/simulations/week13/*.log

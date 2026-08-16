@@ -27,7 +27,7 @@
   <script>
     const params = new URLSearchParams(location.search);
     const deck = params.get("deck") || "";
-    const allowed = /^(?:generated|spec\/decisions\/probes|tests\/electrical)\/[A-Za-z0-9._\/-]+\.cir\.txt$/;
+    const allowed = /^(?:generated|simulations|spec\/decisions\/probes|tests\/electrical)\/[A-Za-z0-9._\/-]+\.cir\.txt$/;
     const pathEl = document.getElementById("path");
     const statusEl = document.getElementById("status");
     const deckEl = document.getElementById("deck");
