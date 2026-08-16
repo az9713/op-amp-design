@@ -4,11 +4,13 @@ This project was developed against local source representations that are intenti
 
 ## Roberge textbook
 
+- Title and author: James K. Roberge, *Operational Amplifiers: Theory and Practice*
+- Public editions: [MIT OpenCourseWare PDF](https://ocw.mit.edu/courses/res-6-010-electronic-feedback-systems-spring-2013/res6_010_s_13_coursetextbook.pdf) and [Engineering LibreTexts](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers%3A_Theory_and_Practice_(Roberge))
 - Local filename used during development: `op_amps_roberge.pdf`
 - Role: principal historical source for figures, equations, section references, and circuit behavior
 - Excluded because: the repository does not establish redistribution rights for the complete textbook
 
-Place a lawfully obtained copy at the repository root under that filename if you want the historical HTML records' original local links to resolve.
+Use either public edition above. A local copy may also be placed at the repository root under the recorded filename if you want the historical HTML records' original local PDF links to resolve.
 
 ## Extracted book figures
 
@@ -20,7 +22,7 @@ The canonical graphs, decision records, and generated project schematics remain 
 
 ## Saved Arrow article
 
-- Local filename used during development: `Top 10 fundamental operational amplifier circuits.html`
+- Local filename used during development: `docs/Top 10 fundamental operational amplifier circuits.html`
 - Associated browser assets: `Top 10 fundamental operational amplifier circuits_files/`
 - Role: peripheral background reference only
 - Excluded because: saved third-party webpage content and its cache are not required to reproduce the canonical circuits

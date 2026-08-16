@@ -2,6 +2,16 @@
 
 This repository develops one progressively assembled ±15 V analog-computing chassis across Weeks 0–13. The machine begins with LM301A computing blocks, gains a physical regulator plant and persistent test oscillator, replaces one stock integrator amplifier with a discrete Q1–Q13 design, adds reset/operate/hold modes, runs nonlinear and fourth-order computations, and ends with separate compensation experiments.
 
+[![Open the live Roberge capstone](assets/capstone-preview.png)](https://az9713.github.io/op-amp-design/capstone.html)
+
+**[Open the live capstone](https://az9713.github.io/op-amp-design/capstone.html)**
+
+## Textbook foundation
+
+“Roberge” refers to James K. Roberge’s MIT textbook, *Operational Amplifiers: Theory and Practice*. The weekly progression reconstructs, adapts, and extends circuits from that book into one cumulative teaching chassis. Read the source as either the [MIT OpenCourseWare textbook PDF](https://ocw.mit.edu/courses/res-6-010-electronic-feedback-systems-spring-2013/res6_010_s_13_coursetextbook.pdf) or the [navigable Engineering LibreTexts edition](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers%3A_Theory_and_Practice_(Roberge)).
+
+The book remains the historical circuit authority. Project-added values, protection, fixtures, and build completions are explicitly labeled as derived or proposed rather than attributed to Roberge.
+
 The central engineering rule is stronger than “the schematic looks connected”:
 
 > Every published SVG schematic and its SPICE deck are projections of the same canonical component/pin/net graph, and both projections are independently parsed and compared back to that graph.
@@ -10,9 +20,9 @@ The central engineering rule is stronger than “the schematic looks connected�
 
 - [Integrated capstone](capstone.html) — the W00–W13 build narrative with 44 approved schematic sheets and matched SPICE/receipt links.
 - [Complete development journey](development-journey.html) — the early drawing attempts, the representation change, major corrections, gates, and current limitations.
-- [Pre-flight decisions](preflight-decisions.html) — the sixteen binding project decisions and deferred-project ledger.
-- [Implementation plan](implementation-plan.html) — the gated production and verification strategy.
-- [Weekly electrical specification](weekly-electrical-specification.html) — the integrated electrical contract for every weekly state.
+- [Pre-flight decisions](docs/preflight-decisions.html) — the sixteen binding project decisions and deferred-project ledger.
+- [Implementation plan](docs/implementation-plan.html) — the gated production and verification strategy.
+- [Weekly electrical specification](docs/weekly-electrical-specification.html) — the integrated electrical contract for every weekly state.
 - [Canonical-toolchain ADR](spec/decisions/adr-001-canonical-toolchain.md) — why the project uses a canonical graph plus deterministic SVG/SPICE projectors.
 
 Open `capstone.html` directly in a browser. Each weekly schematic set is collapsible; Week 0 is expanded initially.
@@ -31,7 +41,7 @@ tools/circuit_pipeline/          SVG/SPICE projectors, parsers, simulator runner
 tests/                           Schema, connectivity, visual, weekly, and simulation tests
 generated/                       Reviewed SVG, SPICE, and connectivity artifacts
 spec/decisions/                  Gates, source maps, production decisions, acceptances
-week*-review.html                Chronological human-review surfaces
+docs/                            Review pages, plans, gates, and historical HTML
 drafts/                          Preserved specification and audit history
 ```
 
@@ -90,6 +100,18 @@ Layout overlays may position symbols, select hierarchy views, and define routing
 
 The validation and projection core uses the Python standard library. Python 3.13 is the recorded development runtime. ngspice 47 is used for the executable simulation subset.
 
+### Where the SPICE files are
+
+The repository currently contains 98 tracked `.cir` decks. The main, human-reviewed weekly decks are beside their SVG counterparts:
+
+- `generated/weeks00_04/` — Weeks 0–4;
+- `generated/weeks05_06/` — Weeks 5–6;
+- `generated/weeks07_08/` — Weeks 7–8;
+- `generated/week09_reconciled/` and `generated/week09/proof/` — Week 9 publication and executable proof cases;
+- `generated/week10/` through `generated/week13/` — Weeks 10–13.
+
+Every schematic card in the [live capstone](https://az9713.github.io/op-amp-design/capstone.html) has a **SPICE** link to its matched deck and a **connectivity receipt** link showing the SVG/SPICE comparison. Files under `tests/electrical/` and `spec/decisions/probes/` are test fixtures, not weekly build sheets.
+
 Validate one canonical graph:
 
 ```powershell
@@ -138,7 +160,7 @@ See [Gate 2 status](spec/decisions/gate-2-week09-status.md) and the [development
 
 ## Source material and copyright
 
-The original Roberge PDF, extracted textbook figure crops, and a saved third-party Arrow article are intentionally **not redistributed** in this repository. See [SOURCE_MATERIALS.md](SOURCE_MATERIALS.md) for acquisition and placement notes.
+The original locally downloaded Roberge PDF, extracted textbook figure crops, and a saved third-party Arrow article are intentionally **not redistributed** in this repository. Use the public [MIT OpenCourseWare PDF](https://ocw.mit.edu/courses/res-6-010-electronic-feedback-systems-spring-2013/res6_010_s_13_coursetextbook.pdf) or [LibreTexts edition](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers%3A_Theory_and_Practice_(Roberge)). See [SOURCE_MATERIALS.md](SOURCE_MATERIALS.md) for acquisition and placement notes.
 
 Generated circuits distinguish source-verified topology from project-derived or proposed build completions. A practical value is never silently described as a historical Roberge value.
 
@@ -153,6 +175,6 @@ The following remain separate workstreams:
 
 ## Repository history
 
-The preserved early files document several coordinate-first and Schemdraw approaches. They established the visual vocabulary and exposed failure modes, but could not prove electrical connectivity. `schematic-methods.html` correctly diagnosed that “the gap is the representation, not the coordinates.” The current toolchain implements that insight by making the net graph authoritative and every drawing a checked projection.
+The preserved early files document several coordinate-first and Schemdraw approaches. They established the visual vocabulary and exposed failure modes, but could not prove electrical connectivity. `docs/schematic-methods.html` correctly diagnosed that “the gap is the representation, not the coordinates.” The current toolchain implements that insight by making the net graph authoritative and every drawing a checked projection.
 
 No open-source license has been assigned. Copyright and reuse rights therefore remain with their respective owners.

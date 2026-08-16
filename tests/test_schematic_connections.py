@@ -1,4 +1,4 @@
-"""Drive the shipped schematics.html through the Arrow connection checker."""
+"""Drive the archived docs/schematics.html through the Arrow connection checker."""
 from __future__ import annotations
 
 import subprocess
@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CHECKER = ROOT / "check_schematic_connections.py"
-HTML = ROOT / "schematics.html"
+HTML = ROOT / "docs" / "schematics.html"
 
 sys.path.insert(0, str(ROOT))
 from check_schematic_connections import check_diagram  # noqa: E402

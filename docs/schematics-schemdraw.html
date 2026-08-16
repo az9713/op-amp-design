@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Roberge one-box — schemdraw</title>
-  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <link rel="stylesheet" href="../design-system/colors_and_type.css">
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; }
@@ -47,7 +47,7 @@
   <div class="deck">
     <header>
       <div class="top">
-        <img src="design-system/anthropic-mark.svg" alt="">
+        <img src="../design-system/anthropic-mark.svg" alt="">
         <p class="eyebrow">Visual guide · schemdraw IEEE</p>
       </div>
       <h1 class="display">The box, drawn by a schematic engine</h1>
@@ -59,7 +59,7 @@
       <p class="back">
         <a href="schematics.html">Hand SVG</a> ·
         <a href="schematics-other.html">Book + first schemdraw set</a> ·
-        <a href="capstone.html">Build log</a>
+        <a href="../capstone.html">Build log</a>
       </p>
     </header>
     <nav class="jump">
@@ -83,7 +83,7 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">everything this week is new · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w1-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w1-chassis.svg" alt="The box so far">
       <p class="note">Build all three. Measure each Vo/Vi. Do not patch an ODE yet.</p>
     </article>
     <h2 id="w2">Week 2 — close ẋ = −x</h2>
@@ -92,7 +92,7 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = the patch · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w2-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w2-chassis.svg" alt="The box so far">
       <p class="note">Same three ICs. Time constant must be RC once |L| is large.</p>
     </article>
     <h2 id="w3">Week 3 — characterize the machine you already have</h2>
@@ -101,7 +101,7 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = Cc · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w3-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w3-chassis.svg" alt="The box so far">
       <p class="note">Step and ramp the same ẋ = −x patch.</p>
     </article>
     <h2 id="w4">Week 4 — second integrator, second-order loop</h2>
@@ -110,7 +110,7 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = INT2 and the new loop · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w4-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w4-chassis.svg" alt="The box so far">
       <p class="note">The computer can ring. Measure L of the patched loop.</p>
     </article>
     <h2 id="w5">Week 5 — plant on the unused end</h2>
@@ -119,13 +119,13 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = the regulator · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w5-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w5-chassis.svg" alt="The box so far">
       <p class="note">Two systems, one chassis. Do not patch them together yet.</p>
     </article>
     <article class="card">
       <h3>New module · Figure 5.3a</h3>
       <p class="tag">§5.2.2 · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w5-plant.svg" alt="New module · Figure 5.3a">
+      <img class="sch" src="../figures/schemdraw-box/w5-plant.svg" alt="New module · Figure 5.3a">
       <p class="note">VR to +. Vl sensed to −. Series pass, load RL || CL.</p>
     </article>
     <h2 id="w6">Week 6 — test oscillator on the patchbay</h2>
@@ -134,13 +134,13 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = oscillator · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w6-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w6-chassis.svg" alt="The box so far">
       <p class="note">Computer and plant stay. The oscillator is the signal source.</p>
     </article>
     <article class="card">
       <h3>New module · Figure 12.7a</h3>
       <p class="tag">positive feedback to + · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w6-schmitt.svg" alt="New module · Figure 12.7a">
+      <img class="sch" src="../figures/schemdraw-box/w6-schmitt.svg" alt="New module · Figure 12.7a">
       <p class="note">Thresholds ±(R1/R2)VM. − is grounded.</p>
     </article>
     <h2 id="w7">Week 7 — pull INT1’s IC, start the discrete pair</h2>
@@ -149,19 +149,19 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = INT1 socket after the IC comes out · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w7-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w7-chassis.svg" alt="The box so far">
       <p class="note">SUM, INT2, INV, plant, oscillator still run on ICs.</p>
     </article>
     <article class="card">
       <h3>Inside the INT1 socket this week</h3>
       <p class="tag">Figure 7.4 · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w7-int1.svg" alt="Inside the INT1 socket this week">
+      <img class="sch" src="../figures/schemdraw-box/w7-int1.svg" alt="Inside the INT1 socket this week">
       <p class="note">No second stage yet. C stays.</p>
     </article>
     <article class="card">
       <h3>Balance · Figure 7.10</h3>
       <p class="tag">pot across the collector loads · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w7-710.svg" alt="Balance · Figure 7.10">
+      <img class="sch" src="../figures/schemdraw-box/w7-710.svg" alt="Balance · Figure 7.10">
       <p class="note">Short the bases, null vo, remove the short.</p>
     </article>
     <h2 id="w8">Week 8 — finish that same channel</h2>
@@ -170,13 +170,13 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = stages added behind last week’s pair · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w8-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w8-chassis.svg" alt="The box so far">
       <p class="note">INT1 is a complete discrete op-amp again.</p>
     </article>
     <article class="card">
       <h3>Inside the INT1 socket this week</h3>
       <p class="tag">week 7 pair + new stages · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w8-int1.svg" alt="Inside the INT1 socket this week">
+      <img class="sch" src="../figures/schemdraw-box/w8-int1.svg" alt="Inside the INT1 socket this week">
       <p class="note">Same Q1/Q2. Q3, CS load, complementary pair, and C are new.</p>
     </article>
     <h2 id="w9">Week 9 — that channel is now Figure 9.1</h2>
@@ -185,19 +185,19 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = Cc on last week’s amp · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w9-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w9-chassis.svg" alt="The box so far">
       <p class="note">Repeat the week-2 ẋ = −x step through this amp.</p>
     </article>
     <article class="card">
       <h3>INT1 socket = week 8 + Cc</h3>
       <p class="tag">Figure 9.1 · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w9-int1.svg" alt="INT1 socket = week 8 + Cc">
+      <img class="sch" src="../figures/schemdraw-box/w9-int1.svg" alt="INT1 socket = week 8 + Cc">
       <p class="note">This is last week’s circuit. The only new component is Cc.</p>
     </article>
     <article class="card">
       <h3>Measurement hookup · Figure 9.8</h3>
       <p class="tag">C lifted, resistive feedback · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w9-98.svg" alt="Measurement hookup · Figure 9.8">
+      <img class="sch" src="../figures/schemdraw-box/w9-98.svg" alt="Measurement hookup · Figure 9.8">
       <p class="note">Do not leave it as an inverter. The computer needs C back.</p>
     </article>
     <h2 id="w10">Week 10 — current repeater on the same amp</h2>
@@ -206,13 +206,13 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = repeater on INT1 · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w10-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w10-chassis.svg" alt="The box so far">
       <p class="note">INT2 is still an IC. Hold-time ratio is IB.</p>
     </article>
     <article class="card">
       <h3>INT1 socket = week 9 + repeater</h3>
       <p class="tag">Figure 10.9 · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w10-int1.svg" alt="INT1 socket = week 9 + repeater">
+      <img class="sch" src="../figures/schemdraw-box/w10-int1.svg" alt="INT1 socket = week 9 + repeater">
       <p class="note">Same Q1–Q3. The first-stage load is now a current repeater.</p>
     </article>
     <h2 id="w11">Week 11 — reset / operate / hold</h2>
@@ -221,19 +221,19 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = mode switches · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w11-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w11-chassis.svg" alt="The box so far">
       <p class="note">The discrete amp does not move. You wrap switches around C.</p>
     </article>
     <article class="card">
       <h3>New around each integrator · Figure 12.17</h3>
       <p class="tag">switches in coral · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w11-1217.svg" alt="New around each integrator · Figure 12.17">
+      <img class="sch" src="../figures/schemdraw-box/w11-1217.svg" alt="New around each integrator · Figure 12.17">
       <p class="note">Operate: ① closed, ② open. Reset: ① open, ② closed. Hold: both open.</p>
     </article>
     <article class="card">
       <h3>Also keep · Figure 11.18</h3>
       <p class="tag">precision rectifier · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w11-rectifier.svg" alt="Also keep · Figure 11.18">
+      <img class="sch" src="../figures/schemdraw-box/w11-rectifier.svg" alt="Also keep · Figure 11.18">
       <p class="note">Needed later if you add Wien amplitude control.</p>
     </article>
     <h2 id="w12">Week 12 — run the two problems</h2>
@@ -242,13 +242,13 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = analog twin of the regulator · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w12-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w12-chassis.svg" alt="The box so far">
       <p class="note">This is the finished function. Week 13 only makes it faster and quieter.</p>
     </article>
     <article class="card">
       <h3>Problem 1a patch · Figure 12.13</h3>
       <p class="tag">same five blocks, one feedback · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w12-butter.svg" alt="Problem 1a patch · Figure 12.13">
+      <img class="sch" src="../figures/schemdraw-box/w12-butter.svg" alt="Problem 1a patch · Figure 12.13">
       <p class="note">Coral is only the closing patch.</p>
     </article>
     <h2 id="w13">Week 13 — compensate the assembled box</h2>
@@ -257,10 +257,10 @@
     <article class="card">
       <h3>The box so far</h3>
       <p class="tag">coral = compensation parts · schemdraw IEEE</p>
-      <img class="sch" src="figures/schemdraw-box/w13-chassis.svg" alt="The box so far">
+      <img class="sch" src="../figures/schemdraw-box/w13-chassis.svg" alt="The box so far">
       <p class="note">Raise time-scale α until it breaks. Fix L. Raise it again.</p>
     </article>
-    <p class="back"><a href="capstone.html">Back to the build log</a></p>
+    <p class="back"><a href="../capstone.html">Back to the build log</a></p>
   </div>
 </body>
 </html>

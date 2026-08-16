@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Gate 0 integrated weekly electrical specification for the Roberge one-box capstone.">
   <title>Roberge one-box — weekly electrical specification</title>
-  <link rel="stylesheet" href="design-system/colors_and_type.css">
+  <link rel="stylesheet" href="../design-system/colors_and_type.css">
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -76,7 +76,7 @@
       <div class="meta">
           <div><span class="meta-label">Status</span><span class="meta-value">Integrated specification approved 2026-08-15. Phase 2 architecture work authorized.</span></div>
         <div><span class="meta-label">Authority</span><span class="meta-value"><a href="preflight-decisions.html">16 locked decisions</a></span></div>
-        <div><span class="meta-label">Primary source</span><span class="meta-value"><a href="op_amps_roberge.pdf">Roberge PDF</a></span></div>
+        <div><span class="meta-label">Primary source</span><span class="meta-value"><a href="../op_amps_roberge.pdf">Roberge PDF</a></span></div>
           <div><span class="meta-label">Execution gate</span><span class="meta-value">Gate 0 closed; Gate 1 architecture review is next.</span></div>
       </div>
     </header>
@@ -148,7 +148,7 @@
             <div class="week-body"><div><h4>Provisional configuration</h4><p>A SUM1–INT1–INT2 loop forms a harmonic oscillator with <code>ω0=√(K/(τ1τ2))</code>. In the ideal model it is already on the imaginary axis for every positive K.</p></div><div><h4>Missing definition</h4><p>The capstone supplies no damping term, concrete ODE, sign convention, or loop-injection fixture, so “find the gain that puts it on jω” is not yet well-defined.</p></div></div>
           </article>
 
-          <div class="sources"><a href="drafts/spec-weeks-00-04.md">Detailed Week 0–4 annex</a></div>
+          <div class="sources"><a href="../drafts/spec-weeks-00-04.md">Detailed Week 0–4 annex</a></div>
         </section>
 
         <section id="weeks-5-9">
@@ -185,7 +185,7 @@
             <div class="week-body"><div><h4>Configurations</h4><ul><li>Compensation-response tests</li><li>Figure 9.8 inverter/slew fixture</li><li>Restored cumulative integrator</li></ul></div><div><h4>Gate</h4><p>Double-transcribe the full Figure 9.1 component/pin/net graph, select lawful device models, define fixtures and parasitics, and select a provisional end-state Cc before the Week 9 proof.</p></div></div>
           </article>
 
-          <div class="sources"><a href="drafts/spec-weeks-05-09.md">Detailed Week 5–9 annex</a></div>
+          <div class="sources"><a href="../drafts/spec-weeks-05-09.md">Detailed Week 5–9 annex</a></div>
         </section>
 
         <section id="weeks-10-13">
@@ -216,7 +216,7 @@
             <div class="week-body"><div><h4>Campaigns and graph split</h4><ul><li>Fixed dynamics: separate SUM1 lag, INV1 lag, regulator load-capacitance baseline, and compensated regulator graphs.</li><li>Changed dynamics: separate AMP1 and LM301A INT2 one-pole tests, plus a REG1 error-amplifier two-pole graph.</li></ul></div><div><h4>Constraint</h4><p>No Figure 13.21 values may be copied into the regulator. Values must be derived from the built plant, measured loop, tolerances, and target crossover. Load-capacitance work is nonapplicable unless G0-15 accepts that DUT case.</p></div></div>
           </article>
 
-          <div class="sources"><a href="drafts/spec-weeks-10-13.md">Detailed Week 10–13 annex</a></div>
+          <div class="sources"><a href="../drafts/spec-weeks-10-13.md">Detailed Week 10–13 annex</a></div>
         </section>
 
         <section id="blockers">

@@ -2,7 +2,7 @@
 
 Status: **BLOCKED — GATE 2 NOT APPROVED**  
 Snapshot date: 2026-08-15  
-Review surface: `../../gate-2-week09-proof.html`
+Review surface: `../../docs/gate-2-week09-proof.html`
 
 ## Boundary
 

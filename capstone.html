@@ -41,6 +41,14 @@
       margin: 0 0 28px;
       max-width: 40rem;
     }
+    .source-note {
+      max-width: 52rem;
+      margin: -12px 0 28px;
+      color: var(--fg-muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .source-note a { color: var(--crail-deep); }
 
     .sticky-next {
       position: sticky;
@@ -333,10 +341,11 @@
     <header>
       <div class="top">
         <img src="design-system/anthropic-mark.svg" alt="">
-        <p class="eyebrow">One chassis · 13 additions · Roberge</p>
+        <p class="eyebrow">One chassis · 13 additions · James K. Roberge</p>
       </div>
       <h1 class="display">Build the computer. Then put your amp inside it.</h1>
       <p class="lede">Same box every week. A new module or a socket swap. Nothing is a one-off lab. The finished machine solves an ODE, runs a model of a real regulator, and uses an operational amplifier you designed. The approved weekly SVG schematics and their matched SPICE decks now live directly beside each build step below.</p>
+      <p class="source-note">The source is James K. Roberge’s MIT textbook, <em>Operational Amplifiers: Theory and Practice</em>. Read the <a href="https://ocw.mit.edu/courses/res-6-010-electronic-feedback-systems-spring-2013/res6_010_s_13_coursetextbook.pdf">MIT OpenCourseWare PDF</a> or the <a href="https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers%3A_Theory_and_Practice_(Roberge)">LibreTexts edition</a>. Added build values and fixtures are identified as project-derived or proposed rather than silently attributed to the book.</p>
     </header>
 
     <div class="sticky-next" id="sticky">
@@ -511,13 +520,13 @@
 
     const SCHEMATICS = {
       0: {
-        review: "week00-04-review.html#w00",
+        review: "docs/week00-04-review.html#w00",
         sheets: [
           sheet("W00.INFRA_TEST · permanent infrastructure", "generated/weeks00_04/w00-infra_test-ideal", "Separate ±15 V infrastructure, signal/power grounds, decoupling, and reserved sockets.")
         ]
       },
       1: {
-        review: "week00-04-review.html#w01",
+        review: "docs/week00-04-review.html#w01",
         sheets: [
           sheet("W01.INV_TEST · inverting amplifier", "generated/weeks00_04/w01-inv_test-ideal", "INV1 characterization with its installed unity-gain passive network."),
           sheet("W01.SUM_TEST · weighted summer", "generated/weeks00_04/w01-sum_test-ideal", "SUM1 characterization with three explicit input branches."),
@@ -525,13 +534,13 @@
         ]
       },
       2: {
-        review: "week00-04-review.html#w02",
+        review: "docs/week00-04-review.html#w02",
         sheets: [
           sheet("W02.FIRST_ORDER · stable first-order loop", "generated/weeks00_04/w02-first_order-ideal", "Approved SUM1 → INV1 → INT1 sign chain for ẋ = −x.")
         ]
       },
       3: {
-        review: "week00-04-review.html#w03",
+        review: "docs/week00-04-review.html#w03",
         sheets: [
           sheet("W03.FIG3_1_REF_12P · reference inverter", "generated/weeks00_04/w03-fig3_1_ref_12p-ideal", "Figure 3.1 reference fixture with 12 pF compensation."),
           sheet("W03.FIG3_1_REF_220P · reference inverter", "generated/weeks00_04/w03-fig3_1_ref_220p-ideal", "Figure 3.1 reference fixture with 220 pF compensation."),
@@ -540,33 +549,33 @@
         ]
       },
       4: {
-        review: "week00-04-review.html#w04",
+        review: "docs/week00-04-review.html#w04",
         sheets: [
           sheet("W04.SECOND_ORDER_RUN · damped system", "generated/weeks00_04/w04-second_order_run-ideal", "Two-integrator run configuration with explicit damping branch and initial-condition fixture."),
           sheet("W04.LOOP_MEASURE · return-ratio fixture", "generated/weeks00_04/w04-loop_measure-ideal", "Mutually exclusive AC injection configuration used to measure the loop.")
         ]
       },
       5: {
-        review: "week05-06-review.html",
+        review: "docs/week05-06-review.html",
         sheets: [
           sheet("W05.REGULATOR_SWEEP · physical plant", "generated/weeks05_06/w05-regulator_sweep-ideal", "Build-ready ±15 V regulator plant with explicit pass device, load sweep, and measurement fixture.")
         ]
       },
       6: {
-        review: "week05-06-review.html",
+        review: "docs/week05-06-review.html",
         sheets: [
           sheet("W06.OSCILLATOR · persistent test source", "generated/weeks05_06/w06-oscillator-ideal", "Dedicated INT3 triangle integrator, Schmitt trigger, and amplitude limiter.")
         ]
       },
       7: {
-        review: "week07-08-review.html",
+        review: "docs/week07-08-review.html",
         sheets: [
           sheet("W07.PAIR_CHARACTERIZE · chassis state", "generated/weeks07_08/w07-pair_characterize-ideal", "The active chassis configuration while INT1 is intentionally incomplete and nonfunctional."),
           sheet("W07.PAIR_CHARACTERIZE · AMP1 detail", "generated/weeks07_08/w07-pair_characterize-ideal-amp1-detail", "Pin-level differential-pair and current-source characterization detail.")
         ]
       },
       8: {
-        review: "week07-08-review.html",
+        review: "docs/week07-08-review.html",
         sheets: [
           sheet("W08.OPEN_LOOP · chassis state", "generated/weeks07_08/w08-open_loop-ideal", "Approved open-loop amplifier characterization configuration."),
           sheet("W08.OPEN_LOOP · AMP1 detail", "generated/weeks07_08/w08-open_loop-ideal-amp1-detail", "Q1–Q11 internal amplifier topology at the end of open-loop assembly."),
@@ -574,7 +583,7 @@
         ]
       },
       9: {
-        review: "week09-review.html",
+        review: "docs/week09-review.html",
         sheets: [
           sheet("W09.CC_SWEEP · complete amplifier", "generated/week09_reconciled/w09-cc_sweep-ideal", "Reconciled complete Q1–Q13 amplifier in the compensation-capacitor sweep fixture."),
           sheet("W09.CC_SWEEP · AMP1 detail", "generated/week09_reconciled/w09-cc_sweep-ideal-amp1-detail", "Pin-level Figure 9.1-derived amplifier sheet."),
@@ -583,7 +592,7 @@
         ]
       },
       10: {
-        review: "week10-review.html",
+        review: "docs/week10-review.html",
         sheets: [
           sheet("W10.CR_CHARACTERIZE · complete amplifier", "generated/week10/w10-cr_characterize-ideal", "Current-mirror characterization with the former passive load electrically inactive."),
           sheet("W10.CR_CHARACTERIZE · mirror detail", "generated/week10/w10-cr_characterize-ideal-amp1-cr1-detail", "Figure 10.9-derived PNP mirror insertion detail."),
@@ -592,7 +601,7 @@
         ]
       },
       11: {
-        review: "week11-review.html",
+        review: "docs/week11-review.html",
         sheets: [
           sheet("W11.INT_OPERATE · computing mode", "generated/week11/w11-int_operate-ideal", "Both computing integrators in OPERATE."),
           sheet("W11.INT_OPERATE · mode-switch detail", "generated/week11/w11-int_operate-ideal-w11-mode-i1-detail", "Pin-level reset/operate/hold network for the first channel."),
@@ -605,7 +614,7 @@
         ]
       },
       12: {
-        review: "week12-review.html",
+        review: "docs/week12-review.html",
         sheets: [
           sheet("W12.BW · fourth-order Butterworth", "generated/week12/w12-bw-ideal", "SUM1 reconfigured as the integrating summer, with INT1, INT2, INT3, and INV1."),
           sheet("W12.VDP · Van der Pol oscillator", "generated/week12/w12-vdp-ideal", "Two-integrator nonlinear system with two four-quadrant AD633 multiplier blocks."),
@@ -613,7 +622,7 @@
         ]
       },
       13: {
-        review: "week13-review.html",
+        review: "docs/week13-review.html",
         sheets: [
           sheet("W13.LAG_SUM1 · input-lag campaign", "generated/week13/w13-lag_sum1-ideal", "Figure 13.1-derived input lag on SUM1."),
           sheet("W13.LAG_INV1 · input-lag campaign", "generated/week13/w13-lag_inv1-ideal", "Distinct Figure 13.1-derived input lag graph on INV1."),

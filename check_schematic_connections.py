@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Arrow-connection checker for the shipped schematics.html.
+"""Arrow-connection checker for the archived docs/schematics.html.
 
 Reads the real file (not a copy). Each svg.sch is scored against the
 Arrow pin-stub / feedback T-join / no-endpoint-inside-triangle rules.
@@ -15,7 +15,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-HTML = ROOT / "schematics.html"
+HTML = ROOT / "docs" / "schematics.html"
 TOL = 1.6  # px — stroke width is 1.8
 
 
