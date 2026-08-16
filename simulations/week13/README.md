@@ -2,6 +2,8 @@
 
 This directory contains a separate, executable ideal-tier SPICE campaign derived from the approved `W13.FINAL_BUILD` netlist. The approved canonical SVG/SPICE pair remains the connectivity authority; this deck adds the explicit models, loads, stimuli, analysis, measurements, assertions, and reporting needed to demonstrate system behavior under ngspice.
 
+Read the [complete final SPICE simulation report](../../docs/final-spice-simulation.html) for the relationship between both netlists, the ngspice 47 executable fingerprint, model details, numerical gates, results plot, and demonstrated/not-demonstrated claim boundary.
+
 ## Run it
 
 From the repository root:

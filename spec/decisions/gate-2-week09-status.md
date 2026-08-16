@@ -4,9 +4,13 @@ Status: **BLOCKED — GATE 2 NOT APPROVED**
 Snapshot date: 2026-08-15  
 Review surface: `../../docs/gate-2-week09-proof.html`
 
+## Current project context
+
+This remains the authoritative historical Week 9 vertical-proof result: its electrical gate is still blocked. Later user decisions separately authorized weekly production and publication. The completed project now also has a [final ideal-tier functional simulation](../../docs/final-spice-simulation.html) using behavioral/generic models; its 8/8 pass demonstrates final-system signal flow and regulator-twin calibration, not the transistor-level claims that failed here.
+
 ## Boundary
 
-This record evaluates the Week 9 vertical proof only. It does not authorize Week 0–13 production, construction release, realistic-model claims, or integration into `capstone.html`. The capstone file remains outside this phase and untouched.
+This record evaluates the Week 9 vertical proof only. At this historical gate it did not authorize Week 0–13 production, construction release, realistic-model claims, or integration into `capstone.html`. Later explicit approvals changed the production/publication state, not this gate's electrical verdict.
 
 ## Independent gate scorecard
 

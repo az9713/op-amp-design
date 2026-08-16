@@ -44,9 +44,9 @@
 <body>
   <div class="page">
     <header>
-      <div class="top"><p class="eyebrow">Roberge one-box · Phase 0</p><span class="status">Controls active · Gate 0 open</span></div>
+      <div class="top"><p class="eyebrow">Roberge one-box · project controls</p><span class="status">Production complete · ideal-tier demo passed</span></div>
       <h1 class="display">Project controls</h1>
-      <p class="lede">Authority, ownership, evidence, naming, and change rules for producing the weekly electrical specification without prematurely implementing circuits.</p>
+      <p class="lede">Authority, ownership, evidence, naming, and change rules that governed the completed weekly electrical specification, schematic production, capstone integration, and final ideal-tier SPICE demonstration.</p>
     </header>
 
     <main>
@@ -65,13 +65,13 @@
 
       <section>
         <p class="eyebrow">02 · Current boundary</p>
-        <h2>Phase 0/1 only</h2>
+        <h2>Historical controls and current release state</h2>
         <ul>
-          <li>Authorized: source reading, project inventory, specification drafting, issue discovery, and documentation.</li>
-          <li>Gate 0 was approved on 2026-08-15. Phase 2 canonical-model, validator, toolchain, renderer/SPICE evaluation, and throwaway evaluation circuits are authorized.</li>
-          <li>Still gated: chronological production, <code>capstone.html</code> integration, and release beyond the architecture and Week 9 proof gates.</li>
-          <li>Gate 0 closes only after the integrated fourteen-state specification is reviewed and approved by the user.</li>
-          <li>No Git repository exists. Git initialization requires separate user approval.</li>
+          <li>Gate 0 and Gate 1 were approved on 2026-08-15; the canonical graph, validator, renderer, SPICE projector, and equivalence pipeline were implemented.</li>
+          <li>Weeks 0–13 were produced, reviewed, approved, and integrated into <a href="../capstone.html">capstone.html</a>.</li>
+          <li>The separate <a href="final-spice-simulation.html">final ideal-tier SPICE demonstration</a> runs under pinned ngspice 47 and passes all eight declared functional gates.</li>
+          <li>Week 9 historical-device electrical acceptance remains blocked; final hardware fidelity, tolerance, temperature, noise, and stability validation remain open.</li>
+          <li>The project is a public Git repository with GitHub Pages publication; this document remains the historical control policy rather than the current execution queue.</li>
         </ul>
       </section>
 
@@ -141,11 +141,11 @@
           <div class="row"><span class="row-key">schematic-methods.html</span><span class="hash">685675389214861A537C78899643D7E8BD27A4BC5E4B5A32E4E6F164977ED019</span></div>
         </div>
         <h3>Observed environment</h3>
-        <p>Python 3.13.5 and PyMuPDF are available. Schemdraw, lcapy, ngspice, KiCad CLI, and LaTeX were not available on the active command path at baseline. No installation is authorized before Gate 0.</p>
+        <p>At baseline, Python 3.13.5 and PyMuPDF were available while ngspice was absent. After explicit Gate 1 authorization, ngspice 47 was installed and pinned; its exact executable and hash are recorded in the <a href="final-spice-simulation.html#executable">final simulation report</a>.</p>
       </section>
     </main>
 
-    <footer>Project controls · Phase 0/1 · No circuit implementation performed.</footer>
+    <footer>Project controls · historical authority preserved · current release summarized in the final SPICE report</footer>
   </div>
 </body>
 </html>

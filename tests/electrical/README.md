@@ -1,6 +1,6 @@
 # Electrical verification contract
 
-This directory will hold executable ngspice checks and their receipts. The current file specifies the Week 9 proof; it does not claim a simulation has run.
+This directory contains executable ngspice checks and receipts originating with the Week 9 proof. The separate final combined-system campaign lives under `simulations/week13/`; its [complete report](../../docs/final-spice-simulation.html) records the pinned ngspice 47 executable, behavioral/generic models, results, and claim boundary.
 
 ## Preconditions
 

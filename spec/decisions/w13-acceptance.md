@@ -7,6 +7,7 @@
 - Accepted correction: the SUM1 and INV1 collapsed-core labels were repositioned to remove the reported overlap.
 - Electrical-performance boundary: connectivity approval does not approve measurement-derived compensation values, realistic loop stability, tolerance robustness, or overload recovery.
 - Chronological status: weekly topology and presentation reviews are complete for Weeks 0 through 13.
-- Authorized next work: final audited integration of the approved SVG schematics and matched SPICE links into `capstone.html`.
+- Completed next work: the approved SVG schematics and matched SPICE links are integrated into `capstone.html`.
+- Final functional campaign: the separate enhanced ideal-tier deck runs under pinned ngspice 47 and passes 8/8 declared gates; see the [complete report](../../docs/final-spice-simulation.html).
+- Remaining boundary: that functional pass does not approve historical-device behavior, measurement-derived compensation values, realistic loop stability, tolerance robustness, overload recovery, or constructed hardware.
 - Deferred work remains unchanged: patch-cord drawings, low-voltage redesign, modern alternatives, and physical construction documentation.
-

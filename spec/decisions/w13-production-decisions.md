@@ -1,6 +1,6 @@
 # Week 13 production decisions
 
-Status: implemented for topology and presentation review. Electrical performance is not approved.
+Status: implemented and published for topology/presentation. A separate final ideal-tier functional campaign passes 8/8 declared gates; historical-device, compensation, and hardware performance remain unapproved.
 
 ## Configuration boundary
 
@@ -57,3 +57,5 @@ The canonical graphs, SVGs, and SPICE connectivity decks establish topology only
 - D-04: physical chassis, board, harness, and thermal construction documentation.
 
 `capstone.html` now includes all seven approved experiment sheets and the concluding `W13.FINAL_BUILD` sheet with its matched SPICE deck and connectivity receipt.
+
+The concluding card also links the separate run-ready deck, simulation receipt, and results plot. The [final SPICE simulation report](../../docs/final-spice-simulation.html) records ngspice 47 provenance, explicit behavioral/generic models, numerical gates, results, and the exact claim boundary.

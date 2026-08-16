@@ -8,6 +8,10 @@
 - **Dependency authority:** install and pin ngspice for this workspace
 - **Still gated:** chronological weekly production and `capstone.html` integration until Gate 2
 
+## Current project context
+
+This record preserves the Gate 1 decision at the time it was made. Later user approvals authorized chronological production and capstone integration despite the Week 9 electrical gate remaining blocked. Weeks 0–13 are now published, and the separate [final ideal-tier SPICE demonstration](../../docs/final-spice-simulation.html) passes all eight declared functional gates under pinned ngspice 47. That later result does not retroactively validate the Week 9 historical transistor models.
+
 ## Binding Phase 3 requirements
 
 1. Complete independent Figure 9.1 Transcription B and adjudicate it against Transcription A before accepting the Week 9 graph.
