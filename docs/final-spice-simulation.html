@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Final SPICE Simulation · Roberge One-Box Capstone</title>
+  <link rel="stylesheet" href="../design-system/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--book); color: var(--slate); }
+    a { overflow-wrap: anywhere; }
+    header { border-bottom: 1px solid var(--hairline); background: var(--slate-900); color: var(--fg-onDark); }
+    .hero { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 56px 0 44px; }
+    .hero .eyebrow, .hero p { color: #d9d7cf; }
+    .hero h1 { max-width: 900px; margin: 10px 0 16px; color: white; }
+    .hero .lede { max-width: 900px; margin: 0; }
+    .verdict { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 26px; }
+    .badge { display: inline-block; padding: 7px 11px; border: 1px solid #78a160; color: #e8f6df; font: 700 12px/1 var(--font-mono); letter-spacing: .07em; text-transform: uppercase; }
+    .claim { font: 13px/1.5 var(--font-mono); color: #d9d7cf; }
+    nav { border-bottom: 1px solid var(--hairline); background: var(--ivory); }
+    nav .inner { width: min(1180px, calc(100% - 40px)); margin: auto; display: flex; flex-wrap: wrap; gap: 18px; padding: 13px 0; font: 12px/1.4 var(--font-mono); }
+    main { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 42px 0 80px; }
+    section { margin: 0 0 58px; scroll-margin-top: 20px; }
+    h2 { margin: 0 0 14px; }
+    h3 { margin: 0 0 8px; }
+    .intro { max-width: 900px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .card { border: 1px solid var(--hairline); background: var(--ivory); padding: 20px; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .metric { font: 400 34px/1.1 var(--font-serif); color: var(--slate-900); }
+    .metric-label { margin-top: 7px; color: var(--fg-muted); font-size: 13px; }
+    .authority { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: stretch; gap: 12px; }
+    .authority .arrow { display: grid; place-items: center; color: var(--crail); font-size: 30px; }
+    .authority article { border: 1px solid var(--hairline); background: var(--paper); padding: 22px; }
+    .authority .run { border-top: 4px solid var(--crail); }
+    .authority .canonical { border-top: 4px solid var(--slate-500); }
+    .path { font: 12px/1.5 var(--font-mono); color: var(--fg-muted); overflow-wrap: anywhere; }
+    .callout { border-left: 4px solid var(--crail); background: var(--accent-bg); padding: 16px 19px; }
+    .callout p { margin: 0; }
+    table { width: 100%; border-collapse: collapse; background: var(--ivory); font-size: 14px; }
+    th, td { padding: 11px 12px; border: 1px solid var(--hairline); text-align: left; vertical-align: top; }
+    th { background: var(--slate-100); font-weight: 600; }
+    .pass { color: var(--ok); font-weight: 700; }
+    .mono, code { font-family: var(--font-mono); }
+    .codebox { border: 1px solid var(--hairline); background: #111715; color: #edf0eb; padding: 18px; overflow: auto; font: 13px/1.55 var(--font-mono); white-space: pre; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+    .button { display: inline-block; padding: 9px 12px; border: 1px solid var(--slate-400); background: var(--paper); font: 12px/1.2 var(--font-mono); text-decoration: none; }
+    .button.primary { border-color: var(--crail); background: var(--crail); color: white; }
+    figure { margin: 22px 0 0; border: 1px solid var(--hairline); background: white; }
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { padding: 11px 14px; border-top: 1px solid var(--hairline); color: var(--fg-muted); font-size: 13px; }
+    .two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+    .yes { border-top: 4px solid var(--ok); }
+    .no { border-top: 4px solid var(--err); }
+    details { border: 1px solid var(--hairline); background: var(--ivory); }
+    summary { cursor: pointer; padding: 15px 17px; font-weight: 600; }
+    details .inside { padding: 0 17px 17px; }
+    .hash { font: 11px/1.5 var(--font-mono); overflow-wrap: anywhere; }
+    footer { border-top: 1px solid var(--hairline); padding: 24px 20px 42px; color: var(--fg-muted); text-align: center; font-size: 13px; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } .authority { grid-template-columns: 1fr; } .authority .arrow { transform: rotate(90deg); } .two { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <p class="eyebrow">W13.FINAL_BUILD · executable evidence report</p>
+      <h1>Final SPICE simulation: what ran, what passed, and what remains unproved.</h1>
+      <p class="lede">The approved final schematic/netlist pair remains the connectivity authority. A separate enhanced deck makes that system runnable by supplying explicit models, loads, stimuli, analysis commands, calibration, numerical assertions, and a reproducible receipt.</p>
+      <div class="verdict"><span class="badge">8 / 8 functional gates passed</span><span class="claim">Ideal-tier function demonstrated · historical-device and hardware performance not claimed</span></div>
+    </div>
+  </header>
+
+  <nav><div class="inner"><a href="../capstone.html">Capstone</a><a href="#netlists">Netlists</a><a href="#executable">SPICE executable</a><a href="#models">Models</a><a href="#method">Method</a><a href="#results">Results</a><a href="#claims">Claim boundary</a><a href="#reproduce">Reproduce</a></div></nav>
+
+  <main>
+    <section id="summary">
+      <p class="eyebrow">Executive result</p>
+      <h2>Yes, SPICE ran the final functional system.</h2>
+      <p class="intro">Pinned ngspice 47 executed one combined transient campaign containing OSC1, the REG1 physical-regulator topology, the SUM1 load-current encoder, and the INT2 calibrated leaky-integrator twin. The simulator converged, emitted the requested waveforms, and the independent runner passed every declared numerical gate.</p>
+      <div class="grid">
+        <article class="card"><div class="metric">9.605 → 9.511 V</div><div class="metric-label">REG1 output, unloaded to loaded</div></article>
+        <article class="card"><div class="metric">94.110 mV</div><div class="metric-label">measured regulator load-step droop</div></article>
+        <article class="card"><div class="metric">0.501 ms</div><div class="metric-label">measured 63.2% regulator time constant</div></article>
+        <article class="card"><div class="metric">0.542 mV</div><div class="metric-label">REG1 versus INT2 RMS tracking error</div></article>
+        <article class="card"><div class="metric">3.245 mV</div><div class="metric-label">maximum transient tracking error</div></article>
+        <article class="card"><div class="metric">118 / 118</div><div class="metric-label">repository tests passing after integration</div></article>
+      </div>
+    </section>
+
+    <section id="netlists">
+      <p class="eyebrow">Authority boundary</p>
+      <h2>Two related netlists, two different jobs.</h2>
+      <div class="authority">
+        <article class="canonical">
+          <h3>Approved canonical projection</h3>
+          <p>The exact SPICE projection matched to the approved concluding SVG. It preserves the canonical component/pin/net graph and symbolic unresolved fields. It is the topology and connectivity authority, but is not directly executable as a quantitative campaign.</p>
+          <p class="path">generated/week13/w13-final_build-ideal.cir</p>
+          <div class="links"><a class="button" href="spice-viewer.html?deck=generated%2Fweek13%2Fw13-final_build-ideal.cir.txt">View final matched netlist</a><a class="button" href="../generated/week13/w13-final_build-ideal.svg">View final schematic</a><a class="button" href="../generated/week13/w13-final_build-ideal.connectivity.json">Connectivity receipt</a></div>
+          <p class="hash">SHA-256 B7D8FB273BDD9BC0E600FF013D4368A63E9ED1A9E7F87D9FB44A05BB45472268</p>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="run">
+          <h3>Enhanced run-ready deck</h3>
+          <p>A separate deck based on the accepted final topology. It replaces symbolic/non-executable interfaces with documented ideal-tier models and values, and adds stimulus, transient analysis, measurements, output vectors, calibration, and pass/fail grading.</p>
+          <p class="path">simulations/week13/w13-final_build-functional.cir</p>
+          <div class="links"><a class="button primary" href="spice-viewer.html?deck=simulations%2Fweek13%2Fw13-final_build-functional.cir.txt">View final simulation netlist</a><a class="button" href="../simulations/week13/w13-final_build-functional.cir">Open raw .cir</a><a class="button" href="../simulations/week13/w13-final_build-functional.receipt.json">Simulation receipt</a></div>
+          <p class="hash">SHA-256 ED4616FD6E3B40E800F776E32C97EFD0B971DA53C4FCFA3080292E125F73E754</p>
+        </article>
+      </div>
+      <div class="callout" style="margin-top:18px"><p><strong>Exact conclusion:</strong> the enhanced final-system deck was executed. The untouched canonical projection was not executed because it intentionally contains symbolic values and structural model placeholders.</p></div>
+    </section>
+
+    <section id="executable">
+      <p class="eyebrow">Simulator provenance</p>
+      <h2>ngspice 47, pinned and hashed.</h2>
+      <table>
+        <tbody>
+          <tr><th>Simulator</th><td>ngspice-47, circuit-level simulation program</td></tr>
+          <tr><th>Build</th><td>Compiled with the KLU Direct Linear Solver; creation date reported by the executable: 11 August 2026</td></tr>
+          <tr><th>Executable used</th><td class="mono">C:\Users\simon\scoop\apps\ngspice\47\bin\ngspice_con.exe</td></tr>
+          <tr><th>Executable SHA-256</th><td class="hash">22D5CAE2BD32B2E39157A8D27BF457122F68285B72A9EBEFDF41551B628233AB</td></tr>
+          <tr><th>Invocation mode</th><td>Noninteractive batch mode, option <code>-b</code></td></tr>
+          <tr><th>Dependency record</th><td><a href="../spec/decisions/dependency-lock.json">Pinned dependency lock</a></td></tr>
+        </tbody>
+      </table>
+      <pre class="codebox">C:\Users\simon\scoop\apps\ngspice\47\bin\ngspice_con.exe -b simulations\week13\w13-final_build-functional.cir</pre>
+    </section>
+
+    <section id="enhancements">
+      <p class="eyebrow">The requested nine-item completion</p>
+      <h2>What was added to make the final topology demonstrable.</h2>
+      <table>
+        <thead><tr><th>#</th><th>Enhancement</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Runnable device interfaces</td><td>Project-owned dominant-pole op-amp subcircuit, voltage-controlled switch, and generic NPN/zener/diode model cards.</td></tr>
+          <tr><td>2</td><td>Explicit plant loading</td><td>1 kΩ permanent load, 1 kΩ switched load, 47 µF output capacitance, 0.30 Ω ESR, and 100 Ω isolation.</td></tr>
+          <tr><td>3</td><td>Regulator transient</td><td>OSC1 square output controls the switched REG1 load in a 350 ms transient campaign.</td></tr>
+          <tr><td>4</td><td>Droop and time-constant extraction</td><td>Windowed unloaded/loaded averages and the first 63.212% crossing are calculated from saved waveform samples.</td></tr>
+          <tr><td>5</td><td>Twin-component derivation</td><td>The runner derives <code>R_TWIN_LEAK</code> and <code>R_TWIN_DRIVE</code>, then checks configured values within 2%.</td></tr>
+          <tr><td>6</td><td>Combined final run</td><td>OSC1, REG1, SUM1, and INT2 coexist in one deck and one transient solution.</td></tr>
+          <tr><td>7</td><td>Recorded outputs</td><td>Square, triangle, regulator output, and twin output vectors are written for independent post-processing.</td></tr>
+          <tr><td>8</td><td>Numerical assertions</td><td>Eight gates cover oscillator ranges, regulation, polarity, steady/transient tracking, time constant, and resistor calibration.</td></tr>
+          <tr><td>9</td><td>Plot and receipt</td><td>A deterministic SVG waveform plot and JSON receipt record measurements, hashes, simulator identity, and pass/fail state.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="models">
+      <p class="eyebrow">Model tier</p>
+      <h2>How the op-amps and plant were represented.</h2>
+      <div class="two">
+        <article class="card">
+          <h3>Behavioral op-amp</h3>
+          <p><code>OPAMP_LP</code> contains a voltage-controlled differential-gain source, one RC dominant pole, and a smooth <code>tanh</code> output limiter near ±14.5 V. It does not reproduce an LM301A or the Q1–Q13 discrete amplifier.</p>
+          <pre class="codebox">EERR NRAW 0 INP INM {A0}
+RDOM NRAW NPOLE 1k
+CDOM NPOLE 0 {1/(2*pi*FP*1k)}
+BOUT OUT 0 V={14.5*tanh(V(NPOLE)/14.5)}</pre>
+          <p>REG1 error amplifier: <code>A0=30</code>, <code>FP=10 kHz</code>. SUM1 and INT2: <code>A0=100,000</code>, <code>FP=10 kHz</code>.</p>
+        </article>
+        <article class="card">
+          <h3>Other ideal-tier models</h3>
+          <ul>
+            <li>Generic NPN pass transistor: finite β, Early voltage, junction capacitances, and transit time.</li>
+            <li>Generic 10 V zener reference and generic diode cards.</li>
+            <li>Voltage-controlled load switch with 0.1 Ω on-resistance and 1 TΩ off-resistance.</li>
+            <li>OSC1 represented by behavioral square and triangle sources, not its complete Schmitt/integrator circuit.</li>
+            <li>±15 V computing rails and an 18 V unregulated regulator input are explicit.</li>
+          </ul>
+        </article>
+      </div>
+      <p>The current-to-voltage scale is stated unambiguously as <code>S_VI = 100 V/A</code>: one simulated volt represents 10 mA. This resolves the earlier dimensional ambiguity in the label <code>I_SCALE</code>.</p>
+    </section>
+
+    <section id="method">
+      <p class="eyebrow">Campaign method</p>
+      <h2>Stimulus, numerical method, calibration, and grading.</h2>
+      <div class="grid">
+        <article class="card"><h3>Stimulus</h3><p>OSC1 square: 0–5 V, 50 ms high, 100 ms period, beginning at 50 ms. OSC1 triangle: approximately ±5 V at 10 Hz.</p></article>
+        <article class="card"><h3>Transient solution</h3><p><code>tran 50u 350m</code> with Gear integration, <code>reltol=1e-5</code>, <code>abstol=1e-10</code>, and <code>vntol=1e-7</code>.</p></article>
+        <article class="card"><h3>Calibration</h3><p>REG1 droop and 63.2% time are measured first. A 1 µF INT2 capacitor then gives derived leaky-twin resistors of 501.209 Ω and 5.326 kΩ.</p></article>
+      </div>
+      <p>The configured values—496.549 Ω and 5.276258 kΩ—came from the earlier calibration sample embedded in the deck. The rerun-derived values differ by less than 1%, inside the declared 2% gate.</p>
+    </section>
+
+    <section id="results">
+      <p class="eyebrow">Measured evidence</p>
+      <h2>All declared functional gates passed.</h2>
+      <table>
+        <thead><tr><th>Gate</th><th>Acceptance rule</th><th>Observed result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Oscillator square</td><td>Low ≤ 0.01 V; high 4.99–5.01 V</td><td>0.000 V to 5.000 V</td><td class="pass">PASS</td></tr>
+          <tr><td>Oscillator triangle</td><td>Minimum ≤ −4.9 V; maximum ≥ +4.9 V</td><td>−4.9998 V to +4.9974 V</td><td class="pass">PASS</td></tr>
+          <tr><td>Regulated output</td><td>Loaded output 9–11 V; droop 50–200 mV</td><td>9.6046 V unloaded; 9.5105 V loaded; 94.110 mV droop</td><td class="pass">PASS</td></tr>
+          <tr><td>Droop polarity</td><td>Physical droop and twin response both positive</td><td>Both positive</td><td class="pass">PASS</td></tr>
+          <tr><td>Steady twin tracking</td><td>Magnitude error ≤ 0.5 mV</td><td>2.153 µV</td><td class="pass">PASS</td></tr>
+          <tr><td>Transient twin tracking</td><td>RMS ≤ 3 mV; peak ≤ 6 mV</td><td>0.542 mV RMS; 3.245 mV peak</td><td class="pass">PASS</td></tr>
+          <tr><td>Time-constant tracking</td><td>Difference ≤ 0.1 ms</td><td>Both sampled at approximately 0.5012 ms</td><td class="pass">PASS</td></tr>
+          <tr><td>Calibration resistors</td><td>Configured versus derived error ≤ 2%</td><td>Both within 1%</td><td class="pass">PASS</td></tr>
+        </tbody>
+      </table>
+      <figure><a href="../simulations/week13/w13-final_build-functional-results.svg"><img src="../simulations/week13/w13-final_build-functional-results.svg" alt="OSC1 square and triangle waveforms above the nearly overlapping REG1 droop and INT2 analog-twin response"></a><figcaption>Top: OSC1 behavioral outputs. Bottom: REG1 load-step droop and INT2 analog twin. Click for the original SVG.</figcaption></figure>
+    </section>
+
+    <section id="claims">
+      <p class="eyebrow">Interpretation discipline</p>
+      <h2>What was demonstrated—and what was not.</h2>
+      <div class="two">
+        <article class="card yes"><h3>Demonstrated</h3><ul><li>The enhanced final-system deck parses, converges, and completes under ngspice 47.</li><li>OSC1 supplies correctly ranged square and triangle functions.</li><li>The ideal-tier regulator produces the expected polarity and a finite, measurable load droop.</li><li>The simulation-derived twin values reproduce REG1’s first-order droop response.</li><li>OSC1, REG1, SUM1, and INT2 function together in one transient campaign.</li><li>The result is reproducible from a pinned executable, deck, runner, and hash-bearing receipt.</li></ul></article>
+        <article class="card no"><h3>Not demonstrated</h3><ul><li>Transistor-level operation of the Q1–Q13 AMP1 or an LM301A macromodel.</li><li>Historical-device accuracy, exact package pin behavior, matching, leakage, or temperature dependence.</li><li>Input offset/bias, CMRR, PSRR, noise, common-mode range, slew rate, output-current limiting, or saturation recovery.</li><li>Real compensation stability margins, loop gain, phase margin, or capacitive-load boundary.</li><li>Monte Carlo tolerance, startup extremes, supply variation, fault behavior, or thermal performance.</li><li>Agreement with a constructed chassis. Hardware measurements remain the required final calibration and validation step.</li></ul></article>
+      </div>
+      <div class="callout" style="margin-top:18px"><p><strong>Defensible claim:</strong> the final machine’s intended mathematical signal flow and regulator-twin function work in the declared ideal-tier model. This is not yet a prediction of physical hardware performance.</p></div>
+    </section>
+
+    <section id="reproduce">
+      <p class="eyebrow">Reproducibility</p>
+      <h2>Run the same simulation and inspect every artifact.</h2>
+      <pre class="codebox">python simulations/week13/run_final_demo.py</pre>
+      <p>The Python runner locates the pinned ngspice executable from the dependency lock, executes the deck, rejects simulator errors, parses the saved waveforms, calculates measurements, grades all gates, and regenerates the receipt and SVG plot.</p>
+      <div class="links">
+        <a class="button primary" href="spice-viewer.html?deck=simulations%2Fweek13%2Fw13-final_build-functional.cir.txt">Readable simulation netlist</a>
+        <a class="button" href="../simulations/week13/w13-final_build-functional.cir">Raw final simulation .cir</a>
+        <a class="button" href="../simulations/week13/run_final_demo.py">Runner source</a>
+        <a class="button" href="../simulations/week13/w13-final_build-functional.receipt.json">JSON receipt</a>
+        <a class="button" href="../simulations/week13/w13-final_build-functional-results.svg">Results SVG</a>
+        <a class="button" href="../simulations/week13/README.md">Simulation README</a>
+      </div>
+      <details><summary>Recorded artifact hashes</summary><div class="inside"><table><tbody>
+        <tr><th>Functional deck</th><td class="hash">ED4616FD6E3B40E800F776E32C97EFD0B971DA53C4FCFA3080292E125F73E754</td></tr>
+        <tr><th>Waveform CSV generated during recorded run</th><td class="hash">6BD74CF79955E08DA0741DDCBA22F04E2917DD506CA1EB980AE12E3851D285B2</td></tr>
+        <tr><th>ngspice log generated during recorded run</th><td class="hash">37CF266CECEF49A5053F1B81C1806536A31793D6B52D78AACC69325F5C840D43</td></tr>
+        <tr><th>Results plot</th><td class="hash">5F42D42570838CB41FAAAD93359E45B3EF57799AD75F20F069F023AC9F6CC92A</td></tr>
+        <tr><th>Runner source</th><td class="hash">9EB4623A0EC60569485B0D571FFC824E87967B6A01E53D8E4A0F70F354A276A2</td></tr>
+      </tbody></table></div></details>
+    </section>
+  </main>
+
+  <footer>Roberge One-Box Op-Amp Design Capstone · final ideal-tier SPICE evidence · recorded 16 August 2026</footer>
+</body>
+</html>

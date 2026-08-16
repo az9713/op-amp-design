@@ -19,6 +19,7 @@ The central engineering rule is stronger than “the schematic looks connected�
 ## Start here
 
 - [Integrated capstone](capstone.html) — the W00–W13 build narrative with 45 approved schematic sheets and matched SPICE/receipt links, including the explicit concluding final build.
+- [Final SPICE simulation report](docs/final-spice-simulation.html) — the two final netlists, exact ngspice 47 executable, model assumptions, numerical results, demonstrated functions, unsupported claims, and reproduction links.
 - [Complete development journey](development-journey.html) — the early drawing attempts, the representation change, major corrections, gates, and current limitations.
 - [Pre-flight decisions](docs/preflight-decisions.html) — the sixteen binding project decisions and deferred-project ledger.
 - [Implementation plan](docs/implementation-plan.html) — the gated production and verification strategy.
