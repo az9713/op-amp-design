@@ -6,6 +6,12 @@ This repository develops one progressively assembled ±15 V analog-computing cha
 
 **[Open the live capstone](https://az9713.github.io/op-amp-design/capstone.html)**
 
+## Final simulation evidence
+
+[![Open the live final SPICE simulation report](assets/final-spice-simulation-preview.png)](https://az9713.github.io/op-amp-design/docs/final-spice-simulation.html)
+
+**[Open the live final SPICE simulation report](https://az9713.github.io/op-amp-design/docs/final-spice-simulation.html)**
+
 ## Textbook foundation
 
 “Roberge” refers to James K. Roberge’s MIT textbook, *Operational Amplifiers: Theory and Practice*. The weekly progression reconstructs, adapts, and extends circuits from that book into one cumulative teaching chassis. Read the source as either the [MIT OpenCourseWare textbook PDF](https://ocw.mit.edu/courses/res-6-010-electronic-feedback-systems-spring-2013/res6_010_s_13_coursetextbook.pdf) or the [navigable Engineering LibreTexts edition](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers%3A_Theory_and_Practice_(Roberge)).
