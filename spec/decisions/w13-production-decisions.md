@@ -4,7 +4,7 @@ Status: implemented for topology and presentation review. Electrical performance
 
 ## Configuration boundary
 
-Week 13 uses seven separate graphs. Mutually exclusive compensation networks are never overlaid:
+Week 13 uses seven separate experiment graphs and one concluding normal-operation graph. Mutually exclusive compensation networks are never overlaid:
 
 1. `W13.LAG_SUM1`
 2. `W13.LAG_INV1`
@@ -13,6 +13,9 @@ Week 13 uses seven separate graphs. Mutually exclusive compensation networks are
 5. `W13.ONEPOLE_AMP1`
 6. `W13.ONEPOLE_INT2`
 7. `W13.TWOPOLE_REG1`
+8. `W13.FINAL_BUILD` — approved Week 12 regulator-and-analog-twin operation, external AMP1 47 pF one-pole selection, REG1 30 pF one-pole selection, and no temporary measurement fixtures
+
+`W13.FINAL_BUILD` is the publication end state, not an eighth compensation experiment. It deliberately excludes the symbolic lag, dual-feedback, and two-pole candidates because they remain measurement-gated.
 
 ## Fixed amplifier dynamics
 
@@ -53,5 +56,4 @@ The canonical graphs, SVGs, and SPICE connectivity decks establish topology only
 - D-03: parallel modern internally compensated implementations.
 - D-04: physical chassis, board, harness, and thermal construction documentation.
 
-`capstone.html` remains unchanged pending approval and final integration.
-
+`capstone.html` now includes all seven approved experiment sheets and the concluding `W13.FINAL_BUILD` sheet with its matched SPICE deck and connectivity receipt.

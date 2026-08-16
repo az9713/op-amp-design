@@ -18,7 +18,7 @@ The central engineering rule is stronger than “the schematic looks connected�
 
 ## Start here
 
-- [Integrated capstone](capstone.html) — the W00–W13 build narrative with 44 approved schematic sheets and matched SPICE/receipt links.
+- [Integrated capstone](capstone.html) — the W00–W13 build narrative with 45 approved schematic sheets and matched SPICE/receipt links, including the explicit concluding final build.
 - [Complete development journey](development-journey.html) — the early drawing attempts, the representation change, major corrections, gates, and current limitations.
 - [Pre-flight decisions](docs/preflight-decisions.html) — the sixteen binding project decisions and deferred-project ledger.
 - [Implementation plan](docs/implementation-plan.html) — the gated production and verification strategy.
@@ -94,7 +94,7 @@ Layout overlays may position symbols, select hierarchy views, and define routing
 | W10 | PNP current-mirror load and equal-condition hold comparison |
 | W11 | Reset/operate/hold hardware, DUT error fixtures, grounded half-wave rectifier |
 | W12 | Fourth-order Butterworth, Van der Pol, and regulator analog twin |
-| W13 | Seven separate fixed/adjustable compensation configurations |
+| W13 | Seven fixed/adjustable compensation experiments plus one explicit final normal-operation build |
 
 ## Running the checks
 
@@ -102,7 +102,7 @@ The validation and projection core uses the Python standard library. Python 3.13
 
 ### Where the SPICE files are
 
-The repository currently contains 98 tracked `.cir` decks. The main, human-reviewed weekly decks are beside their SVG counterparts:
+The repository currently contains 99 tracked `.cir` decks. The main, human-reviewed weekly decks are beside their SVG counterparts:
 
 - `generated/weeks00_04/` — Weeks 0–4;
 - `generated/weeks05_06/` — Weeks 5–6;
@@ -138,7 +138,7 @@ Run the complete test suite:
 python -m unittest discover -s tests -v
 ```
 
-Current repository snapshot: **113 tests pass**.
+Current repository snapshot: **116 tests pass**.
 
 ## Verification status
 

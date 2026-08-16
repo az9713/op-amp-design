@@ -13,6 +13,7 @@ from tools.validate_circuit_graph import validate_document  # noqa: E402
 
 GRAPH = ROOT / "circuits" / "weeks" / "w13" / "graph.json"
 VARIANTS = (
+    "W13.FINAL_BUILD",
     "W13.LAG_SUM1",
     "W13.LAG_INV1",
     "W13.ONEPOLE_AMP1",
@@ -85,7 +86,20 @@ class Week13GraphTests(unittest.TestCase):
         self.assertEqual("R_2P", ps["W13.REG.R_2P"].value)
         self.assertEqual("C2_2P", ps["W13.REG.C_2P_2"].value)
 
-    def test_week13_is_strict_physical_addition_with_seven_configs(self):
+    def test_final_build_is_normal_operation_without_temporary_fixtures(self):
+        ps = parts("W13.FINAL_BUILD")
+        self.assertNotIn("AMP1.CC", ps)
+        self.assertEqual("47p", ps["W13.AMP1.CC_SELECT"].value)
+        self.assertEqual("30p", ps["REG1.CC"].value)
+        self.assertNotIn("REG1.V_LOOP_INJ", ps)
+        self.assertNotIn("W12.TWIN.R_SCOPE_REG", ps)
+        self.assertNotIn("W12.TWIN.R_SCOPE_TWIN", ps)
+        self.assertNotIn("W13.REG.C_F", ps)
+        self.assertNotIn("W13.REG.C_2P_1", ps)
+        self.assertNotIn("W13.LAG_SUM.R", ps)
+        self.assertNotIn("W13.LAG_INV.R", ps)
+
+    def test_week13_is_strict_physical_addition_with_eight_configs(self):
         week = next(item for item in document()["weekly_states"] if item["id"] == "W13")
         self.assertEqual("W12", week["inherits"])
         self.assertEqual([], week["delta"]["remove"])
@@ -95,4 +109,3 @@ class Week13GraphTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

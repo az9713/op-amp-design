@@ -75,9 +75,9 @@
     <p class="deck">The complete development journey of the one-box capstone based on James K. Roberge’s MIT textbook, <em>Operational Amplifiers: Theory and Practice</em>: the user-attributed Grok phase, the Codex specification and production phase, the architectural change that grounded every schematic in named electrical connectivity, the corrections that survived review, and the work that remains unproved. The source is available as the <a href="https://ocw.mit.edu/courses/res-6-010-electronic-feedback-systems-spring-2013/res6_010_s_13_coursetextbook.pdf">MIT OpenCourseWare PDF</a> and a <a href="https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers%3A_Theory_and_Practice_(Roberge)">LibreTexts edition</a>.</p>
     <div class="metrics" aria-label="Project metrics">
       <div class="metric"><strong>14</strong><span>weekly physical states, W00–W13</span></div>
-      <div class="metric"><strong>44</strong><span>approved SVG/SPICE pairs in capstone</span></div>
+      <div class="metric"><strong>45</strong><span>approved SVG/SPICE pairs in capstone</span></div>
       <div class="metric"><strong>78</strong><span>connectivity receipts in generated history</span></div>
-      <div class="metric"><strong>113</strong><span>tests in the final integration run</span></div>
+      <div class="metric"><strong>116</strong><span>tests in the final integration run</span></div>
       <div class="metric"><strong>0/2</strong><span>Week 9 electrical gate score: still blocked</span></div>
     </div>
   </header>
@@ -99,7 +99,7 @@
     <article>
       <section id="coverage" class="coverage">
         <h2>Evidence boundary</h2>
-        <p>This account uses the project records under this folder: 13 early visual-generation records, seven governance surfaces, five specification/audit drafts, 28 durable decision records, 26 weekly graph/manifests/README records, 41 layout overlays, eight review pages, 17 test modules, 78 generated connectivity receipts, the local Roberge PDF and book crops, and the final integrated capstone. Generated SVGs and decks are treated as derived evidence, not independent design authorities.</p>
+        <p>This account uses the project records under this folder: 13 early visual-generation records, seven governance surfaces, five specification/audit drafts, 28 durable decision records, 26 weekly graph/manifests/README records, 42 layout overlays, eight review pages, 18 test modules, 79 generated connectivity receipts, the local Roberge PDF and book crops, and the final integrated capstone. Generated SVGs and decks are treated as derived evidence, not independent design authorities.</p>
         <p><strong>Coverage:</strong> textual and tabular records are substantial and locally addressable; visual evolution is sampled through the historical HTML/SVG surfaces; full conversation transcripts are not present in the folder. File modification times establish an ordering, not authorship.</p>
       </section>
 
@@ -143,7 +143,7 @@
           <article class="event"><span class="tag">Vertical proof</span><div><h3>Transcribe Figure 9.1 twice and let failure remain failure</h3><p><a href="spec/decisions/week09-source-map.md">Transcription A/source map</a> and <a href="spec/decisions/week09-transcription-b.md">Transcription B</a> were independently compared in the <a href="spec/decisions/week09-transcription-diff.md">diff</a>. The pipeline passed schema, graph↔SVG↔SPICE connectivity, and human visual review. It executed eight ngspice cases—but the balance, inverter-gain, and integrator-polarity assertions failed. <a href="docs/gate-2-week09-proof.html">Gate 2</a> therefore remained blocked rather than being cosmetically promoted.</p></div></article>
           <article class="event"><span class="tag">Style acceptance</span><div><h3>Separate presentation approval from electrical approval</h3><p>The user accepted the <a href="spec/decisions/week09-style-acceptance.md">Week 9 visual language</a>: black active circuitry, coral changes, grey installed-inactive hardware, explicit junctions and insulated crossings, large main sheets, and pin-level details when needed. That acceptance allowed chronological topology production without erasing the failed electrical gate.</p></div></article>
           <article class="event"><span class="tag">Production</span><div><h3>Rebuild W00–W13 as cumulative graph states</h3><p>Production proceeded in review batches: <a href="docs/week00-04-review.html">W00–04</a>, <a href="docs/week05-06-review.html">W05–06</a>, <a href="docs/week07-08-review.html">W07–08</a>, <a href="docs/week09-review.html">W09 reconciliation</a>, then <a href="docs/week10-review.html">W10</a>, <a href="docs/week11-review.html">W11</a>, <a href="docs/week12-review.html">W12</a>, and <a href="docs/week13-review.html">W13</a>. Every approval froze topology and presentation while carrying forward electrical limitations.</p></div></article>
-          <article class="event"><span class="tag">Integration</span><div><h3>Publish only after all weekly reviews</h3><p>After <a href="spec/decisions/w13-acceptance.md">Week 13 acceptance</a>, 44 approved sheets with matched SPICE and connectivity links were embedded in <a href="capstone.html">capstone.html</a>. The final integration check found every referenced artifact present, every embedded receipt passing, JavaScript syntax valid, and 113 tests passing.</p></div></article>
+          <article class="event"><span class="tag">Integration</span><div><h3>Publish only after all weekly reviews</h3><p>After <a href="spec/decisions/w13-acceptance.md">Week 13 acceptance</a>, the approved weekly sheets were embedded in <a href="capstone.html">capstone.html</a>. A later final-state audit added <code>W13.FINAL_BUILD</code>, producing 45 matched SVG/SPICE pairs and an explicit normal-operation conclusion. The integration check found every referenced artifact present, every embedded receipt passing, JavaScript syntax valid, and 116 tests passing.</p></div></article>
         </div>
       </section>
 
@@ -218,7 +218,7 @@
             <tr><td>Weekly specification and topology decisions</td><td class="good">Complete</td><td>W00–W13 states, configurations, adaptations, and deferred boundaries are recorded.</td></tr>
             <tr><td>Canonical graph/schema pipeline</td><td class="good">Implemented</td><td>Graphs, variants, layout overlays, SVG/SPICE projectors, parsers, receipts, and tests exist.</td></tr>
             <tr><td>Weekly topology and presentation acceptance</td><td class="good">Accepted</td><td>All chronological review batches were approved, with explicit claim boundaries.</td></tr>
-            <tr><td>Capstone integration</td><td class="good">Implemented</td><td>44 approved sheets and matched SPICE/receipt links are embedded in <a href="capstone.html">capstone.html</a>.</td></tr>
+            <tr><td>Capstone integration</td><td class="good">Implemented</td><td>45 approved sheets—including <code>W13.FINAL_BUILD</code>—and matched SPICE/receipt links are embedded in <a href="capstone.html">capstone.html</a>.</td></tr>
             <tr><td>Week 0 publication polish</td><td class="open">Open defect</td><td>The dummy-load/PGND overlap must be rerouted and re-reviewed.</td></tr>
             <tr><td>Week 9/10 quantitative electrical acceptance</td><td class="open">Blocked</td><td>Balance, inverter gain, and integrator polarity failures remain unresolved.</td></tr>
             <tr><td>Realistic historical semiconductor behavior</td><td class="open">Unsupported</td><td>Lawful characterized models, exact package pins, matching, leakage, temperature, and parasitics remain incomplete.</td></tr>

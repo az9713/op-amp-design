@@ -299,7 +299,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "Equal 4.70 k\u03a9 resistors give a unity inverter and match Figure 3.1.",
+          "claim": "Equal 4.70 kΩ resistors give a unity inverter and match Figure 3.1.",
           "label": "verified",
           "source_id": "SRC.ROBERGE.W1"
         }
@@ -496,7 +496,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "Equal 10 k\u03a9 summer input is a proposed teaching value.",
+          "claim": "Equal 10 kΩ summer input is a proposed teaching value.",
           "label": "proposed",
           "source_id": "SRC.ROBERGE.W1"
         }
@@ -526,7 +526,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "Equal 10 k\u03a9 summer input is a proposed teaching value.",
+          "claim": "Equal 10 kΩ summer input is a proposed teaching value.",
           "label": "proposed",
           "source_id": "SRC.ROBERGE.W1"
         }
@@ -556,7 +556,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "Equal 10 k\u03a9 summer input is a proposed teaching value.",
+          "claim": "Equal 10 kΩ summer input is a proposed teaching value.",
           "label": "proposed",
           "source_id": "SRC.ROBERGE.W1"
         }
@@ -814,7 +814,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "10 k\u03a9 and 1 \u00b5F give the approved 10 ms integrator scale.",
+          "claim": "10 kΩ and 1 µF give the approved 10 ms integrator scale.",
           "label": "proposed",
           "source_id": "SRC.ROBERGE.W1"
         }
@@ -1042,7 +1042,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "10 k\u03a9 and 1 \u00b5F give the approved 10 ms integrator scale.",
+          "claim": "10 kΩ and 1 µF give the approved 10 ms integrator scale.",
           "label": "proposed",
           "source_id": "SRC.ROBERGE.W1"
         }
@@ -1554,7 +1554,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "Proposed 10\u00d7 scope resistive load.",
+          "claim": "Proposed 10× scope resistive load.",
           "label": "proposed",
           "source_id": "SRC.ENGINEERING"
         }
@@ -1584,7 +1584,7 @@
       ],
       "source_evidence": [
         {
-          "claim": "40 k\u03a9 in series with SUM1.RIN_B=10 k\u03a9 gives the proposed damping coefficient 0.2.",
+          "claim": "40 kΩ in series with SUM1.RIN_B=10 kΩ gives the proposed damping coefficient 0.2.",
           "label": "proposed",
           "source_id": "SRC.ENGINEERING"
         }
@@ -9348,7 +9348,7 @@
   "modules": [
     {
       "component_ids": [],
-      "description": "Cumulative \u00b115 V analog-computer chassis",
+      "description": "Cumulative ±15 V analog-computer chassis",
       "id": "CHASSIS",
       "parent_id": null,
       "ports": [
@@ -11795,6 +11795,1136 @@
     {
       "connection_overrides": [
         {
+          "component_id": "DEV.U_INT2",
+          "net": "W12.TWIN.OUT",
+          "pin_id": "OUT"
+        }
+      ],
+      "description": "Concluding normal-operation build: the approved regulator-and-analog-twin machine, AMP1 on the selected 47 pF external one-pole capacitor, REG1 on its accepted 30 pF one-pole capacitor, and no temporary scope or loop-injection fixtures.",
+      "id": "W13.FINAL_BUILD",
+      "model_overrides": [],
+      "state_overrides": [
+        {
+          "component_id": "AMP1.CC",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "AMP1.C_BIAS_G",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_BIAS_N",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_Q45_E",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_Q4B_BYP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_Q6_BYP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_VN_BULK",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_VN_FAST",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_VP_BULK",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.C_VP_FAST",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.D_BAL",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "AMP1.D_BIAS",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.D_DRV_1",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.D_DRV_2",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q1",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q10",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q11",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q12",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q13",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q2",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q3",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q4",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q5",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q6",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q7",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q8",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q9",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q_CR_OUT",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.Q_CR_REF",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_BAL_L",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "AMP1.R_BAL_R",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "AMP1.R_BIAS_TC",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_COL_L",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "AMP1.R_COL_R",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "AMP1.R_OUT_N",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_OUT_P",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q3_180K",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q3_5K6",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q45_E",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q6_BG",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q6_BP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q7_E",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "AMP1.R_Q9_E",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "DEV.U_INT1_STOCK",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "DEV.U_INT2",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "DEV.U_INT3_OSC",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "DEV.U_INT3_OSC.CC",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "DEV.U_INT3_OSC.CN",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "DEV.U_INT3_OSC.CP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "DEV.U_INV1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "DEV.U_SUM1",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "FIX.RLOAD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "FIX.V_IC",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "FIX.V_INT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "FIX.V_INV",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "FIX.V_STEP50",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "FIX.V_SUMA",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "FIX.V_SUMB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INF.CBN",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INF.CBP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INF.GND_TIE",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INF.RDUMMY_N",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INF.RDUMMY_P",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INF.VN15",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INF.VP15",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INT1.CC12",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.CC220",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.CC30",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.CFB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.CN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.CP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.RIN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT1.ROUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT2.CC30",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INT2.CFB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT2.CN",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INT2.CP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "INT2.RIN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INT2.ROUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.CC12",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.CC220",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.CC30",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.CN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.CP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.RFB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.RIN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "INV1.ROUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "OSC1.C_INT",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.D_ZN",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.D_ZP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_HYS",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_INT",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_LIMIT",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_SCOPE_SQ",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_SCOPE_TRI",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_TRI",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.R_VC",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.U_SCHMITT",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.U_SCHMITT.CC",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.U_SCHMITT.CN",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "OSC1.U_SCHMITT.CP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "RECT1.CN",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "RECT1.CP",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "RECT1.C_COMP",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "RECT1.D1",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "RECT1.R_LOAD",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "RECT1.U1",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "RECT1.VIN",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.CC",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "REG1.CN",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.CP",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.C_LOAD",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.C_REF",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.D_DISCH",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.D_REF",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.I_DIST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "REG1.Q_PASS",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_BASE",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_BLEED",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_EMIT",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_ESR",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_LOAD",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_REF",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.R_SCOPE",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.U_ERR",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "REG1.V_LOOP_INJ",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "REG1.V_UNREG",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "SLOT.INT2.MARKER",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "SLOT.INT3.MARKER",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "SUM1.CC30",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "SUM1.CN",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "SUM1.CP",
+          "state_class": "persistent-inactive"
+        },
+        {
+          "component_id": "SUM1.RFB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "SUM1.RIN_A",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "SUM1.RIN_B",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "SUM1.RIN_C",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "SUM1.ROUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W04.RDAMP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W04.VINJ",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W07.R_SCOPE_L",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W07.R_SCOPE_R",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W07.V_INV_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W07.V_NON_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W08.R_LOAD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W08.V_DIFF",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W08.V_INV_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W08.V_NON_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W08.V_STEP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.CPAR_COMPA",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.CPAR_COMPB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.CPAR_HIGHZ",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.CPROBE_OUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.LOAD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.NONINV_GROUND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.RALPHA",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.RFB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.RIN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.RSOURCE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W09.VSRC",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W10.NONINV_GROUND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W10.R_SCOPE_INT1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W10.R_SCOPE_INT2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.NONINV_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.R_EO_FB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.R_EO_G",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.R_IM",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.R_IP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.R_LOAD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.ERR.VFOLLOW",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.CN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.CP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.C_COMP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_BIAS1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_BIAS2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_CLAMP_N",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_CLAMP_P",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_INPUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_LOGIC_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_LOGIC_RST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_OP_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_OP_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_RST_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.D_RST_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.NONINV_GROUND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.Q_OP_DRV",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.Q_RST_DRV",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R2_BOTTOM",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R2_TOP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_BIAS",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_LOGIC_OP_PD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_LOGIC_RST_PD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_OP_EMIT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_OP_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_RST_EMIT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.R_RST_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.S_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.S_RST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.U_RESET",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.V_IC",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.V_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.V_RST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I1.V_SIGNAL",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.CN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.CP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.C_COMP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_BIAS1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_BIAS2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_CLAMP_N",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_CLAMP_P",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_INPUT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_LOGIC_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_LOGIC_RST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_OP_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_OP_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_RST_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.D_RST_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.Q_OP_DRV",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.Q_RST_DRV",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R2_BOTTOM",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R2_TOP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_BIAS",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_LOGIC_OP_PD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_LOGIC_RST_PD",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_OP_EMIT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_OP_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_RST_EMIT",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.R_RST_GATE",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.S_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.S_RST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.U_RESET",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.V_IC",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.V_OP",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.V_RST",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W11.I2.V_SIGNAL",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.C_I0",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.C_I1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.C_I2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.C_I3",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_COMB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_F",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_I1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_I1_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_I2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_I3",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_INV_FB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_INV_X",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_INV_X2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_Q1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_Q3",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.R_SCOPE_X",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.BW.VF",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.TWIN.C_INT",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.TWIN.R_DRIVE",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.TWIN.R_LEAK",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.TWIN.R_SCOPE_REG",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.TWIN.R_SCOPE_TWIN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.TWIN.R_STEP",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.TWIN.R_SUM_FB",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.TWIN.R_SUM_IN",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.TWIN.S_LOAD",
+          "state_class": "persistent-installed"
+        },
+        {
+          "component_id": "W12.VDP.CN1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.CN2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.CP1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.CP2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.C_ACCEL",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.C_D1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.M_X2",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.M_X2D1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_D1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_LINEAR",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_NONINV_GND",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_NONLIN",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_SCOPE_X",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_SUM_D1",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_SUM_FB",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W12.VDP.R_SUM_X",
+          "state_class": "removed-off-circuit"
+        },
+        {
+          "component_id": "W13.AMP1.CC_SELECT",
+          "state_class": "persistent-installed"
+        }
+      ]
+    },
+    {
+      "connection_overrides": [
+        {
           "component_id": "FIX.RLOAD",
           "net": null,
           "pin_id": "P"
@@ -12734,7 +13864,7 @@
           "pin_id": "P"
         }
       ],
-      "description": "Approved SUM\u2192INV\u2192INT loop realizes dx/dt=-x/tau; pulse provides repeatable excitation.",
+      "description": "Approved SUM→INV→INT loop realizes dx/dt=-x/tau; pulse provides repeatable excitation.",
       "id": "W02.FIRST_ORDER",
       "model_overrides": [],
       "state_overrides": [
@@ -14078,7 +15208,7 @@
           "pin_id": "P"
         }
       ],
-      "description": "Damped second-order run: x''+(0.2/tau)x'+x/tau\u00b2=0 with tau=10 ms.",
+      "description": "Damped second-order run: x''+(0.2/tau)x'+x/tau²=0 with tau=10 ms.",
       "id": "W04.SECOND_ORDER_RUN",
       "model_overrides": [],
       "state_overrides": [
@@ -39154,7 +40284,7 @@
       },
       "id": "W00",
       "inherits": null,
-      "learning_objective": "Commission the external \u00b115 V boundary, bypassing, and one-point ground tie.",
+      "learning_objective": "Commission the external ±15 V boundary, bypassing, and one-point ground tie.",
       "source_evidence": [
         {
           "claim": "W00 state/configuration split approved at Gate 0.",
@@ -39798,7 +40928,8 @@
         "W13.ONEPOLE_INT2",
         "W13.CLOAD_BASE",
         "W13.CLOAD_COMP",
-        "W13.TWOPOLE_REG1"
+        "W13.TWOPOLE_REG1",
+        "W13.FINAL_BUILD"
       ],
       "delta": {
         "add": [

@@ -1,6 +1,11 @@
 {
   "claim_boundary": "Canonical topology and SVG/SPICE connectivity only. Compensation values requiring measured loop dynamics remain symbolic and are not approved for construction or performance claims.",
   "configurations": {
+    "W13.FINAL_BUILD": {
+      "active_network": "Approved W12 regulator-and-analog-twin machine with external AMP1 Cc=47p and REG1 Cc=30p",
+      "purpose": "concluding normal-operation configuration",
+      "fixture_policy": "temporary scope loads, loop injection, and compensation-campaign sources disconnected"
+    },
     "W13.CLOAD_BASE": {
       "active_network": "REG1 with accepted 30 pF one-pole compensation, R_EMIT, ESR, and CL_CASE",
       "purpose": "uncompensated capacitive-load baseline"
@@ -49,4 +54,3 @@
   "schema_version": 1,
   "status": "topology and presentation review; electrical performance open"
 }
-

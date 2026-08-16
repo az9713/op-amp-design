@@ -87,7 +87,7 @@
     {
       "id": "SRC.LAYOUT",
       "role": "Non-electrical placement and routing overlays",
-      "count": 41,
+      "count": 42,
       "locator": "layout/weeks/**/*.json",
       "authority_limit": "May position and route canonical nets but may not create electrical objects or connectivity"
     },
@@ -101,8 +101,8 @@
       "id": "SRC.VERIFICATION",
       "role": "Implementation and generated-equivalence evidence",
       "counts": {
-        "test_modules": 17,
-        "connectivity_receipts": 78
+        "test_modules": 18,
+        "connectivity_receipts": 79
       },
       "locators": [
         "tests/**/test_*.py",
@@ -158,7 +158,7 @@
     "docs/weekly-electrical-specification.html": "65BC79C1ECF3D08522DE3DABCD819287E7E9CF2BB388C654798BC926E207280C",
     "spec/decisions/adr-001-canonical-toolchain.md": "C3CEBAD9ABD9602889C85CDE1866E8D55BDAF073A880D46684F3DA0416E3FC7F",
     "spec/decisions/gate-2-week09-status.md": "6CC3DF89837EF70EBF6DCC704CECD87F90F553D1DD9BFEF12194C112ADCF9C56",
-    "capstone.html": "3AF4AA7427927D8175A189CAEA43DF4B69DAAFC22C0FA9AD913D66087B194E23"
+    "capstone.html": "8B747A986C56C7CA5678837CDE35B2F752313B8C85F7800F38E7FE4DF77907FD"
   },
   "primary_artifact": "development-journey.html"
 }
